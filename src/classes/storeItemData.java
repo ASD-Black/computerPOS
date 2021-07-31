@@ -50,9 +50,9 @@ public class storeItemData {
         }
     }
     
-    public String updateTempItem(String name, int warranty, int qty, double w_price, double r_price, String date, String type, String itmCode, Component comp){
+    public String updateTempItem(String name, int warranty, int qty, double w_price, double r_price, String date, String type, String supply, String itmCode, Component comp){
         try{
-            String SQL= "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=? where itm_code=?"; 
+            String SQL= "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=?, supply=? where itm_code=?"; 
             PreparedStatement pst = conn.prepareStatement(SQL);
  
             //System.out.println("4");
@@ -68,7 +68,8 @@ public class storeItemData {
             //System.out.println("9");
             pst.setString(6, date);
             pst.setString(7, type);
-            pst.setString(8, itmCode);
+            pst.setString(8, supply);
+            pst.setString(9, itmCode);
 
             pst.execute();   
             increaseNoOfItemsByOne();

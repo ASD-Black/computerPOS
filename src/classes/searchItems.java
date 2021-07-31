@@ -19,7 +19,7 @@ public class searchItems {
     }
     
     public ResultSet showItemDetails(){
-        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', w_price as 'w_price', r_price as 'r_price', date as 'Date', type as 'Category' from items WHERE qty!=-1 ORDER BY date ASC";
+        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', w_price as 'w_price', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items WHERE qty!=-1 ORDER BY date ASC";
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(SQl1);
@@ -32,7 +32,7 @@ public class searchItems {
     }
     
     public ResultSet showUpdatedItemDetails(){
-        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', w_price as 'w_price', r_price as 'r_price', date as 'Date', type as 'Category' from items ORDER BY date ASC";
+        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', w_price as 'w_price', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items ORDER BY date ASC";
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(SQl1);
@@ -47,7 +47,7 @@ public class searchItems {
     public ResultSet searchByItemName(String itemName){
        String item = null;
        item = itemName;
-       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category' from items where itm_name like '%"+item+"%'";
+       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items where itm_name like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -61,7 +61,7 @@ public class searchItems {
     public ResultSet searchByItemCatogary(String itemCat){
        String item = null;
        item = itemCat;
-       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category' from items where type like '%"+item+"%'";
+       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items where type like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -76,7 +76,7 @@ public class searchItems {
     public ResultSet searchByItemType(String type){
        String item = null;
        item = type;
-       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category' from items where type like '%"+item+"%'";
+       String sql2 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items where type like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -91,7 +91,7 @@ public class searchItems {
     public ResultSet searchByItemCode(String itmCode){
        String item = null;
        item = itmCode;
-       String sql3 = "select items.itm_code as 'Code', items.itm_name as 'Item Name', items.warranty as 'Warranty', items.qty as 'QTY', items.r_price as 'r_price', items.type as 'Category' from items items INNER JOIN sub_items sub_items ON items.itm_code = sub_items.itm_code where sub_items.sn like '%"+item+"%'";
+       String sql3 = "select items.itm_code as 'Code', items.itm_name as 'Item Name', items.warranty as 'Warranty', items.qty as 'QTY', items.r_price as 'r_price', items.type as 'Category', supply as 'Supplier' from items items INNER JOIN sub_items sub_items ON items.itm_code = sub_items.itm_code where sub_items.sn like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();

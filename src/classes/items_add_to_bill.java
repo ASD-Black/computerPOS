@@ -1066,7 +1066,7 @@ public class items_add_to_bill {
     }
     
     public boolean deleteBillSN(String BillsnID){
-        String sql = "delete from bill_sub_items where bill_item_id='"+BillsnID+"'";
+        String sql = "delete from bill_sub_items where idbill_sub_itemsID='"+BillsnID+"'";
         
         try{
             Statement stmnt = conn.createStatement();
@@ -1075,6 +1075,20 @@ public class items_add_to_bill {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Cannot Delete This SN", "Database Error!", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+    public boolean deleteBillItem(String BillItemID){
+        String sql = "delete from bill_items where bill_item_id='"+BillItemID+"'";
+        
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Cannot Delete This Item", "Database Error!", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }

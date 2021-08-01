@@ -19,7 +19,7 @@ public class searchItems {
     }
     
     public ResultSet showItemDetails(){
-        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', w_price as 'w_price', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items WHERE qty!=-1 ORDER BY date ASC";
+        String SQl1 = "select itm_code as 'Code', itm_name as 'Item Name', warranty as 'Warranty', qty as 'QTY', r_price as 'r_price', date as 'Date', type as 'Category', supply as 'Supplier' from items WHERE qty!=-1 ORDER BY date ASC";
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(SQl1);

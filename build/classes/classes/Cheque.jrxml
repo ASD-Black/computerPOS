@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="460"/>
+	<property name="ireport.y" value="455"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -271,14 +271,14 @@ WHERE
 				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="62" y="2" width="127" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
+				<reportElement x="62" y="2" width="146" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{item_name}+ " ("+$F{pack_size}+"M) "]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="209" y="2" width="36" height="12" uuid="f4d63cc5-f615-441c-805b-a23a7e116394"/>
+				<reportElement x="223" y="2" width="22" height="12" uuid="f4d63cc5-f615-441c-805b-a23a7e116394"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Calibri" size="9"/>
 				</textElement>
@@ -286,7 +286,7 @@ WHERE
 			</textField>
 			<textField>
 				<reportElement x="245" y="2" width="70" height="12" uuid="8baa8d38-0309-44de-8adc-aea5fe77b73a"/>
-				<textElement textAlignment="Justified">
+				<textElement textAlignment="Right">
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{r_price}]]></textFieldExpression>

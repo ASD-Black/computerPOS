@@ -20,9 +20,9 @@ public class hr {
         conn = con.Connect();
     }
     
-    public String addCustomer(String name, String address_nile_1, String address_nile_2, String city, String state, String contactNo, String reg_date, Component comp){
+    public String addCustomer(String name, String address_nile_1, String address_nile_2, String city, String state, String contactNo, String reg_date, double credit_bal, Component comp){
         try{
-            String SQL= "insert into customers(cust_id, name, address_nile_1, address_nile_2, city, state, contactNo, reg_date) values(?,?,?,?,?,?,?,?)";
+            String SQL= "insert into customers(cust_id, name, address_nile_1, address_nile_2, city, state, contactNo, reg_date, credit_bal) values(?,?,?,?,?,?,?,?,?)";
             
             String cust_Code = generateCustomerCode(comp);
             //System.out.println(itemCode);
@@ -43,6 +43,7 @@ public class hr {
             //System.out.println("10");
             pst.setString(8, reg_date);
             //System.out.println("11");
+            pst.setDouble(9, credit_bal);
             pst.execute();
             //System.out.println("12");
             increaseNoOfCustByOne();

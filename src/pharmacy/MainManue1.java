@@ -11056,8 +11056,10 @@ public class MainManue1 extends javax.swing.JFrame {
             Date d = new Date();     
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
             String reg_date = sdf1.format(d);
+            double credit_bal = 0;
+            
 
-            String custID = hrr.addCustomer(name, addr1, addr2, city, state, conNo, reg_date, this);
+            String custID = hrr.addCustomer(name, addr1, addr2, city, state, conNo, reg_date,credit_bal, this);
             JOptionPane.showMessageDialog(this, "Customer Added Successfully","Movie Details", JOptionPane.INFORMATION_MESSAGE);
 
             ResultSet rs = hrr.showUpdatedCustDetails();
@@ -16362,9 +16364,11 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRow177 = this.tbl_addBillItems.getSelectedRow();
         
         String itmCorde = this.tbl_addBillItems.getModel().getValueAt(selectedRow177, 0).toString();
+        String r_price = this.tbl_addBillItems.getModel().getValueAt(selectedRow177, 4).toString();
         
         ResultSet rs3333 = jukif.getSubItemData(itmCorde);
-        this.jTable33.setModel(DbUtils.resultSetToTableModel(rs3333));        
+        this.jTable33.setModel(DbUtils.resultSetToTableModel(rs3333)); 
+        this.txt_search_bill_itm2.setText(r_price);
    
     }//GEN-LAST:event_tbl_addBillItemsMousePressed
 
@@ -16455,28 +16459,28 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton85ActionPerformed
         cashBalancing pooo = new cashBalancing();
-        String addNoteee = "";
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttt = sdf.format(d);
         
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String ddddd = sdf1.format(d);
-            
-        
-        
-        
+
         String addNote = this.jTextArea17.getText();
-        if(addNote.equals("")){
-            addNoteee = "-";
+        String AMT = this.txt_search_text1.getText();
+        
+        if(addNote.equals(" ") || addNote.trim().isEmpty()){
+            addNote = "-";
+        }
+        
+        
+        if(AMT.equals(" ") || AMT.trim().isEmpty()){
+            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            this.txt_search_text1.requestFocusInWindow();
         }
         else{
-            addNoteee = this.jTextArea17.getText();
-        }
-        double addAmt = Double.parseDouble(this.txt_search_text1.getText());
-        
-        if(pooo.validatecashIn(this.txt_search_text1.getText())){
-            String trueee = pooo.addDebitePayments(addNoteee, addAmt, ddddd, tttt, pnl_quickBill);
+            double addAmt = Double.parseDouble(AMT);
+            String trueee = pooo.addDebitePayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
             if(trueee == null){
                 JOptionPane.showMessageDialog(this, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
             }
@@ -16485,12 +16489,9 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.txt_search_text1.setText("");
                 this.jTextArea17.setText("");
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Please Enter the Cash Amount","Cash Tray", JOptionPane.ERROR_MESSAGE);
-        }
-        ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
-        this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu));   
+            ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
+            this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu)); 
+        }     
     }//GEN-LAST:event_jButton85ActionPerformed
 
     private void txt_search_text2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text2KeyPressed
@@ -16501,25 +16502,33 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton86ActionPerformed
         cashBalancing poo = new cashBalancing(); 
-        String addNoteeeg = "";
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttt = sdf.format(d);
         
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String ddddd = sdf1.format(d);
-            
         
         String addNote = this.jTextArea18.getText();
-        if(addNote.equals("")){
-            addNoteeeg = "-";
+        String cashAMT = this.txt_search_text2.getText();
+        System.out.println("111111");
+        System.out.println(addNote);
+        System.out.println("111111");
+        if(addNote.trim().isEmpty()){
+            System.out.println("baaaaaaaaank");
+        }
+        
+        if(addNote.equals("") || addNote.trim().isEmpty()){
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                this.jTextArea18.requestFocusInWindow();
+            }
+        else if(cashAMT.equals(" ") || cashAMT.trim().isEmpty()){
+            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            this.txt_search_text2.requestFocusInWindow();
         }
         else{
-            addNoteeeg = this.jTextArea18.getText();
-        }
-        double addAmt = Double.parseDouble(this.txt_search_text2.getText());
-        if(poo.validatecashOut(addNote)){
-            String trueee =  poo.addCreditedPayments(addNoteeeg, addAmt, ddddd, tttt, pnl_quickBill);
+            double addAmt = Double.parseDouble(cashAMT);
+            String trueee =  poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
             if(trueee == null){
                 JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
             }
@@ -16528,13 +16537,9 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextArea18.setText("");
                 this.txt_search_text2.setText("");
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note","Cash Tray", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
-        this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp));
+            ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
+            this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp)); 
+        }    
     }//GEN-LAST:event_jButton86ActionPerformed
 
     private void jTable27MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable27MousePressed
@@ -17656,42 +17661,39 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton85KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton85KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             cashBalancing pooo = new cashBalancing();
-        String addNoteee = "";
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-        String tttt = sdf.format(d);
-        
-        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-        String ddddd = sdf1.format(d);
-            
-        
-        
-        
-        String addNote = this.jTextArea17.getText();
-        if(addNote.equals("")){
-            addNoteee = "-";
-        }
-        else{
-            addNoteee = this.jTextArea17.getText();
-        }
-        double addAmt = Double.parseDouble(this.txt_search_text1.getText());
-        
-        if(pooo.validatecashIn(this.txt_search_text1.getText())){
-            String trueee = pooo.addDebitePayments(addNoteee, addAmt, ddddd, tttt, pnl_quickBill);
-            if(trueee == null){
-                JOptionPane.showMessageDialog(this, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+            String tttt = sdf.format(d);
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+            String ddddd = sdf1.format(d);
+
+            String addNote = this.jTextArea17.getText();
+            String AMT = this.txt_search_text1.getText();
+
+            if(addNote.equals(" ") || addNote.trim().isEmpty()){
+                addNote = "-";
             }
-            else{                
-                JOptionPane.showMessageDialog(this, "Cash IN Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE);
-                this.txt_search_text1.setText("");
-                this.jTextArea17.setText("");
+
+
+            if(AMT.equals(" ") || AMT.trim().isEmpty()){
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                this.txt_search_text1.requestFocusInWindow();
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Please Enter the Cash Amount","Cash Tray", JOptionPane.ERROR_MESSAGE);
-        }
-        ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
-        this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu));
+            else{
+                double addAmt = Double.parseDouble(AMT);
+                String trueee = pooo.addDebitePayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
+                if(trueee == null){
+                    JOptionPane.showMessageDialog(this, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                }
+                else{                
+                    JOptionPane.showMessageDialog(this, "Cash IN Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE);
+                    this.txt_search_text1.setText("");
+                    this.jTextArea17.setText("");
+                }
+                ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
+                this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu)); 
+            }
         }
     }//GEN-LAST:event_jButton85KeyPressed
 
@@ -17704,40 +17706,39 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton86KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton86KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             cashBalancing poo = new cashBalancing(); 
-        String addNoteeeg = "";
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-        String tttt = sdf.format(d);
-        
-        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-        String ddddd = sdf1.format(d);
-            
-        
-        String addNote = this.jTextArea18.getText();
-        if(addNote.equals("")){
-            addNoteeeg = "-";
-        }
-        else{
-            addNoteeeg = this.jTextArea18.getText();
-        }
-        double addAmt = Double.parseDouble(this.txt_search_text2.getText());
-        if(poo.validatecashOut(addNote)){
-            String trueee =  poo.addCreditedPayments(addNoteeeg, addAmt, ddddd, tttt, pnl_quickBill);
-            if(trueee == null){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+            String tttt = sdf.format(d);
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+            String ddddd = sdf1.format(d);
+
+            String addNote = this.jTextArea18.getText();
+            String cashAMT = this.txt_search_text2.getText();
+
+            System.out.println(addNote);
+            if(addNote.equals("") || addNote.trim().isEmpty()){
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                this.jTextArea18.requestFocusInWindow();
+            }
+            else if(cashAMT.equals(" ") || cashAMT.trim().isEmpty()){
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                this.txt_search_text2.requestFocusInWindow();
             }
             else{
-                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE); 
-                this.jTextArea18.setText("");
-                this.txt_search_text2.setText("");
+                double addAmt = Double.parseDouble(cashAMT);
+                String trueee =  poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
+                if(trueee == null){
+                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE); 
+                    this.jTextArea18.setText("");
+                    this.txt_search_text2.setText("");
+                }
+                ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
+                this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp)); 
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note","Cash Tray", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
-        this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp));
         }
     }//GEN-LAST:event_jButton86KeyPressed
 

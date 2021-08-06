@@ -308,6 +308,42 @@ public class billSearch {
         return amt;
     }
     
+    public String getBillItemIDBySN(String sn){  
+        String billItemID = null;
+        String id = null;
+        id = sn;
+        try{
+            Statement stmnt = conn.createStatement();
+            ResultSet rss1 = stmnt.executeQuery("select bill_item_id from bill_sub_items where snn='"+id+"'");
+            while(rss1.next()){
+                billItemID = rss1.getString("bill_item_id");    
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return billItemID;
+    }
+    
+    public String getBillIDByBillItemID(String billItemIDD){  
+        String billID = null;
+        String id = null;
+        id = billItemIDD;
+        try{
+            Statement stmnt = conn.createStatement();
+            ResultSet rss1 = stmnt.executeQuery("select bill_id from bill_items where bill_item_id='"+id+"'");
+            while(rss1.next()){
+                billID = rss1.getString("bill_id");    
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return billID;
+    }
+    
     public double getadvancedAmt(String invoID){
         double amt = 0;
         String id = null;

@@ -29,6 +29,7 @@ import java.sql.ResultSet;
 import javax.swing.JPanel;
 import net.proteanit.sql.DbUtils;
 import java.awt.Component;
+import java.awt.List;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -139,210 +140,6 @@ public class MainManue1 extends javax.swing.JFrame {
     private void initComponents() {
 
         subInitComp();
-
-        org.jdesktop.layout.GroupLayout jPanel58Layout = new org.jdesktop.layout.GroupLayout(jPanel58);
-        jPanel58.setLayout(jPanel58Layout);
-        jPanel58Layout.setHorizontalGroup(
-            jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel58Layout.createSequentialGroup()
-                .add(29, 29, 29)
-                .add(jButton104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jButton105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(34, 34, 34))
-            .add(jPanel58Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 387, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel58Layout.setVerticalGroup(
-            jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel58Layout.createSequentialGroup()
-                .add(7, 7, 7)
-                .add(jScrollPane56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_billed_ItemsLayout = new org.jdesktop.layout.GroupLayout(edit_billed_Items.getContentPane());
-        edit_billed_Items.getContentPane().setLayout(edit_billed_ItemsLayout);
-        edit_billed_ItemsLayout.setHorizontalGroup(
-            edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel58, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_billed_ItemsLayout.setVerticalGroup(
-            edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        edit_edit_billed_Items.setAlwaysOnTop(true);
-        edit_edit_billed_Items.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel60.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable35.setAutoCreateRowSorter(true);
-        jTable35.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable35.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"C000001", "Chamara", "Hettipola"},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Customa ID", "Name", "City"
-            }
-        ));
-        jTable35.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable35.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable35.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable35MousePressed(evt);
-            }
-        });
-        jScrollPane57.setViewportView(jTable35);
-        if (jTable35.getColumnModel().getColumnCount() > 0) {
-            jTable35.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        jButton107.setBackground(new java.awt.Color(255, 255, 255));
-        jButton107.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton107.setText("Delete");
-        jButton107.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jButton107.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton107.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton107ActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel60Layout = new org.jdesktop.layout.GroupLayout(jPanel60);
-        jPanel60.setLayout(jPanel60Layout);
-        jPanel60Layout.setHorizontalGroup(
-            jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel60Layout.createSequentialGroup()
-                .add(jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel60Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jScrollPane57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel60Layout.createSequentialGroup()
-                        .add(110, 110, 110)
-                        .add(jButton107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(142, Short.MAX_VALUE))
-        );
-        jPanel60Layout.setVerticalGroup(
-            jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel60Layout.createSequentialGroup()
-                .add(7, 7, 7)
-                .add(jScrollPane57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_edit_billed_ItemsLayout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items.getContentPane());
-        edit_edit_billed_Items.getContentPane().setLayout(edit_edit_billed_ItemsLayout);
-        edit_edit_billed_ItemsLayout.setHorizontalGroup(
-            edit_edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel60, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_edit_billed_ItemsLayout.setVerticalGroup(
-            edit_edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(edit_edit_billed_ItemsLayout.createSequentialGroup()
-                .add(jPanel60, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        edit_edit_billed_Items1.setAlwaysOnTop(true);
-
-        jPanel61.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable36.setAutoCreateRowSorter(true);
-        jTable36.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable36.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"C000001", "Chamara", "Hettipola"},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Customa ID", "Name", "City"
-            }
-        ));
-        jTable36.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable36.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable36.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable36MousePressed(evt);
-            }
-        });
-        jScrollPane58.setViewportView(jTable36);
-        if (jTable36.getColumnModel().getColumnCount() > 0) {
-            jTable36.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        jButton108.setBackground(new java.awt.Color(255, 255, 255));
-        jButton108.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton108.setText("Delete");
-        jButton108.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jButton108.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton108.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton108ActionPerformed(evt);
-            }
-        });
 
         org.jdesktop.layout.GroupLayout jPanel61Layout = new org.jdesktop.layout.GroupLayout(jPanel61);
         jPanel61.setLayout(jPanel61Layout);
@@ -2084,7 +1881,6 @@ public class MainManue1 extends javax.swing.JFrame {
                                         .add(jTextField30)
                                         .addContainerGap())))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, pnl_billingLayout.createSequentialGroup()
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jButton23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))))
         );
@@ -2152,8 +1948,13 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel48.setText("Search By");
 
         jComboBox2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Invoice No", "Customer", "Customer & Date", "Date" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Invoice No", "Customer", "Customer & Date", "Date", "Serial Number" }));
         jComboBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jTextField24.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jTextField24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
@@ -10021,6 +9822,210 @@ public class MainManue1 extends javax.swing.JFrame {
                 jButton105ActionPerformed(evt);
             }
         });
+
+        org.jdesktop.layout.GroupLayout jPanel58Layout = new org.jdesktop.layout.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel58Layout.createSequentialGroup()
+                .add(29, 29, 29)
+                .add(jButton104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jButton105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(34, 34, 34))
+            .add(jPanel58Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 387, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel58Layout.createSequentialGroup()
+                .add(7, 7, 7)
+                .add(jScrollPane56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel58Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_billed_ItemsLayout = new org.jdesktop.layout.GroupLayout(edit_billed_Items.getContentPane());
+        edit_billed_Items.getContentPane().setLayout(edit_billed_ItemsLayout);
+        edit_billed_ItemsLayout.setHorizontalGroup(
+            edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel58, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_billed_ItemsLayout.setVerticalGroup(
+            edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        edit_edit_billed_Items.setAlwaysOnTop(true);
+        edit_edit_billed_Items.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel60.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable35.setAutoCreateRowSorter(true);
+        jTable35.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable35.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"C000001", "Chamara", "Hettipola"},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Customa ID", "Name", "City"
+            }
+        ));
+        jTable35.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable35.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable35MousePressed(evt);
+            }
+        });
+        jScrollPane57.setViewportView(jTable35);
+        if (jTable35.getColumnModel().getColumnCount() > 0) {
+            jTable35.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jButton107.setBackground(new java.awt.Color(255, 255, 255));
+        jButton107.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jButton107.setText("Delete");
+        jButton107.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jButton107.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton107.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton107ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel60Layout = new org.jdesktop.layout.GroupLayout(jPanel60);
+        jPanel60.setLayout(jPanel60Layout);
+        jPanel60Layout.setHorizontalGroup(
+            jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel60Layout.createSequentialGroup()
+                .add(jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel60Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jScrollPane57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel60Layout.createSequentialGroup()
+                        .add(110, 110, 110)
+                        .add(jButton107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+        jPanel60Layout.setVerticalGroup(
+            jPanel60Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel60Layout.createSequentialGroup()
+                .add(7, 7, 7)
+                .add(jScrollPane57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_edit_billed_ItemsLayout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items.getContentPane());
+        edit_edit_billed_Items.getContentPane().setLayout(edit_edit_billed_ItemsLayout);
+        edit_edit_billed_ItemsLayout.setHorizontalGroup(
+            edit_edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel60, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_edit_billed_ItemsLayout.setVerticalGroup(
+            edit_edit_billed_ItemsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(edit_edit_billed_ItemsLayout.createSequentialGroup()
+                .add(jPanel60, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        edit_edit_billed_Items1.setAlwaysOnTop(true);
+
+        jPanel61.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable36.setAutoCreateRowSorter(true);
+        jTable36.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable36.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"C000001", "Chamara", "Hettipola"},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Customa ID", "Name", "City"
+            }
+        ));
+        jTable36.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable36.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable36MousePressed(evt);
+            }
+        });
+        jScrollPane58.setViewportView(jTable36);
+        if (jTable36.getColumnModel().getColumnCount() > 0) {
+            jTable36.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jButton108.setBackground(new java.awt.Color(255, 255, 255));
+        jButton108.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jButton108.setText("Delete");
+        jButton108.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jButton108.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton108.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton108ActionPerformed(evt);
+            }
+        });
 	}
     private void bgFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bgFocusLost
         // TODO add your handling code here:
@@ -10871,10 +10876,7 @@ public class MainManue1 extends javax.swing.JFrame {
         billSearch bs = new billSearch();
         
         DateFormat dff = new SimpleDateFormat("yyyy-MM-dd");
-            
-        String FromSelectedDate = dff.format(dChooser_edt_expDate1.getDate());
-        String ToSelectedDate = dff.format(dChooser_edt_expDate2.getDate());
-        
+
    
         if((this.jComboBox2.getSelectedItem().toString().equals("Invoice No"))){
             ResultSet rs1= bs.showCompleteBillDetailsByBillId(this.jTextField24.getText().toString());
@@ -10885,13 +10887,26 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
         }
         else if((this.jComboBox2.getSelectedItem().toString().equals("Date"))){
+            String FromSelectedDate = dff.format(dChooser_edt_expDate1.getDate());
+            String ToSelectedDate = dff.format(dChooser_edt_expDate2.getDate());
             ResultSet rs2= bs.showCompleteBillDetailsByDate(FromSelectedDate,ToSelectedDate);
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
         }
         else if((this.jComboBox2.getSelectedItem().toString().equals("Customer & Date"))){
-            ResultSet rs2= bs.showCompleteBillDetailsByDateANDcustomer(FromSelectedDate,ToSelectedDate,this.jTextField24.getText().toString());
+            String FromSelectedDate2 = dff.format(dChooser_edt_expDate1.getDate());
+            String ToSelectedDate2 = dff.format(dChooser_edt_expDate2.getDate());
+            ResultSet rs2= bs.showCompleteBillDetailsByDateANDcustomer(FromSelectedDate2,ToSelectedDate2,this.jTextField24.getText().toString());
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
-        }        
+        }      
+        else if((this.jComboBox2.getSelectedItem().toString().equals("Serial Number"))){
+            System.out.println("ffffffffffffffff");
+            String ddd = bs.getBillItemIDBySN(this.jTextField24.getText().toString());
+            System.out.println(ddd);
+            String ggg = bs.getBillIDByBillItemID(ddd);
+            System.out.println(ggg);
+            ResultSet rs111= bs.showCompleteBillDetailsByBillId(ggg);
+            this.jTable4.setModel(DbUtils.resultSetToTableModel(rs111));
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
@@ -14101,6 +14116,27 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable18MousePressed
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
+        try {
+                String query = "update bill_items set item_name = ? where bill_item_id = ?";
+                PreparedStatement pstd = conn.prepareStatement(query);
+
+                    for(int i=0; i<jTable3.getRowCount(); i++){
+                        
+                        String billItemId = (String)jTable3.getValueAt(i, 0);
+                        String name = (String)jTable3.getValueAt(i, 2);
+                        
+                        String billedSN = getBillItemSN(billItemId);
+                        System.out.println(billedSN);
+                        String newName = name.concat(" - ").concat(billedSN);
+                        
+                        pstd.setString(1, newName);
+                        pstd.setString(2, billItemId);
+                        pstd.executeUpdate();
+                    }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if(this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & jCheckBox14.isSelected() ){
             System.out.println("cash advances");
             
@@ -17385,7 +17421,7 @@ public class MainManue1 extends javax.swing.JFrame {
                     String cashBalID = "no";
                     String billID = jjkkii.generateBill_id(this);
                     double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                    double costValue = calculateBillItemCostValue(qty,ww_price);   
 
                     String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
 
@@ -19049,6 +19085,10 @@ public class MainManue1 extends javax.swing.JFrame {
         ResultSet rs = opiu1.getAddedItemsBy_bill_ID(aaaa);
         this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
     }//GEN-LAST:event_edit_billed_ItemsWindowClosed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
     
     public void showPanels(){
         setColor(btn_search);
@@ -20135,6 +20175,33 @@ public static void main(String args[]) {
         }
        
         return calCred;
+    }
+    
+    public String getBillItemSN(String billItemID){
+        
+        String sb = "";
+        ArrayList<String> SNlist=new ArrayList<>();
+        String id = null;
+        id = billItemID;
+        try{
+            Statement stmnt5d = conn.createStatement();
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT snn FROM bill_sub_items where bill_item_id='"+id+"'");
+            int j = 0;
+            while(rsfs.next()){
+                SNlist.add(rsfs.getString("snn"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(SNlist.size());
+        
+        for (String s : SNlist)
+        {
+            sb += s + ", ";
+        }
+
+        return sb;
     }
     
     public double calculateBillItemValue(int qttty, double r_pprice){

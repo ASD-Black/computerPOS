@@ -381,9 +381,9 @@ public class hr {
         }
     }
     
-    public String addJob(String type, String cust, String Proccesor, String ram, String mb, String kb, String battery, String hdd,String rom, String vga, String charger, String status, int days, String date,String dis, Component comp){
+    public String addJob(String type, String cust, String Proccesor, String ram, String mb, String kb, String battery, String hdd,String rom, String vga, String charger, String status, int days, String date,String dis, String mobile, Component comp){
         try{
-            String SQL= "insert into job(jobCode, type, cust, proccesor, ram, mb, kb, battery, hdd, rom, vga, charger, status, days, date, dis) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String SQL= "insert into job(jobCode, type, cust, proccesor, ram, mb, kb, battery, hdd, rom, vga, charger, status, days, date, dis, mobile) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             
             String jobeCode = generateJobCode(comp);
             //System.out.println(itemCode);
@@ -411,7 +411,7 @@ public class hr {
             pst.setInt(14, days);
             pst.setString(15, date);
             pst.setString(16, dis);
-            
+            pst.setString(17, mobile);
             //System.out.println("11");
             pst.execute();
             //System.out.println("12");
@@ -699,6 +699,29 @@ public class hr {
             return false;
         }
         else if(connc.length()==1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    
+    public boolean validateJobCust(String cusName){
+        if(cusName.equals("")){
+            return false;
+        }
+        else if(cusName.length()==1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    public boolean validateJobCutMobile(String mobile){
+        if(mobile.equals("")){
+            return false;
+        }
+        else if(mobile.length()<10){
             return false;
         }
         else{

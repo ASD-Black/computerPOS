@@ -71,7 +71,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{job_jobCode}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="68" y="140" width="139" height="18" uuid="0f4c7779-d5f5-4026-a347-925275dbcfd7"/>
+				<reportElement style="Detail" positionType="Float" x="68" y="141" width="139" height="18" uuid="0f4c7779-d5f5-4026-a347-925275dbcfd7"/>
 				<textElement>
 					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
 				</textElement>
@@ -130,7 +130,7 @@ WHERE
 				<text><![CDATA[Phone :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="68" y="159" width="100" height="20" uuid="ace6c2e1-85ea-4057-8fef-d5025571ba57"/>
+				<reportElement x="68" y="161" width="100" height="20" uuid="ace6c2e1-85ea-4057-8fef-d5025571ba57"/>
 				<textElement>
 					<font fontName="Calibri" size="14" isBold="true"/>
 				</textElement>

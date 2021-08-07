@@ -92,7 +92,7 @@ WHERE
 				<text><![CDATA[Phone :]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Detail" positionType="Float" x="69" y="143" width="139" height="18" uuid="133df577-4301-4e6b-b83a-fa28c4c76759"/>
+				<reportElement style="Detail" positionType="Float" x="69" y="144" width="139" height="18" uuid="133df577-4301-4e6b-b83a-fa28c4c76759"/>
 				<textElement>
 					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
 				</textElement>
@@ -127,7 +127,7 @@ WHERE
 				<text><![CDATA[Job ID :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="69" y="162" width="100" height="20" uuid="0f952c97-02b2-4d3e-b0aa-ab495f079e42"/>
+				<reportElement x="69" y="164" width="100" height="20" uuid="0f952c97-02b2-4d3e-b0aa-ab495f079e42"/>
 				<textElement>
 					<font fontName="Calibri" size="14" isBold="true"/>
 				</textElement>

@@ -578,7 +578,7 @@ public class items_add_to_bill {
     }
     
     public ResultSet showCustomersDetails(){
-        String SQl4 = "select cust_id as 'Customer ID', name as 'Name', city as 'City' from customers";
+        String SQl4 = "select cust_id as 'Customer ID', name as 'Name', address_nile_1 as 'Address' from customers";
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(SQl4);

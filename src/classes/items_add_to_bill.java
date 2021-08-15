@@ -645,6 +645,66 @@ public class items_add_to_bill {
         }
     }
     
+    public String addInvoiceDiscription(String invoID, String initial, String  warranty, String returnDis, Component comp){
+        try{
+            String SQL3= "insert into invoice_discription(invoice_id, initial_dis, warranty_dis, return_dis) values(?,?,?,?)";
+
+            PreparedStatement pst = conn.prepareStatement(SQL3);
+            pst.setString(1, invoID);
+            pst.setString(2, initial);
+            pst.setString(3, warranty);
+            pst.setString(4, returnDis);
+
+            pst.execute();
+            
+            increaseNoOfCreditInvoiceCodeByOne();
+            
+            //JOptionPane.showMessageDialog(comp, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
+            return "OK";
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            //JOptionPane.showMessageDialog(comp, "Item Added Failed","Item Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+    
+    public String updateInvoiceDiscriptionByWarrantyDiscription(String invoId, String dis){
+        try{
+            String SQL3= "update invoice_discription set warranty_dis=? where invoice_id=?";
+            //System.out.println(billItemCode);
+            PreparedStatement pst = conn.prepareStatement(SQL3);
+            pst.setString(1, dis); 
+            pst.setString(2, invoId);   
+
+            pst.execute();
+
+            return "KO";
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public String updateInvoiceDiscriptionByReturnDiscription(String invoId, String dis){
+        try{
+            String SQL3= "update invoice_discription set return_dis=? where invoice_id=?";
+            //System.out.println(billItemCode);
+            PreparedStatement pst = conn.prepareStatement(SQL3);
+            pst.setString(1, dis); 
+            pst.setString(2, invoId);   
+
+            pst.execute();
+
+            return "KO";
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
     public String updateCreditInvoice(double payed, double dueAmt, String credID, Component comp){
         try{
             String SQL3= "update creditedinvoices set payed=?, dueAmt=? where cdID=?";
@@ -1059,6 +1119,57 @@ public class items_add_to_bill {
                 ssss = rsaggg.getString("inStock");  
             }
            return ssss;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getInitialDis(String InvoID){
+       String ssssd = "";
+       String sql34567 = "select initial_dis from invoice_discription where invoice_id='"+InvoID+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagggd = stmnt.executeQuery(sql34567);
+           while(rsagggd.next()){
+                ssssd = rsagggd.getString("initial_dis");  
+            }
+           return ssssd;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getWarrantylDis(String InvoID){
+       String ssssdf = "";
+       String sql34567 = "select warranty_dis from invoice_discription where invoice_id='"+InvoID+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagggdf = stmnt.executeQuery(sql34567);
+           while(rsagggdf.next()){
+                ssssdf = rsagggdf.getString("warranty_dis");  
+            }
+           return ssssdf;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getReturnlDis(String InvoID){
+       String ssssdff = "";
+       String sql34567 = "select return_dis from invoice_discription where invoice_id='"+InvoID+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagggdff = stmnt.executeQuery(sql34567);
+           while(rsagggdff.next()){
+                ssssdff = rsagggdff.getString("return_dis");  
+            }
+           return ssssdff;
        }
        catch(Exception e){
            return null;

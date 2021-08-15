@@ -322,9 +322,9 @@ public class cashBalancing {
         }
     }
     
-    public String addWarrantyItems(String notee, String itmDate, int warranty, String wDate, String invoID, String claim, Component comp){
+    public String addWarrantyItems(String notee, String itmDate, int warranty, String wDate, String invoID, String claim,String serial, Component comp){
         try{
-            String SQLLL1= "insert into warranty(wCode, notee, itmDate, warranty, wDate, invoID, claim) values(?,?,?,?,?,?,?)";
+            String SQLLL1= "insert into warranty(wCode, notee, itmDate, warranty, wDate, invoID, claim, serialNum) values(?,?,?,?,?,?,?,?)";
             
             String WarrantyCode = generateWarrantyCode(comp);
             //System.out.println(itemCode);
@@ -339,16 +339,15 @@ public class cashBalancing {
             pstdr.setString(5, wDate);
             pstdr.setString(6, invoID);
             pstdr.setString(7, claim);
+            pstdr.setString(8, serial);
          
             pstdr.execute();
             increaseNoOfWarrantyCodeByOne();
            
             return WarrantyCode;
         }
-        catch(Exception e){
-            //System.out.println("add Returned items error");
-            e.printStackTrace();
-            //JOptionPane.showMessageDialog(comp, "Employee Added Failed","Owner Error", JOptionPane.ERROR_MESSAGE);
+        catch(Exception e){ 
+            JOptionPane.showMessageDialog(comp, "Warranty Added Failed","Warranty Error", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }

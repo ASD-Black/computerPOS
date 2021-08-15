@@ -182,5 +182,26 @@ public class searchItems {
        catch(Exception e){
            return null;
        }
-   } 
+   }
+    
+    public String getItemNameByItemCode(String name){
+       String item = null;
+       String itemName = null;
+       item = name;
+       
+       String sql34 = "select itm_name from items where itm_code='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                itemName = rsa.getString("itm_name");  
+            }
+           return itemName;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
 }

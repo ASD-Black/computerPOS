@@ -48,33 +48,7 @@ public class billSearch {
             return null;
         }
     }
-//    public ResultSet showCompleteBillDetailsByBillId(String billID){
-//        String bill = null;
-//        bill = billID;
-//        String SQl5 = "SELECT bill.bill_id as InvoiceNo, bill.bill_date Date, customers.name as Customer,employee.f_name as Employee, bill.total as Total, bill.bill_dis as 'Discount (Ps)',bill.net_amount as NetAmount, bill.invoiceType as 'Invoice Type',bill.bill_discrip as 'Discription', bill.creditCodeChequeCode as 'Credit or Cheque ID', bill.advancedCode as 'Advanced Code', bill.status as 'Status'  FROM customers customers INNER JOIN bill bill ON customers.cust_id = bill.cust_id INNER JOIN employee employee ON bill.e_id = employee.e_id WHERE bill.cust_id = bill.cust_id  AND bill.e_id = bill.e_id AND bill.bill_id like '%"+bill+"%' ORDER BY bill.bill_id DESC";
-//        try{
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery(SQl5);
-//            return rs;
-//        }
-//        catch(Exception e){
-//            return null;
-//        }
-//    }
-//    public ResultSet showCompleteBillDetailsByBillId(String billID){
-//        String bill = null;
-//        bill = billID;
-//        String SQl5 = "SELECT bill.bill_id as InvoiceNo, bill.bill_date Date, customers.name as Customer,employee.f_name as Employee, bill.total as Total, bill.bill_dis as 'Discount (Ps)',bill.net_amount as NetAmount, bill.invoiceType as 'Invoice Type',bill.bill_discrip as 'Discription', bill.creditCodeChequeCode as 'Credit or Cheque ID', bill.advancedCode as 'Advanced Code', bill.status as 'Status'  FROM customers customers INNER JOIN bill bill ON customers.cust_id = bill.cust_id INNER JOIN employee employee ON bill.e_id = employee.e_id WHERE bill.cust_id = bill.cust_id  AND bill.e_id = bill.e_id AND bill.bill_id like '%"+bill+"%' ORDER BY bill.bill_id DESC";
-//        try{
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery(SQl5);
-//            return rs;
-//        }
-//        catch(Exception e){
-//            return null;
-//        }
-//    }
-    
+
     public ResultSet showCompleteBillDetailsByParmacyName(String pharmacyName){
         String name = null;
         name = pharmacyName;

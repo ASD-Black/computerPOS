@@ -486,10 +486,39 @@ public class cashBalancing {
         }
     }
     
+    public boolean deleteWarrantyItem(String WID){
+        String sql = "delete from warranty where wCode='"+WID+"'";
+        
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Cannot Delete Warranty Item", "Database Error!", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
     public ResultSet getAllNonClaimedWarranties(){
        String id = null;
 
-       String sql22 = "select wCode as 'Warranty ID', notee as 'Note', itmDate as 'Item Invo Date', warranty as 'Warranty(M)', wDate as 'Warranty Date', invoID as 'Invoice No', claim as 'Claim' from warranty where claim='no' ORDER BY wDate ASC";
+       String sql22 = "select wCode as 'Warranty ID', notee as 'Note', itmDate as 'Item Invo Date', warranty as 'Warranty(M)', wDate as 'Warranty Date', invoID as 'Invoice No', serialNum as 'Item Serial', claim as 'Claim' from warranty where claim='no' ORDER BY wDate ASC";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsl = stmnt.executeQuery(sql22);
+           return rsl;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public ResultSet getAllNonClaimedWarrantiesByInvoice(String invoID){
+       String id = null;
+
+       String sql22 = "select wCode as 'Warranty ID', notee as 'Note', itmDate as 'Item Invo Date', warranty as 'Warranty(M)', wDate as 'Warranty Date', invoID as 'Invoice No', serialNum as 'Item Serial', claim as 'Claim' from warranty where claim='no' and invoID like '%"+invoID+"%' ORDER BY wDate ASC";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -504,7 +533,7 @@ public class cashBalancing {
     public ResultSet getAllClaimedWarranties(){
        String id = null;
 
-       String sql23 = "select wCode as 'Warranty ID', notee as 'Note', itmDate as 'Item Invo Date', warranty as 'Warranty(M)', wDate as 'Warranty Date', invoID as 'Invoice No', claim as 'Claim' from warranty where claim='yes' ORDER BY wDate ASC";
+       String sql23 = "select wCode as 'Warranty ID', notee as 'Note', itmDate as 'Item Invo Date', warranty as 'Warranty(M)', wDate as 'Warranty Date', invoID as 'Invoice No', serialNum as 'Item Serial', claim as 'Claim' from warranty where claim='yes' ORDER BY wDate ASC";
        
        try{
            Statement stmnt = conn.createStatement();

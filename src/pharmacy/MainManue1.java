@@ -141,6 +141,131 @@ public class MainManue1 extends javax.swing.JFrame {
 
         subInitComp();
 
+        org.jdesktop.layout.GroupLayout jPanel61Layout = new org.jdesktop.layout.GroupLayout(jPanel61);
+        jPanel61.setLayout(jPanel61Layout);
+        jPanel61Layout.setHorizontalGroup(
+            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61Layout.createSequentialGroup()
+                .add(jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel61Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel61Layout.createSequentialGroup()
+                        .add(110, 110, 110)
+                        .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel61Layout.setVerticalGroup(
+            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61Layout.createSequentialGroup()
+                .add(7, 7, 7)
+                .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_edit_billed_Items1Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items1.getContentPane());
+        edit_edit_billed_Items1.getContentPane().setLayout(edit_edit_billed_Items1Layout);
+        edit_edit_billed_Items1Layout.setHorizontalGroup(
+            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_edit_billed_Items1Layout.setVerticalGroup(
+            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_edit.setAlwaysOnTop(true);
+
+        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton115.setBackground(new java.awt.Color(255, 255, 255));
+        jButton115.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton115.setForeground(new java.awt.Color(102, 102, 102));
+        jButton115.setText("Okay");
+        jButton115.setBorder(null);
+        jButton115.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton115.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton115ActionPerformed(evt);
+            }
+        });
+
+        jTextField145.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField145.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField145.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField145.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField145KeyPressed(evt);
+            }
+        });
+
+        jLabel316.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel316.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel316.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel62Layout = new org.jdesktop.layout.GroupLayout(jPanel62);
+        jPanel62.setLayout(jPanel62Layout);
+        jPanel62Layout.setHorizontalGroup(
+            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel316)
+                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel62Layout.setVerticalGroup(
+            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel316)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_editLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_edit.getContentPane());
+        adminLogin_item_edit.getContentPane().setLayout(adminLogin_item_editLayout);
+        adminLogin_item_editLayout.setHorizontalGroup(
+            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_editLayout.setVerticalGroup(
+            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_delete.setAlwaysOnTop(true);
+
+        jPanel63.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton116.setBackground(new java.awt.Color(255, 255, 255));
+        jButton116.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton116.setForeground(new java.awt.Color(102, 102, 102));
+        jButton116.setText("Okay");
+        jButton116.setBorder(null);
+        jButton116.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton116.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton116ActionPerformed(evt);
+            }
+        });
+
+        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField147KeyPressed(evt);
+            }
+        });
+
         jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel317.setForeground(new java.awt.Color(51, 51, 51));
         jLabel317.setText("Enter the Password");
@@ -5287,6 +5412,10 @@ public class MainManue1 extends javax.swing.JFrame {
         jScrollPane31 = new javax.swing.JScrollPane();
         jTextArea11 = new javax.swing.JTextArea();
         jLabel199 = new javax.swing.JLabel();
+        jTextField78 = new javax.swing.JTextField();
+        jLabel170 = new javax.swing.JLabel();
+        jButton71 = new javax.swing.JButton();
+        jButton106 = new javax.swing.JButton();
         returnItms = new javax.swing.JDialog();
         jPanel35 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
@@ -6962,60 +7091,58 @@ public class MainManue1 extends javax.swing.JFrame {
                         .add(jButton58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 214, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .add(jPanel37Layout.createSequentialGroup()
+                        .add(jLabel164)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 0, Short.MAX_VALUE))))
+            .add(jPanel37Layout.createSequentialGroup()
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel37Layout.createSequentialGroup()
                         .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel37Layout.createSequentialGroup()
-                                .add(jLabel164)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 30, Short.MAX_VALUE)
-                                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel169)
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel166, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .add(4, 4, 4))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel37Layout.createSequentialGroup()
-                                .add(0, 0, Short.MAX_VALUE)
-                                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(jLabel167)
-                                    .add(jLabel168))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
+                            .add(jLabel169)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel166, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(4, 4, 4))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel37Layout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
                         .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jPanel37Layout.createSequentialGroup()
-                                .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(16, 16, 16))
-                            .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(27, 27, 27))))
+                            .add(jLabel167)
+                            .add(jLabel168))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanel37Layout.createSequentialGroup()
+                        .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(16, 16, 16))
+                    .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel37Layout.createSequentialGroup()
-                .add(29, 29, 29)
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel164))
+                .add(14, 14, 14)
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(jLabel164))
+                    .add(jLabel169)
                     .add(jPanel37Layout.createSequentialGroup()
-                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel169)
-                            .add(jPanel37Layout.createSequentialGroup()
-                                .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(18, 18, 18)
-                                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jLabel168))))
+                        .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
                         .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel167))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel166))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
+                            .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel168))))
+                .add(18, 18, 18)
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel167))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel166))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jButton58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTable16.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -7072,6 +7199,32 @@ public class MainManue1 extends javax.swing.JFrame {
 
         jLabel199.setText("Note :");
 
+        jTextField78.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField78ActionPerformed(evt);
+            }
+        });
+
+        jLabel170.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel170.setText("Invoice Number :");
+
+        jButton71.setBackground(new java.awt.Color(255, 255, 255));
+        jButton71.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton71.setText("Delete");
+        jButton71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton71ActionPerformed(evt);
+            }
+        });
+
+        jButton106.setBackground(new java.awt.Color(255, 255, 255));
+        jButton106.setText("Search");
+        jButton106.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton106ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel34Layout = new org.jdesktop.layout.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -7082,21 +7235,28 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jPanel36, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel34Layout.createSequentialGroup()
                         .add(jPanel37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                        .add(44, 44, 44)
+                        .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane26)
+                            .add(jPanel34Layout.createSequentialGroup()
+                                .add(jLabel172)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jLabel170, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jTextField78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 146, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(jButton106, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jPanel34Layout.createSequentialGroup()
                                 .add(jLabel199)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jScrollPane31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 389, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jScrollPane31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 434, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jCheckBox12)
-                                .add(63, 63, 63)
-                                .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel34Layout.createSequentialGroup()
-                                .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel172)
-                                    .add(jScrollPane26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 658, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .add(11, 11, 11)))))
+                                .add(60, 60, 60)
+                                .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jButton71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -7108,16 +7268,23 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jPanel34Layout.createSequentialGroup()
-                        .add(jLabel172)
+                        .add(4, 4, 4)
+                        .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabel172)
+                            .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                .add(jTextField78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jLabel170)
+                                .add(jButton106)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jScrollPane26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 207, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jScrollPane26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 195, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jScrollPane31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel199)
                             .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                                 .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jCheckBox12)))))
+                                .add(jCheckBox12)
+                                .add(jButton71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -10021,131 +10188,6 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton108.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton108ActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout jPanel61Layout = new org.jdesktop.layout.GroupLayout(jPanel61);
-        jPanel61.setLayout(jPanel61Layout);
-        jPanel61Layout.setHorizontalGroup(
-            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61Layout.createSequentialGroup()
-                .add(jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel61Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel61Layout.createSequentialGroup()
-                        .add(110, 110, 110)
-                        .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel61Layout.setVerticalGroup(
-            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61Layout.createSequentialGroup()
-                .add(7, 7, 7)
-                .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_edit_billed_Items1Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items1.getContentPane());
-        edit_edit_billed_Items1.getContentPane().setLayout(edit_edit_billed_Items1Layout);
-        edit_edit_billed_Items1Layout.setHorizontalGroup(
-            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_edit_billed_Items1Layout.setVerticalGroup(
-            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_edit.setAlwaysOnTop(true);
-
-        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton115.setBackground(new java.awt.Color(255, 255, 255));
-        jButton115.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton115.setForeground(new java.awt.Color(102, 102, 102));
-        jButton115.setText("Okay");
-        jButton115.setBorder(null);
-        jButton115.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton115.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton115ActionPerformed(evt);
-            }
-        });
-
-        jTextField145.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField145.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField145.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField145.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField145KeyPressed(evt);
-            }
-        });
-
-        jLabel316.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel316.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel316.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel62Layout = new org.jdesktop.layout.GroupLayout(jPanel62);
-        jPanel62.setLayout(jPanel62Layout);
-        jPanel62Layout.setHorizontalGroup(
-            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel316)
-                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel62Layout.setVerticalGroup(
-            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel316)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_editLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_edit.getContentPane());
-        adminLogin_item_edit.getContentPane().setLayout(adminLogin_item_editLayout);
-        adminLogin_item_editLayout.setHorizontalGroup(
-            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_editLayout.setVerticalGroup(
-            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_delete.setAlwaysOnTop(true);
-
-        jPanel63.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton116.setBackground(new java.awt.Color(255, 255, 255));
-        jButton116.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton116.setForeground(new java.awt.Color(102, 102, 102));
-        jButton116.setText("Okay");
-        jButton116.setBorder(null);
-        jButton116.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton116.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton116ActionPerformed(evt);
-            }
-        });
-
-        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField147KeyPressed(evt);
             }
         });
 	}
@@ -19253,6 +19295,36 @@ public class MainManue1 extends javax.swing.JFrame {
         ResultSet rs99 = ggg.getAllNonClaimedWarranties();
         this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton118ActionPerformed
+
+    private void jTextField78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField78ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField78ActionPerformed
+
+    private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
+        cashBalancing lloo = new cashBalancing();
+        int selectedRow9456d = this.jTable16.getSelectedRow();
+        
+        if(selectedRow9456d == -1){
+            JOptionPane.showMessageDialog(Warranty, "Select a Warranty to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            
+            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if(userSelection == 0){
+ 
+                String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456d, 0).toString();
+                String itemSireal = this.jTable16.getModel().getValueAt(selectedRow9456d, 6).toString();
+                //iii1.deleteAddedBillItems(billItemCode);
+            }
+        }
+    }//GEN-LAST:event_jButton71ActionPerformed
+
+    private void jButton106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton106ActionPerformed
+        cashBalancing jjuu = new cashBalancing();
+           
+        ResultSet rs997 = jjuu.getAllNonClaimedWarrantiesByInvoice(this.jTextField78.getText());
+        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs997));
+    }//GEN-LAST:event_jButton106ActionPerformed
     
     public void showPanels(){
         setColor(btn_search);
@@ -19429,6 +19501,7 @@ public static void main(String args[]) {
     javax.swing.JButton jButton103;
     javax.swing.JButton jButton104;
     javax.swing.JButton jButton105;
+    javax.swing.JButton jButton106;
     javax.swing.JButton jButton107;
     javax.swing.JButton jButton108;
     javax.swing.JButton jButton109;
@@ -19505,6 +19578,7 @@ public static void main(String args[]) {
     javax.swing.JButton jButton69;
     javax.swing.JButton jButton7;
     javax.swing.JButton jButton70;
+    javax.swing.JButton jButton71;
     javax.swing.JButton jButton72;
     javax.swing.JButton jButton73;
     javax.swing.JButton jButton74;
@@ -19645,6 +19719,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel168;
     javax.swing.JLabel jLabel169;
     javax.swing.JLabel jLabel17;
+    javax.swing.JLabel jLabel170;
     javax.swing.JLabel jLabel171;
     javax.swing.JLabel jLabel172;
     javax.swing.JLabel jLabel173;
@@ -20149,6 +20224,7 @@ public static void main(String args[]) {
     javax.swing.JTextField jTextField75;
     javax.swing.JTextField jTextField76;
     javax.swing.JTextField jTextField77;
+    javax.swing.JTextField jTextField78;
     javax.swing.JTextField jTextField79;
     javax.swing.JTextField jTextField8;
     javax.swing.JTextField jTextField80;

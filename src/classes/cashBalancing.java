@@ -499,6 +499,53 @@ public class cashBalancing {
             return false;
         }
     }
+    public boolean UpdateSerialDiscription(String invoID, String dis){
+        String sql = "update invoice_discription set warranty_dis='"+dis+"' where invoice_id='"+invoID+"'";
+        
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
+        catch(Exception e){
+            //JOptionPane.showMessageDialog(null, "Cannot Delete Warranty Item", "Database Error!", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+    public String getInvoiceWarrantyDiscription(String billID){
+       String des = "";
+       String sql3456 = "select warranty_dis from invoice_discription where invoice_id='"+billID+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagg = stmnt.executeQuery(sql3456);
+           while(rsagg.next()){
+                des = rsagg.getString("warranty_dis");  
+            }
+           return des;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getItemCodeBySn(String sn){
+       String item = "";
+       String sql3456 = "select itm_code from sub_items where sn='"+sn+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagg = stmnt.executeQuery(sql3456);
+           while(rsagg.next()){
+                item = rsagg.getString("itm_code");  
+            }
+           return item;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
     
     public ResultSet getAllNonClaimedWarranties(){
        String id = null;

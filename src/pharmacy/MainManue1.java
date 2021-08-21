@@ -58,6 +58,7 @@ import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import static javax.xml.datatype.DatatypeConstants.DATETIME;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -98,6 +99,7 @@ public class MainManue1 extends javax.swing.JFrame {
         runDateTime();
         setIcon();
         setCashBalance();
+        //tableColumnSettings();
                
         
         try {
@@ -140,196 +142,6 @@ public class MainManue1 extends javax.swing.JFrame {
     private void initComponents() {
 
         subInitComp();
-
-        org.jdesktop.layout.GroupLayout jPanel61Layout = new org.jdesktop.layout.GroupLayout(jPanel61);
-        jPanel61.setLayout(jPanel61Layout);
-        jPanel61Layout.setHorizontalGroup(
-            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61Layout.createSequentialGroup()
-                .add(jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel61Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel61Layout.createSequentialGroup()
-                        .add(110, 110, 110)
-                        .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel61Layout.setVerticalGroup(
-            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61Layout.createSequentialGroup()
-                .add(7, 7, 7)
-                .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_edit_billed_Items1Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items1.getContentPane());
-        edit_edit_billed_Items1.getContentPane().setLayout(edit_edit_billed_Items1Layout);
-        edit_edit_billed_Items1Layout.setHorizontalGroup(
-            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_edit_billed_Items1Layout.setVerticalGroup(
-            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_edit.setAlwaysOnTop(true);
-
-        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton115.setBackground(new java.awt.Color(255, 255, 255));
-        jButton115.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton115.setForeground(new java.awt.Color(102, 102, 102));
-        jButton115.setText("Okay");
-        jButton115.setBorder(null);
-        jButton115.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton115.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton115ActionPerformed(evt);
-            }
-        });
-
-        jTextField145.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField145.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField145.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField145.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField145KeyPressed(evt);
-            }
-        });
-
-        jLabel316.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel316.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel316.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel62Layout = new org.jdesktop.layout.GroupLayout(jPanel62);
-        jPanel62.setLayout(jPanel62Layout);
-        jPanel62Layout.setHorizontalGroup(
-            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel316)
-                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel62Layout.setVerticalGroup(
-            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel316)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_editLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_edit.getContentPane());
-        adminLogin_item_edit.getContentPane().setLayout(adminLogin_item_editLayout);
-        adminLogin_item_editLayout.setHorizontalGroup(
-            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel62, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_editLayout.setVerticalGroup(
-            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_delete.setAlwaysOnTop(true);
-
-        jPanel63.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton116.setBackground(new java.awt.Color(255, 255, 255));
-        jButton116.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton116.setForeground(new java.awt.Color(102, 102, 102));
-        jButton116.setText("Okay");
-        jButton116.setBorder(null);
-        jButton116.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton116.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton116ActionPerformed(evt);
-            }
-        });
-
-        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField147KeyPressed(evt);
-            }
-        });
-
-        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel317.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
-        jPanel63.setLayout(jPanel63Layout);
-        jPanel63Layout.setHorizontalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel317)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel63Layout.setVerticalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel317)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
-        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
-        adminLogin_item_deleteLayout.setHorizontalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_deleteLayout.setVerticalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_delete_sn.setAlwaysOnTop(true);
-
-        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton117.setBackground(new java.awt.Color(255, 255, 255));
-        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton117.setForeground(new java.awt.Color(102, 102, 102));
-        jButton117.setText("Okay");
-        jButton117.setBorder(null);
-        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton117.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton117ActionPerformed(evt);
-            }
-        });
-
-        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField148KeyPressed(evt);
-            }
-        });
 
         jLabel318.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel318.setForeground(new java.awt.Color(51, 51, 51));
@@ -5391,6 +5203,8 @@ public class MainManue1 extends javax.swing.JFrame {
         jScrollPane24 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
         jButton63 = new javax.swing.JButton();
+        jLabel161 = new javax.swing.JLabel();
+        jLabel188 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
         jLabel164 = new javax.swing.JLabel();
         jTextField76 = new javax.swing.JTextField();
@@ -6757,6 +6571,7 @@ public class MainManue1 extends javax.swing.JFrame {
         );
 
         Warranty.setAlwaysOnTop(true);
+        Warranty.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel34.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -6896,6 +6711,12 @@ public class MainManue1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel161.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel161.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel161.setText("Type");
+
+        jLabel188.setText("Invoice Type : ");
+
         org.jdesktop.layout.GroupLayout jPanel36Layout = new org.jdesktop.layout.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
         jPanel36Layout.setHorizontalGroup(
@@ -6914,7 +6735,11 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jPanel36Layout.createSequentialGroup()
                         .add(jLabel156)
                         .add(4, 4, 4)
-                        .add(jLabel157))
+                        .add(jLabel157)
+                        .add(56, 56, 56)
+                        .add(jLabel188)
+                        .add(4, 4, 4)
+                        .add(jLabel161, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 154, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jScrollPane22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 656, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(9, 9, 9)
                 .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -6961,8 +6786,10 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jPanel36Layout.createSequentialGroup()
                         .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel156)
-                            .add(jLabel157))
-                        .add(6, 6, 6)
+                            .add(jLabel157)
+                            .add(jLabel188)
+                            .add(jLabel161))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jScrollPane22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -10190,6 +10017,196 @@ public class MainManue1 extends javax.swing.JFrame {
                 jButton108ActionPerformed(evt);
             }
         });
+
+        org.jdesktop.layout.GroupLayout jPanel61Layout = new org.jdesktop.layout.GroupLayout(jPanel61);
+        jPanel61.setLayout(jPanel61Layout);
+        jPanel61Layout.setHorizontalGroup(
+            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61Layout.createSequentialGroup()
+                .add(jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel61Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel61Layout.createSequentialGroup()
+                        .add(110, 110, 110)
+                        .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel61Layout.setVerticalGroup(
+            jPanel61Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61Layout.createSequentialGroup()
+                .add(7, 7, 7)
+                .add(jScrollPane58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_edit_billed_Items1Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items1.getContentPane());
+        edit_edit_billed_Items1.getContentPane().setLayout(edit_edit_billed_Items1Layout);
+        edit_edit_billed_Items1Layout.setHorizontalGroup(
+            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_edit_billed_Items1Layout.setVerticalGroup(
+            edit_edit_billed_Items1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel61, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_edit.setAlwaysOnTop(true);
+
+        jPanel62.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton115.setBackground(new java.awt.Color(255, 255, 255));
+        jButton115.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton115.setForeground(new java.awt.Color(102, 102, 102));
+        jButton115.setText("Okay");
+        jButton115.setBorder(null);
+        jButton115.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton115.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton115ActionPerformed(evt);
+            }
+        });
+
+        jTextField145.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField145.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField145.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField145.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField145KeyPressed(evt);
+            }
+        });
+
+        jLabel316.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel316.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel316.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel62Layout = new org.jdesktop.layout.GroupLayout(jPanel62);
+        jPanel62.setLayout(jPanel62Layout);
+        jPanel62Layout.setHorizontalGroup(
+            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel316)
+                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel62Layout.setVerticalGroup(
+            jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel316)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel62Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField145, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_editLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_edit.getContentPane());
+        adminLogin_item_edit.getContentPane().setLayout(adminLogin_item_editLayout);
+        adminLogin_item_editLayout.setHorizontalGroup(
+            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel62, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_editLayout.setVerticalGroup(
+            adminLogin_item_editLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_delete.setAlwaysOnTop(true);
+
+        jPanel63.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton116.setBackground(new java.awt.Color(255, 255, 255));
+        jButton116.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton116.setForeground(new java.awt.Color(102, 102, 102));
+        jButton116.setText("Okay");
+        jButton116.setBorder(null);
+        jButton116.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton116.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton116ActionPerformed(evt);
+            }
+        });
+
+        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField147KeyPressed(evt);
+            }
+        });
+
+        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel317.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
+        jPanel63.setLayout(jPanel63Layout);
+        jPanel63Layout.setHorizontalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel317)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel63Layout.setVerticalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel317)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
+        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
+        adminLogin_item_deleteLayout.setHorizontalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_deleteLayout.setVerticalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_delete_sn.setAlwaysOnTop(true);
+
+        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton117.setBackground(new java.awt.Color(255, 255, 255));
+        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton117.setForeground(new java.awt.Color(102, 102, 102));
+        jButton117.setText("Okay");
+        jButton117.setBorder(null);
+        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton117.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton117ActionPerformed(evt);
+            }
+        });
+
+        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField148KeyPressed(evt);
+            }
+        });
 	}
     private void bgFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bgFocusLost
         // TODO add your handling code here:
@@ -13308,6 +13325,7 @@ public class MainManue1 extends javax.swing.JFrame {
             //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
             String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
             String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
+            String billType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
             //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
             
             
@@ -13317,6 +13335,7 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField71.setText(total);
             this.jTextField74.setText(netAmt);
             this.jTextArea5.setText(billDiscrip);
+            this.jLabel161.setText(billType);
             //this.jLabel179.setText(invoID);
             
             
@@ -13326,7 +13345,7 @@ public class MainManue1 extends javax.swing.JFrame {
             
             ResultSet rs99 = hyt.getAllNonClaimedWarranties();
             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
-            
+ 
             this.jTextField76.setText("");
 //            this.jTextArea7.setText("");
 //            this.jTextField81.setText("");
@@ -13487,6 +13506,183 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField80ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
+        items_add_to_bill gghhjj = new items_add_to_bill();
+        cashBalancing jjuu = new cashBalancing();
+        
+        String billID = this.jLabel157.getText();
+        String invoTypee = this.jLabel161.getText();
+        
+        int selectedRow9456gg = 0;
+        selectedRow9456gg = this.jTable16.getSelectedRow();
+        
+        if(selectedRow9456gg == -1){
+            JOptionPane.showMessageDialog(Warranty, "Select a Item from warranty Item List.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String wCode = this.jTable16.getModel().getValueAt(selectedRow9456gg, 0).toString();
+            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure you want to claim this item.?", "Confirm Warranty Claim", JOptionPane.YES_NO_OPTION);
+            if(userSelection == 0){
+                
+                String sItemCodeed = this.jTextField76.getText();
+                String statusd = gghhjj.getItemStatus(sItemCodeed);
+
+                if(statusd.equals("yes")){
+                    String notee = " --> Claimed By SN- ".concat(sItemCodeed);
+                    try {
+                        String queryyyd = "update warranty set claimedSerial=?, notee=CONCAT( notee, ?), claim=? where wCode = ?";
+                        PreparedStatement pstluf = conn.prepareStatement(queryyyd);
+
+                        pstluf.setString(1, sItemCodeed);
+                        pstluf.setString(2, notee);
+                        pstluf.setString(3, "yes");
+                        pstluf.setString(4, wCode);
+                        pstluf.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                    
+                    try{
+                        String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
+
+                        PreparedStatement pstf = conn.prepareStatement(SQL);
+                        pstf.setString(1, wCode);
+                        pstf.setString(2, notee);
+                        pstf.setString(3, sItemCodeed);  
+                        
+                        pstf.execute();
+                    }
+                    catch(Exception ed){
+                       ed.printStackTrace(); 
+                    }
+                    
+                    try {
+                        String queryyy = "update sub_items set inStock=? where sn = ?";
+                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                        pstlu.setString(1, "no");
+                        pstlu.setString(2, sItemCodeed);
+                        pstlu.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    String itmCode = jjuu.getItemCodeBySn(sItemCodeed);
+                    
+                    try {
+                        String query = "update items set qty = qty- ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, 1);
+                        pst.setString(2, itmCode);
+                        pst.executeUpdate();
+                            
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                    String FullNoted = getAllWarrantyNotices(billID); 
+                    updateInvoiceDiscriptionForWarranty(FullNoted, billID);
+                    updateInvoiceDiscription(billID);
+                    
+                    this.Warranty.dispose();
+                    
+                    if(invoTypee.equals("Cash")){
+                            HashMap ab = new HashMap();
+                            ab.put("invoNum", billID);
+                            try {
+
+                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                                JasperDesign jdesign = JRXmlLoader.load(file);
+
+                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                                JasperViewer.viewReport(jprint, false);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else if(invoTypee.equals("Cash Advanced")){
+                            HashMap ab = new HashMap();
+                            ab.put("invoNum", billID);
+                            try {
+
+                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                                JasperDesign jdesign = JRXmlLoader.load(file);
+
+                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                                JasperViewer.viewReport(jprint, false);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            } 
+                        }
+                        else if(invoTypee.equals("Credit")){
+                            HashMap ab = new HashMap();
+                            ab.put("invoNum", billID);
+                            try { 
+                                
+                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                                JasperDesign jdesign = JRXmlLoader.load(file);
+
+                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                                JasperViewer.viewReport(jprint, false);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else if(invoTypee.equals("Credit Advanced")){
+                            HashMap ab = new HashMap();
+                            ab.put("invoNum", billID);
+                            try {
+                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                                JasperDesign jdesign = JRXmlLoader.load(file);
+
+                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                                JasperViewer.viewReport(jprint, false);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        else if(invoTypee.equals("Cheque")){
+                            HashMap ab = new HashMap();
+                            ab.put("invoNum", billID);
+                            try {
+
+                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                                JasperDesign jdesign = JRXmlLoader.load(file);
+
+                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                                JasperViewer.viewReport(jprint, false);
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }  
+                }
+                else{
+                    JOptionPane.showMessageDialog(Warranty, "Something went wrong with selected item.!","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                
+                
+                
+                
+            }      
+        }
 //        items_add_to_bill aaas = new items_add_to_bill();
 //            cashBalancing ghj = new cashBalancing();
 //
@@ -14141,8 +14337,8 @@ public class MainManue1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(Warranty, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            if(warran.equals("W")){
-                int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if(warran.equals("w")){
+                int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
                 if(userSelection == 0){
  
                     String billItemCode = this.jTable15.getModel().getValueAt(selectedRow9456, 0).toString();
@@ -18382,34 +18578,38 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTextField76KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField76KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            items_add_to_bill jjkkiig = new items_add_to_bill();
+            
             String sItemCodee = this.jTextField76.getText();
-            String name, w_price, warranty, r_price, company, expDate, qty, type;
-            searchItems sd = new searchItems();
-            try{
-                ResultSet rs = sd.getItemDetails(sItemCodee);
-                while(rs.next()){
-                    //itmCode = rs.getString("itm_code");
-                    name = rs.getString("itm_name");
-                    warranty = rs.getString("warranty");
-                    qty = rs.getString("qty");
-                    w_price = rs.getString("w_price");
-                    r_price = rs.getString("r_price");
-                    Date = rs.getString("date");
-                    //type = rs.getString("type");
+            String status = jjkkiig.getItemStatus(sItemCodee);
+            
+            if(status.equals("no") || status.equals("w")){
+                
+                JOptionPane.showMessageDialog(Warranty, "This "+sItemCodee+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                String name, warranty, r_price, qty;
+                searchItems sd = new searchItems();
+                try{
+                    ResultSet rs = sd.searchByItemCodeeeee(sItemCodee);
+                    System.out.println(rs);
+                    while(rs.next()){
+                        name = rs.getString("itm_name");
+                        warranty = rs.getString("warranty");
+                        qty = rs.getString("qty");
+                        r_price = rs.getString("r_price");
+                        System.out.println(warranty);
 
-                    //this.txt_edt_company.setText(itmCode);
-//                    this.jTextArea7.setText(name);
-//                    this.jTextField84.setText(warranty);
-//                    this.jTextField83.setText(qty);
-//                    this.jTextField82.setText(w_price);
-//                    this.jTextField81.setText(r_price);
-                    //this.com_box_searchTyp2.setSelectedItem(type);
-
+                        this.jTextArea7.setText(name);
+                        this.jTextField84.setText(r_price);
+                        this.jTextField83.setText(qty);
+                        this.jTextField82.setText(warranty);
+                    }
                 }
-            }
-            catch(Exception e){
-                //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
-            }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }           
         }
     }//GEN-LAST:event_jTextField76KeyPressed
 
@@ -19281,7 +19481,7 @@ public class MainManue1 extends javax.swing.JFrame {
             String isItOkay = ggg.addWarrantyItems(notee, itmbillDate, WarrantyMonths, day, billIdd, claim,serial, edit_edit_billed_Items2);
             
             if(!isItOkay.equals(null)){
-                JOptionPane.showMessageDialog(returnItms, "Save Warranty Item Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(Warranty, "Save Warranty Item Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
                 
                 String FullNote = getAllWarrantyNotices(billIdd); 
                 updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
@@ -19309,12 +19509,31 @@ public class MainManue1 extends javax.swing.JFrame {
         }
         else{
             
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
             if(userSelection == 0){
  
                 String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456d, 0).toString();
+                String warrantyNote = this.jTable16.getModel().getValueAt(selectedRow9456d, 1).toString();
                 String itemSireal = this.jTable16.getModel().getValueAt(selectedRow9456d, 6).toString();
+                String invoID = this.jTable16.getModel().getValueAt(selectedRow9456d, 5).toString();
                 //iii1.deleteAddedBillItems(billItemCode);
+                
+                String wDis = lloo.getInvoiceWarrantyDiscription(invoID);
+                
+                String newWarrantyDis = wDis.replaceAll(warrantyNote, "");
+                String newNewWarrantyDis = newWarrantyDis.replaceAll("\n", "");
+                
+                lloo.UpdateSerialDiscription(invoID, newNewWarrantyDis);
+                
+                lloo.deleteWarrantyItem(warrantyItemCode);
+                String kkG = updateInvoiceDiscription(invoID);
+                
+                if(kkG==null){
+                    
+                }
+                else{
+                    JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         }
     }//GEN-LAST:event_jButton71ActionPerformed
@@ -19710,6 +19929,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel159;
     javax.swing.JLabel jLabel16;
     javax.swing.JLabel jLabel160;
+    javax.swing.JLabel jLabel161;
     javax.swing.JLabel jLabel162;
     javax.swing.JLabel jLabel163;
     javax.swing.JLabel jLabel164;
@@ -19738,6 +19958,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel185;
     javax.swing.JLabel jLabel186;
     javax.swing.JLabel jLabel187;
+    javax.swing.JLabel jLabel188;
     javax.swing.JLabel jLabel19;
     javax.swing.JLabel jLabel194;
     javax.swing.JLabel jLabel195;
@@ -20439,7 +20660,7 @@ public static void main(String args[]) {
         jjuut.updateInvoiceDiscriptionByReturnDiscription(invoID, dis);
     }
     
-    public void updateInvoiceDiscription(String billID){
+    public String updateInvoiceDiscription(String billID){
         items_add_to_bill ffgg = new items_add_to_bill(); 
         
         String initialDis = ffgg.getInitialDis(billID);
@@ -20455,9 +20676,12 @@ public static void main(String args[]) {
             pstlu.setString(1, fullDis);
             pstlu.setString(2, billID);
             pstlu.executeUpdate();
+            
+            return "OK";
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+            return null;
         }
         
     }
@@ -20526,6 +20750,11 @@ public static void main(String args[]) {
         double CostValue= qttty * w_pprice;
         
         return CostValue;
+    }
+    
+    private void tableColumnSettings(){
+        TableColumn col2 = jTable16.getColumnModel().getColumn(1);   
+        col2.setPreferredWidth(300);
     }
 //    private void checkCustomerCrediteBal() {
 //        

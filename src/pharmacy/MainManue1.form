@@ -1380,6 +1380,9 @@
     <Container class="javax.swing.JDialog" name="Warranty">
       <Properties>
         <Property name="alwaysOnTop" type="boolean" value="true"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -1513,6 +1516,10 @@
                                   <Component id="jLabel156" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                                   <Component id="jLabel157" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Component id="jLabel188" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                  <Component id="jLabel161" min="-2" pref="154" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane22" min="-2" pref="656" max="-2" attributes="0"/>
                           </Group>
@@ -1575,8 +1582,10 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel156" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel157" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel188" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel161" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane22" min="-2" pref="219" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1887,6 +1896,22 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton63ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel161">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="11" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Type"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel188">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Invoice Type : "/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

@@ -103,6 +103,21 @@ public class searchItems {
        }
     }
     
+    public ResultSet searchByItemCodeeeee(String itmCode){
+       String item = null;
+       item = itmCode;
+       String sql3 = "select * from items INNER JOIN sub_items sub_items ON items.itm_code = sub_items.itm_code where sub_items.sn like '%"+item+"%'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql3);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
     public String getItemCodeBySubItemCode(String sItemCode){
        String item = null;
        String itemCode = null;

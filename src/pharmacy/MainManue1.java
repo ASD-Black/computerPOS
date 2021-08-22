@@ -5202,7 +5202,6 @@ public class MainManue1 extends javax.swing.JFrame {
         jTextField80 = new javax.swing.JTextField();
         jScrollPane24 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
-        jButton63 = new javax.swing.JButton();
         jLabel161 = new javax.swing.JLabel();
         jLabel188 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
@@ -5218,10 +5217,10 @@ public class MainManue1 extends javax.swing.JFrame {
         jScrollPane25 = new javax.swing.JScrollPane();
         jTextArea7 = new javax.swing.JTextArea();
         jLabel169 = new javax.swing.JLabel();
+        jButton59 = new javax.swing.JButton();
         jScrollPane26 = new javax.swing.JScrollPane();
         jTable16 = new javax.swing.JTable();
         jLabel172 = new javax.swing.JLabel();
-        jButton59 = new javax.swing.JButton();
         jCheckBox12 = new javax.swing.JCheckBox();
         jScrollPane31 = new javax.swing.JScrollPane();
         jTextArea11 = new javax.swing.JTextArea();
@@ -5230,6 +5229,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel170 = new javax.swing.JLabel();
         jButton71 = new javax.swing.JButton();
         jButton106 = new javax.swing.JButton();
+        jButton119 = new javax.swing.JButton();
         returnItms = new javax.swing.JDialog();
         jPanel35 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
@@ -6702,15 +6702,6 @@ public class MainManue1 extends javax.swing.JFrame {
         jTextArea6.setWrapStyleWord(true);
         jScrollPane24.setViewportView(jTextArea6);
 
-        jButton63.setBackground(new java.awt.Color(255, 255, 255));
-        jButton63.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton63.setText("Delete");
-        jButton63.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton63ActionPerformed(evt);
-            }
-        });
-
         jLabel161.setBackground(new java.awt.Color(255, 255, 255));
         jLabel161.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel161.setText("Type");
@@ -6726,9 +6717,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel36Layout.createSequentialGroup()
                         .add(jButton57)
-                        .add(17, 17, 17)
-                        .add(jButton63)
-                        .add(260, 260, 260)
+                        .add(346, 346, 346)
                         .add(jLabel151)
                         .add(19, 19, 19)
                         .add(jTextField71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -6795,9 +6784,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel151)
                             .add(jTextField71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                .add(jButton57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jButton63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                            .add(jButton57, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(jPanel36Layout.createSequentialGroup()
                         .add(9, 9, 9)
                         .add(jPanel36Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -6907,6 +6894,15 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel169.setBackground(new java.awt.Color(255, 255, 255));
         jLabel169.setText("Item Discription : ");
 
+        jButton59.setBackground(new java.awt.Color(255, 255, 255));
+        jButton59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton59.setText("Claimed");
+        jButton59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton59ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel37Layout = new org.jdesktop.layout.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
         jPanel37Layout.setHorizontalGroup(
@@ -6915,34 +6911,37 @@ public class MainManue1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel37Layout.createSequentialGroup()
-                        .add(jButton58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 214, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .add(jPanel37Layout.createSequentialGroup()
                         .add(jLabel164)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, Short.MAX_VALUE))))
+                        .add(jTextField76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel37Layout.createSequentialGroup()
+                        .add(15, 15, 15)
+                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel37Layout.createSequentialGroup()
+                                .add(jLabel168)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jPanel37Layout.createSequentialGroup()
+                                .add(jLabel167)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+                .add(0, 0, Short.MAX_VALUE))
             .add(jPanel37Layout.createSequentialGroup()
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel37Layout.createSequentialGroup()
                         .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel169)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel166, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(4, 4, 4))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel37Layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jLabel167)
-                            .add(jLabel168))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
-                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(0, 0, Short.MAX_VALUE))
                     .add(jPanel37Layout.createSequentialGroup()
-                        .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(16, 16, 16))
-                    .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(jButton58)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
+                        .add(jButton59)))
+                .addContainerGap())
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -6953,23 +6952,24 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(14, 14, 14)
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel169)
-                    .add(jPanel37Layout.createSequentialGroup()
-                        .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel168))))
+                    .add(jScrollPane25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel168))
                 .add(18, 18, 18)
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jTextField83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel167))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(11, 11, 11)
                 .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jTextField82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel166))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jButton58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
+                .add(jPanel37Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jTable16.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -7002,15 +7002,6 @@ public class MainManue1 extends javax.swing.JFrame {
 
         jLabel172.setText("Warranty Item List");
 
-        jButton59.setBackground(new java.awt.Color(255, 255, 255));
-        jButton59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton59.setText("Claimed");
-        jButton59.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton59ActionPerformed(evt);
-            }
-        });
-
         jCheckBox12.setText("Claimed");
         jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -7037,7 +7028,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
         jButton71.setBackground(new java.awt.Color(255, 255, 255));
         jButton71.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton71.setText("Delete");
+        jButton71.setText("Delete Warranty");
         jButton71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton71ActionPerformed(evt);
@@ -7052,6 +7043,15 @@ public class MainManue1 extends javax.swing.JFrame {
             }
         });
 
+        jButton119.setBackground(new java.awt.Color(255, 255, 255));
+        jButton119.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton119.setText("Delete Claimed");
+        jButton119.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton119ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel34Layout = new org.jdesktop.layout.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -7062,7 +7062,7 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jPanel36, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel34Layout.createSequentialGroup()
                         .add(jPanel37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(44, 44, 44)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane26)
                             .add(jPanel34Layout.createSequentialGroup()
@@ -7079,11 +7079,10 @@ public class MainManue1 extends javax.swing.JFrame {
                                 .add(jScrollPane31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 434, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jCheckBox12)
-                                .add(60, 60, 60)
-                                .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(0, 0, Short.MAX_VALUE)))))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(jButton119, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jButton71)))))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -7109,9 +7108,9 @@ public class MainManue1 extends javax.swing.JFrame {
                             .add(jScrollPane31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jLabel199)
                             .add(jPanel34Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                .add(jButton59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(jCheckBox12)
-                                .add(jButton71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+                                .add(jButton71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jButton119, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -13347,6 +13346,15 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
  
             this.jTextField76.setText("");
+            
+            this.jTextArea7.setText("");
+            this.jTextField84.setText("");
+            this.jTextField83.setText("");
+            this.jTextField82.setText("");
+            
+            String hhh = hyt.getInvoiceDis(invoID);
+                
+            this.jTextArea5.setText(hhh);
 //            this.jTextArea7.setText("");
 //            this.jTextField81.setText("");
 //            this.jTextField82.setText("");
@@ -13410,463 +13418,6 @@ public class MainManue1 extends javax.swing.JFrame {
         
             
     }//GEN-LAST:event_jButton56ActionPerformed
-
-    private void jTable15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable15MousePressed
-        int selectedRow1 = this.jTable15.getSelectedRow();
-        
-        String itmCorde = this.jTable15.getModel().getValueAt(selectedRow1, 1).toString();
-        String itmDiscrip = this.jTable15.getModel().getValueAt(selectedRow1, 2).toString();
-        int QQTy = (int)jTable15.getValueAt(selectedRow1, 4);
-            String Warranty = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 3).toString());
-            String r_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 5).toString());
-            //String w_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 4).toString());
-            //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
-            
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
-            this.jTextField75.setText(itmCorde);
-            this.jTextArea6.setText(itmDiscrip);
-            this.jTextField79.setText(Integer.toString(QQTy));
-            //this.jTextField103.setText(Integer.toString(QQTy));
-            this.jTextField77.setText(r_price);
-            this.jTextField80.setText(Warranty);
-    }//GEN-LAST:event_jTable15MousePressed
-
-    private void jTextField71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField71ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField71ActionPerformed
-
-    private void jTextField72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField72ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField72ActionPerformed
-
-    private void jTextField73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField73ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField73ActionPerformed
-
-    private void jTextField74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField74ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField74ActionPerformed
-
-    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
-        items_add_to_bill iii = new items_add_to_bill(); 
-        String billIDD = this.jLabel229.getText();
-         
-        int selectedRow7b = this.jTable15.getSelectedRow();   
-        if(selectedRow7b == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Item to Warranty.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String billItemCodeh = this.jTable15.getModel().getValueAt(selectedRow7b, 0).toString();
-            String strItemCode = this.jTable15.getModel().getValueAt(selectedRow7b, 1).toString();
-            String qyyt = this.jTable15.getModel().getValueAt(selectedRow7b, 4).toString();
-            String r_pprice = this.jTable15.getModel().getValueAt(selectedRow7b, 7).toString();
-            int INTqty = Integer.parseInt(qyyt);
-            String aaa = iii.checkSNAvailability(billItemCodeh);
-            if(aaa.equals("")){
-                JOptionPane.showMessageDialog(Warranty, "Cannot Warranty nun serial items.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{               
-                items_add_to_bill jiu87ds = new items_add_to_bill();
-                int selectedRow321123ds = this.jTable15.getSelectedRow();
-
-                if(selectedRow321123ds == -1){
-                    JOptionPane.showMessageDialog(Warranty, "Select a Serial Number to warranty.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.edit_edit_billed_Items2.setSize(340,300);
-                    this.edit_edit_billed_Items2.setTitle("Warranty ");   
-                    this.edit_edit_billed_Items2.setLocationRelativeTo(this);
-                    this.edit_edit_billed_Items2.setVisible(true);
-
-                    String ProductItmCoded = this.jTable15.getModel().getValueAt(selectedRow321123ds, 0).toString();
-
-                    ResultSet jjuyyf = jiu87ds.getSubItemDataFromBill(ProductItmCoded);
-                    this.jTable39.setModel(DbUtils.resultSetToTableModel(jjuyyf));
-                } 
-            }           
-        }
-    }//GEN-LAST:event_jButton57ActionPerformed
-
-    private void jTextField75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField75ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField75ActionPerformed
-
-    private void jTextField77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField77ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField77ActionPerformed
-
-    private void jTextField79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField79ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField79ActionPerformed
-
-    private void jTextField80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField80ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField80ActionPerformed
-
-    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
-        items_add_to_bill gghhjj = new items_add_to_bill();
-        cashBalancing jjuu = new cashBalancing();
-        
-        String billID = this.jLabel157.getText();
-        String invoTypee = this.jLabel161.getText();
-        
-        int selectedRow9456gg = 0;
-        selectedRow9456gg = this.jTable16.getSelectedRow();
-        
-        if(selectedRow9456gg == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Item from warranty Item List.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String wCode = this.jTable16.getModel().getValueAt(selectedRow9456gg, 0).toString();
-            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure you want to claim this item.?", "Confirm Warranty Claim", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
-                
-                String sItemCodeed = this.jTextField76.getText();
-                String statusd = gghhjj.getItemStatus(sItemCodeed);
-
-                if(statusd.equals("yes")){
-                    String notee = " --> Claimed By SN- ".concat(sItemCodeed);
-                    try {
-                        String queryyyd = "update warranty set claimedSerial=?, notee=CONCAT( notee, ?), claim=? where wCode = ?";
-                        PreparedStatement pstluf = conn.prepareStatement(queryyyd);
-
-                        pstluf.setString(1, sItemCodeed);
-                        pstluf.setString(2, notee);
-                        pstluf.setString(3, "yes");
-                        pstluf.setString(4, wCode);
-                        pstluf.executeUpdate();
-
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                    
-                    try{
-                        String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
-
-                        PreparedStatement pstf = conn.prepareStatement(SQL);
-                        pstf.setString(1, wCode);
-                        pstf.setString(2, notee);
-                        pstf.setString(3, sItemCodeed);  
-                        
-                        pstf.execute();
-                    }
-                    catch(Exception ed){
-                       ed.printStackTrace(); 
-                    }
-                    
-                    try {
-                        String queryyy = "update sub_items set inStock=? where sn = ?";
-                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
-
-                        pstlu.setString(1, "no");
-                        pstlu.setString(2, sItemCodeed);
-                        pstlu.executeUpdate();
-
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    String itmCode = jjuu.getItemCodeBySn(sItemCodeed);
-                    
-                    try {
-                        String query = "update items set qty = qty- ? where itm_code = ?";
-                        PreparedStatement pst = conn.prepareStatement(query);
-
-                        pst.setInt(1, 1);
-                        pst.setString(2, itmCode);
-                        pst.executeUpdate();
-                            
-                    } catch(SQLException ex){
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
-                    String FullNoted = getAllWarrantyNotices(billID); 
-                    updateInvoiceDiscriptionForWarranty(FullNoted, billID);
-                    updateInvoiceDiscription(billID);
-                    
-                    this.Warranty.dispose();
-                    
-                    if(invoTypee.equals("Cash")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billID);
-                            try {
-
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
-
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-
-                                JasperViewer.viewReport(jprint, false);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypee.equals("Cash Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billID);
-                            try {
-
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
-
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-
-                                JasperViewer.viewReport(jprint, false);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            } 
-                        }
-                        else if(invoTypee.equals("Credit")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billID);
-                            try { 
-                                
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
-
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-
-                                JasperViewer.viewReport(jprint, false);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypee.equals("Credit Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billID);
-                            try {
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
-
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-
-                                JasperViewer.viewReport(jprint, false);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypee.equals("Cheque")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billID);
-                            try {
-
-                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
-
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-
-                                JasperViewer.viewReport(jprint, false);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }  
-                }
-                else{
-                    JOptionPane.showMessageDialog(Warranty, "Something went wrong with selected item.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                
-                
-                
-                
-            }      
-        }
-//        items_add_to_bill aaas = new items_add_to_bill();
-//            cashBalancing ghj = new cashBalancing();
-//
-//            String itmCode1 = this.jTextField76.getText();
-//            String name = this.jTextArea7.getText();
-//            int packSize = Integer.parseInt(this.jTextField84.getText());
-//            int qty = Integer.parseInt(this.jTextField85.getText());
-//            double w_price = Double.parseDouble(this.jTextField82.getText());
-//            String wCode = this.jTextField135.getText();
-//            //double price = Double.parseDouble(this.jTextField3.getText());
-//            int free = 0;
-//            int dis = 0;
-//            
-//            double r_price = Double.parseDouble(this.jTextField81.getText());
-//            double valu = ((qty * r_price)-((qty * r_price)*dis/100));
-//            
-//            double costValue = (w_price * qty);
-//            
-//            String billID = this.jLabel157.getText();
-//
-//
-//            Date d = new Date();
-//            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-//            String date = sdf1.format(d); 
-//            
-//            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-//            String ttt = sdf.format(d);
-//            
-//            //String note = "Add ".concat(String.valueOf(qty)).concat(" new ").concat(itmCode1).concat(" item/s to invo- ").concat(billID);
-//
-//            int avl_qty1 = Integer.parseInt(this.jTextField83.getText());
-//            String finalName = name.concat(" --").concat(wCode).concat("--").concat("(Claimed item/s for the WARRANTY item/s. ").concat(date).concat(" )");
-//            if(avl_qty1 >= (qty+free)){
-//                String cashBalanceID = "W";
-//                String billItemCode = aaas.addItemsToBill(itmCode1, finalName, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalanceID, this);
-//                JOptionPane.showMessageDialog(itemsAdder, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
-//                
-//                try {
-//                    String query = "update items set qty = qty- ? where itm_code = ?";
-//                    PreparedStatement pst = conn.prepareStatement(query);
-//
-//                        pst.setInt(1, qty);
-//                        pst.setString(2, itmCode1);
-//                        pst.executeUpdate();
-//                    
-//                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-//                    } catch (SQLException ex) {
-//                        ex.printStackTrace();
-//                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-//                    }
-//                    int selectedRow = this.jTable4.getSelectedRow();
-//                    
-//                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-//                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
-//
-//                        if(invoTypeee.equals("Cash")){
-//                            HashMap ab = new HashMap();
-//                            ab.put("invoNum", billl);
-//                            try {
-//
-//                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
-//                                JasperDesign jdesign = JRXmlLoader.load(file);
-//
-//                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-//                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-//
-//                                JasperViewer.viewReport(jprint, false);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        else if(invoTypeee.equals("Cash Advanced")){
-//                            HashMap ab = new HashMap();
-//                            ab.put("invoNum", billl);
-//                            try {
-//
-//                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
-//                                JasperDesign jdesign = JRXmlLoader.load(file);
-//
-//                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-//                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-//
-//                                JasperViewer.viewReport(jprint, false);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        else if(invoTypeee.equals("Credit")){
-//                            HashMap ab = new HashMap();
-//                            ab.put("invoNum", billl);
-//                            try {
-//
-//                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
-//                                JasperDesign jdesign = JRXmlLoader.load(file);
-//
-//                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-//                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-//
-//                                JasperViewer.viewReport(jprint, false);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        else if(invoTypeee.equals("Credit Advanced")){
-//                            HashMap ab = new HashMap();
-//                            ab.put("invoNum", billl);
-//                            try {
-//
-//                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
-//                                JasperDesign jdesign = JRXmlLoader.load(file);
-//
-//                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-//                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-//
-//                                JasperViewer.viewReport(jprint, false);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        else if(invoTypeee.equals("Cheque")){
-//                            HashMap ab = new HashMap();
-//                            ab.put("invoNum", billl);
-//                            try {
-//
-//                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
-//                                JasperDesign jdesign = JRXmlLoader.load(file);
-//
-//                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-//                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-//
-//                                JasperViewer.viewReport(jprint, false);
-//
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                        }     
-//                    
-//                this.Warranty.dispose();
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(itemsAdder, "Available quantity is not enought","Error",JOptionPane.ERROR_MESSAGE);
-//            }
-//            
-//            
-//            ResultSet rs = aaas.getAddedItemsBy_bill_ID(billID);
-//            this.jTable15.setModel(DbUtils.resultSetToTableModel(rs));
-    }//GEN-LAST:event_jButton58ActionPerformed
-
-    private void jTable16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable16MousePressed
-        int selectedRow011 = this.jTable16.getSelectedRow();
-        String Note = this.jTable16.getModel().getValueAt(selectedRow011, 1).toString();
-        this.jTextArea11.setText(Note);
-    }//GEN-LAST:event_jTable16MousePressed
-
-    private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
-        cashBalancing gggg = new cashBalancing();
-        
-        int selectedRow011 = this.jTable16.getSelectedRow();
-        
-        if(selectedRow011 == -1){
-            JOptionPane.showMessageDialog(Warranty, "Pleace select one to claim WARRANTY!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            try {
-                String wCode = this.jTable16.getModel().getValueAt(selectedRow011, 0).toString();
-                String query11 = "update warranty set claim = ? where wCode = ?";
-                PreparedStatement pst21 = conn.prepareStatement(query11);
-                    pst21.setString(1, "yes");
-                    pst21.setString(2, wCode);
-                    pst21.executeUpdate();
-            //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        }
-        
-        ResultSet rs99 = gggg.getAllNonClaimedWarranties();
-        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
-    }//GEN-LAST:event_jButton59ActionPerformed
 
     private void jTextField96ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField96ActionPerformed
         // TODO add your handling code here:
@@ -14309,78 +13860,6 @@ public class MainManue1 extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton65ActionPerformed
-
-    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
-        cashBalancing gggu = new cashBalancing();
-        if(jCheckBox12.isSelected()){
-            ResultSet rs993 = gggu.getAllClaimedWarranties();
-            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs993));
-        }
-        else{
-            ResultSet rs994 = gggu.getAllNonClaimedWarranties();
-            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs994));
-        }
-    }//GEN-LAST:event_jCheckBox12ActionPerformed
-
-    private void jTable16AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable16AncestorAdded
-        
-    }//GEN-LAST:event_jTable16AncestorAdded
-
-    private void jButton63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton63ActionPerformed
-        items_add_to_bill iii1 = new items_add_to_bill();
-        
-        int selectedRow9456 = 0;
-        String warran = "";
-        selectedRow9456 = this.jTable15.getSelectedRow();
-        
-        if(selectedRow9456 == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            if(warran.equals("w")){
-                int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection == 0){
- 
-                    String billItemCode = this.jTable15.getModel().getValueAt(selectedRow9456, 0).toString();
-                    String itemCodeee = this.jTable15.getModel().getValueAt(selectedRow9456, 1).toString();
-                    iii1.deleteAddedBillItems(billItemCode);
-
-                    String billID = this.jLabel157.getText();
-                    ResultSet rsss = iii1.getAddedItemsBy_bill_ID(billID);
-
-                    //ResultSet rs = s.showItemDetails();
-                    this.jTable15.setModel(DbUtils.resultSetToTableModel(rsss));
-                    
-                    try {
-                        warran = this.jTable15.getModel().getValueAt(selectedRow9456, 9).toString();
-                        int qtyyy = (int)jTable15.getValueAt(selectedRow9456, 4);
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst = conn.prepareStatement(query);
-
-                        pst.setInt(1, qtyyy);
-                        pst.setString(2, itemCodeee);
-                        pst.executeUpdate();
-            
-            
-            //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                }
-                
-                
-                
-                
-                
-                
-            }
-            else{
-                JOptionPane.showMessageDialog(Warranty, "You Can only delete newly added Items..!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            
-        }
-    }//GEN-LAST:event_jButton63ActionPerformed
 
     private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
         searchItems s = new searchItems();
@@ -18576,47 +18055,6 @@ public class MainManue1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField127ActionPerformed
 
-    private void jTextField76KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField76KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            items_add_to_bill jjkkiig = new items_add_to_bill();
-            
-            String sItemCodee = this.jTextField76.getText();
-            String status = jjkkiig.getItemStatus(sItemCodee);
-            
-            if(status.equals("no") || status.equals("w")){
-                
-                JOptionPane.showMessageDialog(Warranty, "This "+sItemCodee+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                String name, warranty, r_price, qty;
-                searchItems sd = new searchItems();
-                try{
-                    ResultSet rs = sd.searchByItemCodeeeee(sItemCodee);
-                    System.out.println(rs);
-                    while(rs.next()){
-                        name = rs.getString("itm_name");
-                        warranty = rs.getString("warranty");
-                        qty = rs.getString("qty");
-                        r_price = rs.getString("r_price");
-                        System.out.println(warranty);
-
-                        this.jTextArea7.setText(name);
-                        this.jTextField84.setText(r_price);
-                        this.jTextField83.setText(qty);
-                        this.jTextField82.setText(warranty);
-                    }
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-            }           
-        }
-    }//GEN-LAST:event_jTextField76KeyPressed
-
-    private void jTextField76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField76ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField76ActionPerformed
-
     private void jTextField136KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField136KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             userController usrg = new userController();
@@ -19427,18 +18865,6 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField67.setText(custIDDd);
     }//GEN-LAST:event_jTable14MousePressed
 
-    private void jTextField82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField82ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField82ActionPerformed
-
-    private void jTextField83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField83ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField83ActionPerformed
-
-    private void jTextField84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField84ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField84ActionPerformed
-
     private void jTable39MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable39MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable39MousePressed
@@ -19489,6 +18915,13 @@ public class MainManue1 extends javax.swing.JFrame {
                 //update main bill discription
                 
                 updateInvoiceDiscription(billIdd);
+                
+                String hhh = ggg.getInvoiceDis(billIdd);
+                
+                this.jTextArea5.setText(hhh);
+                
+                ResultSet rs99dg = ggg.getAllNonClaimedWarranties();
+                this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99dg));
             }
         }
         
@@ -19496,40 +18929,44 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton118ActionPerformed
 
-    private void jTextField78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField78ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField78ActionPerformed
+    private void jButton106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton106ActionPerformed
+        cashBalancing jjuu = new cashBalancing();
+
+        ResultSet rs997 = jjuu.getAllNonClaimedWarrantiesByInvoice(this.jTextField78.getText());
+        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs997));
+    }//GEN-LAST:event_jButton106ActionPerformed
 
     private void jButton71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton71ActionPerformed
         cashBalancing lloo = new cashBalancing();
         int selectedRow9456d = this.jTable16.getSelectedRow();
-        
+
         if(selectedRow9456d == -1){
             JOptionPane.showMessageDialog(Warranty, "Select a Warranty to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            
+
             int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
             if(userSelection == 0){
- 
+
                 String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456d, 0).toString();
                 String warrantyNote = this.jTable16.getModel().getValueAt(selectedRow9456d, 1).toString();
                 String itemSireal = this.jTable16.getModel().getValueAt(selectedRow9456d, 6).toString();
                 String invoID = this.jTable16.getModel().getValueAt(selectedRow9456d, 5).toString();
                 //iii1.deleteAddedBillItems(billItemCode);
-                
+
                 String wDis = lloo.getInvoiceWarrantyDiscription(invoID);
-                
+
                 String newWarrantyDis = wDis.replaceAll(warrantyNote, "");
                 String newNewWarrantyDis = newWarrantyDis.replaceAll("\n", "");
-                
+
                 lloo.UpdateSerialDiscription(invoID, newNewWarrantyDis);
-                
+
                 lloo.deleteWarrantyItem(warrantyItemCode);
                 String kkG = updateInvoiceDiscription(invoID);
-                
+
                 if(kkG==null){
-                    
+                    ResultSet rs99dd = lloo.getAllNonClaimedWarranties();
+                    this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99dd));
                 }
                 else{
                     JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
@@ -19538,12 +18975,792 @@ public class MainManue1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton71ActionPerformed
 
-    private void jButton106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton106ActionPerformed
+    private void jTextField78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField78ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField78ActionPerformed
+
+    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+        cashBalancing gggu = new cashBalancing();
+        if(jCheckBox12.isSelected()){
+            ResultSet rs993 = gggu.getAllClaimedWarranties();
+            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs993));
+        }
+        else{
+            ResultSet rs994 = gggu.getAllNonClaimedWarranties();
+            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs994));
+        }
+    }//GEN-LAST:event_jCheckBox12ActionPerformed
+
+    private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
+        cashBalancing gggg = new cashBalancing();
+        billSearch kkii = new billSearch();
+
+        Date d = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        String dat = sdf1.format(d);
+
+        int selectedRow011 = this.jTable16.getSelectedRow();
+
+        if(selectedRow011 == -1){
+            JOptionPane.showMessageDialog(Warranty, "Pleace select one to claim WARRANTY!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String wCodee = this.jTable16.getModel().getValueAt(selectedRow011, 0).toString();
+            String WarrantySN = this.jTable16.getModel().getValueAt(selectedRow011, 6).toString();
+            String invoID = this.jTable16.getModel().getValueAt(selectedRow011, 5).toString();
+            String invoType = kkii.getBillTypeByBillID(invoID);
+            System.out.println(invoType);
+            System.out.println(invoID);
+            String notee = " --> Claimed By Same Item. Date - ".concat(dat);
+            try {
+                String queryyyd = "update warranty set claimedSerial=?, notee=CONCAT( notee, ?), claim=? where wCode = ?";
+                PreparedStatement pstluf = conn.prepareStatement(queryyyd);
+
+                pstluf.setString(1, "Claimed by same item");
+                pstluf.setString(2, notee);
+                pstluf.setString(3, "yes");
+                pstluf.setString(4, wCodee);
+                pstluf.executeUpdate();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+            try{
+                String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
+
+                PreparedStatement pstf = conn.prepareStatement(SQL);
+                pstf.setString(1, wCodee);
+                pstf.setString(2, notee);
+                pstf.setString(3, WarrantySN);
+
+                pstf.execute();
+            }
+            catch(Exception ed){
+                ed.printStackTrace();
+            }
+
+            String FullNoted = getAllWarrantyNotices(invoID);
+            updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
+            updateInvoiceDiscription(invoID);
+
+            this.Warranty.dispose();
+
+            if(invoType.equals("Cash")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", invoID);
+                try {
+
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoType.equals("Cash Advanced")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", invoID);
+                try {
+
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoType.equals("Credit")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", invoID);
+                try {
+
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoType.equals("Credit Advanced")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", invoID);
+                try {
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoType.equals("Cheque")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", invoID);
+                try {
+
+                    InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            billSearch kkkg = new billSearch();
+            ResultSet rs1g = kkkg.showAllPendingBillDetails();
+            this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1g));
+        }
+        ResultSet rs99 = gggg.getAllNonClaimedWarranties();
+        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
+    }//GEN-LAST:event_jButton59ActionPerformed
+
+    private void jTable16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable16MousePressed
+        int selectedRow011 = this.jTable16.getSelectedRow();
+        String Note = this.jTable16.getModel().getValueAt(selectedRow011, 1).toString();
+        this.jTextArea11.setText(Note);
+    }//GEN-LAST:event_jTable16MousePressed
+
+    private void jTable16AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable16AncestorAdded
+
+    }//GEN-LAST:event_jTable16AncestorAdded
+
+    private void jTextField84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField84ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField84ActionPerformed
+
+    private void jTextField83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField83ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField83ActionPerformed
+
+    private void jTextField82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField82ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField82ActionPerformed
+
+    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
+        items_add_to_bill gghhjj = new items_add_to_bill();
         cashBalancing jjuu = new cashBalancing();
-           
-        ResultSet rs997 = jjuu.getAllNonClaimedWarrantiesByInvoice(this.jTextField78.getText());
-        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs997));
-    }//GEN-LAST:event_jButton106ActionPerformed
+        billSearch kkiidd = new billSearch();
+
+        Date d = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        String datee = sdf1.format(d);
+
+        //String billID = this.jLabel157.getText();
+        //String invoTypee = this.jLabel161.getText();
+
+        int selectedRow9456gg = 0;
+        selectedRow9456gg = this.jTable16.getSelectedRow();
+
+        if(selectedRow9456gg == -1){
+            JOptionPane.showMessageDialog(Warranty, "Select a Item from warranty Item List.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String wCode = this.jTable16.getModel().getValueAt(selectedRow9456gg, 0).toString();
+            String invoID = this.jTable16.getModel().getValueAt(selectedRow9456gg, 5).toString();
+            String invoType = kkiidd.getBillTypeByBillID(invoID);
+            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure you want to claim this item.?", "Confirm Warranty Claim", JOptionPane.YES_NO_OPTION);
+            if(userSelection == 0){
+
+                String sItemCodeed = this.jTextField76.getText();
+                String statusd = gghhjj.getItemStatus(sItemCodeed);
+
+                if(statusd.equals("yes")){
+                    String notee = " --> Claimed By SN- ".concat(sItemCodeed).concat(". Date - ").concat(datee);
+                    try {
+                        String queryyyd = "update warranty set claimedSerial=?, notee=CONCAT( notee, ?), claim=? where wCode = ?";
+                        PreparedStatement pstluf = conn.prepareStatement(queryyyd);
+
+                        pstluf.setString(1, sItemCodeed);
+                        pstluf.setString(2, notee);
+                        pstluf.setString(3, "yes");
+                        pstluf.setString(4, wCode);
+                        pstluf.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    try{
+                        String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
+
+                        PreparedStatement pstf = conn.prepareStatement(SQL);
+                        pstf.setString(1, wCode);
+                        pstf.setString(2, notee);
+                        pstf.setString(3, sItemCodeed);
+
+                        pstf.execute();
+                    }
+                    catch(Exception ed){
+                        ed.printStackTrace();
+                    }
+
+                    try {
+                        String queryyy = "update sub_items set inStock=? where sn = ?";
+                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                        pstlu.setString(1, "no");
+                        pstlu.setString(2, sItemCodeed);
+                        pstlu.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    String itmCode = jjuu.getItemCodeBySn(sItemCodeed);
+
+                    try {
+                        String query = "update items set qty = qty- ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, 1);
+                        pst.setString(2, itmCode);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    String FullNoted = getAllWarrantyNotices(invoID);
+                    updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
+                    updateInvoiceDiscription(invoID);
+
+                    this.Warranty.dispose();
+
+                    if(invoType.equals("Cash")){
+                        HashMap ab = new HashMap();
+                        ab.put("invoNum", invoID);
+                        try {
+
+                            InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                            JasperDesign jdesign = JRXmlLoader.load(file);
+
+                            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                            JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                            JasperViewer.viewReport(jprint, false);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else if(invoType.equals("Cash Advanced")){
+                        HashMap ab = new HashMap();
+                        ab.put("invoNum", invoID);
+                        try {
+
+                            InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                            JasperDesign jdesign = JRXmlLoader.load(file);
+
+                            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                            JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                            JasperViewer.viewReport(jprint, false);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else if(invoType.equals("Credit")){
+                        HashMap ab = new HashMap();
+                        ab.put("invoNum", invoID);
+                        try {
+
+                            InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                            JasperDesign jdesign = JRXmlLoader.load(file);
+
+                            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                            JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                            JasperViewer.viewReport(jprint, false);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else if(invoType.equals("Credit Advanced")){
+                        HashMap ab = new HashMap();
+                        ab.put("invoNum", invoID);
+                        try {
+                            InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                            JasperDesign jdesign = JRXmlLoader.load(file);
+
+                            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                            JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                            JasperViewer.viewReport(jprint, false);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else if(invoType.equals("Cheque")){
+                        HashMap ab = new HashMap();
+                        ab.put("invoNum", invoID);
+                        try {
+
+                            InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                            JasperDesign jdesign = JRXmlLoader.load(file);
+
+                            JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                            JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                            JasperViewer.viewReport(jprint, false);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    
+                    billSearch kkkd = new billSearch();
+                    ResultSet rs1d = kkkd.showAllPendingBillDetails();
+                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1d));
+                    
+                    this.jTextArea7.setText("");
+                    this.jTextField84.setText("");
+                    this.jTextField83.setText("");
+                    this.jTextField82.setText("");
+                }
+                else{
+                    JOptionPane.showMessageDialog(Warranty, "Something went wrong with selected item.!","Error",JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+        }
+        //        items_add_to_bill aaas = new items_add_to_bill();
+        //            cashBalancing ghj = new cashBalancing();
+        //
+        //            String itmCode1 = this.jTextField76.getText();
+        //            String name = this.jTextArea7.getText();
+        //            int packSize = Integer.parseInt(this.jTextField84.getText());
+        //            int qty = Integer.parseInt(this.jTextField85.getText());
+        //            double w_price = Double.parseDouble(this.jTextField82.getText());
+        //            String wCode = this.jTextField135.getText();
+        //            //double price = Double.parseDouble(this.jTextField3.getText());
+        //            int free = 0;
+        //            int dis = 0;
+        //
+        //            double r_price = Double.parseDouble(this.jTextField81.getText());
+        //            double valu = ((qty * r_price)-((qty * r_price)*dis/100));
+        //
+        //            double costValue = (w_price * qty);
+        //
+        //            String billID = this.jLabel157.getText();
+        //
+        //
+        //            Date d = new Date();
+        //            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        //            String date = sdf1.format(d);
+        //
+        //            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+        //            String ttt = sdf.format(d);
+        //
+        //            //String note = "Add ".concat(String.valueOf(qty)).concat(" new ").concat(itmCode1).concat(" item/s to invo- ").concat(billID);
+        //
+        //            int avl_qty1 = Integer.parseInt(this.jTextField83.getText());
+        //            String finalName = name.concat(" --").concat(wCode).concat("--").concat("(Claimed item/s for the WARRANTY item/s. ").concat(date).concat(" )");
+        //            if(avl_qty1 >= (qty+free)){
+            //                String cashBalanceID = "W";
+            //                String billItemCode = aaas.addItemsToBill(itmCode1, finalName, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalanceID, this);
+            //                JOptionPane.showMessageDialog(itemsAdder, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
+            //
+            //                try {
+                //                    String query = "update items set qty = qty- ? where itm_code = ?";
+                //                    PreparedStatement pst = conn.prepareStatement(query);
+                //
+                //                        pst.setInt(1, qty);
+                //                        pst.setString(2, itmCode1);
+                //                        pst.executeUpdate();
+                //
+                //                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                //                    } catch (SQLException ex) {
+                //                        ex.printStackTrace();
+                //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                //                    }
+            //                    int selectedRow = this.jTable4.getSelectedRow();
+            //
+            //                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+            //                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
+            //
+            //                        if(invoTypeee.equals("Cash")){
+                //                            HashMap ab = new HashMap();
+                //                            ab.put("invoNum", billl);
+                //                            try {
+                    //
+                    //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    //
+                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    //
+                    //                                JasperViewer.viewReport(jprint, false);
+                    //
+                    //                            } catch (Exception e) {
+                    //                                e.printStackTrace();
+                    //                            }
+                //                        }
+            //                        else if(invoTypeee.equals("Cash Advanced")){
+                //                            HashMap ab = new HashMap();
+                //                            ab.put("invoNum", billl);
+                //                            try {
+                    //
+                    //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    //
+                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    //
+                    //                                JasperViewer.viewReport(jprint, false);
+                    //
+                    //                            } catch (Exception e) {
+                    //                                e.printStackTrace();
+                    //                            }
+                //                        }
+            //                        else if(invoTypeee.equals("Credit")){
+                //                            HashMap ab = new HashMap();
+                //                            ab.put("invoNum", billl);
+                //                            try {
+                    //
+                    //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    //
+                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    //
+                    //                                JasperViewer.viewReport(jprint, false);
+                    //
+                    //                            } catch (Exception e) {
+                    //                                e.printStackTrace();
+                    //                            }
+                //                        }
+            //                        else if(invoTypeee.equals("Credit Advanced")){
+                //                            HashMap ab = new HashMap();
+                //                            ab.put("invoNum", billl);
+                //                            try {
+                    //
+                    //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    //
+                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    //
+                    //                                JasperViewer.viewReport(jprint, false);
+                    //
+                    //                            } catch (Exception e) {
+                    //                                e.printStackTrace();
+                    //                            }
+                //                        }
+            //                        else if(invoTypeee.equals("Cheque")){
+                //                            HashMap ab = new HashMap();
+                //                            ab.put("invoNum", billl);
+                //                            try {
+                    //
+                    //                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    //
+                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    //
+                    //                                JasperViewer.viewReport(jprint, false);
+                    //
+                    //                            } catch (Exception e) {
+                    //                                e.printStackTrace();
+                    //                            }
+                //                        }
+            //
+            //                this.Warranty.dispose();
+            //            }
+        //            else{
+            //                JOptionPane.showMessageDialog(itemsAdder, "Available quantity is not enought","Error",JOptionPane.ERROR_MESSAGE);
+            //            }
+        //
+        //
+        //            ResultSet rs = aaas.getAddedItemsBy_bill_ID(billID);
+        //            this.jTable15.setModel(DbUtils.resultSetToTableModel(rs));
+    }//GEN-LAST:event_jButton58ActionPerformed
+
+    private void jTextField76KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField76KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            items_add_to_bill jjkkiig = new items_add_to_bill();
+
+            String sItemCodee = this.jTextField76.getText();
+            String status = jjkkiig.getItemStatus(sItemCodee);
+
+            if(status.equals("no") || status.equals("w")){
+
+                JOptionPane.showMessageDialog(Warranty, "This "+sItemCodee+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                String name, warranty, r_price, qty;
+                searchItems sd = new searchItems();
+                try{
+                    ResultSet rs = sd.searchByItemCodeeeee(sItemCodee);
+                    System.out.println(rs);
+                    while(rs.next()){
+                        name = rs.getString("itm_name");
+                        warranty = rs.getString("warranty");
+                        qty = rs.getString("qty");
+                        r_price = rs.getString("r_price");
+                        System.out.println(warranty);
+
+                        this.jTextArea7.setText(name);
+                        this.jTextField84.setText(r_price);
+                        this.jTextField83.setText(qty);
+                        this.jTextField82.setText(warranty);
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }//GEN-LAST:event_jTextField76KeyPressed
+
+    private void jTextField76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField76ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField76ActionPerformed
+
+    private void jTextField80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField80ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField80ActionPerformed
+
+    private void jTextField79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField79ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField79ActionPerformed
+
+    private void jTextField77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField77ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField77ActionPerformed
+
+    private void jTextField75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField75ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField75ActionPerformed
+
+    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
+        items_add_to_bill iii = new items_add_to_bill();
+        String billIDD = this.jLabel229.getText();
+
+        int selectedRow7b = this.jTable15.getSelectedRow();
+        if(selectedRow7b == -1){
+            JOptionPane.showMessageDialog(Warranty, "Select a Item to Warranty.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String billItemCodeh = this.jTable15.getModel().getValueAt(selectedRow7b, 0).toString();
+            String strItemCode = this.jTable15.getModel().getValueAt(selectedRow7b, 1).toString();
+            String qyyt = this.jTable15.getModel().getValueAt(selectedRow7b, 4).toString();
+            String r_pprice = this.jTable15.getModel().getValueAt(selectedRow7b, 7).toString();
+            int INTqty = Integer.parseInt(qyyt);
+            String aaa = iii.checkSNAvailability(billItemCodeh);
+            if(aaa.equals("")){
+                JOptionPane.showMessageDialog(Warranty, "Cannot Warranty nun serial items.!","Error",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                items_add_to_bill jiu87ds = new items_add_to_bill();
+                int selectedRow321123ds = this.jTable15.getSelectedRow();
+
+                if(selectedRow321123ds == -1){
+                    JOptionPane.showMessageDialog(Warranty, "Select a Serial Number to warranty.!","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    this.edit_edit_billed_Items2.setSize(340,300);
+                    this.edit_edit_billed_Items2.setTitle("Warranty ");
+                    this.edit_edit_billed_Items2.setLocationRelativeTo(this);
+                    this.edit_edit_billed_Items2.setVisible(true);
+
+                    String ProductItmCoded = this.jTable15.getModel().getValueAt(selectedRow321123ds, 0).toString();
+
+                    ResultSet jjuyyf = jiu87ds.getSubItemDataFromBill(ProductItmCoded);
+                    this.jTable39.setModel(DbUtils.resultSetToTableModel(jjuyyf));
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton57ActionPerformed
+
+    private void jTextField74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField74ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField74ActionPerformed
+
+    private void jTextField73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField73ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField73ActionPerformed
+
+    private void jTextField72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField72ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField72ActionPerformed
+
+    private void jTextField71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField71ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField71ActionPerformed
+
+    private void jTable15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable15MousePressed
+        int selectedRow1 = this.jTable15.getSelectedRow();
+
+        String itmCorde = this.jTable15.getModel().getValueAt(selectedRow1, 1).toString();
+        String itmDiscrip = this.jTable15.getModel().getValueAt(selectedRow1, 2).toString();
+        int QQTy = (int)jTable15.getValueAt(selectedRow1, 4);
+        String Warranty = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 3).toString());
+        String r_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 5).toString());
+        //String w_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 4).toString());
+        //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
+
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+
+        this.jTextField75.setText(itmCorde);
+        this.jTextArea6.setText(itmDiscrip);
+        this.jTextField79.setText(Integer.toString(QQTy));
+        //this.jTextField103.setText(Integer.toString(QQTy));
+        this.jTextField77.setText(r_price);
+        this.jTextField80.setText(Warranty);
+    }//GEN-LAST:event_jTable15MousePressed
+
+    private void jButton119ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton119ActionPerformed
+        cashBalancing lloof = new cashBalancing();
+        int selectedRow9456dg = this.jTable16.getSelectedRow();
+
+        if(selectedRow9456dg == -1){
+            JOptionPane.showMessageDialog(Warranty, "Select a Claimed Warranty to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+
+            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure.! You want to delete this Claimed warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if(userSelection == 0){
+
+                String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456dg, 0).toString();
+                String warrantyNote = this.jTable16.getModel().getValueAt(selectedRow9456dg, 1).toString();
+                String itemSireal = this.jTable16.getModel().getValueAt(selectedRow9456dg, 6).toString();
+                String claimStatus = this.jTable16.getModel().getValueAt(selectedRow9456dg, 7).toString();
+                String claimedItemSireal = this.jTable16.getModel().getValueAt(selectedRow9456dg, 8).toString();
+                String invoID = this.jTable16.getModel().getValueAt(selectedRow9456dg, 5).toString();
+                
+                String warrantyClaimedNote = lloof.getWarrantyClaimDiscription(warrantyItemCode);
+                
+                if(claimStatus.equals("yes")){
+                    if(itemSireal.equals("Claimed by same item")){
+                        String newWarrantyNote = warrantyNote.replaceAll(warrantyClaimedNote, "");
+                        System.out.println(newWarrantyNote);
+                        try {
+                            String queryyydd = "update warranty set claimedSerial=?, notee=?, claim=? where wCode = ?";
+                            PreparedStatement pstlufd = conn.prepareStatement(queryyydd);
+
+                            pstlufd.setString(1, "");
+                            pstlufd.setString(2, newWarrantyNote);
+                            pstlufd.setString(3, "no");
+                            pstlufd.setString(4, warrantyItemCode);
+                            pstlufd.executeUpdate();
+
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                        
+                        lloof.deleteClaimedWarranty(warrantyItemCode);
+                        
+                        String FullNoted = getAllWarrantyNotices(invoID);
+                        updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
+                        
+                        String kkG = updateInvoiceDiscription(invoID);
+
+                        if(kkG==null){
+
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    }
+                    else{
+                        String newWarrantyNote = warrantyNote.replaceAll(warrantyClaimedNote, "");
+                        System.out.println(newWarrantyNote);
+                        try {
+                            String queryyydd = "update warranty set claimedSerial=?, notee=?, claim=? where wCode = ?";
+                            PreparedStatement pstlufd = conn.prepareStatement(queryyydd);
+
+                            pstlufd.setString(1, "");
+                            pstlufd.setString(2, newWarrantyNote);
+                            pstlufd.setString(3, "no");
+                            pstlufd.setString(4, warrantyItemCode);
+                            pstlufd.executeUpdate();
+
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                        
+                        try {
+                            String queryyy = "update sub_items set inStock=? where sn = ?";
+                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                            pstlu.setString(1, "yes");
+                            pstlu.setString(2, claimedItemSireal);
+                            pstlu.executeUpdate();
+
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        String itmCode = lloof.getItemCodeBySn(claimedItemSireal);
+
+                        try {
+                            String query = "update items set qty = qty+ ? where itm_code = ?";
+                            PreparedStatement pst = conn.prepareStatement(query);
+
+                            pst.setInt(1, 1);
+                            pst.setString(2, itmCode);
+                            pst.executeUpdate();
+
+                        } catch(SQLException ex){
+                            ex.printStackTrace();
+                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        lloof.deleteClaimedWarranty(warrantyItemCode);
+                        
+                        String FullNoted = getAllWarrantyNotices(invoID);
+                        updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
+                        
+                        String kkG = updateInvoiceDiscription(invoID);
+
+                        if(kkG==null){
+                            ResultSet rs99d = lloof.getAllNonClaimedWarranties();
+                            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99d));
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+                            
+                            
+                        } 
+                    }      
+                }
+                else{
+                    JOptionPane.showMessageDialog(Warranty, "You can only delete Claimed Warrantys.!","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                //iii1.deleteAddedBillItems(billItemCode);
+
+                
+            }
+        }
+    }//GEN-LAST:event_jButton119ActionPerformed
     
     public void showPanels(){
         setColor(btn_search);
@@ -19734,6 +19951,7 @@ public static void main(String args[]) {
     javax.swing.JButton jButton116;
     javax.swing.JButton jButton117;
     javax.swing.JButton jButton118;
+    javax.swing.JButton jButton119;
     javax.swing.JButton jButton12;
     javax.swing.JButton jButton13;
     javax.swing.JButton jButton14;
@@ -19788,7 +20006,6 @@ public static void main(String args[]) {
     javax.swing.JButton jButton60;
     javax.swing.JButton jButton61;
     javax.swing.JButton jButton62;
-    javax.swing.JButton jButton63;
     javax.swing.JButton jButton64;
     javax.swing.JButton jButton65;
     javax.swing.JButton jButton66;

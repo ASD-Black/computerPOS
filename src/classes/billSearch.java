@@ -318,6 +318,24 @@ public class billSearch {
         return billID;
     }
     
+    public String getBillTypeByBillID(String ID){  
+        String invoType = null;
+        String id = null;
+        id = ID;
+        try{
+            Statement stmnt = conn.createStatement();
+            ResultSet rss1 = stmnt.executeQuery("select invoiceType from bill where bill_id='"+id+"'");
+            while(rss1.next()){
+                invoType = rss1.getString("invoiceType");    
+            }
+            return invoType;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
     public double getadvancedAmt(String invoID){
         double amt = 0;
         String id = null;

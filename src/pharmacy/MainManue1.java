@@ -13525,7 +13525,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
         items_add_to_bill hgh = new items_add_to_bill();
-        
+        cashBalancing fff = new cashBalancing();
         int selectedRow = this.jTable4.getSelectedRow();
         if(selectedRow == -1){
             JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Return items!","Error",JOptionPane.ERROR_MESSAGE);
@@ -13557,14 +13557,9 @@ public class MainManue1 extends javax.swing.JFrame {
             
             ResultSet rs = hgh.getAddedItemsBy_bill_ID(invoID);
             this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
-//            this.jTextField97.setText("");
-//            this.jTextArea10.setText("");
-//            this.jTextField98.setText("");
-//            this.jTextField99.setText("");
-//            this.jTextField100.setText("");
-//            this.jTextField101.setText("");
-//            this.jTextField102.setText("");
-//            this.jTextField110.setText("");
+            
+            ResultSet rs99dgf = fff.getAllReturnItemsByInvoice(invoID);
+            this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgf));
         }    
         
         
@@ -19872,7 +19867,127 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable41MousePressed
 
     private void jButton120ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton120ActionPerformed
-        // TODO add your handling code here:
+        items_add_to_bill hghhf = new items_add_to_bill();
+        searchItems dddd = new searchItems();
+        cashBalancing ggg1 = new cashBalancing();
+        String billIdd = this.jLabel179.getText();
+        
+        
+        
+        int selectedRow011w = this.jTable41.getSelectedRow();
+        int selectedRow21w = this.jTable17.getSelectedRow();
+        
+        if(selectedRow011w == -1){
+            JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Pleace select an Serial to Return.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();   
+            String itemCodeee = this.jTable17.getModel().getValueAt(selectedRow21w, 1).toString();
+            String serial = this.jTable41.getModel().getValueAt(selectedRow011w, 1).toString();
+            
+            String wCode = ggg1.checkSNAvailabilityInWarranty(serial);
+            
+            if(wCode.equals("")){
+                Date d = new Date();
+                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                String day = sdf1.format(d);
+
+                String itemName = dddd.getItemNameByItemCode(itemCodeee);
+
+
+                double rAmount = 0;
+                int r_qty = 1;
+                String notee = "SN- ".concat(serial).concat(" of ").concat(itemName).concat(" item Returned.");
+
+
+    //            int WarrantyMonths = parseInt(this.jTextField80.getText());
+    //            String claim = "no";
+    //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
+
+                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee,itemName, r_qty, billIdd, day, serial,notee, edit_edit_billed_Items3);
+
+                if(!isItOkay.equals(null)){
+
+                    try {
+                        String queryyy = "update bill_sub_items set snn=CONCAT( snn, ?) where snn = ?";
+                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                        pstlu.setString(1, "(R)");
+                        pstlu.setString(2, serial);
+                        pstlu.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    try {
+                        String query = "update bill_items set item_name = ? where bill_item_id = ?";
+                        PreparedStatement pstd = conn.prepareStatement(query);
+
+                        String billedSN = getBillItemSN(billItemCode);
+                        System.out.println(billedSN);
+                        String newName = itemName.concat(" - ").concat(billedSN);
+
+                        pstd.setString(1, newName);
+                        pstd.setString(2, billItemCode);
+                        pstd.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    try {
+                        String queryyy = "update sub_items set inStock=? where sn = ?";
+                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                        pstlu.setString(1, "yes");
+                        pstlu.setString(2, serial);
+                        pstlu.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    String itmCode = ggg1.getItemCodeBySn(serial);
+
+                    try {
+                        String query = "update items set qty = qty+ ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, 1);
+                        pst.setString(2, itmCode);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    String FullNote = getAllWarrantyNotices(billIdd); 
+                    updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
+
+                    //update main bill discription
+
+                    updateInvoiceDiscription(billIdd);
+
+                    String hhhd = ggg1.getInvoiceDis(billIdd);
+
+                    this.jTextArea8.setText(hhhd);
+
+                    ResultSet rs99dg = ggg1.getAllReturnItemsByInvoice(billIdd);
+                    this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dg));
+
+                    JOptionPane.showMessageDialog(returnItms, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
+                } 
+            }
+            else{
+                JOptionPane.showMessageDialog(edit_edit_billed_Items3, "This Item allready in Warranty.!","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        ResultSet rs99 = ggg1.getAllNonClaimedWarranties();
+        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton120ActionPerformed
 
     private void jButton121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton121ActionPerformed

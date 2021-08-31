@@ -222,9 +222,9 @@ public class cashBalancing {
         }
     }
     
-    public String addReturnedItems(double returnAmt, String itemCodee, int r_qty, String bill_id, String bill_item_id, String date, String time, Component comp){
+    public String addReturnedItems(double returnAmt, String itemCodee, String itemName, int r_qty, String bill_id, String date, String SNN, String note, Component comp){
         try{
-            String SQLLL1= "insert into returneditmlist(returnCode, returnAmt, itemCodee, r_qty, bill_id, bill_item_id, datee, time) values(?,?,?,?,?,?,?,?)";
+            String SQLLL1= "insert into returneditmlist(returnCode, returnAmt, itemCodee, r_qty, bill_id, datee, SNn,notee, itemName) values(?,?,?,?,?,?,?,?,?)";
             
             String returnItemCode = generateReturnItemsCode(comp);
             //System.out.println(itemCode);
@@ -237,9 +237,10 @@ public class cashBalancing {
             //System.out.println("6");
             pstdr.setInt(4, r_qty);
             pstdr.setString(5, bill_id);
-            pstdr.setString(6, bill_item_id);
-            pstdr.setString(7, date);
-            pstdr.setString(8, time);
+            pstdr.setString(6, date);
+            pstdr.setString(7, SNN);
+            pstdr.setString(8, note);
+            pstdr.setString(9, itemName);
 
             pstdr.execute();
             increaseNoOfReturnItemsCodeByOne();
@@ -607,6 +608,20 @@ public class cashBalancing {
            return null;
        }
     }
+    public ResultSet getAllReturnItemsByInvoice(String invoID){
+       String id = null;
+
+       String sql22 = "select returnCode as 'Return ID', itemCodee as 'Product Code',itemName as 'Product', r_qty as 'QTY', bill_id as 'Invoice No', datee as 'Returned Date', SNn as 'Serial' from returneditmlist where bill_id='"+invoID+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsl = stmnt.executeQuery(sql22);
+           return rsl;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
     
     public ResultSet getAllNonClaimedWarrantiesByInvoice(String invoID){
        String id = null;
@@ -617,6 +632,23 @@ public class cashBalancing {
            Statement stmnt = conn.createStatement();
            ResultSet rsl = stmnt.executeQuery(sql22);
            return rsl;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String checkSNAvailabilityInWarranty(String snn){
+       String qqttyy = "";
+       String sql3456 = "select wCode from warranty where serialNum='"+snn+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagg = stmnt.executeQuery(sql3456);
+           while(rsagg.next()){
+                qqttyy = rsagg.getString("wCode");  
+            }
+           return qqttyy;
        }
        catch(Exception e){
            return null;

@@ -2287,11 +2287,6 @@
                                               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                               <Component id="jTextField96" min="-2" pref="141" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel191" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="jTextField97" min="-2" pref="141" max="-2" attributes="0"/>
-                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2318,11 +2313,6 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jScrollPane30" min="-2" pref="223" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel191" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField97" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel190" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField96" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
@@ -2881,19 +2871,7 @@
             <Component class="javax.swing.JTextField" name="jTextField96">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField96ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel191">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Total Item Value (Rs) : "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField97">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField97ActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField96KeyPressed"/>
               </Events>
             </Component>
           </SubComponents>

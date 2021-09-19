@@ -17,6 +17,7 @@ import classes.hr;
 import classes.barcode;
 import classes.cashBalancing;
 import classes.quotation;
+import classes.returnItem;
 import classes.typesHandler;
 import classes.userController;
 import classes.userLogin;
@@ -142,175 +143,6 @@ public class MainManue1 extends javax.swing.JFrame {
     private void initComponents() {
 
         subInitComp();
-
-        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel317.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
-        jPanel63.setLayout(jPanel63Layout);
-        jPanel63Layout.setHorizontalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel317)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel63Layout.setVerticalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel317)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
-        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
-        adminLogin_item_deleteLayout.setHorizontalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_deleteLayout.setVerticalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_delete_sn.setAlwaysOnTop(true);
-
-        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton117.setBackground(new java.awt.Color(255, 255, 255));
-        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton117.setForeground(new java.awt.Color(102, 102, 102));
-        jButton117.setText("Okay");
-        jButton117.setBorder(null);
-        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton117.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton117ActionPerformed(evt);
-            }
-        });
-
-        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField148KeyPressed(evt);
-            }
-        });
-
-        jLabel318.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel318.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel318.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel64Layout = new org.jdesktop.layout.GroupLayout(jPanel64);
-        jPanel64.setLayout(jPanel64Layout);
-        jPanel64Layout.setHorizontalGroup(
-            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel318)
-                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel64Layout.setVerticalGroup(
-            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel318)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_delete_snLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete_sn.getContentPane());
-        adminLogin_item_delete_sn.getContentPane().setLayout(adminLogin_item_delete_snLayout);
-        adminLogin_item_delete_snLayout.setHorizontalGroup(
-            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_delete_snLayout.setVerticalGroup(
-            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        edit_edit_billed_Items2.setAlwaysOnTop(true);
-
-        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable39.setAutoCreateRowSorter(true);
-        jTable39.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable39.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"C000001", "Chamara", "Hettipola"},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Customa ID", "Name", "City"
-            }
-        ));
-        jTable39.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable39.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable39.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable39MousePressed(evt);
-            }
-        });
-        jScrollPane61.setViewportView(jTable39);
-        if (jTable39.getColumnModel().getColumnCount() > 0) {
-            jTable39.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        jButton118.setBackground(new java.awt.Color(255, 255, 255));
-        jButton118.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton118.setText("Warranty");
-        jButton118.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jButton118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton118.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton118ActionPerformed(evt);
-            }
-        });
 
         org.jdesktop.layout.GroupLayout jPanel65Layout = new org.jdesktop.layout.GroupLayout(jPanel65);
         jPanel65.setLayout(jPanel65Layout);
@@ -5495,8 +5327,6 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel187 = new javax.swing.JLabel();
         jLabel190 = new javax.swing.JLabel();
         jTextField96 = new javax.swing.JTextField();
-        jLabel191 = new javax.swing.JLabel();
-        jTextField97 = new javax.swing.JTextField();
         billSubmition = new javax.swing.JDialog();
         jPanel24 = new javax.swing.JPanel();
         jComboBox8 = new javax.swing.JComboBox<>();
@@ -7696,13 +7526,9 @@ public class MainManue1 extends javax.swing.JFrame {
                 jTextField96ActionPerformed(evt);
             }
         });
-
-        jLabel191.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel191.setText("Total Item Value (Rs) : ");
-
-        jTextField97.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField97ActionPerformed(evt);
+        jTextField96.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField96KeyPressed(evt);
             }
         });
 
@@ -7731,11 +7557,7 @@ public class MainManue1 extends javax.swing.JFrame {
                                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel35Layout.createSequentialGroup()
                                         .add(jLabel190)
                                         .add(12, 12, 12)
-                                        .add(jTextField96, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel35Layout.createSequentialGroup()
-                                        .add(jLabel191)
-                                        .add(12, 12, 12)
-                                        .add(jTextField97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))))
+                                        .add(jTextField96, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))))
                     .add(jPanel38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(0, 8, Short.MAX_VALUE))
             .add(jPanel35Layout.createSequentialGroup()
@@ -7754,10 +7576,6 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(jPanel35Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jScrollPane30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 223, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jPanel35Layout.createSequentialGroup()
-                        .add(jPanel35Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel191)
-                            .add(jTextField97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
                         .add(jPanel35Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel190)
                             .add(jTextField96, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -10360,6 +10178,175 @@ public class MainManue1 extends javax.swing.JFrame {
         jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField147KeyPressed(evt);
+            }
+        });
+
+        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel317.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
+        jPanel63.setLayout(jPanel63Layout);
+        jPanel63Layout.setHorizontalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel317)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel63Layout.setVerticalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel317)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
+        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
+        adminLogin_item_deleteLayout.setHorizontalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_deleteLayout.setVerticalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_delete_sn.setAlwaysOnTop(true);
+
+        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton117.setBackground(new java.awt.Color(255, 255, 255));
+        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton117.setForeground(new java.awt.Color(102, 102, 102));
+        jButton117.setText("Okay");
+        jButton117.setBorder(null);
+        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton117.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton117ActionPerformed(evt);
+            }
+        });
+
+        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField148KeyPressed(evt);
+            }
+        });
+
+        jLabel318.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel318.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel318.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel64Layout = new org.jdesktop.layout.GroupLayout(jPanel64);
+        jPanel64.setLayout(jPanel64Layout);
+        jPanel64Layout.setHorizontalGroup(
+            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel318)
+                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel64Layout.setVerticalGroup(
+            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel318)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_delete_snLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete_sn.getContentPane());
+        adminLogin_item_delete_sn.getContentPane().setLayout(adminLogin_item_delete_snLayout);
+        adminLogin_item_delete_snLayout.setHorizontalGroup(
+            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_delete_snLayout.setVerticalGroup(
+            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        edit_edit_billed_Items2.setAlwaysOnTop(true);
+
+        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable39.setAutoCreateRowSorter(true);
+        jTable39.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable39.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"C000001", "Chamara", "Hettipola"},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Customa ID", "Name", "City"
+            }
+        ));
+        jTable39.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable39.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable39MousePressed(evt);
+            }
+        });
+        jScrollPane61.setViewportView(jTable39);
+        if (jTable39.getColumnModel().getColumnCount() > 0) {
+            jTable39.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jButton118.setBackground(new java.awt.Color(255, 255, 255));
+        jButton118.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jButton118.setText("Warranty");
+        jButton118.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jButton118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton118.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton118ActionPerformed(evt);
             }
         });
 	}
@@ -13542,7 +13529,7 @@ public class MainManue1 extends javax.swing.JFrame {
             //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
             String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
             String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+            String invoType = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
             
             
             this.jLabel179.setText(invoID);
@@ -13551,7 +13538,9 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField87.setText(total);
             this.jTextField90.setText(netAmt);
             this.jTextArea8.setText(billDiscrip);
-            //this.jLabel179.setText(invoID);
+            this.jLabel186.setText(invoType);
+            this.jTextField96.setText("");
+            this.jTextField93.setText("");
             
             
             
@@ -13770,9 +13759,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable17MousePressed
         int selectedRow1 = this.jTable17.getSelectedRow();
+        returnItem hhtt = new returnItem();
         
         String itmCorde = this.jTable17.getModel().getValueAt(selectedRow1, 1).toString();
-        String itmDiscrip = this.jTable17.getModel().getValueAt(selectedRow1, 2).toString();
+        String billItmCorde = this.jTable17.getModel().getValueAt(selectedRow1, 0).toString();
+        //String itmDiscrip = this.jTable17.getModel().getValueAt(selectedRow1, 2).toString();
         int QQTy = (int)jTable17.getValueAt(selectedRow1, 4);
             String Warranty = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 3).toString());
             String r_price = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 5).toString());
@@ -13781,6 +13772,7 @@ public class MainManue1 extends javax.swing.JFrame {
             
             //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
             
+            String  itmDiscrip = hhtt.getBillItemName(billItmCorde); 
             
             this.jTextField91.setText(itmCorde);
             this.jTextArea9.setText(itmDiscrip);
@@ -13790,100 +13782,136 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable17MousePressed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-        int selectedRow = this.jTable4.getSelectedRow();
-                    
-                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
+         
+        String billl = this.jLabel179.getText();
+        String invoTypeee = this.jLabel186.getText();
+        String netAmount = this.jTextField90.getText();
+        
+        String Ramount = this.jTextField96.getText();
+        
+        if(!Ramount.equals("")){
+            
+            double netAmt = Double.parseDouble(netAmount);
+            double RAmt = Double.parseDouble(Ramount);
+            
+            double finalBillAmt = netAmt - RAmt;
+            
+            try {
+                String queryyy = "update bill set net_amount=? where bill_id = ?";
+                PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                        if(invoTypeee.equals("Cash")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                pstlu.setDouble(1, finalBillAmt);
+                pstlu.setString(2, billl);
+                pstlu.executeUpdate();
 
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            
+            String allRetuneItems = getReturnItemsGroupByName(billl);
+        
+            String RNote = "Returned -".concat(allRetuneItems).concat(" for ").concat(Ramount).concat("/=");
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+            updateInvoiceDiscriptionForReturn(RNote, billl);
 
-                                JasperViewer.viewReport(jprint, false);
+            updateInvoiceDiscription(billl);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Cash Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
 
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+            if(invoTypeee.equals("Cash")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Credit")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                    JasperViewer.viewReport(jprint, false);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoTypeee.equals("Cash Advanced")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Credit Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                    JasperViewer.viewReport(jprint, false);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoTypeee.equals("Credit")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Cheque")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                    JasperViewer.viewReport(jprint, false);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoTypeee.equals("Credit Advanced")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        } 
-                        this.returnItms.dispose();
-                        billSearch kkk1 = new billSearch();
-                        ResultSet rs11 = kkk1.showAllPendingBillDetails();
-                        this.jTable4.setModel(DbUtils.resultSetToTableModel(rs11));
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(invoTypeee.equals("Cheque")){
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
+
+                    InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } 
+            this.returnItms.dispose();
+            billSearch kkk1 = new billSearch();
+            ResultSet rs11 = kkk1.showAllPendingBillDetails();
+            this.jTable4.setModel(DbUtils.resultSetToTableModel(rs11));
+        }
+        else{
+            JOptionPane.showMessageDialog(returnItms, "Please Enter return Amount.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+                
+        
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void txt_search_textKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_textKeyPressed
@@ -13923,7 +13951,7 @@ public class MainManue1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(returnItms, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            int userSelection = JOptionPane.showConfirmDialog(returnItms,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
             if(userSelection == 0){
                 
                 
@@ -18603,7 +18631,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
 
                 String itemID = this.tbl_items_search.getModel().getValueAt(selectedRow, 0).toString();
-                String itmCode, name, w_price, warranty, r_price, company, expDate, qty, type;
+                String itmCode, name, w_price, warranty, r_price, company, qty, type;
                 searchItems sd = new searchItems();
                 try{
                     ResultSet rs = sd.getItemDetails(itemID);
@@ -19859,7 +19887,148 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable40MousePressed
 
     private void jButton114ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton114ActionPerformed
-        // TODO add your handling code here:
+        items_add_to_bill hghhf = new items_add_to_bill();
+        searchItems dddd = new searchItems();
+        cashBalancing ggg1 = new cashBalancing();
+        String billIdd = this.jLabel179.getText();
+        returnItem jjuu = new returnItem();
+        
+        int selectedRow011wf = this.jTable40.getSelectedRow();
+        
+        if(selectedRow011wf == -1){
+            JOptionPane.showMessageDialog(returnItms, "Pleace select a Return.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int userSelection = JOptionPane.showConfirmDialog(returnItms,"Are you sure to delete this Item from return?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if(userSelection == 0){
+                String rcode = this.jTable40.getModel().getValueAt(selectedRow011wf, 0).toString();
+                String serial = this.jTable40.getModel().getValueAt(selectedRow011wf, 6).toString();
+                String itemCode = this.jTable40.getModel().getValueAt(selectedRow011wf, 1).toString();
+                String itemName = this.jTable40.getModel().getValueAt(selectedRow011wf, 2).toString();
+                String Rqty = this.jTable40.getModel().getValueAt(selectedRow011wf, 3).toString();
+
+                if(serial.equals("Non-Serial")){
+                    // update item stock qty
+                    System.out.println("ddddddddddddddddddddd");
+                    int r_qty = Integer.parseInt(Rqty);
+                    try {
+                        String query = "update items set qty = qty- ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, r_qty);
+                        pst.setString(2, itemCode);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // update bill item name
+                    try {
+                        String query = "update bill_items set item_name = ? where bill_id = ? and item_code=?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setString(1, itemName);
+                        pst.setString(2, billIdd);
+                        pst.setString(3, itemCode);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // delete from return table
+                    boolean isOkay = jjuu.deleteReturnItems(rcode);
+                    if(isOkay){
+                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!","Return Details", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        ResultSet rs99dgf = ggg1.getAllReturnItemsByInvoice(billIdd);
+                        this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgf));
+                        
+                        ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
+                        this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
+                        
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                else{
+                    // update item stock qty
+                    try {
+                        String query = "update items set qty = qty- ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, 1);
+                        pst.setString(2, itemCode);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // update sub item table with no status
+                    try {
+                        String queryyy = "update sub_items set inStock=? where sn = ?";
+                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                        pstlu.setString(1, "no");
+                        pstlu.setString(2, serial);
+                        pstlu.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // update bill sub item table (remove R  )
+                    String rSerial = serial.concat("(R)");
+                    try {
+                        String query = "update bill_sub_items set snn = ? where snn = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setString(1, serial);
+                        pst.setString(2, rSerial);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // update bill item name
+                    String billItemId = jjuu.getBillItemIDBySN(serial);
+                    try {
+                        String query = "update bill_items set item_name = ? where bill_item_id = ?";
+                        PreparedStatement pstd = conn.prepareStatement(query);
+
+                        String billedSN = getBillItemSN(billItemId);
+                        String newName = itemName.concat(" - ").concat(billedSN);
+
+                        pstd.setString(1, newName);
+                        pstd.setString(2, billItemId);
+                        pstd.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    // delete from return table
+                    boolean isOkayc = jjuu.deleteReturnItems(rcode);
+                    if(isOkayc){
+                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!","Return Details", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        ResultSet rs99dgfc = ggg1.getAllReturnItemsByInvoice(billIdd);
+                        this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgfc));
+                        
+                        ResultSet rsc = hghhf.getAddedItemsBy_bill_ID(billIdd);
+                        this.jTable17.setModel(DbUtils.resultSetToTableModel(rsc));
+                        
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButton114ActionPerformed
 
     private void jTable41MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable41MousePressed
@@ -19870,6 +20039,8 @@ public class MainManue1 extends javax.swing.JFrame {
         items_add_to_bill hghhf = new items_add_to_bill();
         searchItems dddd = new searchItems();
         cashBalancing ggg1 = new cashBalancing();
+        returnItem jjkkii = new returnItem();
+                
         String billIdd = this.jLabel179.getText();
         
         
@@ -19920,6 +20091,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    
                     try {
                         String query = "update bill_items set item_name = ? where bill_item_id = ?";
                         PreparedStatement pstd = conn.prepareStatement(query);
@@ -19964,21 +20136,29 @@ public class MainManue1 extends javax.swing.JFrame {
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                    String FullNote = getAllWarrantyNotices(billIdd); 
-                    updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
-
-                    //update main bill discription
-
-                    updateInvoiceDiscription(billIdd);
-
-                    String hhhd = ggg1.getInvoiceDis(billIdd);
-
-                    this.jTextArea8.setText(hhhd);
+//                    String FullNote = getAllWarrantyNotices(billIdd); 
+//                    updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
+//
+//                    //update main bill discription
+//
+//                    updateInvoiceDiscription(billIdd);
+//
+//                    String hhhd = ggg1.getInvoiceDis(billIdd);
+//
+//                    this.jTextArea8.setText(hhhd);
 
                     ResultSet rs99dg = ggg1.getAllReturnItemsByInvoice(billIdd);
                     this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dg));
+                    
+                    String  itmDiscrip = jjkkii.getBillItemName(billItemCode);
+                    this.jTextArea9.setText(itmDiscrip);
+//                    ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
+//                    this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
+                    
+                    ResultSet jjuyyfaf = hghhf.getSubItemDataFromBill(billItemCode);
+                    this.jTable41.setModel(DbUtils.resultSetToTableModel(jjuyyfaf));
 
-                    JOptionPane.showMessageDialog(returnItms, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
                 } 
             }
             else{
@@ -19991,7 +20171,107 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton120ActionPerformed
 
     private void jButton121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton121ActionPerformed
-        // TODO add your handling code here:
+        items_add_to_bill hghhf = new items_add_to_bill();
+        searchItems dddd = new searchItems();
+        cashBalancing ggg1 = new cashBalancing();
+        returnItem jjkkiid = new returnItem();
+        
+        String billIdd = this.jLabel179.getText();
+        
+        String itmQtyString = this.jTextField149.getText();
+        
+        
+        int selectedRow21w = this.jTable17.getSelectedRow();
+        
+        if(selectedRow21w == -1){
+            JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Select item to Return.!","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();   
+            String itemCodeee = this.jTable17.getModel().getValueAt(selectedRow21w, 1).toString();
+            String itemnameeeee = this.jTable17.getModel().getValueAt(selectedRow21w, 2).toString();
+            
+            
+            if(itmQtyString.equals("")){
+                JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Enter the Return Quantity.!","Error",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                
+                Date d = new Date();
+                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                String day = sdf1.format(d);
+
+                String itemName = dddd.getItemNameByItemCode(itemCodeee);
+
+
+                double rAmount = 0;
+                int r_qty = Integer.parseInt(itmQtyString);
+                String notee = "Item- ".concat(itemName).concat(" Returned. QTY- ").concat(itmQtyString);    
+
+
+    //            int WarrantyMonths = parseInt(this.jTextField80.getText());
+    //            String claim = "no";
+    //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
+
+                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee,itemName, r_qty, billIdd, day, "Non-Serial",notee, edit_edit_billed_Items3);
+
+                if(!isItOkay.equals(null)){
+
+                    try {
+                        String query = "update bill_items set item_name = ? where bill_item_id = ?";
+                        PreparedStatement pstd = conn.prepareStatement(query);
+
+                        
+                        String newName = itemnameeeee.concat("(R)- ").concat(itmQtyString);
+
+                        pstd.setString(1, newName);
+                        pstd.setString(2, billItemCode);
+                        pstd.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    try {
+                        String query = "update items set qty = qty+ ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, r_qty);
+                        pst.setString(2, itemCodeee);
+                        pst.executeUpdate();
+
+                    } catch(SQLException ex){
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+//                    String FullNote = getAllWarrantyNotices(billIdd); 
+//                    updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
+//
+//                    //update main bill discription
+//
+//                    updateInvoiceDiscription(billIdd);
+//
+//                    String hhhd = ggg1.getInvoiceDis(billIdd);
+//
+//                    this.jTextArea8.setText(hhhd);
+
+                    ResultSet rs99dg = ggg1.getAllReturnItemsByInvoice(billIdd);
+                    this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dg));
+                    
+                    String  itmDiscrip = jjkkiid.getBillItemName(billItemCode);
+                    this.jTextArea9.setText(itmDiscrip);
+//                    ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
+//                    this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
+
+                    JOptionPane.showMessageDialog(returnItms, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
+                } 
+            }             
+        }
+           
+        ResultSet rs99 = ggg1.getAllNonClaimedWarranties();
+        this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton121ActionPerformed
 
     private void jTextField149ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField149ActionPerformed
@@ -20006,9 +20286,23 @@ public class MainManue1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField96ActionPerformed
 
-    private void jTextField97ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField97ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField97ActionPerformed
+    private void jTextField96KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField96KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            String netAmount = this.jTextField90.getText();
+        
+            String Ramount = this.jTextField96.getText();
+
+            if(!Ramount.equals("")){
+
+                double netAmt = Double.parseDouble(netAmount);
+                double RAmt = Double.parseDouble(Ramount);
+
+                double finalBillAmt = netAmt - RAmt;
+                
+                this.jTextField93.setText(String.valueOf(finalBillAmt));
+            }
+        }
+    }//GEN-LAST:event_jTextField96KeyPressed
     
     public void showPanels(){
         setColor(btn_search);
@@ -20430,7 +20724,6 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel189;
     javax.swing.JLabel jLabel19;
     javax.swing.JLabel jLabel190;
-    javax.swing.JLabel jLabel191;
     javax.swing.JLabel jLabel195;
     javax.swing.JLabel jLabel196;
     javax.swing.JLabel jLabel199;
@@ -20940,7 +21233,6 @@ public static void main(String args[]) {
     javax.swing.JTextField jTextField94;
     javax.swing.JTextField jTextField95;
     javax.swing.JTextField jTextField96;
-    javax.swing.JTextField jTextField97;
     javax.swing.JLabel lbl_main_date;
     javax.swing.JLabel lbl_main_time;
     javax.swing.JPanel manueExit;
@@ -21190,7 +21482,59 @@ public static void main(String args[]) {
         return sb;
     }
     
+    public String getReturnItemsGroupByName(String billItemID){
+        
+        String sb = "";
+        ArrayList<String> SNlist=new ArrayList<>();
+        String id = null;
+        id = billItemID;
+        try{
+            Statement stmnt5d = conn.createStatement();
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT itemName FROM returneditmlist WHERE bill_id = '"+id+"' GROUP BY itemName");
+
+            while(rsfs.next()){
+                SNlist.add(rsfs.getString("itemName"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        for (String s : SNlist)
+        {
+            sb += s + ", ";
+        }
+
+        return sb;
+    }
+    
     public String getAllWarrantyNotices(String billID){
+        
+        String sb = "";
+        ArrayList<String> NoteList=new ArrayList<>();
+        String id = null;
+        id = billID;
+        try{
+            Statement stmnt5d = conn.createStatement();
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT notee FROM warranty where invoID='"+id+"'");
+            while(rsfs.next()){
+                NoteList.add(rsfs.getString("notee"));
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(NoteList.size());
+        
+        for (String s : NoteList)
+        {
+            sb += s + "\n";
+        }
+
+        return sb;
+    }
+     
+    public String getAllReturnNotices(String billID){
         
         String sb = "";
         ArrayList<String> NoteList=new ArrayList<>();

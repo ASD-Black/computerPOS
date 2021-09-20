@@ -6351,11 +6351,12 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jPanel4Layout.createSequentialGroup()
                         .add(jPanel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
-                        .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(txt_search_bill_itm1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txt_search_bill_itm2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 17, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                .add(txt_search_bill_itm1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(txt_search_bill_itm2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jLabel36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 17, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .add(66, 66, 66)
                         .add(jButton12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jPanel4Layout.createSequentialGroup()
@@ -6375,7 +6376,7 @@ public class MainManue1 extends javax.swing.JFrame {
         );
         itemsAdderLayout.setVerticalGroup(
             itemsAdderLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
+            .add(jPanel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 406, Short.MAX_VALUE)
         );
 
         serviceAdder.setAlwaysOnTop(true);
@@ -10874,163 +10875,82 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.txt_search_bill_itm.requestFocusInWindow();
             }
             else{
-                String itmCode ="";
-                String name="";
-                String warranty="";
-                String w_price="";
-                String r_price=this.txt_search_bill_itm2.getText();
-                String type="";
-
-                Date d = new Date();
-                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                String date = sdf1.format(d); 
-
-                int qty,free,dis;
-                try{
-                    ResultSet rsg = jjkkii.getItemDetails(selectedSN);
-                    while(rsg.next()){
-                        itmCode = rsg.getString("itm_code");
-                        name = rsg.getString("itm_name");
-                        warranty = rsg.getString("warranty");   
-                        w_price = rsg.getString("w_price");
-                        //r_price = rsg.getString("r_price");
-                        type = rsg.getString("type");              
-                    }
-                qty = 1;
-                free = 0;
-                dis = 0;
-                int wwarranty = Integer.parseInt(warranty);
-                double ww_price = Double.parseDouble(w_price);
-                double rr_price = Double.parseDouble(r_price);
-                String cashBalID = "no";
-                String billID = jjkkii.generateBill_id(this);
-                double valu = calculateBillItemValue(qty,rr_price);
-                double costValue = calculateBillItemCostValue(qty,ww_price);
-
-                String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
-
-                if(billItemCode != null){
-                    jjkkii.addBillSubItems(selectedSN, billItemCode, itemsAdder);
-                    try {
-                        String queryyy = "update sub_items set inStock=? where sn = ?";
-                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
-
-                        pstlu.setString(1, "no");
-                        pstlu.setString(2, selectedSN);
-                        pstlu.executeUpdate();
-
-                     } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                     }
+                String rppp = this.txt_search_bill_itm2.getText();
+                if(rppp.equals("")){
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                }
-                catch(Exception e){
-                    //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
-                }
+                    String itmCode ="";
+                    String name="";
+                    String warranty="";
+                    String w_price="";
+                    String r_price=this.txt_search_bill_itm2.getText();
+                    String type="";
 
-                ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
-                this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+                    Date d = new Date();
+                    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                    String date = sdf1.format(d); 
 
-                double calculatedValue = jjkkii.calculateTotal(NextBillid);
-                this.jTextField7.setText(String.valueOf(calculatedValue));
-                
-                this.txt_search_bill_itm.setText("");
-                this.txt_search_bill_itm.requestFocusInWindow();
+                    int qty,free,dis;
+                    try{
+                        ResultSet rsg = jjkkii.getItemDetails(selectedSN);
+                        while(rsg.next()){
+                            itmCode = rsg.getString("itm_code");
+                            name = rsg.getString("itm_name");
+                            warranty = rsg.getString("warranty");   
+                            w_price = rsg.getString("w_price");
+                            //r_price = rsg.getString("r_price");
+                            type = rsg.getString("type");              
+                        }
+                    qty = 1;
+                    free = 0;
+                    dis = 0;
+                    int wwarranty = Integer.parseInt(warranty);
+                    double ww_price = Double.parseDouble(w_price);
+                    double rr_price = Double.parseDouble(r_price);
+                    String cashBalID = "no";
+                    String billID = jjkkii.generateBill_id(this);
+                    double valu = calculateBillItemValue(qty,rr_price);
+                    double costValue = calculateBillItemCostValue(qty,ww_price);
+
+                    String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
+
+                    if(billItemCode != null){
+                        jjkkii.addBillSubItems(selectedSN, billItemCode, itemsAdder);
+                        try {
+                            String queryyy = "update sub_items set inStock=? where sn = ?";
+                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                            pstlu.setString(1, "no");
+                            pstlu.setString(2, selectedSN);
+                            pstlu.executeUpdate();
+
+                         } catch (SQLException ex) {
+                            ex.printStackTrace();
+                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                         }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                    }
+                    catch(Exception e){
+                        //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
+                    this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+
+                    double calculatedValue = jjkkii.calculateTotal(NextBillid);
+                    this.jTextField7.setText(String.valueOf(calculatedValue));
+
+                    this.txt_search_bill_itm.setText("");
+                    this.txt_search_bill_itm.requestFocusInWindow();
+                }
+  
             }
             
         }
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        items_add_to_bill aaa = new items_add_to_bill();
-//         
-//        try{
-//            String wCode = this.jTextField109.getText();
-//            String itmCode = this.jTextField15.getText();
-//            String name = this.jTextField14.getText().concat(" --").concat(wCode).concat("--");
-//            int packSize = Integer.parseInt(this.jTextField13.getText());
-//            int qty = Integer.parseInt(this.jTextField2.getText());
-//            double w_price = Double.parseDouble(this.jTextField18.getText());
-//            //double price = Double.parseDouble(this.jTextField3.getText());
-//            
-//            int free = 0;
-//            int dis = 0;
-//            
-//            double r_price = Double.parseDouble(this.jTextField17.getText());
-//            double valu = ((qty * r_price)-((qty * r_price)*dis/100));
-//            
-//            double costValue = (w_price * qty);
-//            
-//            String billID = aaa.generateBill_id(this);
-//
-//
-//            Date d = new Date();
-//            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-//            String date = sdf1.format(d); 
-//
-//            int avl_qty = Integer.parseInt(this.jTextField16.getText());
-//        
-//            if(avl_qty >= (qty+free)){
-//                String cashBalID = "no";
-//                String billItemCode = aaa.addItemsToBill(itmCode, name, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalID, this);
-//                JOptionPane.showMessageDialog(itemsAdder, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(itemsAdder, "Available quantity is not enought","Error",JOptionPane.ERROR_MESSAGE);
-//            }
-//            
-//            ResultSet rs = aaa.getAddedItemsBy_bill_ID(billID);
-//            this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
-//            
-//            double calculatedValue = aaa.calculateTotal(billID);
-//            this.jTextField7.setText(String.valueOf(calculatedValue));
-//            
-//            }      
-//        
-//        catch(Exception e){
-//                 e.printStackTrace();
-//        }
-//        
-//        this.jTextField15.setText("");
-//        this.jTextField14.setText("");
-//        this.jTextField13.setText("");
-//        this.jTextField2.setText("");
-//        this.jTextField18.setText("");
-//
-//        this.jTextField17.setText("");
-//        this.jTextField25.setText("");
-//        this.jTextField16.setText("");
-//        this.jTextField109.setText("");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -14073,8 +13993,15 @@ public class MainManue1 extends javax.swing.JFrame {
                         String name = (String)jTable3.getValueAt(i, 2);
                         
                         String billedSN = getBillItemSN(billItemId);
-                        System.out.println(billedSN);
-                        String newName = name.concat(" - ").concat(billedSN);
+
+                        String newName = "";
+                        
+                        if(!billedSN.equals("")){
+                            newName = name.concat(" - ").concat(billedSN);
+                        }
+                        else{
+                            newName = name;
+                        }
                         
                         pstd.setString(1, newName);
                         pstd.setString(2, billItemId);
@@ -15038,101 +14965,110 @@ public class MainManue1 extends javax.swing.JFrame {
                 UpdateBillPrices();
             }
             else{
-                String itmCode ="";
-                String name="";
-                String warranty="";
-                String w_price="";
-                String r_price="";
-                String type="";
-
-                 
-
-                int qty,free,dis;
-                try{
-                    ResultSet rsg = jjkkii1.getItemDetails(selectedSN);
-                    while(rsg.next()){
-                        itmCode = rsg.getString("itm_code");
-                        name = rsg.getString("itm_name");
-                        warranty = rsg.getString("warranty");   
-                        w_price = rsg.getString("w_price");
-                        r_price = rsg.getString("r_price");
-                        type = rsg.getString("type");              
-                    }
-                qty = 1;
-                free = 0;
-                dis = 0;
-                int wwarranty = Integer.parseInt(warranty);
-                double ww_price = Double.parseDouble(w_price);
-                double rr_price = Double.parseDouble(r_price);
-                String cashBalID = "no";
-                String billID = this.jLabel229.getText();
-                double valu = calculateBillItemValue(qty,rr_price);
-                double costValue = calculateBillItemCostValue(qty,ww_price);
-
-                String billItemCode = jjkkii1.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, editEnvoice);
-
-                if(billItemCode != null){
-                    jjkkii1.addBillSubItems(selectedSN, billItemCode, itemsAdder);
-                    try {
-                        String queryyy = "update sub_items set inStock=? where sn = ?";
-                        PreparedStatement pstlu = conn.prepareStatement(queryyy);
-
-                        pstlu.setString(1, "no");
-                        pstlu.setString(2, selectedSN);
-                        pstlu.executeUpdate();
-
-                     } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                     }
-                    
-                    try {
-                        String query = "update items set qty = qty- ? where itm_code = ?";
-                        PreparedStatement pst = conn.prepareStatement(query);
-
-                        pst.setInt(1, 1);
-                        pst.setString(2, SearchedItmCode);
-                        pst.executeUpdate();
-
-                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                    } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
-                    cashBalancing jju989 = new cashBalancing();
-                        
-                    String Note = ("One ").concat(itmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");        
-                    jju989.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
-                    
-                    storeItemData jukifg = new storeItemData(); 
-                    ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                    this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
-                    
-                    
+                String rppp = this.jTextField132.getText();
+                if(rppp.equals("")){
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    JOptionPane.showMessageDialog(editEnvoice, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                }
-                catch(Exception e){
-                    //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
-                }
+                    
+                    String itmCode ="";
+                    String name="";
+                    String warranty="";
+                    String w_price="";
+                    String r_price= this.jTextField132.getText();
+                    String type="";
 
-                ResultSet rs = jjkkii1.getAddedItemsBy_bill_ID(NextBillid);
-                this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
 
-                double calculatedValuee = jjkkii1.calculateTotal(NextBillid);
-                this.jTextField115.setText(String.valueOf(calculatedValuee));
-                
-                this.jTextField126.setText("");
-                this.jTextField126.requestFocusInWindow();
-                
-                double billDiss = Double.parseDouble(this.jTextField117.getText());
 
-                this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+                    int qty,free,dis;
+                    try{
+                        ResultSet rsg = jjkkii1.getItemDetails(selectedSN);
+                        while(rsg.next()){
+                            itmCode = rsg.getString("itm_code");
+                            name = rsg.getString("itm_name");
+                            warranty = rsg.getString("warranty");   
+                            w_price = rsg.getString("w_price");
+                            //r_price = rsg.getString("r_price");
+                            type = rsg.getString("type");              
+                        }
+                    qty = 1;
+                    free = 0;
+                    dis = 0;
+                    int wwarranty = Integer.parseInt(warranty);
+                    double ww_price = Double.parseDouble(w_price);
+                    double rr_price = Double.parseDouble(r_price);
+                    String cashBalID = "no";
+                    String billID = this.jLabel229.getText();
+                    double valu = calculateBillItemValue(qty,rr_price);
+                    double costValue = calculateBillItemCostValue(qty,ww_price);
+
+                    String billItemCode = jjkkii1.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, editEnvoice);
+
+                    if(billItemCode != null){
+                        jjkkii1.addBillSubItems(selectedSN, billItemCode, itemsAdder);
+                        try {
+                            String queryyy = "update sub_items set inStock=? where sn = ?";
+                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                            pstlu.setString(1, "no");
+                            pstlu.setString(2, selectedSN);
+                            pstlu.executeUpdate();
+
+                         } catch (SQLException ex) {
+                            ex.printStackTrace();
+                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                         }
+
+                        try {
+                            String query = "update items set qty = qty- ? where itm_code = ?";
+                            PreparedStatement pst = conn.prepareStatement(query);
+
+                            pst.setInt(1, 1);
+                            pst.setString(2, SearchedItmCode);
+                            pst.executeUpdate();
+
+                                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                        } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                        cashBalancing jju989 = new cashBalancing();
+
+                        String Note = ("One ").concat(itmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");        
+                        jju989.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
+
+                        storeItemData jukifg = new storeItemData(); 
+                        ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
+
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(editEnvoice, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                    }
+                    catch(Exception e){
+                        //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+
+                    ResultSet rs = jjkkii1.getAddedItemsBy_bill_ID(NextBillid);
+                    this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
+
+                    double calculatedValuee = jjkkii1.calculateTotal(NextBillid);
+                    this.jTextField115.setText(String.valueOf(calculatedValuee));
+
+                    this.jTextField126.setText("");
+                    this.jTextField126.requestFocusInWindow();
+
+                    double billDiss = Double.parseDouble(this.jTextField117.getText());
+
+                    this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+
+                    UpdateBillPrices();
+                    
+                }
                 
-                UpdateBillPrices();
             }
             
         }   
@@ -15238,8 +15174,37 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton73ActionPerformed
         items_add_to_bill hyt5 = new items_add_to_bill();
         billSearch juyy = new billSearch();
+        searchItems dddddd = new searchItems();
         
-        
+        try {
+            String query = "update bill_items set item_name = ? where bill_item_id = ?";
+            PreparedStatement pstd = conn.prepareStatement(query);
+
+                for(int i=0; i<jTable19.getRowCount(); i++){
+
+                    String billItemId = (String)jTable19.getValueAt(i, 0);
+                    String id = (String)jTable19.getValueAt(i, 1);
+                    String name = dddddd.getItemNameByItemCode(id);
+
+                    String billedSN = getBillItemSN(billItemId);
+                    
+                    String newName = "";
+                    
+                    if(!billedSN.equals("")){
+                        newName = name.concat(" - ").concat(billedSN);
+                    }
+                    else{
+                        newName = name;
+                    }
+
+                    pstd.setString(1, newName);
+                    pstd.setString(2, billItemId);
+                    pstd.executeUpdate();
+                }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         String invoIDDD = this.jLabel229.getText();
         String custt = this.jTextField116.getText();
@@ -17343,72 +17308,78 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.txt_search_bill_itm.requestFocusInWindow();
                 }
                 else{
-                    String itmCode ="";
-                    String name="";
-                    String warranty="";
-                    String w_price="";
-                    String r_price=this.txt_search_bill_itm2.getText();
-                    String type="";
-
-                    Date d = new Date();
-                    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                    String date = sdf1.format(d); 
-
-                    int qty,free,dis;
-                    try{
-                        ResultSet rsg = jjkkii.getItemDetails(selectedSN);
-                        while(rsg.next()){
-                            itmCode = rsg.getString("itm_code");
-                            name = rsg.getString("itm_name");
-                            warranty = rsg.getString("warranty");   
-                            w_price = rsg.getString("w_price");
-                            //r_price = rsg.getString("r_price");
-                            type = rsg.getString("type");              
-                        }
-                    qty = 1;
-                    free = 0;
-                    dis = 0;
-                    int wwarranty = Integer.parseInt(warranty);
-                    double ww_price = Double.parseDouble(w_price);
-                    double rr_price = Double.parseDouble(r_price);
-                    String cashBalID = "no";
-                    String billID = jjkkii.generateBill_id(this);
-                    double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);   
-
-                    String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
-
-                    if(billItemCode != null){
-                        jjkkii.addBillSubItems(selectedSN, billItemCode, itemsAdder);
-                        try {
-                            String queryyy = "update sub_items set inStock=? where sn = ?";
-                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
-
-                            pstlu.setString(1, "no");
-                            pstlu.setString(2, selectedSN);
-                            pstlu.executeUpdate();
-
-                         } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
+                    String rppp = this.txt_search_bill_itm2.getText();
+                    if(rppp.equals("")){
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
                     }
                     else{
-                        JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    }
-                    catch(Exception e){
-                        //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
+                        String itmCode ="";
+                        String name="";
+                        String warranty="";
+                        String w_price="";
+                        String r_price=this.txt_search_bill_itm2.getText();
+                        String type="";
 
-                    ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
-                    this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+                        Date d = new Date();
+                        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                        String date = sdf1.format(d); 
 
-                    double calculatedValue = jjkkii.calculateTotal(NextBillid);
-                    this.jTextField7.setText(String.valueOf(calculatedValue));
+                        int qty,free,dis;
+                        try{
+                            ResultSet rsg = jjkkii.getItemDetails(selectedSN);
+                            while(rsg.next()){
+                                itmCode = rsg.getString("itm_code");
+                                name = rsg.getString("itm_name");
+                                warranty = rsg.getString("warranty");   
+                                w_price = rsg.getString("w_price");
+                                //r_price = rsg.getString("r_price");
+                                type = rsg.getString("type");              
+                            }
+                        qty = 1;
+                        free = 0;
+                        dis = 0;
+                        int wwarranty = Integer.parseInt(warranty);
+                        double ww_price = Double.parseDouble(w_price);
+                        double rr_price = Double.parseDouble(r_price);
+                        String cashBalID = "no";
+                        String billID = jjkkii.generateBill_id(this);
+                        double valu = calculateBillItemValue(qty,rr_price);
+                        double costValue = calculateBillItemCostValue(qty,ww_price);   
 
-                    this.txt_search_bill_itm.setText("");
-                    this.txt_search_bill_itm.requestFocusInWindow();
+                        String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
+
+                        if(billItemCode != null){
+                            jjkkii.addBillSubItems(selectedSN, billItemCode, itemsAdder);
+                            try {
+                                String queryyy = "update sub_items set inStock=? where sn = ?";
+                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
+
+                                pstlu.setString(1, "no");
+                                pstlu.setString(2, selectedSN);
+                                pstlu.executeUpdate();
+
+                             } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                             }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
+                        }
+                        }
+                        catch(Exception e){
+                            //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
+                        this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+
+                        double calculatedValue = jjkkii.calculateTotal(NextBillid);
+                        this.jTextField7.setText(String.valueOf(calculatedValue));
+
+                        this.txt_search_bill_itm.setText("");
+                        this.txt_search_bill_itm.requestFocusInWindow();
+                    }
                 }
             }
         }
@@ -17891,60 +17862,141 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRow12 = this.tbl_addBillItems.getSelectedRow();
         
         if(selectedRow12 == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(itemsAdder, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            String ittemmCoodde = this.tbl_addBillItems.getModel().getValueAt(selectedRow12, 0).toString();
-            
-            
-            String itmCode ="";
-            String name="";
-            String warranty="";
-            String w_price="";
-            String r_price=this.txt_search_bill_itm2.getText();
-            String type="";
+            //String SearchedItmName = kio.getItemCodeBySubItemName(selectedSN);
 
-            Date d = new Date();
-            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-            String date = sdf1.format(d); 
+            String SearchedItmCode = this.tbl_addBillItems.getModel().getValueAt(selectedRow12, 0).toString();
 
-            int qty,free,dis;
-           try{
-                ResultSet rsg = kio.getItemDetails(ittemmCoodde);
-                while(rsg.next()){
-                    itmCode = rsg.getString("itm_code");
-                    name = rsg.getString("itm_name");
-                    warranty = rsg.getString("warranty");   
-                    w_price = rsg.getString("w_price");
-                    //r_price = rsg.getString("r_price");
-                    type = rsg.getString("type");              
-                }
-            qty = Integer.parseInt(this.txt_search_bill_itm1.getText());
-            free = 0;
-            dis = 0;
-            int wwarranty = Integer.parseInt(warranty);
-            double ww_price = Double.parseDouble(w_price);
-            double rr_price = Double.parseDouble(r_price);
-            String cashBalID = "no";
-            String billID = jjkkii2.generateBill_id(this);
-            double valu = calculateBillItemValue(qty,rr_price);
-            double costValue = calculateBillItemCostValue(qty,ww_price);
-
-            String billItemCode = jjkkii2.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
-            }
-            catch (SQLException exa) {
-                exa.printStackTrace();
-                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
-            }
-           
             String NextBillid = jjkkii2.generateBill_id(this);
-            
-            ResultSet rs = jjkkii2.getAddedItemsBy_bill_ID(NextBillid);
-            this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
 
-            double calculatedValue = jjkkii2.calculateTotal(NextBillid);
-            this.jTextField7.setText(String.valueOf(calculatedValue));
-           
+            String SavedItemName = jjkkii2.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+
+            if(SearchedItmCode.equals(SavedItemName)){
+                
+                String BillItemID = jjkkii2.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+
+                //String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, itemsAdder);
+               int sqty = Integer.parseInt(this.txt_search_bill_itm1.getText());
+               try {
+                    String queryy = "update bill_items set qty=qty+? where bill_item_id = ?";
+                    PreparedStatement pstl = conn.prepareStatement(queryy);
+                    
+                    pstl.setInt(1, sqty);
+                    pstl.setString(2, BillItemID);      
+                    pstl.executeUpdate();
+
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               
+               try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
+
+                        pst.setInt(1, sqty);
+                        pst.setString(2, SearchedItmCode);
+                        pst.executeUpdate();
+
+                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               
+                double rrrrrPrice = jjkkii2.getRetailPrice(BillItemID);
+
+                double wwwwwPrice = jjkkii2.getCostPrice(BillItemID);
+
+                int qqqqqty = jjkkii2.getQTY(BillItemID);
+
+                double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
+                double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+
+                try {
+                    String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
+                    PreparedStatement pstl = conn.prepareStatement(queryy);
+
+                    pstl.setDouble(1, NewValue);
+                    pstl.setDouble(2, NewCostValue);
+                    pstl.setString(3, BillItemID);
+                    pstl.executeUpdate();
+
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                } 
+
+
+
+                ResultSet rs = jjkkii2.getAddedItemsBy_bill_ID(NextBillid);
+                this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+
+                double calculatedValue = jjkkii2.calculateTotal(NextBillid);
+                this.jTextField7.setText(String.valueOf(calculatedValue));
+                
+                this.txt_search_bill_itm1.setText("");
+                //this.txt_search_bill_itm.requestFocusInWindow();
+            }
+            else{
+                String rppp = this.txt_search_bill_itm2.getText();
+                if(rppp.equals("")){
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    
+                    String ittemmCoodde = this.tbl_addBillItems.getModel().getValueAt(selectedRow12, 0).toString();
+
+                    String itmCode ="";
+                    String name="";
+                    String warranty="";
+                    String w_price="";
+                    String r_price=this.txt_search_bill_itm2.getText();
+                    String type="";
+
+                    Date d = new Date();
+                    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                    String date = sdf1.format(d); 
+
+                    int qty,free,dis;
+                   try{
+                        ResultSet rsg = kio.getItemDetails(ittemmCoodde);
+                        while(rsg.next()){
+                            itmCode = rsg.getString("itm_code");
+                            name = rsg.getString("itm_name");
+                            warranty = rsg.getString("warranty");   
+                            w_price = rsg.getString("w_price");
+                            //r_price = rsg.getString("r_price");
+                            type = rsg.getString("type");              
+                        }
+                    qty = Integer.parseInt(this.txt_search_bill_itm1.getText());
+                    free = 0;
+                    dis = 0;
+                    int wwarranty = Integer.parseInt(warranty);
+                    double ww_price = Double.parseDouble(w_price);
+                    double rr_price = Double.parseDouble(r_price);
+                    String cashBalID = "no";
+                    String billID = jjkkii2.generateBill_id(this);
+                    double valu = calculateBillItemValue(qty,rr_price);
+                    double costValue = calculateBillItemCostValue(qty,ww_price);
+
+                    String billItemCode = jjkkii2.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
+                    }
+                    catch (SQLException exa) {
+                        exa.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
+                    }
+
+                    ResultSet rs = jjkkii2.getAddedItemsBy_bill_ID(NextBillid);
+                    this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+
+                    double calculatedValue = jjkkii2.calculateTotal(NextBillid);
+                    this.jTextField7.setText(String.valueOf(calculatedValue));
+                }
+                
+            }
         }
     }//GEN-LAST:event_jButton109ActionPerformed
 
@@ -18021,6 +18073,9 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRow1777 = this.jTable38.getSelectedRow();
         
         String itmCorde = this.jTable38.getModel().getValueAt(selectedRow1777, 0).toString();
+        String rPrice = this.jTable38.getModel().getValueAt(selectedRow1777, 4).toString();
+        
+        this.jTextField132.setText(rPrice);
         
         ResultSet rs33334 = jukifg.getSubItemData(itmCorde);
         this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334));  
@@ -18045,109 +18100,196 @@ public class MainManue1 extends javax.swing.JFrame {
             int selectedRow120 = this.jTable38.getSelectedRow();
             
             if(selectedRow120 == -1){
-                JOptionPane.showMessageDialog(this, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(editEnvoice, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
             }
             else{
-                String ittemmCoodde = this.jTable38.getModel().getValueAt(selectedRow120, 0).toString();
-                String SNthibeda = jjkkii22.checkSNAvailabilityOnItemsTable(ittemmCoodde);
-                System.out.println(SNthibeda);
-                if(SNthibeda.equals("")){
-                    
-                    String VARavlQTY = this.jTable38.getModel().getValueAt(selectedRow120, 3).toString();
-                    int AVLqty = Integer.parseInt(VARavlQTY);
-                    
-                    if(AVLqty >=qty ){
-                        String itmCode ="";
-                        String name="";
-                        String warranty="";
-                        String w_price="";
-                        String r_price="";
-                        String type="";
+                String SearchedItmCode = this.jTable38.getModel().getValueAt(selectedRow120, 0).toString();
 
-                        Date d = new Date();
-                        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                        String date = sdf1.format(d); 
+                String NextBillid = this.jLabel229.getText();
 
+                String SavedItemName = jjkkii22.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
 
-                        try{
-                            ResultSet rsg = kio.getItemDetails(ittemmCoodde);
-                            while(rsg.next()){
-                                itmCode = rsg.getString("itm_code");
-                                name = rsg.getString("itm_name");
-                                warranty = rsg.getString("warranty");   
-                                w_price = rsg.getString("w_price");
-                                r_price = rsg.getString("r_price");
-                                type = rsg.getString("type");              
-                            }
+                if(SearchedItmCode.equals(SavedItemName)){
 
-                            free = 0;
-                            dis = 0;
-                            int wwarranty = Integer.parseInt(warranty);
-                            double ww_price = Double.parseDouble(w_price);
-                            double rr_price = Double.parseDouble(r_price);
-                            String cashBalID = "no";
-                            String billID = this.jLabel229.getText();
-                            double valu = calculateBillItemValue(qty,rr_price);
-                            double costValue = calculateBillItemCostValue(qty,ww_price);
+                    String BillItemID = jjkkii22.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
 
-                            String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
-                            if(billItemCode != null){   
-                                String NextBillidd = this.jLabel229.getText();
+                    //String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, itemsAdder);
+                   int sqty = Integer.parseInt(this.jTextField131.getText());
+                   try {
+                        String queryy = "update bill_items set qty=qty+? where bill_item_id = ?";
+                        PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                                ResultSet rs20 = jjkkii22.getAddedItemsBy_bill_ID(NextBillidd);
-                                this.jTable19.setModel(DbUtils.resultSetToTableModel(rs20));
+                        pstl.setInt(1, sqty);
+                        pstl.setString(2, BillItemID);      
+                        pstl.executeUpdate();
 
-                                double calculatedValue = jjkkii22.calculateTotal(NextBillidd);
-                                this.jTextField115.setText(String.valueOf(calculatedValue));
-
-                                double billDis = Double.parseDouble(this.jTextField117.getText());
-
-                                this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
-
-                                try {
-                                String query = "update items set qty = qty- ? where itm_code = ?";
-                                PreparedStatement pst = conn.prepareStatement(query);
-
-                                    pst.setInt(1, qty);
-                                    pst.setString(2, ittemmCoodde);
-                                    pst.executeUpdate();
-
-                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                                } catch (SQLException ex) {
-                                    ex.printStackTrace();
-                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                                this.jTextField131.setText("");
-                                
-                                cashBalancing jju98o = new cashBalancing();
-                        
-                                String Note = qytVAR.concat(" - ").concat(itmCode).concat(" Items Add to ").concat(NextBillidd).concat(" Invoice.");
-                                
-                                SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                                String ttttt = sdf.format(d);
-                                
-                                jju98o.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
-                                
-                                UpdateBillPrices();
-                            }
-                        }
-                        catch (SQLException exa) {
-                            exa.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
-                        }
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    else{
-                        JOptionPane.showMessageDialog(editEnvoice,"No Enough quantity to Add.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                    try {
+                        String query = "update items set qty = qty- ? where itm_code = ?";
+                        PreparedStatement pst = conn.prepareStatement(query);
+
+                            pst.setInt(1, qty);
+                            pst.setString(2, SearchedItmCode);
+                            pst.executeUpdate();
+
+                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
+
+                    double rrrrrPrice = jjkkii22.getRetailPrice(BillItemID);
+
+                    double wwwwwPrice = jjkkii22.getCostPrice(BillItemID);
+
+                    int qqqqqty = jjkkii22.getQTY(BillItemID);
+
+                    double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
+                    double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+
+                    try {
+                        String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
+                        PreparedStatement pstl = conn.prepareStatement(queryy);
+
+                        pstl.setDouble(1, NewValue);
+                        pstl.setDouble(2, NewCostValue);
+                        pstl.setString(3, BillItemID);
+                        pstl.executeUpdate();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    } 
+
+
+
+                    ResultSet rs = jjkkii22.getAddedItemsBy_bill_ID(NextBillid);
+                    this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
+
+                    double calculatedValue = jjkkii22.calculateTotal(NextBillid);
+                    this.jTextField115.setText(String.valueOf(calculatedValue));
                     
-                    
-                }
-                else if(SNthibeda==null){
-                    JOptionPane.showMessageDialog(editEnvoice,"Data Base Error.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                    double billDis = Double.parseDouble(this.jTextField117.getText());
+
+                    this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
+
+                    this.jTextField131.setText("");
+                    //this.txt_search_bill_itm.requestFocusInWindow();
                 }
                 else{
-                    JOptionPane.showMessageDialog(editEnvoice,"You can add only NON serial Items.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                    
+                    String rppp = this.jTextField132.getText();
+                    if(rppp.equals("")){
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        String ittemmCoodde = this.jTable38.getModel().getValueAt(selectedRow120, 0).toString();
+                        String SNthibeda = jjkkii22.checkSNAvailabilityOnItemsTable(ittemmCoodde);
+                        System.out.println(SNthibeda);
+                        if(SNthibeda.equals("")){
+
+                            String VARavlQTY = this.jTable38.getModel().getValueAt(selectedRow120, 3).toString();
+                            int AVLqty = Integer.parseInt(VARavlQTY);
+
+                            if(AVLqty >=qty ){
+                                String itmCode ="";
+                                String name="";
+                                String warranty="";
+                                String w_price="";
+                                String r_price= this.jTextField132.getText();
+                                String type="";
+
+                                Date d = new Date();
+                                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                                String date = sdf1.format(d); 
+
+
+                                try{
+                                    ResultSet rsg = kio.getItemDetails(ittemmCoodde);
+                                    while(rsg.next()){
+                                        itmCode = rsg.getString("itm_code");
+                                        name = rsg.getString("itm_name");
+                                        warranty = rsg.getString("warranty");   
+                                        w_price = rsg.getString("w_price");
+                                        //r_price = rsg.getString("r_price");
+                                        type = rsg.getString("type");              
+                                    }
+
+                                    free = 0;
+                                    dis = 0;
+                                    int wwarranty = Integer.parseInt(warranty);
+                                    double ww_price = Double.parseDouble(w_price);
+                                    double rr_price = Double.parseDouble(r_price);
+                                    String cashBalID = "no";
+                                    String billID = this.jLabel229.getText();
+                                    double valu = calculateBillItemValue(qty,rr_price);
+                                    double costValue = calculateBillItemCostValue(qty,ww_price);
+
+                                    String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, itemsAdder);
+                                    if(billItemCode != null){   
+                                        String NextBillidd = this.jLabel229.getText();
+
+                                        ResultSet rs20 = jjkkii22.getAddedItemsBy_bill_ID(NextBillidd);
+                                        this.jTable19.setModel(DbUtils.resultSetToTableModel(rs20));
+
+                                        double calculatedValue = jjkkii22.calculateTotal(NextBillidd);
+                                        this.jTextField115.setText(String.valueOf(calculatedValue));
+
+                                        double billDis = Double.parseDouble(this.jTextField117.getText());
+
+                                        this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
+
+                                        try {
+                                        String query = "update items set qty = qty- ? where itm_code = ?";
+                                        PreparedStatement pst = conn.prepareStatement(query);
+
+                                            pst.setInt(1, qty);
+                                            pst.setString(2, ittemmCoodde);
+                                            pst.executeUpdate();
+
+                                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                                        } catch (SQLException ex) {
+                                            ex.printStackTrace();
+                                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                        this.jTextField131.setText("");
+
+                                        cashBalancing jju98o = new cashBalancing();
+
+                                        String Note = qytVAR.concat(" - ").concat(itmCode).concat(" Items Add to ").concat(NextBillidd).concat(" Invoice.");
+
+                                        SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+                                        String ttttt = sdf.format(d);
+
+                                        jju98o.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
+
+                                        UpdateBillPrices();
+                                    }
+                                }
+                                catch (SQLException exa) {
+                                    exa.printStackTrace();
+                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
+                                }
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(editEnvoice,"No Enough quantity to Add.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                            }
+
+
+                        }
+                        else if(SNthibeda==null){
+                            JOptionPane.showMessageDialog(editEnvoice,"Data Base Error.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(editEnvoice,"You can add only NON serial Items.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                    
                 }
+                
             }
         }
         
@@ -18325,19 +18467,21 @@ public class MainManue1 extends javax.swing.JFrame {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                       try {
-                        String query = "update items set qty = qty- ? where itm_code = ?";
-                        PreparedStatement pst = conn.prepareStatement(query);
+                       
+                        
+                        
+                        try {
+                            String query = "update items set qty = qty- ? where itm_code = ?";
+                            PreparedStatement pst = conn.prepareStatement(query);
 
-                        pst.setInt(1, 1);
-                        pst.setString(2, SearchedItmCode);
-                        pst.executeUpdate();
+                            pst.setInt(1, 1);
+                            pst.setString(2, SearchedItmCode);
+                            pst.executeUpdate();
 
-                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
                         } catch (SQLException ex) {
-                                ex.printStackTrace();
-                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                            }
+                            ex.printStackTrace();
+                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                        }
 
 
                         try {
@@ -18403,104 +18547,112 @@ public class MainManue1 extends javax.swing.JFrame {
                     
                 }
                 else{
-                    String itmCode ="";
-                    String name="";
-                    String warranty="";
-                    String w_price="";
-                    String r_price="";
-                    String type="";
+                    String rppp = this.jTextField132.getText();
+                    if(rppp.equals("")){
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        
+                        String itmCode ="";
+                        String name="";
+                        String warranty="";
+                        String w_price="";
+                        String r_price= this.jTextField132.getText();
+                        String type="";
 
-                    int qty,free,dis;
-                    try{
-                        ResultSet rsg = jjkkii22.getItemDetails(selectedSN);
-                        while(rsg.next()){
-                            itmCode = rsg.getString("itm_code");
-                            name = rsg.getString("itm_name");
-                            warranty = rsg.getString("warranty");   
-                            w_price = rsg.getString("w_price");
-                            r_price = rsg.getString("r_price");
-                            type = rsg.getString("type");              
-                        }
-                    qty = 1;
-                    free = 0;
-                    dis = 0;
-                    int wwarranty = Integer.parseInt(warranty);
-                    double ww_price = Double.parseDouble(w_price);
-                    double rr_price = Double.parseDouble(r_price);
-                    String cashBalID = "no";
-                    String billID = this.jLabel229.getText();
-                    double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                        int qty,free,dis;
+                        try{
+                            ResultSet rsg = jjkkii22.getItemDetails(selectedSN);
+                            while(rsg.next()){
+                                itmCode = rsg.getString("itm_code");
+                                name = rsg.getString("itm_name");
+                                warranty = rsg.getString("warranty");   
+                                w_price = rsg.getString("w_price");
+                                //r_price = rsg.getString("r_price");
+                                type = rsg.getString("type");              
+                            }
+                        qty = 1;
+                        free = 0;
+                        dis = 0;
+                        int wwarranty = Integer.parseInt(warranty);
+                        double ww_price = Double.parseDouble(w_price);
+                        double rr_price = Double.parseDouble(r_price);
+                        String cashBalID = "no";
+                        String billID = this.jLabel229.getText();
+                        double valu = calculateBillItemValue(qty,rr_price);
+                        double costValue = calculateBillItemCostValue(qty,ww_price);
 
-                    String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date4, valu, billID,costValue,cashBalID, itemsAdder);
+                        String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date4, valu, billID,costValue,cashBalID, itemsAdder);
 
-                    if(billItemCode != null){
-                        jjkkii22.addBillSubItems(selectedSN, billItemCode, itemsAdder);
-                        try {
-                            String queryyy = "update sub_items set inStock=? where sn = ?";
-                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+                        if(billItemCode != null){
+                            jjkkii22.addBillSubItems(selectedSN, billItemCode, itemsAdder);
+                            try {
+                                String queryyy = "update sub_items set inStock=? where sn = ?";
+                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                            pstlu.setString(1, "no");
-                            pstlu.setString(2, selectedSN);
-                            pstlu.executeUpdate();
+                                pstlu.setString(1, "no");
+                                pstlu.setString(2, selectedSN);
+                                pstlu.executeUpdate();
 
-                         } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
-                        try {
-                        String query = "update items set qty = qty- ? where itm_code = ?";
-                        PreparedStatement pst = conn.prepareStatement(query);
-
-                        pst.setInt(1, 1);
-                        pst.setString(2, SearchedItmCode);
-                        pst.executeUpdate();
-
-                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                        } catch (SQLException ex) {
+                             } catch (SQLException ex) {
                                 ex.printStackTrace();
                                 Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                             }
+                            try {
+                            String query = "update items set qty = qty- ? where itm_code = ?";
+                            PreparedStatement pst = conn.prepareStatement(query);
+
+                            pst.setInt(1, 1);
+                            pst.setString(2, SearchedItmCode);
+                            pst.executeUpdate();
+
+                                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                            } catch (SQLException ex) {
+                                    ex.printStackTrace();
+                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                            cashBalancing jju98d1 = new cashBalancing();
+
+                            String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");         
+                            jju98d1.addDebitePayments(Note, rr_price, date4, ttttt4, editEnvoice);
+
+                            double tot = Double.parseDouble(this.jTextField115.getText());
+                            int disd = Integer.parseInt(this.jTextField117.getText());
+                            double netAmt = Double.parseDouble(this.jTextField118.getText());
+                            int itmCountd = jTable19.getRowCount();
+                            jjkkii22.updateBillWithPrices(tot, disd, netAmt, itmCountd, NextBillid, editEnvoice);
+
+                            storeItemData jukifg = new storeItemData(); 
+                            ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                            this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
+
                         }
 
-                        cashBalancing jju98d1 = new cashBalancing();
-                        
-                        String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");         
-                        jju98d1.addDebitePayments(Note, rr_price, date4, ttttt4, editEnvoice);
-                        
-                        double tot = Double.parseDouble(this.jTextField115.getText());
-                        int disd = Integer.parseInt(this.jTextField117.getText());
-                        double netAmt = Double.parseDouble(this.jTextField118.getText());
-                        int itmCountd = jTable19.getRowCount();
-                        jjkkii22.updateBillWithPrices(tot, disd, netAmt, itmCountd, NextBillid, editEnvoice);
-                        
-                        storeItemData jukifg = new storeItemData(); 
-                        ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
-                        
+                        else{
+                            JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
+                        }
+                        }
+                        catch(Exception e){
+                            //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        ResultSet rs = jjkkii22.getAddedItemsBy_bill_ID(NextBillid);
+                        this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
+
+                        double calculatedValuee = jjkkii22.calculateTotal(NextBillid);
+                        this.jTextField115.setText(String.valueOf(calculatedValuee));
+
+                        this.jTextField126.setText("");
+                        this.jTextField126.requestFocusInWindow();
+
+                        double billDiss = Double.parseDouble(this.jTextField117.getText());
+
+                        this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+
+                        UpdateBillPrices();
                     }
                     
-                    else{
-                        JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    }
-                    catch(Exception e){
-                        //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-
-                    ResultSet rs = jjkkii22.getAddedItemsBy_bill_ID(NextBillid);
-                    this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
-
-                    double calculatedValuee = jjkkii22.calculateTotal(NextBillid);
-                    this.jTextField115.setText(String.valueOf(calculatedValuee));
-
-                    this.jTextField126.setText("");
-                    this.jTextField126.requestFocusInWindow();
-
-                    double billDiss = Double.parseDouble(this.jTextField117.getText());
-
-                    this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
-                    
-                    UpdateBillPrices();
                 }
             }
         }

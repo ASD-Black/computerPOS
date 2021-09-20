@@ -959,13 +959,13 @@ public class items_add_to_bill {
     
     public String getItemNameFromBillItemTable(String ItemCobe, String billID){
        String itemName = "";
-       String sql345 = "select item_name from bill_items where item_code='"+ItemCobe+"' and bill_id='"+billID+"'";
+       String sql345 = "select item_code from bill_items where item_code='"+ItemCobe+"' and bill_id='"+billID+"'";
        
        try{
            Statement stmnt = conn.createStatement();
            ResultSet rsag = stmnt.executeQuery(sql345);
            while(rsag.next()){
-                itemName = rsag.getString("item_name");  
+                itemName = rsag.getString("item_code");  
             }
            return itemName;
        }

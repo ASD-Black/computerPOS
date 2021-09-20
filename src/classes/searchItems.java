@@ -143,13 +143,13 @@ public class searchItems {
        String itemCode = null;
        item = sItemCode;
        
-       String sql34 = "select items.itm_name from items items INNER JOIN sub_items sub_items ON items.itm_code = sub_items.itm_code where sub_items.sn='"+item+"'";
+       String sql34 = "select items.itm_code from items items INNER JOIN sub_items sub_items ON items.itm_code = sub_items.itm_code where sub_items.sn='"+item+"'";
        
        try{
            Statement stmnt = conn.createStatement();
            ResultSet rsa = stmnt.executeQuery(sql34);
            while(rsa.next()){
-                itemCode = rsa.getString("itm_name");  
+                itemCode = rsa.getString("itm_code");  
             }
            return itemCode;
        }

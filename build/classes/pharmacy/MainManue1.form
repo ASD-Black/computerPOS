@@ -463,11 +463,13 @@
                           <Group type="102" attributes="0">
                               <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txt_search_bill_itm1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jButton109" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="txt_search_bill_itm2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Component id="jLabel36" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jButton109" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="txt_search_bill_itm1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="txt_search_bill_itm2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="jLabel36" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Component id="jButton12" min="-2" pref="58" max="-2" attributes="0"/>

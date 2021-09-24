@@ -144,6 +144,184 @@ public class MainManue1 extends javax.swing.JFrame {
 
         subInitComp();
 
+        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField147KeyPressed(evt);
+            }
+        });
+
+        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel317.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
+        jPanel63.setLayout(jPanel63Layout);
+        jPanel63Layout.setHorizontalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel317)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel63Layout.setVerticalGroup(
+            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel317)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
+        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
+        adminLogin_item_deleteLayout.setHorizontalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_deleteLayout.setVerticalGroup(
+            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        adminLogin_item_delete_sn.setAlwaysOnTop(true);
+
+        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton117.setBackground(new java.awt.Color(255, 255, 255));
+        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton117.setForeground(new java.awt.Color(102, 102, 102));
+        jButton117.setText("Okay");
+        jButton117.setBorder(null);
+        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton117.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton117ActionPerformed(evt);
+            }
+        });
+
+        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField148KeyPressed(evt);
+            }
+        });
+
+        jLabel318.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel318.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel318.setText("Enter the Password");
+
+        org.jdesktop.layout.GroupLayout jPanel64Layout = new org.jdesktop.layout.GroupLayout(jPanel64);
+        jPanel64.setLayout(jPanel64Layout);
+        jPanel64Layout.setHorizontalGroup(
+            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jLabel318)
+                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
+                .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+        );
+        jPanel64Layout.setVerticalGroup(
+            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jLabel318)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout adminLogin_item_delete_snLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete_sn.getContentPane());
+        adminLogin_item_delete_sn.getContentPane().setLayout(adminLogin_item_delete_snLayout);
+        adminLogin_item_delete_snLayout.setHorizontalGroup(
+            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel64, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adminLogin_item_delete_snLayout.setVerticalGroup(
+            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        edit_edit_billed_Items2.setAlwaysOnTop(true);
+
+        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable39.setAutoCreateRowSorter(true);
+        jTable39.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable39.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"C000001", "Chamara", "Hettipola"},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Customa ID", "Name", "City"
+            }
+        ));
+        jTable39.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable39.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable39MousePressed(evt);
+            }
+        });
+        jScrollPane61.setViewportView(jTable39);
+        if (jTable39.getColumnModel().getColumnCount() > 0) {
+            jTable39.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jButton118.setBackground(new java.awt.Color(255, 255, 255));
+        jButton118.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jButton118.setText("Warranty");
+        jButton118.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jButton118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton118.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton118ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel65Layout = new org.jdesktop.layout.GroupLayout(jPanel65);
         jPanel65.setLayout(jPanel65Layout);
         jPanel65Layout.setHorizontalGroup(
@@ -364,7 +542,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 34)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("E-Shop");
+        jLabel9.setText("E - Shop");
 
         btn_search.setBackground(new java.awt.Color(64, 43, 100));
         btn_search.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -554,18 +732,18 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(52, 52, 52)
                 .add(jLabel1)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_hr2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_billing1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_hr4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .add(jLabel6)
-                        .add(54, 54, 54))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                         .add(jLabel107)
-                        .add(33, 33, 33))))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_hr2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_billing1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, btn_hr4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(33, 33, 33))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .add(jLabel6)
+                        .add(22, 22, 22))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -5420,6 +5598,8 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel245 = new javax.swing.JLabel();
         jLabel246 = new javax.swing.JLabel();
         jButton113 = new javax.swing.JButton();
+        jLabel247 = new javax.swing.JLabel();
+        jLabel320 = new javax.swing.JLabel();
         jPanel43 = new javax.swing.JPanel();
         jTextField131 = new javax.swing.JTextField();
         jButton72 = new javax.swing.JButton();
@@ -5443,6 +5623,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jTable21 = new javax.swing.JTable();
         jLabel237 = new javax.swing.JLabel();
         jButton78 = new javax.swing.JButton();
+        jCheckBox16 = new javax.swing.JCheckBox();
         chequeInvo = new javax.swing.JDialog();
         jPanel44 = new javax.swing.JPanel();
         jTextField125 = new javax.swing.JTextField();
@@ -6376,7 +6557,7 @@ public class MainManue1 extends javax.swing.JFrame {
         );
         itemsAdderLayout.setVerticalGroup(
             itemsAdderLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 406, Short.MAX_VALUE)
+            .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
         );
 
         serviceAdder.setAlwaysOnTop(true);
@@ -7606,7 +7787,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
         jPanel24.setBackground(new java.awt.Color(255, 255, 255));
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash Invoice", "Credit Invoice", "Cheque Invoice" }));
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash Invoice", "Credit Invoice", "Cheque Invoice", "Bank Deposit" }));
         jComboBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox8ActionPerformed(evt);
@@ -7683,11 +7864,12 @@ public class MainManue1 extends javax.swing.JFrame {
 
         jTextField113.setText("#");
 
+        jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
         billGroup.add(jRadioButton3);
+        jRadioButton3.setSelected(true);
         jRadioButton3.setText("E-shop");
 
         billGroup.add(jRadioButton4);
-        jRadioButton4.setSelected(true);
         jRadioButton4.setText("E-Print");
 
         billGroup.add(jRadioButton5);
@@ -8247,6 +8429,12 @@ public class MainManue1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel247.setText("Invoice Status : ");
+
+        jLabel320.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel320.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel320.setText("status");
+
         org.jdesktop.layout.GroupLayout jPanel42Layout = new org.jdesktop.layout.GroupLayout(jPanel42);
         jPanel42.setLayout(jPanel42Layout);
         jPanel42Layout.setHorizontalGroup(
@@ -8255,21 +8443,28 @@ public class MainManue1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(jPanel42Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel42Layout.createSequentialGroup()
-                        .add(jButton113)
-                        .add(373, 373, 373)
-                        .add(jLabel217)
-                        .add(18, 18, 18)
-                        .add(jTextField115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(jPanel42Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel42Layout.createSequentialGroup()
+                                .add(jButton113)
+                                .add(373, 373, 373)
+                                .add(jLabel217)
+                                .add(18, 18, 18)
+                                .add(jTextField115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 661, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 6, Short.MAX_VALUE))
                     .add(jPanel42Layout.createSequentialGroup()
                         .add(jLabel228)
                         .add(4, 4, 4)
                         .add(jLabel229)
-                        .add(183, 183, 183)
+                        .add(88, 88, 88)
                         .add(jLabel245)
                         .add(4, 4, 4)
-                        .add(jLabel246, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 661, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel246, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jLabel247)
+                        .add(4, 4, 4)
+                        .add(jLabel320, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(34, 34, 34)))
                 .add(jPanel42Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel42Layout.createSequentialGroup()
                         .add(jPanel42Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
@@ -8320,7 +8515,9 @@ public class MainManue1 extends javax.swing.JFrame {
                             .add(jLabel228)
                             .add(jLabel229)
                             .add(jLabel245)
-                            .add(jLabel246))
+                            .add(jLabel246)
+                            .add(jLabel247)
+                            .add(jLabel320))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jScrollPane34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
@@ -8651,6 +8848,8 @@ public class MainManue1 extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox16.setText("Bank Deposit");
+
         org.jdesktop.layout.GroupLayout jPanel41Layout = new org.jdesktop.layout.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
         jPanel41Layout.setHorizontalGroup(
@@ -8674,12 +8873,14 @@ public class MainManue1 extends javax.swing.JFrame {
                                     .add(jLabel237, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                     .add(jScrollPane41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 203, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                             .add(jPanel41Layout.createSequentialGroup()
-                                .add(163, 163, 163)
-                                .add(jButton78)
-                                .add(40, 40, 40)
-                                .add(jButton73))))
-                    .add(jPanel42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                .add(365, 365, 365)
+                                .add(jCheckBox16))))
+                    .add(jPanel42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jPanel41Layout.createSequentialGroup()
+                        .add(jButton78)
+                        .add(40, 40, 40)
+                        .add(jButton73)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel41Layout.setVerticalGroup(
             jPanel41Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -8702,10 +8903,12 @@ public class MainManue1 extends javax.swing.JFrame {
                             .add(jScrollPane38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 139, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jScrollPane41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 139, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jCheckBox16)
+                        .add(26, 26, 26)
                         .add(jPanel41Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jButton78)
                             .add(jButton73))
-                        .add(95, 95, 95))))
+                        .add(61, 61, 61))))
         );
 
         org.jdesktop.layout.GroupLayout editEnvoiceLayout = new org.jdesktop.layout.GroupLayout(editEnvoice.getContentPane());
@@ -10170,184 +10373,6 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton116.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton116ActionPerformed(evt);
-            }
-        });
-
-        jTextField147.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField147.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField147.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField147KeyPressed(evt);
-            }
-        });
-
-        jLabel317.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel317.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel317.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel63Layout = new org.jdesktop.layout.GroupLayout(jPanel63);
-        jPanel63.setLayout(jPanel63Layout);
-        jPanel63Layout.setHorizontalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel317)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel63Layout.setVerticalGroup(
-            jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel317)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel63Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_deleteLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete.getContentPane());
-        adminLogin_item_delete.getContentPane().setLayout(adminLogin_item_deleteLayout);
-        adminLogin_item_deleteLayout.setHorizontalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel63, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_deleteLayout.setVerticalGroup(
-            adminLogin_item_deleteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        adminLogin_item_delete_sn.setAlwaysOnTop(true);
-
-        jPanel64.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton117.setBackground(new java.awt.Color(255, 255, 255));
-        jButton117.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButton117.setForeground(new java.awt.Color(102, 102, 102));
-        jButton117.setText("Okay");
-        jButton117.setBorder(null);
-        jButton117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton117.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton117ActionPerformed(evt);
-            }
-        });
-
-        jTextField148.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jTextField148.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTextField148.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField148KeyPressed(evt);
-            }
-        });
-
-        jLabel318.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel318.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel318.setText("Enter the Password");
-
-        org.jdesktop.layout.GroupLayout jPanel64Layout = new org.jdesktop.layout.GroupLayout(jPanel64);
-        jPanel64.setLayout(jPanel64Layout);
-        jPanel64Layout.setHorizontalGroup(
-            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jLabel318)
-                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 217, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 35, Short.MAX_VALUE)
-                .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(24, 24, 24))
-        );
-        jPanel64Layout.setVerticalGroup(
-            jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jLabel318)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel64Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton117, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout adminLogin_item_delete_snLayout = new org.jdesktop.layout.GroupLayout(adminLogin_item_delete_sn.getContentPane());
-        adminLogin_item_delete_sn.getContentPane().setLayout(adminLogin_item_delete_snLayout);
-        adminLogin_item_delete_snLayout.setHorizontalGroup(
-            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel64, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adminLogin_item_delete_snLayout.setVerticalGroup(
-            adminLogin_item_delete_snLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        edit_edit_billed_Items2.setAlwaysOnTop(true);
-
-        jPanel65.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable39.setAutoCreateRowSorter(true);
-        jTable39.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable39.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"C000001", "Chamara", "Hettipola"},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Customa ID", "Name", "City"
-            }
-        ));
-        jTable39.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable39.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable39.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable39MousePressed(evt);
-            }
-        });
-        jScrollPane61.setViewportView(jTable39);
-        if (jTable39.getColumnModel().getColumnCount() > 0) {
-            jTable39.getColumnModel().getColumn(2).setResizable(false);
-        }
-
-        jButton118.setBackground(new java.awt.Color(255, 255, 255));
-        jButton118.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton118.setText("Warranty");
-        jButton118.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jButton118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton118.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton118ActionPerformed(evt);
             }
         });
 	}
@@ -14135,6 +14160,250 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField8.setText("0"); 
             }
         }
+        else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & jCheckBox14.isSelected() ){
+            System.out.println("Bank Deposit");
+            
+            items_add_to_bill ffff = new items_add_to_bill();
+            cashBalancing cbbb = new cashBalancing();
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+            String t = sdf.format(d);
+            lbl_main_time.setText(t);
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+            String da = sdf1.format(d);
+            lbl_main_date.setText(da);
+
+            String billID = ffff.generateBill_id(this);
+
+
+            //String s3=s1.concat(s2);  
+
+            String bill_date = da.concat(t);
+            double total = ffff.calculateTotal(billID);
+            int bill_dis = Integer.parseInt(this.jTextField8.getText());
+            String cust_id = this.jTextField4.getText();
+            String e_id = this.jTextField5.getText();
+            double net_amount = (total)-(bill_dis);
+            int setle_days = 0;
+
+            String status = "PENDING";
+
+            int itmCount = jTable3.getRowCount();
+            
+            int selectedRow1u = this.jTable18.getSelectedRow();
+        
+//            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
+//            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
+//            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
+            
+            int no_extra_bonous;
+
+                if(jCheckBox2.isSelected()){
+                    no_extra_bonous=1;
+                }
+                else{
+                    no_extra_bonous=0;
+                }
+            String advancedCode = this.jTable18.getModel().getValueAt(selectedRow1u, 0).toString();
+            double advAmount = Double.parseDouble(String.valueOf(this.jTable18.getModel().getValueAt(selectedRow1u, 2).toString()));
+            String invoiceType = "Bank Advanced";
+            String recevingDate = da;
+            String creditCodeChequeCode = "no";
+            double grangAmount = net_amount - advAmount;
+            String discrip = this.jTextArea16.getText();
+
+            System.out.println(bill_date);
+            boolean isOkk = ffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+
+            if (isOkk){
+               try {
+                String query = "update items set qty = qty- ? where itm_code = ?";
+                PreparedStatement pst = conn.prepareStatement(query);
+
+                    for(int i=0; i<jTable3.getRowCount(); i++){
+                        String itemId = (String)jTable3.getValueAt(i, 1);
+                        int qty = (int)jTable3.getValueAt(i, 4);
+
+                        pst.setInt(1, qty);
+                        pst.setString(2, itemId);
+                        pst.executeUpdate();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                items_add_to_bill ff = new items_add_to_bill();
+
+                String id = ff.getBill_id(this);
+                
+                String eid = this.jTextField5.getText();
+                HashMap a = new HashMap();
+                a.put("invoNum", id);
+                
+                try { 
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
+
+                    JasperViewer.viewReport(jprint, false); 
+
+                    try {
+                    updateBill();
+                    } catch (ParseException ex) {
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                this.billSubmition.dispose();
+                String note = billID.concat(" - cash avdvance invoice payment");
+
+                //cbbb.addDebitePayments(note, grangAmount, da, t, this);
+                //setCashBalance();
+                
+                saveInvoiceDiscriptionForNewInvoices(discrip, id);
+
+
+                items_add_to_bill dfdd = new items_add_to_bill();
+                String billid = dfdd.generateBill_id(this);
+                this.jLabel47.setText(billid);
+
+                ResultSet rs = dfdd.getAddedItemsBy_bill_ID(billid);
+                this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+
+                this.jTextField4.setText("");
+                this.jTextField5.setText("");
+
+                this.jTextField7.setText("");
+
+                this.jTextField8.setText("0"); 
+            }
+        }
+        else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & !jCheckBox14.isSelected() ){
+            System.out.println("Bank Deposit");
+            //        cashBalancing cbb = new cashBalancing();
+            items_add_to_bill fff = new items_add_to_bill();
+            cashBalancing cbb = new cashBalancing();
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+            String t = sdf.format(d);
+            lbl_main_time.setText(t);
+
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+            String da = sdf1.format(d);
+            lbl_main_date.setText(da);
+
+            String billID = fff.generateBill_id(this);
+
+
+            //String s3=s1.concat(s2);  
+
+            String bill_date = da.concat(t);
+            double total = fff.calculateTotal(billID);
+            int bill_dis = Integer.parseInt(this.jTextField8.getText());
+            String cust_id = this.jTextField4.getText();
+            String e_id = this.jTextField5.getText();
+            double net_amount = (total)-(bill_dis);
+            int setle_days = 0;
+
+            String status = "PENDING";
+
+            int itmCount = jTable3.getRowCount();
+
+            int no_extra_bonous;
+
+                if(jCheckBox2.isSelected()){
+                    no_extra_bonous=1;
+                }
+                else{
+                    no_extra_bonous=0;
+                }
+            String advancedCode = "no";
+            double advAmount = 0;
+            String invoiceType = "Bank Deposit";
+            String recevingDate = da;
+            String creditCodeChequeCode = "no";
+            double grangAmount = net_amount;
+            String discrip = this.jTextArea16.getText();
+
+            System.out.println(bill_date);
+            boolean isOkk = fff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+
+            if (isOkk){
+               try {
+                String query = "update items set qty = qty- ? where itm_code = ?";
+                PreparedStatement pst = conn.prepareStatement(query);
+
+                    for(int i=0; i<jTable3.getRowCount(); i++){
+                        String itemId = (String)jTable3.getValueAt(i, 1);
+                        int qty = (int)jTable3.getValueAt(i, 4);
+
+                        pst.setInt(1, qty);
+                        pst.setString(2, itemId);
+                        pst.executeUpdate();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                items_add_to_bill ff = new items_add_to_bill();
+
+                String id = ff.getBill_id(this);
+                
+                String eid = this.jTextField5.getText();
+                HashMap a = new HashMap();
+                a.put("invoNum", id);
+                
+                try { 
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprintf = JasperFillManager.fillReport(jreport, a, conn);
+
+                    JasperViewer.viewReport(jprintf, false); 
+
+                    try {
+                    updateBill();
+                    } catch (ParseException ex) {
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                this.billSubmition.dispose();
+
+                String note = billID.concat(" - cash invoice payment");
+
+                //cbb.addDebitePayments(note, net_amount, da, t, this);
+                //setCashBalance();
+                
+                saveInvoiceDiscriptionForNewInvoices(discrip, id);
+
+                items_add_to_bill dfdd = new items_add_to_bill();
+                String billid = dfdd.generateBill_id(this);
+                this.jLabel47.setText(billid);
+
+                ResultSet rs = dfdd.getAddedItemsBy_bill_ID(billid);
+                this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
+                
+                
+                this.jTextField4.setText("");
+                this.jTextField5.setText("");
+
+                this.jTextField7.setText("");
+
+                this.jTextField8.setText("0"); 
+            }
+            
+        }
         else if(this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & !jCheckBox14.isSelected() ){
             System.out.println("cash only");
             //        cashBalancing cbb = new cashBalancing();
@@ -15217,8 +15486,18 @@ public class MainManue1 extends javax.swing.JFrame {
         int itmCountd = jTable19.getRowCount();
         
         double oldPayedAmt = juyy.getPayedCeditAmt(invoIDDD);
+        String status = this.jLabel320.getText();
         
-        boolean isOK = hyt5.EditBillData(ttotal, dissco, custt, emplee, netAmmt, itmCountd,dd, invoIDDD, editEnvoice);
+        if(this.jCheckBox16.isEnabled()){
+            if(this.jCheckBox16.isSelected()){
+                status = "COMPLETE";
+            }
+            else{
+                status = "PENDING";
+            }
+        }
+        
+        boolean isOK = hyt5.EditBillData(ttotal, dissco, custt, emplee, netAmmt, itmCountd,dd,status, invoIDDD, editEnvoice);
         
         if(isOK){
             
@@ -16815,6 +17094,8 @@ public class MainManue1 extends javax.swing.JFrame {
                 String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
                 String emlo = this.jTable4.getModel().getValueAt(selectedRow, 3).toString();
                 String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
+                String invoType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
+                String status = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 11).toString());
 
 
                 this.jLabel229.setText(invoIDD);
@@ -16825,6 +17106,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField133.setText(emlo);
                 this.jLabel246.setText(invodatee);
                 this.jTextArea13.setText(billDiscrip);
+                this.jLabel320.setText(status);
 
 
                 ResultSet rs3s = hghhf.getAddedItemsBy_bill_ID(invoIDD);
@@ -16837,7 +17119,20 @@ public class MainManue1 extends javax.swing.JFrame {
 //                this.jTextField130.setText("");
 //                this.jTextField132.setText("");
                 this.jTextField131.setText("");
-
+                
+                if(invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")){
+                    if(status.equals("COMPLETE")){
+                        this.jCheckBox16.setEnabled(true);
+                        this.jCheckBox16.setSelected(true);
+                    }
+                    else{
+                        this.jCheckBox16.setEnabled(true);
+                        this.jCheckBox16.setSelected(false);
+                    }
+                }
+                else{
+                    this.jCheckBox16.setEnabled(false);
+                }
             }
             adminLogin2.dispose();
         }
@@ -18027,6 +18322,8 @@ public class MainManue1 extends javax.swing.JFrame {
                     String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
                     String emlo = this.jTable4.getModel().getValueAt(selectedRow, 3).toString();
                     String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
+                    String invoType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
+                    String status = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 11).toString());
 
 
                     this.jLabel229.setText(invoIDD);
@@ -18037,6 +18334,7 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.jTextField133.setText(emlo);
                     this.jLabel246.setText(invodatee);
                     this.jTextArea13.setText(billDiscrip);
+                    this.jLabel320.setText(status);
 
 
                     ResultSet rs3s = hghhf.getAddedItemsBy_bill_ID(invoIDD);
@@ -18049,6 +18347,20 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    this.jTextField130.setText("");
 //                    this.jTextField132.setText("");
                     this.jTextField131.setText("");
+                    
+                    if(invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")){
+                    if(status.equals("COMPLETE")){
+                        this.jCheckBox16.setEnabled(true);
+                        this.jCheckBox16.setSelected(true);
+                    }
+                    else{
+                        this.jCheckBox16.setEnabled(true);
+                        this.jCheckBox16.setSelected(false);
+                    }
+                }
+                else{
+                    this.jCheckBox16.setEnabled(false);
+                }
 
                 }
                 adminLogin2.dispose();
@@ -18812,6 +19124,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         catch(Exception ex){  
                         }
                     }
+                    setItemTypesForEditItems();
                 }
                 catch(Exception e){
                     //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
@@ -18973,6 +19286,7 @@ public class MainManue1 extends javax.swing.JFrame {
                             catch(Exception ex){  
                             }
                         }
+                        setItemTypesForEditItems();
                     }
                     catch(Exception e){
                         //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
@@ -20749,6 +21063,7 @@ public static void main(String args[]) {
     javax.swing.JCheckBox jCheckBox13;
     javax.swing.JCheckBox jCheckBox14;
     javax.swing.JCheckBox jCheckBox15;
+    javax.swing.JCheckBox jCheckBox16;
     javax.swing.JCheckBox jCheckBox2;
     javax.swing.JCheckBox jCheckBox3;
     javax.swing.JCheckBox jCheckBox4;
@@ -20924,6 +21239,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel24;
     javax.swing.JLabel jLabel245;
     javax.swing.JLabel jLabel246;
+    javax.swing.JLabel jLabel247;
     javax.swing.JLabel jLabel248;
     javax.swing.JLabel jLabel249;
     javax.swing.JLabel jLabel25;
@@ -21005,6 +21321,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel318;
     javax.swing.JLabel jLabel319;
     javax.swing.JLabel jLabel32;
+    javax.swing.JLabel jLabel320;
     javax.swing.JLabel jLabel33;
     javax.swing.JLabel jLabel34;
     javax.swing.JLabel jLabel35;
@@ -21457,6 +21774,23 @@ public static void main(String args[]) {
             ResultSet rss = stmnt.executeQuery(sdds);      
             while(rss.next()){
                 com_box_searchTyp1.addItem(rss.getString("type_name"));
+            }
+            
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+    }
+    
+    private void setItemTypesForEditItems() {
+        String sdds= "select * from item_typs";
+        com_box_searchTyp2.removeAllItems();
+        try{
+            Statement stmnt = conn.createStatement();
+            ResultSet rss = stmnt.executeQuery(sdds);      
+            while(rss.next()){
+                com_box_searchTyp2.addItem(rss.getString("type_name"));
             }
             
         }

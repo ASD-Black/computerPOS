@@ -496,11 +496,11 @@ public class items_add_to_bill {
         }
     }
     
-    public boolean EditBillData(double total, int bill_dis, String cust_id, String e_id, double net_amount, int itmCount, String bill_discrip, String bill_id, Component comp){
+    public boolean EditBillData(double total, int bill_dis, String cust_id, String e_id, double net_amount, int itmCount, String bill_discrip, String status, String bill_id, Component comp){
         boolean isKo = false;
         try{
            
-        String sql = "update bill set total=?, bill_dis=?, cust_id=?, e_id=?, net_amount=?, itm_count=?, bill_discrip=? where bill_id=?";
+        String sql = "update bill set total=?, bill_dis=?, cust_id=?, e_id=?, net_amount=?, itm_count=?, bill_discrip=?, status=? where bill_id=?";
         PreparedStatement pst = conn.prepareStatement(sql); 
             pst.setDouble(1, total);
             pst.setInt(2, bill_dis);
@@ -509,7 +509,8 @@ public class items_add_to_bill {
             pst.setDouble(5, net_amount);
             pst.setInt(6, itmCount);
             pst.setString(7, bill_discrip);
-            pst.setString(8, bill_id);
+            pst.setString(8, status);
+            pst.setString(9, bill_id);
             
             
             pst.execute();

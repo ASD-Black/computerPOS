@@ -263,15 +263,8 @@ WHERE
 	</columnHeader>
 	<detail>
 		<band height="18" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="2" width="52" height="12" uuid="e8f0cb87-27f4-4307-9942-022abee0eb91"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
-			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="62" y="2" width="146" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
+				<reportElement x="37" y="2" width="171" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
@@ -297,6 +290,13 @@ WHERE
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="2" width="31" height="12" uuid="ea72f0c4-1d0d-4bec-ba7d-e6907e6d4069"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

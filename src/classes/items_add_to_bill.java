@@ -275,7 +275,7 @@ public class items_add_to_bill {
        }
     }
     
-    public String addTempDataToBill(String bill_date, double total, int bill_dis, String cust_id, String e_id, double net_amount, int setle_days, String status, int days, Component comp){
+    public String addTempDataToBill(String bill_date, double total, int bill_dis, String cust_id, String e_id, double net_amount, String setle_days, String status, int days, Component comp){
         try{
             String SQL= "insert into bill(bill_id, bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, days) values(?,?,?,?,?,?,?,?,?,?)";
             
@@ -296,7 +296,7 @@ public class items_add_to_bill {
             //System.out.println("9");
             pst.setDouble(7, net_amount);
             //System.out.println("10");
-            pst.setInt(8, setle_days);
+            pst.setString(8, setle_days);
             //System.out.println("11");
             pst.setString(9, status);
             pst.setInt(10, days);
@@ -457,7 +457,7 @@ public class items_add_to_bill {
         
     }
     
-    public boolean UpdateBillData(String bill_date, double total, int bill_dis, String cust_id, String e_id, double net_amount, int setle_days, String status, int itmCount, int no_ex_bonous, String advancedCode, double advAmount, String invoiceType, String recevingDate, String creditCodeChequeCode, double grangAmount, String bill_time, String discription, String bill_id, Component comp){
+    public boolean UpdateBillData(String bill_date, double total, int bill_dis, String cust_id, String e_id, double net_amount, String setle_days, String status, int itmCount, int no_ex_bonous, String advancedCode, double advAmount, String invoiceType, String recevingDate, String creditCodeChequeCode, double grangAmount, String bill_time, String discription, String bill_id, Component comp){
         boolean isKo = false;
         try{
            
@@ -469,7 +469,7 @@ public class items_add_to_bill {
             pst.setString(4, cust_id);
             pst.setString(5, e_id);
             pst.setDouble(6, net_amount);
-            pst.setInt(7, setle_days);
+            pst.setString(7, setle_days);
             pst.setString(8, status);
             pst.setInt(9, itmCount);
             pst.setInt(10, no_ex_bonous);

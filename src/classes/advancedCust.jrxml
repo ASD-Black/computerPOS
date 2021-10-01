@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="96"/>
+	<property name="ireport.y" value="384"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -177,7 +177,7 @@ advancedcust.`idadvancedCustID` = $P{invoNum}]]>
 	<detail>
 		<band height="18" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement x="62" y="2" width="127" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
+				<reportElement x="37" y="2" width="152" height="12" uuid="4585b00b-4de5-4e08-aa53-124e3c90ff27"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
@@ -205,11 +205,11 @@ advancedcust.`idadvancedCustID` = $P{invoNum}]]>
 				<textFieldExpression><![CDATA[$F{adv_value}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="2" width="52" height="12" uuid="a21c77b8-59a6-421d-a143-0d3641c73666"/>
+				<reportElement x="3" y="2" width="31" height="12" uuid="fbbc54cf-2248-44dc-a893-ef8f7ad74bc7"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{avd_itemm_code}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

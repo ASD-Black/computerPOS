@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="455"/>
+	<property name="ireport.y" value="402"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -38,7 +38,7 @@ WHERE
 	<field name="net_amount" class="java.math.BigDecimal">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="setle_days" class="java.lang.Integer">
+	<field name="setle_days" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="status" class="java.lang.String">

@@ -154,7 +154,7 @@ public class hr {
     }
     
      public ResultSet showUpdatedCustDetails(){
-        String SQl1 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', address_nile_2 as 'Address line 2', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date' from customers ORDER BY cust_id DESC";
+        String SQl1 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date', credit_bal as 'Credit Balaance' from customers ORDER BY cust_id DESC";
         try{
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(SQl1);
@@ -196,7 +196,7 @@ public class hr {
     public ResultSet searchByCusName(String name){
        String item = null;
        item = name;
-       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', address_nile_2 as 'Address line 2', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date' from customers where name like '%"+item+"%'";
+       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date', credit_bal as 'Credit Balaance' from customers where name like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -211,7 +211,7 @@ public class hr {
     public ResultSet searchByCusState(String state){
        String item = null;
        item = state;
-       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', address_nile_2 as 'Address line 2', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date' from customers where state like '%"+item+"%'";
+       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date', credit_bal as 'Credit Balaance' from customers where state like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -226,7 +226,7 @@ public class hr {
     public ResultSet searchByCusCity(String city){
        String item = null;
        item = city;
-       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', address_nile_2 as 'Address line 2', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date' from customers where city like '%"+item+"%'";
+       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date', credit_bal as 'Credit Balaance' from customers where city like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -241,7 +241,7 @@ public class hr {
     public ResultSet searchByCusID(String id){
        String item = null;
        item = id;
-       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address line 1', address_nile_2 as 'Address line 2', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date' from customers where cust_id like '%"+item+"%'";
+       String sql3 = "select cust_id as 'Customer ID', name as 'Customer Name', address_nile_1 as 'Address', city as 'City', state as 'State', contactNo as 'Contact No', reg_date as 'Reg Date', credit_bal as 'Credit Balaance' from customers where cust_id like '%"+item+"%'";
        
        try{
            Statement stmnt = conn.createStatement();

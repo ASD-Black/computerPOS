@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="164"/>
+	<property name="ireport.y" value="356"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -37,7 +37,7 @@ WHERE
 	<field name="net_amount" class="java.math.BigDecimal">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="setle_days" class="java.lang.Integer">
+	<field name="setle_days" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="status" class="java.lang.String">
@@ -326,19 +326,33 @@ WHERE
 				<text><![CDATA[Net Amount (Rs) :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="62" y="4" width="100" height="12" uuid="4a70cab6-8028-4907-8738-061d8d3a0a9c"/>
+				<reportElement x="75" y="4" width="100" height="12" uuid="4a70cab6-8028-4907-8738-061d8d3a0a9c"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{advAmount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="4" width="58" height="12" uuid="71262c81-59cd-41ce-bc90-fbc215bae281"/>
+				<reportElement x="0" y="4" width="72" height="12" uuid="71262c81-59cd-41ce-bc90-fbc215bae281"/>
 				<textElement textAlignment="Right">
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Advanced (Rs) :]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="0" y="18" width="72" height="12" uuid="fc1c17ce-309a-4f7f-af0a-22421a618667"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due Amount (Rs) :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="18" width="100" height="12" uuid="20db767d-6192-40de-a238-b0448f1841e0"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{net_amount}-$F{advAmount}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnFooter>
 	<pageFooter>

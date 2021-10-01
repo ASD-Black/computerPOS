@@ -38,7 +38,7 @@ WHERE
 	<field name="net_amount" class="java.math.BigDecimal">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="setle_days" class="java.lang.Integer">
+	<field name="setle_days" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="status" class="java.lang.String">

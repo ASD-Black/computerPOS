@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="384"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -90,87 +90,87 @@ advancedcust.`idadvancedCustID` = $P{invoNum}]]>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="158" splitType="Stretch">
+	<pageHeader>
+		<band height="158">
 			<textField>
-				<reportElement x="37" y="102" width="152" height="12" uuid="85bf8068-1342-49d2-aaa9-21a31ab282ce"/>
+				<reportElement x="297" y="72" width="84" height="12" uuid="3f167f3d-2206-4944-b650-55425c57f285"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{cust_id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="37" y="117" width="152" height="12" uuid="8eb36392-3f1f-4ee0-9d2b-e2db8c542557"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="37" y="132" width="152" height="12" uuid="387d7e9a-0009-48f9-8488-6b812e387f1a"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{contactNo}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idadvancedCustID}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="132" width="34" height="12" uuid="6838aa53-2f9f-42b3-a154-be1afe544e6c"/>
+				<reportElement x="0" y="134" width="34" height="12" uuid="f022785a-0abb-4420-b765-153bed3cdd5f"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Mobile :]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="0" y="117" width="34" height="12" uuid="d53fa472-d2e9-4b29-b128-dc564209c6a2"/>
+			<textField>
+				<reportElement x="37" y="104" width="152" height="12" uuid="d0e88d5e-ddc2-481a-af87-49d78984f11a"/>
 				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
+					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<text><![CDATA[Name :]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{cust_id}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="0" y="102" width="34" height="12" uuid="b93b9600-2113-4501-b12d-67763c469613"/>
-				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ID :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="243" y="70" width="54" height="12" uuid="dc0e2ab2-0322-4682-9892-64adce9928c7"/>
+				<reportElement x="243" y="72" width="54" height="12" uuid="c5c6c1a9-c8bf-4b90-a087-07fd933e1887"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Invoice No :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="264" y="85" width="34" height="12" uuid="abb8c166-a50a-4aa6-b47f-7348df945e8a"/>
+				<reportElement x="0" y="104" width="34" height="12" uuid="017af495-cf3b-4edc-a65a-4a8e65e22e9e"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="37" y="134" width="152" height="12" uuid="c5ea622e-b392-433b-85ad-226212387960"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contactNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="72" width="120" height="20" uuid="faafc2ce-df0e-4eca-985e-eb9dc07802d3"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADVANCED CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="87" width="34" height="12" uuid="35d0255e-c371-4c97-a278-4f5620fbf39a"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="297" y="70" width="84" height="12" uuid="63734fd2-8d3d-4618-ac3e-9c58725f71c3"/>
+				<reportElement x="37" y="119" width="152" height="12" uuid="a2685267-f56b-42aa-a189-ed24a40dce1a"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idadvancedCustID}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="119" width="34" height="12" uuid="fb1dafff-f3b4-43a4-9901-648dac2d0af8"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="297" y="85" width="72" height="12" uuid="7cdc7d91-5ea6-44fa-8e0a-cefc56dcd587"/>
+				<reportElement x="297" y="87" width="72" height="12" uuid="26c44f3f-c607-4726-bcc1-5bdadef8c897"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adv_date}.toString()]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="70" width="120" height="20" uuid="59993917-d52f-4ed7-aa58-d754baabbcb9"/>
-				<textElement>
-					<font fontName="Calibri" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ADVANCED CUSTOMER]]></text>
-			</staticText>
 		</band>
-	</title>
+	</pageHeader>
 	<columnHeader>
 		<band height="20" splitType="Stretch"/>
 	</columnHeader>

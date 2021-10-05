@@ -355,6 +355,34 @@ public class advancedCustomer {
        }
     }
     
+    public ResultSet getAllAdvancedCust(){
+       String sql2 = "select ad.idadvancedCustID as 'Advanced ID', ad.adv_date as 'Date', ad.adv_amount as 'Advanced Amount', ad.adv_total as 'Total Amount', ad.adv_discrip as 'Discription', cu.name as 'Customer' FROM customers cu INNER JOIN advancedcust ad ON cu.cust_id = ad.cust_id WHERE ad.cust_id = ad.cust_id AND ad.statuss!='noComplete'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql2);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public ResultSet getAllAdvacedCusByAID(String id){
+       String item = null;
+       item = id;
+       String sql3 = "select * from advancedcust where idadvancedCustID ='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql3);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
     public double calculate_adv_Total(String avd_id){
         double caldTotal = 0;
         String id = null;
@@ -410,8 +438,50 @@ public class advancedCustomer {
             stmnt.execute(sql);
             return true;
         }
+        catch(Exception e){ 
+            return false;
+        }
+    }
+    
+    public boolean deleteAdvancedCust(String WID){
+        String sql = "delete from advancedcust where idadvancedCustID='"+WID+"'";
+
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Cannot Delete Item", "Database Error!", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+    
+    public double getItemCodeBySn(String id){
+       double item = 0;
+       String sql3456 = "select adv_amount from advancedcust where idadvancedCustID='"+id+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsagg = stmnt.executeQuery(sql3456);
+           while(rsagg.next()){
+                item = rsagg.getDouble("adv_amount");  
+            }
+           return item;
+       }
+       catch(Exception e){
+           return 0;
+       }
+    }
+    
+    public boolean deleteAddedAdvancedCustItemsByID(String advCustID){
+        String sql = "delete from advancedcustitms where idadvancedCustID='"+advCustID+"'";
+        
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
+        catch(Exception e){ 
             return false;
         }
     }

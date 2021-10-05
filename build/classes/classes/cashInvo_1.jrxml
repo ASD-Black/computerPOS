@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="356"/>
+	<property name="ireport.y" value="96"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -151,94 +151,94 @@ WHERE
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="158" splitType="Stretch">
+	<pageHeader>
+		<band height="158">
 			<textField>
-				<reportElement x="37" y="102" width="152" height="12" uuid="85bf8068-1342-49d2-aaa9-21a31ab282ce"/>
+				<reportElement x="37" y="103" width="152" height="12" uuid="ac9f4574-9327-4992-9031-a68261499ea4"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cust_id}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="37" y="117" width="152" height="12" uuid="8eb36392-3f1f-4ee0-9d2b-e2db8c542557"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="37" y="132" width="152" height="12" uuid="387d7e9a-0009-48f9-8488-6b812e387f1a"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{contactNo}]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement x="0" y="132" width="34" height="12" uuid="6838aa53-2f9f-42b3-a154-be1afe544e6c"/>
-				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Mobile :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="117" width="34" height="12" uuid="d53fa472-d2e9-4b29-b128-dc564209c6a2"/>
-				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Name :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="102" width="34" height="12" uuid="b93b9600-2113-4501-b12d-67763c469613"/>
+				<reportElement x="0" y="103" width="34" height="12" uuid="634de01c-b87a-40ca-8abc-2f531c2789ad"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ID :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="243" y="70" width="54" height="12" uuid="dc0e2ab2-0322-4682-9892-64adce9928c7"/>
+				<reportElement x="0" y="118" width="34" height="12" uuid="330644b4-eb93-4212-87d8-c350f4061fd9"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="301" y="102" width="80" height="12" uuid="dd0f9431-4619-4ace-ae03-9f52f676d613"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{invoiceType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="71" width="80" height="12" uuid="5b0c67cd-ab02-4389-90f3-65056c1d43b0"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="71" width="54" height="12" uuid="08bdade8-3c43-4bbf-897b-252c807bb503"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Invoice No :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="243" y="85" width="34" height="12" uuid="abb8c166-a50a-4aa6-b47f-7348df945e8a"/>
+				<reportElement x="243" y="102" width="54" height="12" uuid="00486ef3-5175-481c-a015-e922995084c9"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice Type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="243" y="86" width="34" height="12" uuid="3704921a-2191-40e5-bafa-d7731f123bd7"/>
 				<textElement>
 					<font fontName="Calibri" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="301" y="70" width="80" height="12" uuid="43eeb788-6969-429c-b1c4-8372d49062d6"/>
+				<reportElement x="37" y="118" width="152" height="12" uuid="30ef5017-5a8e-4f0a-9615-493ac4c55676"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{bill_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="133" width="34" height="12" uuid="fdfc3dd0-16c5-4cf1-944b-d3c9d4c4d4f0"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile :]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="301" y="85" width="80" height="12" uuid="4a548b32-d372-4363-a39e-2a61ec1e03fa"/>
+				<reportElement x="301" y="86" width="80" height="12" uuid="f5e04934-7f19-4a21-9e4f-2e1144ec0b20"/>
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bill_date}.toString()]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="243" y="101" width="54" height="12" uuid="8715afd7-b31a-4b93-83c8-ad7f5cf5f42b"/>
-				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Invoice Type :]]></text>
-			</staticText>
 			<textField>
-				<reportElement x="301" y="101" width="80" height="12" uuid="6a9be40b-313c-4516-a9bb-9cebd18db47e"/>
+				<reportElement x="37" y="133" width="152" height="12" uuid="1bc61251-7f08-491a-a8a1-b8965f5a2559"/>
 				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
+					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{invoiceType}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{contactNo}]]></textFieldExpression>
 			</textField>
 		</band>
-	</title>
+	</pageHeader>
 	<columnHeader>
 		<band height="20" splitType="Stretch"/>
 	</columnHeader>

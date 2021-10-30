@@ -62,7 +62,7 @@ public class items_add_to_bill {
             return billItemCode;
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(comp, "Item Added Failed","Owner Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(comp, "Item Added Failed","Bill Item Adding Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
             return null;
         }

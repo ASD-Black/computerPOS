@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ebb0f874-8b31-4210-8845-b0dbae8963ea">
 	<property name="ireport.zoom" value="2.7990442812583995"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="546"/>
 	<parameter name="invoNum" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -268,7 +268,7 @@ WHERE
 				<textElement>
 					<font fontName="Calibri" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{item_name}+ " ("+$F{pack_size}+"M) "]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{item_name}+ ($F{pack_size}==0 ?"":(" ("+$F{pack_size}+"M) "))]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="223" y="2" width="22" height="12" uuid="f4d63cc5-f615-441c-805b-a23a7e116394"/>
@@ -395,7 +395,7 @@ WHERE
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{credit_bal}==0 ?"":("CREDIT BALANCE : " + $F{credit_bal})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{credit_bal}==0 || $F{no_ex_bonous}==0) ?"":("CREDIT BALANCE : " + $F{credit_bal})]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

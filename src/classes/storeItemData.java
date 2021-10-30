@@ -349,7 +349,7 @@ public class storeItemData {
             
             return false;
         }
-        else if(size.length()==1){
+        else if(size.length()==0){
             
             return false;
         }

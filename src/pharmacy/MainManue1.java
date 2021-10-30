@@ -14061,6 +14061,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0"); 
+                
+                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
         }
         else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & jCheckBox14.isSelected() ){
@@ -14196,6 +14220,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0"); 
+                
+                                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
         }
         else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & !jCheckBox14.isSelected() ){
@@ -14314,6 +14362,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0"); 
+                
+                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
             
         }
@@ -14433,6 +14505,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0"); 
+                
+                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
             
         }
@@ -14580,6 +14676,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0"); 
+                
+                                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
             
         }
@@ -14714,6 +14834,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0");
+                
+                                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
         }
         else if(this.jComboBox8.getSelectedItem().toString().equals("Cheque Invoice")){
@@ -14846,6 +14990,30 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0");
+                
+                                items_add_to_bill ddde = new items_add_to_bill();
+                //ddd.checkBillRecordAvailability(this);
+        
+                boolean avl = ddde.checkBillRecordAvailability(this);
+        //        System.out.println(avl);
+
+                String bill_datee = "2002-02-15 05:03:42";
+                double totale = 1;
+                int bill_dise = 1;
+                String cust_ide = "C000001";
+                String e_ide = "E000001";
+                double net_amounte = 1;
+                String setle_dayse = "xx";
+                String statuse = "PENDIN";
+                int dayse = 0;
+
+                if(avl){
+                    System.out.println("true");
+                }
+                else{
+                    System.out.println("false");
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                }
             }
         }
     }//GEN-LAST:event_jButton69ActionPerformed
@@ -20907,20 +21075,15 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton129ActionPerformed
         items_add_to_bill jjkkii = new items_add_to_bill();
         searchItems pissa = new searchItems(); 
-        
-        //String selectedSN = this.txt_search_bill_itm.getText();
-        
-        
-        
+    
         int selectedRow123789 = this.jTable3311.getSelectedRow();
         
-        String selectedSN = this.jTable3311.getModel().getValueAt(selectedRow123789, 1).toString();
-        String status = jjkkii.getItemStatus(selectedSN);
-        
         if(selectedRow123789 == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to ADD.!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Select a Serial to ADD.!","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
+            String selectedSN = this.jTable3311.getModel().getValueAt(selectedRow123789, 1).toString();
+            String status = jjkkii.getItemStatus(selectedSN);
             
             if(status.equals("no")){
             JOptionPane.showMessageDialog(this, "This "+selectedSN+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);

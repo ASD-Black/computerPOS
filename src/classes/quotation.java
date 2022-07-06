@@ -307,7 +307,7 @@ public class quotation {
     }
     
     public boolean deleteAddedQuotationItems(String quotItmCode){
-        String sql = "delete from quotation_itms where quotItemCode='"+quotItmCode+"'";
+        String sql = "delete from quotation_itms where qid='"+quotItmCode+"'";
         
         try{
             Statement stmnt = conn.createStatement();
@@ -414,6 +414,76 @@ public class quotation {
         else{
             return true;
         }
+    }
+    
+    public ResultSet getAllQuotations(){
+       String sql2 = "select ad.qid as 'Quotation ID', ad.q_date as 'Date', ad.totall as 'Total Amount', ad.q_dis as 'Discount Amount', ad.q_netAmount as 'Net Amount', ad.q_discription as 'Discription', cu.name as 'Customer' FROM customers cu INNER JOIN qoutations ad ON cu.cust_id = ad.cust_id WHERE ad.cust_id = ad.cust_id AND ad.totall!=1";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql2);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public ResultSet getAllQuotationsByAID(String id){
+       String item = null;
+       item = id;
+       String sql4 = "select * from qoutations where qid ='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql4);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public boolean deleteAdvancedCust(String WID){
+        String sql = "delete from qoutations where qid='"+WID+"'";
+
+        try{
+            Statement stmnt = conn.createStatement();
+            stmnt.execute(sql);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
+    
+    public ResultSet getQuotationBy_id(String iid){
+       String id = null;
+       id = iid;
+       String sql2 = "select ad.qid as 'Quotation ID', ad.q_date as 'Date', ad.totall as 'Total Amount', ad.q_dis as 'Discount Amount', ad.q_netAmount as 'Net Amount', ad.q_discription as 'Discription', cu.name as 'Customer' FROM customers cu INNER JOIN qoutations ad ON cu.cust_id = ad.cust_id WHERE ad.cust_id = ad.cust_id AND ad.qid like '%"+id+"%'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql2);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    public ResultSet getQuotationBy_CustName(String name){
+       String id = null;
+       id = name;
+       String sql2 = "select ad.qid as 'Quotation ID', ad.q_date as 'Date', ad.totall as 'Total Amount', ad.q_dis as 'Discount Amount', ad.q_netAmount as 'Net Amount', ad.q_discription as 'Discription', cu.name as 'Customer' FROM customers cu INNER JOIN qoutations ad ON cu.cust_id = ad.cust_id WHERE ad.cust_id = ad.cust_id AND cu.name like '%"+name+"%'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rs = stmnt.executeQuery(sql2);
+           return rs;
+       }
+       catch(Exception e){
+           return null;
+       }
     }
     
 }

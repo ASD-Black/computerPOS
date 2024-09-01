@@ -4923,10 +4923,9 @@ public class MainManue1 extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
     
-    private void subInitComp(){
-		itemEdit = new javax.swing.JDialog();
+    private void subIinitCom2(){
+        itemEdit = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         txt_edt_itemName = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -7268,6 +7267,10 @@ public class MainManue1 extends javax.swing.JFrame {
                 jButton69ActionPerformed(evt);
             }
         });
+    }
+    
+    private void subInitComp(){
+	subIinitCom2();
 
         jLabel208.setText("Cheque Number :");
 
@@ -12055,10 +12058,10 @@ public class MainManue1 extends javax.swing.JFrame {
             String jobIDd = this.jTable6.getModel().getValueAt(selectedRow, 0).toString();
 
             HashMap abb = new HashMap();
-            abb.put("jobID1", jobIDd);
+            abb.put("jobID", jobIDd);
             try {
 
-                InputStream file = getClass().getResourceAsStream("/classes/job1.jrxml");
+                InputStream file = getClass().getResourceAsStream("/classes/job.jrxml");
                 JasperDesign jdesign = JRXmlLoader.load(file);
 
                 JasperReport jreport = JasperCompileManager.compileReport(jdesign);
@@ -12282,10 +12285,10 @@ public class MainManue1 extends javax.swing.JFrame {
                         String jobIDd = this.jLabel97.getText();
 
                         HashMap abb = new HashMap();
-                        abb.put("jobID1", jobIDd);
+                        abb.put("jobID", jobIDd);
                         try {
 
-                            InputStream file = getClass().getResourceAsStream("/classes/job1.jrxml");
+                            InputStream file = getClass().getResourceAsStream("/classes/job.jrxml");
                             JasperDesign jdesign = JRXmlLoader.load(file);
 
                             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
@@ -12303,10 +12306,10 @@ public class MainManue1 extends javax.swing.JFrame {
                     String jobIDd = this.jLabel97.getText();
 
                     HashMap abb = new HashMap();
-                    abb.put("jobID1", jobIDd);
+                    abb.put("jobID", jobIDd);
                     try {
 
-                        InputStream file = getClass().getResourceAsStream("/classes/job1_1.jrxml");
+                        InputStream file = getClass().getResourceAsStream("/classes/job.jrxml");
                         JasperDesign jdesign = JRXmlLoader.load(file);
 
                         JasperReport jreport = JasperCompileManager.compileReport(jdesign);

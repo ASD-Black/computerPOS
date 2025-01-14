@@ -16145,7 +16145,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 }    
             }
             else{
-               JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Cheque Invoice.!","Error",JOptionPane.ERROR_MESSAGE); 
+               JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Credit Invoice.!","Error",JOptionPane.ERROR_MESSAGE); 
             }
         }
     }//GEN-LAST:event_jButton81ActionPerformed

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" columnCount="4" pageWidth="595" pageHeight="842" columnWidth="138" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59fd7ee2-a191-4721-8af5-cd13e7e02ca4">
-	<property name="ireport.zoom" value="3.0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="barCode" language="groovy" columnCount="3" printOrder="Horizontal" pageWidth="322" pageHeight="86" columnWidth="107" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="59fd7ee2-a191-4721-8af5-cd13e7e02ca4">
+	<property name="ireport.zoom" value="3.3000000000000034"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="mainBarcodeID" class="java.lang.String">
@@ -30,41 +30,43 @@ WHERE
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<detail>
-		<band height="59" splitType="Stretch">
+		<band height="78" splitType="Stretch">
+			<elementGroup>
+				<textField>
+					<reportElement x="18" y="21" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["RS: "+$F{rPrice}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="7" y="44" width="94" height="17" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA["S/N "+$F{itmCode1}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement x="16" y="33" width="77" height="18" uuid="8d0a2ae6-8e76-455f-a7ef-7d0a2a4fadaf"/>
+					<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+						<jr:codeExpression><![CDATA[$F{itmCode1}]]></jr:codeExpression>
+					</jr:barbecue>
+				</componentElement>
+				<staticText>
+					<reportElement x="11" y="3" width="86" height="20" uuid="b05d4a18-65c4-4635-9e32-ef1acdf7bcb0"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mallika Furniture]]></text>
+				</staticText>
+			</elementGroup>
 			<textField>
-				<reportElement x="34" y="10" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
-				<textElement>
-					<font fontName="Calibri" size="9" isBold="true"/>
+				<reportElement x="9" y="61" width="89" height="14" uuid="bcb91225-b5b3-41d6-8d37-6f1b9fac493d"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{rPrice}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="29" y="39" width="73" height="18" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{itmCode1}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="19" y="10" width="29" height="12" uuid="d1c0272f-b55a-43ff-ae09-df5340c0e2ef"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<text><![CDATA[Rs :]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="13" y="39" width="45" height="18" uuid="6dcafcd1-0470-4627-960f-8d4063879df3"/>
-				<textElement>
-					<font fontName="Calibri" size="9"/>
-				</textElement>
-				<text><![CDATA[S/N ]]></text>
-			</staticText>
-			<componentElement>
-				<reportElement x="4" y="22" width="122" height="18" uuid="8d0a2ae6-8e76-455f-a7ef-7d0a2a4fadaf"/>
-				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
-					<jr:codeExpression><![CDATA[$F{itmCode1}]]></jr:codeExpression>
-				</jr:barbecue>
-			</componentElement>
 		</band>
 	</detail>
 </jasperReport>

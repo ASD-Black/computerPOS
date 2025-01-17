@@ -47,7 +47,7 @@ public class barcode {
             String itmcc = generateItemmBarCode(comp, type);
             String mb1 = getMainBarCode(comp2);
             PreparedStatement pst7 = conn.prepareStatement(SQLL);
-            
+
             pst7.setString(1, itmcc);  
             pst7.setString(2, pName);
             pst7.setString(3, mb1);

@@ -83,7 +83,7 @@ public class barcode {
             return mainBB;
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(comp, "Customer Added Failed","Owner Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(comp, "Barcode Added Failed","Barcode Error", JOptionPane.ERROR_MESSAGE);
             return null;
         }
     }
@@ -340,10 +340,8 @@ public class barcode {
         }
     }
     
-    public ResultSet ShowBundelBarcodes(String mbID){
-       String item = null;
-       item = mbID;
-       String sql3 = "select id2 as 'Bundel ID', bb_model as 'Item Model', bb_type as 'Item Code String', bb_price as 'Retail Price', bb_qty as 'Barcode QTY', duplicate as 'Duplicate' from barcode_bundel where mb='"+item+"'";
+    public ResultSet ShowBundelBarcodes(){
+       String sql3 = "select id2 as 'Bundel ID',mb as 'Barcode ID', bb_model as 'Item Name', bb_type as 'String With', bb_price as 'Retail Price', bb_qty as 'Barcode QTY', duplicate as 'Duplicate' from barcode_bundel ORDER BY id2 DESC";
        
        try{
            Statement stmnt = conn.createStatement();
@@ -354,7 +352,7 @@ public class barcode {
            return null;
        }
     }
-    
+      
     public boolean checkBarcodeDataAvailability(Component comp){
         boolean available = false;
         ResultSet result = null;

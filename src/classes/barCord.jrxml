@@ -12,7 +12,7 @@
 FROM
      `a` a
 WHERE
-     a.`mb` = $P{mainBarcodeID}]]>
+     a.`bb_id` = $P{mainBarcodeID}]]>
 	</queryString>
 	<field name="id1" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -33,18 +33,18 @@ WHERE
 		<band height="68" splitType="Stretch">
 			<elementGroup>
 				<textField>
-					<reportElement x="12" y="15" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
+					<reportElement x="12" y="41" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
 					<textElement textAlignment="Center">
 						<font fontName="Calibri" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["RS: "+$F{rPrice}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="1" y="37" width="94" height="17" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
+					<reportElement x="2" y="11" width="94" height="17" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Calibri" size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA["S/N "+$F{itmCode1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{itmCode1}]]></textFieldExpression>
 				</textField>
 				<componentElement>
 					<reportElement x="10" y="26" width="77" height="18" uuid="8d0a2ae6-8e76-455f-a7ef-7d0a2a4fadaf"/>
@@ -53,7 +53,7 @@ WHERE
 					</jr:barbecue>
 				</componentElement>
 				<staticText>
-					<reportElement x="5" y="0" width="86" height="20" uuid="b05d4a18-65c4-4635-9e32-ef1acdf7bcb0"/>
+					<reportElement x="6" y="0" width="86" height="20" uuid="b05d4a18-65c4-4635-9e32-ef1acdf7bcb0"/>
 					<textElement textAlignment="Center">
 						<font isBold="true"/>
 					</textElement>
@@ -61,9 +61,9 @@ WHERE
 				</staticText>
 			</elementGroup>
 			<textField>
-				<reportElement x="3" y="52" width="89" height="14" uuid="bcb91225-b5b3-41d6-8d37-6f1b9fac493d"/>
+				<reportElement x="2" y="51" width="95" height="14" uuid="bcb91225-b5b3-41d6-8d37-6f1b9fac493d"/>
 				<textElement textAlignment="Center">
-					<font size="9" isBold="true"/>
+					<font size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 			</textField>

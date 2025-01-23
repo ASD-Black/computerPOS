@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="barCode" language="groovy" columnCount="3" printOrder="Horizontal" pageWidth="303" pageHeight="96" columnWidth="99" columnSpacing="2" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="59fd7ee2-a191-4721-8af5-cd13e7e02ca4">
+	<property name="ireport.zoom" value="3.3000000000000034"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mainBarcodeID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `a` a
+WHERE
+     a.`bb_id` in ($P!{mainBarcodeID})]]>
+	</queryString>
+	<field name="id1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itmCode1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="model" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rPrice" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="68" splitType="Stretch">
+			<elementGroup>
+				<textField>
+					<reportElement x="12" y="41" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["RS: "+$F{rPrice}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="2" y="11" width="94" height="17" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{itmCode1}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement x="10" y="26" width="77" height="18" uuid="8d0a2ae6-8e76-455f-a7ef-7d0a2a4fadaf"/>
+					<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+						<jr:codeExpression><![CDATA[$F{itmCode1}]]></jr:codeExpression>
+					</jr:barbecue>
+				</componentElement>
+				<staticText>
+					<reportElement x="6" y="0" width="86" height="20" uuid="b05d4a18-65c4-4635-9e32-ef1acdf7bcb0"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mallika Furniture]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="2" y="51" width="95" height="14" uuid="bcb91225-b5b3-41d6-8d37-6f1b9fac493d"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

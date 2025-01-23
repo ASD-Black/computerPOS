@@ -22,7 +22,7 @@ public class storeItemData {
     
     public String addTempItem(String name, int warranty, int qty, double w_price, double r_price, String date, String type, Component comp){
         try{
-            String SQL= "insert into items(itm_code, itm_name, warranty, qty, w_price, r_price, date, type) values(?,?,?,?,?,?,?,?)";
+            String SQL= "insert into items(itm_code, itm_name, warranty, qty, w_price, r_price, date, type, duplicate) values(?,?,?,?,?,?,?,?,?)";
             String itmCode = generateItemCode(comp);
             PreparedStatement pst = conn.prepareStatement(SQL);
             pst.setString(1, itmCode);
@@ -39,6 +39,7 @@ public class storeItemData {
             //System.out.println("9");
             pst.setString(7, date);
             pst.setString(8, type);
+            pst.setString(9, "temp");
 
             pst.execute();   
             
@@ -50,9 +51,9 @@ public class storeItemData {
         }
     }
     
-    public String updateTempItem(String name, int warranty, int qty, double w_price, double r_price, String date, String type, String supply, String itmCode, Component comp){
+    public String updateTempItem(String name, int warranty, int qty, double w_price, double r_price, String date, String type, String supply, String itmCode,String b_id, String dup, Component comp){
         try{
-            String SQL= "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=?, supply=? where itm_code=?"; 
+            String SQL= "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=?, supply=?,barcodeID=?, duplicate=? where itm_code=?"; 
             PreparedStatement pst = conn.prepareStatement(SQL);
  
             //System.out.println("4");
@@ -69,7 +70,9 @@ public class storeItemData {
             pst.setString(6, date);
             pst.setString(7, type);
             pst.setString(8, supply);
-            pst.setString(9, itmCode);
+            pst.setString(9, b_id);
+            pst.setString(10, dup);
+            pst.setString(11, itmCode);
 
             pst.execute();   
             increaseNoOfItemsByOne();

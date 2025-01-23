@@ -5,9 +5,11 @@
  */
 package classes;
 
+import java.util.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class searchItems {
@@ -146,6 +148,108 @@ public class searchItems {
            ResultSet rsa = stmnt.executeQuery(sql34);
            while(rsa.next()){
                 itemCode = rsa.getString("itm_code");  
+            }
+           return itemCode;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getBCodeLableIDByItemCode(String sItemCode){
+       String item = null;
+       String itemCode = null;
+       item = sItemCode;
+       
+       String sql34 = "select sn from sub_items where itm_code='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                itemCode = rsa.getString("sn");  
+            }
+           return itemCode;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getBBCodeByItemCode(String sItemCode){
+       String item = null;
+       String itemCode = null;
+       item = sItemCode;
+       
+       String sql34 = "select barcodeID from items where itm_code='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                itemCode = rsa.getString("barcodeID");  
+            }
+           return itemCode;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public List<String> getBBCodesByItemCode(String sItemCode){
+       String item = null;
+       String itemCode = null;
+       item = sItemCode;
+       List<String> barcodeList = new ArrayList<>();
+       
+       String sql34 = "select sn from sub_items where itm_code='"+item+"' and inStock='yes'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                barcodeList.add(rsa.getString("sn"));  
+            }
+           System.out.println(barcodeList + "  llllllllll");
+           return barcodeList;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getBarCodeTypeByItemCode(String sItemCode){
+       String item = null;
+       String itemCode = null;
+       item = sItemCode;
+       
+       String sql34 = "select duplicate from items where itm_code='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                itemCode = rsa.getString("duplicate");  
+            }
+           return itemCode;
+       }
+       catch(Exception e){
+           return null;
+       }
+    }
+    
+    public String getQtyByItemCode(String sItemCode){
+       String item = null;
+       String itemCode = null;
+       item = sItemCode;
+       
+       String sql34 = "select qty from items where itm_code='"+item+"'";
+       
+       try{
+           Statement stmnt = conn.createStatement();
+           ResultSet rsa = stmnt.executeQuery(sql34);
+           while(rsa.next()){
+                itemCode = rsa.getString("qty");
             }
            return itemCode;
        }

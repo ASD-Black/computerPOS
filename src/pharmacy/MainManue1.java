@@ -5,6 +5,8 @@
  */
 package pharmacy;
 
+import java.util.List;
+import java.util.ArrayList;
 import classes.advancedCustomer;
 import classes.dbConnection;
 import classes.login;
@@ -22,7 +24,6 @@ import classes.typesHandler;
 import classes.userController;
 import classes.userLogin;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.awt.Color;
@@ -30,7 +31,6 @@ import java.sql.ResultSet;
 import javax.swing.JPanel;
 import net.proteanit.sql.DbUtils;
 import java.awt.Component;
-import java.awt.List;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,7 +45,6 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -77,10 +76,10 @@ import static org.hibernate.type.descriptor.sql.JdbcTypeFamilyInformation.Family
 public class MainManue1 extends javax.swing.JFrame {
 
     static Timer x;
-    String Date ;
+    String Date;
     Connection conn;
     private Connection coooon;
-    
+
     byte[] input;
     byte[] keyBytes = "123456789987".getBytes();
     byte[] ivBytes = "input321456".getBytes();
@@ -89,13 +88,12 @@ public class MainManue1 extends javax.swing.JFrame {
     Cipher cipher;
     byte[] cipherText;
     int ctLength;
-    
+
     int yMouse;
     int xMouse;
- 
-    
+
     public MainManue1() {
-        
+
         dbConnection con = new dbConnection();
         conn = con.Connect();
         initComponents();
@@ -104,16 +102,14 @@ public class MainManue1 extends javax.swing.JFrame {
         setIcon();
         setCashBalance();
         //tableColumnSettings();
-               
-        
+
 //        try {
 //            updateBill();
 //            } catch (ParseException ex) {
 //                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //            }
-        
     }
-    
+
     public void runDateTime() {
         x = new Timer(500, new ActionListener() {
 
@@ -123,18 +119,16 @@ public class MainManue1 extends javax.swing.JFrame {
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
                 String t = sdf.format(d);
                 lbl_main_time.setText(t);
-                
+
                 SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                 String da = sdf1.format(d);
                 lbl_main_date.setText(da);
-                
-              //lbl_escapedtime.setText(getTimeDifference(d));
+
+                //lbl_escapedtime.setText(getTimeDifference(d));
             }
         });
         x.start();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -146,659 +140,6 @@ public class MainManue1 extends javax.swing.JFrame {
     private void initComponents() {
 
         subIinitCom2();
-
-        jTextField149.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField149ActionPerformed(evt);
-            }
-        });
-
-        jLabel319.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel319.setText("Return QTY :");
-
-        org.jdesktop.layout.GroupLayout jPanel67Layout = new org.jdesktop.layout.GroupLayout(jPanel67);
-        jPanel67.setLayout(jPanel67Layout);
-        jPanel67Layout.setHorizontalGroup(
-            jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel67Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel319, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jTextField149, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 114, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 29, Short.MAX_VALUE)
-                .add(jButton121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel67Layout.setVerticalGroup(
-            jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel67Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField149, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel319))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_edit_billed_Items4Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items4.getContentPane());
-        edit_edit_billed_Items4.getContentPane().setLayout(edit_edit_billed_Items4Layout);
-        edit_edit_billed_Items4Layout.setHorizontalGroup(
-            edit_edit_billed_Items4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel67, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_edit_billed_Items4Layout.setVerticalGroup(
-            edit_edit_billed_Items4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        add_new_cust.setAlwaysOnTop(true);
-
-        jPanel68.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton122.setBackground(new java.awt.Color(255, 255, 255));
-        jButton122.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton122.setText("ADD");
-        jButton122.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jButton122.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton122.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton122ActionPerformed(evt);
-            }
-        });
-
-        jLabel239.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel239.setText("Address :");
-
-        jTextArea15.setColumns(20);
-        jTextArea15.setLineWrap(true);
-        jTextArea15.setRows(5);
-        jTextArea15.setWrapStyleWord(true);
-        jScrollPane37.setViewportView(jTextArea15);
-
-        jLabel240.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel240.setText("Name :");
-
-        jTextField127.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField127ActionPerformed(evt);
-            }
-        });
-
-        jLabel241.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel241.setText("Contact Num :");
-
-        jTextField128.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField128ActionPerformed(evt);
-            }
-        });
-
-        jLabel242.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel242.setText("Customer ID :");
-
-        jLabel243.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel243.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel243.setText("Name :");
-
-        org.jdesktop.layout.GroupLayout jPanel68Layout = new org.jdesktop.layout.GroupLayout(jPanel68);
-        jPanel68.setLayout(jPanel68Layout);
-        jPanel68Layout.setHorizontalGroup(
-            jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel68Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel68Layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(jButton122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel68Layout.createSequentialGroup()
-                        .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jPanel68Layout.createSequentialGroup()
-                                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel239)
-                                    .add(jLabel240)
-                                    .add(jLabel241))
-                                .add(18, 18, 18)
-                                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jTextField128)
-                                    .add(jScrollPane37)
-                                    .add(jTextField127)))
-                            .add(jPanel68Layout.createSequentialGroup()
-                                .add(jLabel242)
-                                .add(18, 18, 18)
-                                .add(jLabel243, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .add(0, 50, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel68Layout.setVerticalGroup(
-            jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel68Layout.createSequentialGroup()
-                .add(24, 24, 24)
-                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel242)
-                    .add(jLabel243))
-                .add(18, 18, 18)
-                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel240)
-                    .add(jPanel68Layout.createSequentialGroup()
-                        .add(33, 33, 33)
-                        .add(jLabel239))
-                    .add(jPanel68Layout.createSequentialGroup()
-                        .add(jTextField127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jScrollPane37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel241)
-                    .add(jTextField128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(38, 38, 38)
-                .add(jButton122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout add_new_custLayout = new org.jdesktop.layout.GroupLayout(add_new_cust.getContentPane());
-        add_new_cust.getContentPane().setLayout(add_new_custLayout);
-        add_new_custLayout.setHorizontalGroup(
-            add_new_custLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel68, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        add_new_custLayout.setVerticalGroup(
-            add_new_custLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel68, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-        );
-
-        edit_advancedCust.setAlwaysOnTop(true);
-
-        jPanel39.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable42.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable42.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jTable42.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable42.setRowHeight(20);
-        jTable42.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable42.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable42MousePressed(evt);
-            }
-        });
-        jScrollPane63.setViewportView(jTable42);
-
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advanced Code", "Customer Name" }));
-
-        jTextField109.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField109ActionPerformed(evt);
-            }
-        });
-        jTextField109.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField109KeyPressed(evt);
-            }
-        });
-
-        jButton123.setText("Search ");
-        jButton123.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton123ActionPerformed(evt);
-            }
-        });
-
-        jLabel216.setText("Total Amount :");
-
-        jTextField129.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField129KeyTyped(evt);
-            }
-        });
-
-        jButton124.setText("Print Advanced Slip");
-        jButton124.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton124ActionPerformed(evt);
-            }
-        });
-
-        jLabel244.setText("Payed Advance :");
-
-        jTextField130.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField130KeyTyped(evt);
-            }
-        });
-
-        jButton125.setText("Delete Advanced Slip");
-        jButton125.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton125ActionPerformed(evt);
-            }
-        });
-
-        jLabel321.setText("Add More :");
-
-        jTextField135.setText("0");
-        jTextField135.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField135KeyTyped(evt);
-            }
-        });
-
-        jButton126.setText("ADD");
-        jButton126.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton126ActionPerformed(evt);
-            }
-        });
-
-        jTextField150.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField150KeyTyped(evt);
-            }
-        });
-
-        jLabel322.setText("Due Amount :");
-
-        org.jdesktop.layout.GroupLayout jPanel39Layout = new org.jdesktop.layout.GroupLayout(jPanel39);
-        jPanel39.setLayout(jPanel39Layout);
-        jPanel39Layout.setHorizontalGroup(
-            jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel39Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel39Layout.createSequentialGroup()
-                        .add(jComboBox13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(41, 41, 41)
-                        .add(jTextField109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(39, 39, 39)
-                        .add(jButton123))
-                    .add(jPanel39Layout.createSequentialGroup()
-                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jPanel39Layout.createSequentialGroup()
-                                .add(jButton125)
-                                .add(18, 18, 18)
-                                .add(jButton124))
-                            .add(jScrollPane63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 652, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel216)
-                            .add(jTextField129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel244)
-                            .add(jTextField130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel322)
-                            .add(jTextField150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(jButton126)
-                                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel321)
-                                    .add(jTextField135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        jPanel39Layout.setVerticalGroup(
-            jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel39Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jComboBox13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton123))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel39Layout.createSequentialGroup()
-                        .add(jScrollPane63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jButton124)
-                            .add(jButton125)))
-                    .add(jPanel39Layout.createSequentialGroup()
-                        .add(jLabel216)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel244)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel322)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel321)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton126)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout edit_advancedCustLayout = new org.jdesktop.layout.GroupLayout(edit_advancedCust.getContentPane());
-        edit_advancedCust.getContentPane().setLayout(edit_advancedCustLayout);
-        edit_advancedCustLayout.setHorizontalGroup(
-            edit_advancedCustLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel39, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_advancedCustLayout.setVerticalGroup(
-            edit_advancedCustLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel39, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        edit_advancedCust1.setAlwaysOnTop(true);
-
-        jPanel70.setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable43.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTable43.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jTable43.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable43.setRowHeight(20);
-        jTable43.setSelectionBackground(new java.awt.Color(110, 89, 222));
-        jTable43.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTable43MousePressed(evt);
-            }
-        });
-        jScrollPane66.setViewportView(jTable43);
-
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quotation Code", "Customer Name" }));
-
-        jTextField110.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField110ActionPerformed(evt);
-            }
-        });
-        jTextField110.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField110KeyPressed(evt);
-            }
-        });
-
-        jButton128.setText("Search ");
-        jButton128.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton128ActionPerformed(evt);
-            }
-        });
-
-        jLabel324.setText("Total Amount :");
-
-        jTextField151.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField151KeyTyped(evt);
-            }
-        });
-
-        jButton130.setText("Print Quotation");
-        jButton130.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton130ActionPerformed(evt);
-            }
-        });
-
-        jLabel325.setText("Discount Price :");
-
-        jTextField152.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField152KeyTyped(evt);
-            }
-        });
-
-        jButton131.setText("Delete Quotation");
-        jButton131.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton131ActionPerformed(evt);
-            }
-        });
-
-        jLabel326.setText("Description :");
-
-        jTextField154.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField154KeyTyped(evt);
-            }
-        });
-
-        jLabel327.setText("Net Amount :");
-
-        jTextArea19.setColumns(20);
-        jTextArea19.setLineWrap(true);
-        jTextArea19.setRows(5);
-        jTextArea19.setWrapStyleWord(true);
-        jScrollPane54.setViewportView(jTextArea19);
-
-        org.jdesktop.layout.GroupLayout jPanel70Layout = new org.jdesktop.layout.GroupLayout(jPanel70);
-        jPanel70.setLayout(jPanel70Layout);
-        jPanel70Layout.setHorizontalGroup(
-            jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel70Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel70Layout.createSequentialGroup()
-                        .add(jComboBox14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(41, 41, 41)
-                        .add(jTextField110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(39, 39, 39)
-                        .add(jButton128))
-                    .add(jPanel70Layout.createSequentialGroup()
-                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jPanel70Layout.createSequentialGroup()
-                                .add(414, 414, 414)
-                                .add(jButton131)
-                                .add(18, 18, 18)
-                                .add(jButton130))
-                            .add(jScrollPane66))
-                        .add(18, 18, 18)
-                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel324)
-                            .add(jTextField151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel325)
-                            .add(jTextField152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel327)
-                            .add(jTextField154, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel326)
-                            .add(jScrollPane54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 133, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel70Layout.setVerticalGroup(
-            jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel70Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jComboBox14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton128))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel70Layout.createSequentialGroup()
-                        .add(jScrollPane66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jButton130)
-                            .add(jButton131))
-                        .add(0, 0, Short.MAX_VALUE))
-                    .add(jPanel70Layout.createSequentialGroup()
-                        .add(jLabel324)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel325)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel327)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField154, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel326)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jScrollPane54)))
-                .addContainerGap())
-        );
-
-        org.jdesktop.layout.GroupLayout edit_advancedCust1Layout = new org.jdesktop.layout.GroupLayout(edit_advancedCust1.getContentPane());
-        edit_advancedCust1.getContentPane().setLayout(edit_advancedCust1Layout);
-        edit_advancedCust1Layout.setHorizontalGroup(
-            edit_advancedCust1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel70, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        edit_advancedCust1Layout.setVerticalGroup(
-            edit_advancedCust1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel70, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        setResizable(false);
-
-        bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                bgMouseDragged(evt);
-            }
-        });
-        bg.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                bgFocusLost(evt);
-            }
-        });
-        bg.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bgMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                bgMousePressed(evt);
-            }
-        });
-        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(64, 43, 100));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("FURNITURE");
-
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("MALLIKA");
-
-        btn_search.setBackground(new java.awt.Color(64, 43, 100));
-        btn_search.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_searchMousePressed(evt);
-            }
-        });
-        btn_search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png"))); // NOI18N
-        btn_search.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 14, 44, 30));
-
-        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Search Items");
-        btn_search.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 32));
-
-        btn_add.setBackground(new java.awt.Color(64, 43, 100));
-        btn_add.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_addMousePressed(evt);
-            }
-        });
-        btn_add.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_items.png"))); // NOI18N
-        btn_add.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
-
-        jLabel19.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Add Items");
-        btn_add.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, 32));
-
-        btn_billing.setBackground(new java.awt.Color(64, 43, 100));
-        btn_billing.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_billingMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                btn_billingMouseReleased(evt);
-            }
-        });
-        btn_billing.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/bill_30px.png"))); // NOI18N
-        btn_billing.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
-
-        jLabel21.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("Billing");
-        btn_billing.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 50, 32));
-
-        btn_bill_summ.setBackground(new java.awt.Color(64, 43, 100));
-        btn_bill_summ.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_bill_summMousePressed(evt);
-            }
-        });
-        btn_bill_summ.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_bill_32.png"))); // NOI18N
-        btn_bill_summ.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
-
-        jLabel23.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Billing Sumary ");
-        btn_bill_summ.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, 32));
-
-        btn_hr.setBackground(new java.awt.Color(64, 43, 100));
-        btn_hr.setPreferredSize(new java.awt.Dimension(221, 41));
-        btn_hr.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_hrMousePressed(evt);
-            }
-        });
-        btn_hr.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_staff_32.png"))); // NOI18N
-        btn_hr.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
-
-        jLabel25.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("HR");
-        btn_hr.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 101, 32));
-
-        jSeparator1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel107.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jLabel107.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel107.setText("ASD Software Solutions");
-
-        btn_hr2.setBackground(new java.awt.Color(64, 43, 100));
-        btn_hr2.setPreferredSize(new java.awt.Dimension(221, 41));
-        btn_hr2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_hr2MousePressed(evt);
-            }
-        });
         btn_hr2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel119.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1546,7 +887,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(51, 51, 51));
-        jButton6.setText("Reset");
+        jButton6.setText("Reset Form");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -1653,6 +994,16 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel37.setText("Supplier");
 
+        jCheckBox17.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox17.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jCheckBox17.setSelected(true);
+        jCheckBox17.setText("Barcode/Serial Duplicate");
+        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox17ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout pnl_addItmsLayout = new org.jdesktop.layout.GroupLayout(pnl_addItms);
         pnl_addItms.setLayout(pnl_addItmsLayout);
         pnl_addItmsLayout.setHorizontalGroup(
@@ -1679,24 +1030,24 @@ public class MainManue1 extends javax.swing.JFrame {
                                 .add(jLabel311)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jLabel313, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jLabel92))
+                            .add(jLabel92)
+                            .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                 .add(jLabel28)
                                 .add(txt_add_wPrice, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(pnl_addItmsLayout.createSequentialGroup()
-                                    .add(55, 55, 55)
-                                    .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(18, 18, 18)
-                                    .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                 .add(txt_add_packSize, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(jLabel50)
                                 .add(txt_add_qty, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(jLabel31))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                 .add(txt_add_qty2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(jLabel37)))
+                                .add(jLabel37))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, pnl_addItmsLayout.createSequentialGroup()
+                                .add(jCheckBox17)
+                                .add(18, 18, 18)
+                                .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1742,10 +1093,10 @@ public class MainManue1 extends javax.swing.JFrame {
                                 .add(jLabel37)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(txt_add_qty2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jButton6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jCheckBox17)))))
                     .add(pnl_addItmsLayout.createSequentialGroup()
                         .add(18, 18, 18)
                         .add(jLabel30)
@@ -1760,8 +1111,10 @@ public class MainManue1 extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(pnl_addItmsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(com_box_searchTyp1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 19, Short.MAX_VALUE)
+                            .add(jButton20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 14, Short.MAX_VALUE)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 302, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(19, 19, 19))
         );
@@ -1987,6 +1340,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jPanel69.setBackground(new java.awt.Color(255, 255, 255));
         jPanel69.setBorder(javax.swing.BorderFactory.createTitledBorder("Add New Items"));
 
+        txt_search_bill_itm111.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txt_search_bill_itm111.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_search_bill_itm111ActionPerformed(evt);
@@ -2001,6 +1355,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton127.setBackground(new java.awt.Color(255, 255, 255));
         jButton127.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton127.setText("Add Item");
+        jButton127.setEnabled(false);
         jButton127.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton127ActionPerformed(evt);
@@ -2114,6 +1469,8 @@ public class MainManue1 extends javax.swing.JFrame {
         jLabel323.setBackground(new java.awt.Color(255, 255, 255));
         jLabel323.setText("Retail Price: ");
 
+        jLabel34.setText("QTY :");
+
         org.jdesktop.layout.GroupLayout jPanel69Layout = new org.jdesktop.layout.GroupLayout(jPanel69);
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
@@ -2123,18 +1480,20 @@ public class MainManue1 extends javax.swing.JFrame {
                 .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
                         .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane65, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                             .add(jPanel69Layout.createSequentialGroup()
-                                .add(0, 0, Short.MAX_VALUE)
-                                .add(jButton127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane65)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel69Layout.createSequentialGroup()
+                                .add(jLabel34)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(txt_search_bill_itm111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 48, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(18, 18, 18)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jButton109)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(jLabel323)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(txt_search_bill_itm211, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
+                                        .add(jLabel323)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(txt_search_bill_itm211, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
                         .add(18, 18, 18)
                         .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jScrollPane64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 210, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -2162,17 +1521,21 @@ public class MainManue1 extends javax.swing.JFrame {
                     .add(jScrollPane64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
-                        .add(jButton129)
-                        .add(26, 26, 26))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
-                        .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(txt_search_bill_itm111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jButton109)
-                            .add(txt_search_bill_itm211, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel323))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                    .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
+                            .add(jButton129)
+                            .add(26, 26, 26))
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel69Layout.createSequentialGroup()
+                                .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(txt_search_bill_itm211, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jLabel323))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jButton127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jLabel34)))
+                    .add(jPanel69Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                        .add(txt_search_bill_itm111, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, jButton109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
         );
 
         org.jdesktop.layout.GroupLayout pnl_billingLayout = new org.jdesktop.layout.GroupLayout(pnl_billing);
@@ -2274,7 +1637,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         .add(jCheckBox2)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jButton8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, Short.MAX_VALUE))
+                        .add(0, 227, Short.MAX_VALUE))
                     .add(jPanel69, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -4373,6 +3736,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jTable8.setGridColor(new java.awt.Color(255, 255, 255));
         jTable8.setRowHeight(20);
         jTable8.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable8.setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         jScrollPane13.setViewportView(jTable8);
         if (jTable8.getColumnModel().getColumnCount() > 0) {
             jTable8.getColumnModel().getColumn(0).setResizable(false);
@@ -4960,7 +4324,7 @@ public class MainManue1 extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1366, 768));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void subIinitCom2(){
 		itemEdit = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
@@ -5520,6 +4884,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton100 = new javax.swing.JButton();
         txt_add_qty2 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
+        jCheckBox17 = new javax.swing.JCheckBox();
         pnl_billing = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -5558,6 +4923,7 @@ public class MainManue1 extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         txt_search_bill_itm211 = new javax.swing.JTextField();
         jLabel323 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         pnl_billingSumm = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
@@ -10101,10 +9467,663 @@ public class MainManue1 extends javax.swing.JFrame {
                 jButton121ActionPerformed(evt);
             }
         });
+
+        jTextField149.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField149ActionPerformed(evt);
+            }
+        });
+
+        jLabel319.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel319.setText("Return QTY :");
+
+        org.jdesktop.layout.GroupLayout jPanel67Layout = new org.jdesktop.layout.GroupLayout(jPanel67);
+        jPanel67.setLayout(jPanel67Layout);
+        jPanel67Layout.setHorizontalGroup(
+            jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel67Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel319, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTextField149, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 114, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 29, Short.MAX_VALUE)
+                .add(jButton121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel67Layout.setVerticalGroup(
+            jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel67Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel67Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextField149, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 26, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel319))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_edit_billed_Items4Layout = new org.jdesktop.layout.GroupLayout(edit_edit_billed_Items4.getContentPane());
+        edit_edit_billed_Items4.getContentPane().setLayout(edit_edit_billed_Items4Layout);
+        edit_edit_billed_Items4Layout.setHorizontalGroup(
+            edit_edit_billed_Items4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel67, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_edit_billed_Items4Layout.setVerticalGroup(
+            edit_edit_billed_Items4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        add_new_cust.setAlwaysOnTop(true);
+
+        jPanel68.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton122.setBackground(new java.awt.Color(255, 255, 255));
+        jButton122.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jButton122.setText("ADD");
+        jButton122.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jButton122.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton122.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton122ActionPerformed(evt);
+            }
+        });
+
+        jLabel239.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel239.setText("Address :");
+
+        jTextArea15.setColumns(20);
+        jTextArea15.setLineWrap(true);
+        jTextArea15.setRows(5);
+        jTextArea15.setWrapStyleWord(true);
+        jScrollPane37.setViewportView(jTextArea15);
+
+        jLabel240.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel240.setText("Name :");
+
+        jTextField127.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField127ActionPerformed(evt);
+            }
+        });
+
+        jLabel241.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel241.setText("Contact Num :");
+
+        jTextField128.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField128ActionPerformed(evt);
+            }
+        });
+
+        jLabel242.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel242.setText("Customer ID :");
+
+        jLabel243.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel243.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel243.setText("Name :");
+
+        org.jdesktop.layout.GroupLayout jPanel68Layout = new org.jdesktop.layout.GroupLayout(jPanel68);
+        jPanel68.setLayout(jPanel68Layout);
+        jPanel68Layout.setHorizontalGroup(
+            jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel68Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel68Layout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(jButton122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel68Layout.createSequentialGroup()
+                        .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jPanel68Layout.createSequentialGroup()
+                                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel239)
+                                    .add(jLabel240)
+                                    .add(jLabel241))
+                                .add(18, 18, 18)
+                                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jTextField128)
+                                    .add(jScrollPane37)
+                                    .add(jTextField127)))
+                            .add(jPanel68Layout.createSequentialGroup()
+                                .add(jLabel242)
+                                .add(18, 18, 18)
+                                .add(jLabel243, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(0, 50, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel68Layout.setVerticalGroup(
+            jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel68Layout.createSequentialGroup()
+                .add(24, 24, 24)
+                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel242)
+                    .add(jLabel243))
+                .add(18, 18, 18)
+                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel240)
+                    .add(jPanel68Layout.createSequentialGroup()
+                        .add(33, 33, 33)
+                        .add(jLabel239))
+                    .add(jPanel68Layout.createSequentialGroup()
+                        .add(jTextField127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jScrollPane37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel68Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel241)
+                    .add(jTextField128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(38, 38, 38)
+                .add(jButton122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout add_new_custLayout = new org.jdesktop.layout.GroupLayout(add_new_cust.getContentPane());
+        add_new_cust.getContentPane().setLayout(add_new_custLayout);
+        add_new_custLayout.setHorizontalGroup(
+            add_new_custLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel68, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        add_new_custLayout.setVerticalGroup(
+            add_new_custLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel68, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        edit_advancedCust.setAlwaysOnTop(true);
+
+        jPanel39.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable42.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable42.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jTable42.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable42.setRowHeight(20);
+        jTable42.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable42MousePressed(evt);
+            }
+        });
+        jScrollPane63.setViewportView(jTable42);
+
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advanced Code", "Customer Name" }));
+
+        jTextField109.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField109ActionPerformed(evt);
+            }
+        });
+        jTextField109.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField109KeyPressed(evt);
+            }
+        });
+
+        jButton123.setText("Search ");
+        jButton123.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton123ActionPerformed(evt);
+            }
+        });
+
+        jLabel216.setText("Total Amount :");
+
+        jTextField129.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField129KeyTyped(evt);
+            }
+        });
+
+        jButton124.setText("Print Advanced Slip");
+        jButton124.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton124ActionPerformed(evt);
+            }
+        });
+
+        jLabel244.setText("Payed Advance :");
+
+        jTextField130.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField130KeyTyped(evt);
+            }
+        });
+
+        jButton125.setText("Delete Advanced Slip");
+        jButton125.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton125ActionPerformed(evt);
+            }
+        });
+
+        jLabel321.setText("Add More :");
+
+        jTextField135.setText("0");
+        jTextField135.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField135KeyTyped(evt);
+            }
+        });
+
+        jButton126.setText("ADD");
+        jButton126.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton126ActionPerformed(evt);
+            }
+        });
+
+        jTextField150.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField150KeyTyped(evt);
+            }
+        });
+
+        jLabel322.setText("Due Amount :");
+
+        org.jdesktop.layout.GroupLayout jPanel39Layout = new org.jdesktop.layout.GroupLayout(jPanel39);
+        jPanel39.setLayout(jPanel39Layout);
+        jPanel39Layout.setHorizontalGroup(
+            jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel39Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel39Layout.createSequentialGroup()
+                        .add(jComboBox13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(41, 41, 41)
+                        .add(jTextField109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(39, 39, 39)
+                        .add(jButton123))
+                    .add(jPanel39Layout.createSequentialGroup()
+                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel39Layout.createSequentialGroup()
+                                .add(jButton125)
+                                .add(18, 18, 18)
+                                .add(jButton124))
+                            .add(jScrollPane63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 652, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(18, 18, 18)
+                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel216)
+                            .add(jTextField129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel244)
+                            .add(jTextField130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel322)
+                            .add(jTextField150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                .add(jButton126)
+                                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel321)
+                                    .add(jTextField135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        jPanel39Layout.setVerticalGroup(
+            jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel39Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jComboBox13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextField109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton123))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel39Layout.createSequentialGroup()
+                        .add(jScrollPane63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jPanel39Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jButton124)
+                            .add(jButton125)))
+                    .add(jPanel39Layout.createSequentialGroup()
+                        .add(jLabel216)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel244)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel322)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel321)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton126)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout edit_advancedCustLayout = new org.jdesktop.layout.GroupLayout(edit_advancedCust.getContentPane());
+        edit_advancedCust.getContentPane().setLayout(edit_advancedCustLayout);
+        edit_advancedCustLayout.setHorizontalGroup(
+            edit_advancedCustLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel39, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_advancedCustLayout.setVerticalGroup(
+            edit_advancedCustLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel39, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        edit_advancedCust1.setAlwaysOnTop(true);
+
+        jPanel70.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTable43.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable43.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jTable43.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable43.setRowHeight(20);
+        jTable43.setSelectionBackground(new java.awt.Color(110, 89, 222));
+        jTable43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable43MousePressed(evt);
+            }
+        });
+        jScrollPane66.setViewportView(jTable43);
+
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quotation Code", "Customer Name" }));
+
+        jTextField110.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField110ActionPerformed(evt);
+            }
+        });
+        jTextField110.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField110KeyPressed(evt);
+            }
+        });
+
+        jButton128.setText("Search ");
+        jButton128.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton128ActionPerformed(evt);
+            }
+        });
+
+        jLabel324.setText("Total Amount :");
+
+        jTextField151.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField151KeyTyped(evt);
+            }
+        });
+
+        jButton130.setText("Print Quotation");
+        jButton130.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton130ActionPerformed(evt);
+            }
+        });
+
+        jLabel325.setText("Discount Price :");
+
+        jTextField152.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField152KeyTyped(evt);
+            }
+        });
+
+        jButton131.setText("Delete Quotation");
+        jButton131.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton131ActionPerformed(evt);
+            }
+        });
+
+        jLabel326.setText("Description :");
+
+        jTextField154.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField154KeyTyped(evt);
+            }
+        });
+
+        jLabel327.setText("Net Amount :");
+
+        jTextArea19.setColumns(20);
+        jTextArea19.setLineWrap(true);
+        jTextArea19.setRows(5);
+        jTextArea19.setWrapStyleWord(true);
+        jScrollPane54.setViewportView(jTextArea19);
+
+        org.jdesktop.layout.GroupLayout jPanel70Layout = new org.jdesktop.layout.GroupLayout(jPanel70);
+        jPanel70.setLayout(jPanel70Layout);
+        jPanel70Layout.setHorizontalGroup(
+            jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel70Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel70Layout.createSequentialGroup()
+                        .add(jComboBox14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(41, 41, 41)
+                        .add(jTextField110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(39, 39, 39)
+                        .add(jButton128))
+                    .add(jPanel70Layout.createSequentialGroup()
+                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jPanel70Layout.createSequentialGroup()
+                                .add(414, 414, 414)
+                                .add(jButton131)
+                                .add(18, 18, 18)
+                                .add(jButton130))
+                            .add(jScrollPane66))
+                        .add(18, 18, 18)
+                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel324)
+                            .add(jTextField151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel325)
+                            .add(jTextField152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel327)
+                            .add(jTextField154, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel326)
+                            .add(jScrollPane54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 133, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        jPanel70Layout.setVerticalGroup(
+            jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel70Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jComboBox14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextField110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton128))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel70Layout.createSequentialGroup()
+                        .add(jScrollPane66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 220, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jPanel70Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jButton130)
+                            .add(jButton131))
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(jPanel70Layout.createSequentialGroup()
+                        .add(jLabel324)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel325)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel327)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField154, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jLabel326)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jScrollPane54)))
+                .addContainerGap())
+        );
+
+        org.jdesktop.layout.GroupLayout edit_advancedCust1Layout = new org.jdesktop.layout.GroupLayout(edit_advancedCust1.getContentPane());
+        edit_advancedCust1.getContentPane().setLayout(edit_advancedCust1Layout);
+        edit_advancedCust1Layout.setHorizontalGroup(
+            edit_advancedCust1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel70, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        edit_advancedCust1Layout.setVerticalGroup(
+            edit_advancedCust1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel70, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                bgMouseDragged(evt);
+            }
+        });
+        bg.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                bgFocusLost(evt);
+            }
+        });
+        bg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bgMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bgMousePressed(evt);
+            }
+        });
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(64, 43, 100));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("FURNITURE");
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("MALLIKA");
+
+        btn_search.setBackground(new java.awt.Color(64, 43, 100));
+        btn_search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_searchMousePressed(evt);
+            }
+        });
+        btn_search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png"))); // NOI18N
+        btn_search.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 14, 44, 30));
+
+        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Search Items");
+        btn_search.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 130, 32));
+
+        btn_add.setBackground(new java.awt.Color(64, 43, 100));
+        btn_add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_addMousePressed(evt);
+            }
+        });
+        btn_add.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add_items.png"))); // NOI18N
+        btn_add.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
+
+        jLabel19.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Add Items");
+        btn_add.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 90, 32));
+
+        btn_billing.setBackground(new java.awt.Color(64, 43, 100));
+        btn_billing.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_billingMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btn_billingMouseReleased(evt);
+            }
+        });
+        btn_billing.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/bill_30px.png"))); // NOI18N
+        btn_billing.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
+
+        jLabel21.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Billing");
+        btn_billing.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 50, 32));
+
+        btn_bill_summ.setBackground(new java.awt.Color(64, 43, 100));
+        btn_bill_summ.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_bill_summMousePressed(evt);
+            }
+        });
+        btn_bill_summ.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_bill_32.png"))); // NOI18N
+        btn_bill_summ.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
+
+        jLabel23.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Billing Sumary ");
+        btn_bill_summ.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, 32));
+
+        btn_hr.setBackground(new java.awt.Color(64, 43, 100));
+        btn_hr.setPreferredSize(new java.awt.Dimension(221, 41));
+        btn_hr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_hrMousePressed(evt);
+            }
+        });
+        btn_hr.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_staff_32.png"))); // NOI18N
+        btn_hr.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 44, -1));
+
+        jLabel25.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("HR");
+        btn_hr.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 101, 32));
+
+        jSeparator1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel107.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel107.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel107.setText("ASD Software Solutions");
+
+        btn_hr2.setBackground(new java.awt.Color(64, 43, 100));
+        btn_hr2.setPreferredSize(new java.awt.Dimension(221, 41));
+        btn_hr2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_hr2MousePressed(evt);
+            }
+        });
 	}
 	
 	private void bgFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bgFocusLost
-        // TODO add your handling code here:
+            // TODO add your handling code here:
     }//GEN-LAST:event_bgFocusLost
 
     private void manueExitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manueExitMousePressed
@@ -10124,56 +10143,66 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_bgMouseClicked
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
-       
+
     }//GEN-LAST:event_jButton2MousePressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int selectedRow = this.tbl_items_search.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a Item to Edit","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.adminLogin_item_edit.setSize(375,175);
-                this.adminLogin_item_edit.setTitle("Admin Access");   
-                this.adminLogin_item_edit.setLocationRelativeTo(this);
-                this.adminLogin_item_edit.setVisible(true);
-            }
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Item to Edit", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.adminLogin_item_edit.setSize(375, 175);
+            this.adminLogin_item_edit.setTitle("Admin Access");
+            this.adminLogin_item_edit.setLocationRelativeTo(this);
+            this.adminLogin_item_edit.setVisible(true);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-            
-            storeItemData st = new storeItemData();
-        
-            String name = this.txt_add_packSize.getText();
-            String itmCode = st.generateItemCode(this);
-            
-            
-            String w = this.txt_add_qty1.getText();
-            
-            String q  = this.txt_add_qty.getText();
-            
-            String w_p = this.txt_add_wPrice.getText();
-            
-            String r_p = this.txt_add_retailPrice.getText();
-            String supplier = this.txt_add_qty2.getText();
-            
-            Date d = new Date();
-            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-            String date = sdf1.format(d);
-            
-            String type = (String)com_box_searchTyp1.getSelectedItem();
-            
-           if(st.validateItmName(name) & st.validatePackSize(w) & st.validateRprice(r_p) & st.validateWprice(w_p) & st.validateQTY(q) & st.validateEXPdate(date)){
-               int warranty = Integer.parseInt(w);
-               int qty = Integer.parseInt(q);
-               double w_price = Double.parseDouble(w_p);
-               double r_price = Double.parseDouble(r_p);
-               //String itemCode = st.addTempItem(name, warranty, qty, w_price, r_price, date,type, this);
-               String itemCodee = st.updateTempItem(name, warranty, qty, w_price, r_price, date, type,supplier, itmCode, this);
-               
-               if(itemCodee != null){
-                   JOptionPane.showMessageDialog(this, "New Item "+name+" Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
-                   
+
+        storeItemData st = new storeItemData();
+
+        String name = this.txt_add_packSize.getText();
+        String itmCode = st.generateItemCode(this);
+
+        String w = this.txt_add_qty1.getText();
+
+        String q = this.txt_add_qty.getText();
+
+        String w_p = this.txt_add_wPrice.getText();
+
+        String r_p = this.txt_add_retailPrice.getText();
+        String supplier = this.txt_add_qty2.getText();
+
+        Date d = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf1.format(d);
+
+        String type = (String) com_box_searchTyp1.getSelectedItem();
+
+        if (st.validateItmName(name) & st.validatePackSize(w) & st.validateRprice(r_p) & st.validateWprice(w_p) & st.validateQTY(q) & st.validateEXPdate(date)) {
+            int warranty = Integer.parseInt(w);
+            int qty = Integer.parseInt(q);
+            double w_price = Double.parseDouble(w_p);
+            double r_price = Double.parseDouble(r_p);
+            //String itemCode = st.addTempItem(name, warranty, qty, w_price, r_price, date,type, this);
+
+            String bResult = addBarcodeWhenAddingOrUpdateItems(qty, name, r_p, itmCode);
+
+            if (bResult != null) {
+
+                String duplicate = "";
+                if (jCheckBox17.isSelected()) {
+                    duplicate = "yes";
+                } else {     
+                    duplicate = "no";
+                }
+
+                String itemCodee = st.updateTempItem(name, warranty, qty, w_price, r_price, date, type, supplier, itmCode, bResult, duplicate, this);
+
+                if (itemCodee != null) {
+                    JOptionPane.showMessageDialog(this, "New Item " + name + " Added Successfully", "Item Details", JOptionPane.INFORMATION_MESSAGE);
+
                     this.txt_add_itemName.setText("");
                     this.txt_add_packSize.setText("");
                     this.txt_add_qty.setText("");
@@ -10181,7 +10210,7 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.txt_add_retailPrice.setText("");
                     this.txt_add_qty1.setText("");
                     this.txt_add_qty2.setText("");
-                            
+
                     String id = st.generateItemCode(this);
                     this.jLabel313.setText(id);
 
@@ -10190,9 +10219,9 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     int subItemsCount = st.getSubItemCount(id);
                     this.txt_add_qty.setText(String.valueOf(subItemsCount));
-                    
+
                     boolean avlb = st.checkItemRecordAvailability(this);
-//        System.out.println(avl);
+                    //        System.out.println(avl);
 
                     String itm_name = "temp prod";
                     int wa = 0;
@@ -10202,37 +10231,36 @@ public class MainManue1 extends javax.swing.JFrame {
                     String tt = "no";
                     String dd = "2021-01-01";
 
-                    if(avlb){
+                    if (avlb) {
                         System.out.println("true");
-                    }
-                    else{
+                    } else {
                         System.out.println("false");
                         st.addTempItem(itm_name, wa, qq, ww, rr, dd, tt, this);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Item Added Failed..!!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                searchItems si = new searchItems();
+                ResultSet rs = si.showUpdatedItemDetails();
+                this.tbl_addItems.setModel(DbUtils.resultSetToTableModel(rs));
+                //this.store_movie_data.dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Somethig wrong with barcode adding..!!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields To Add a Item..!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-               }
-               else{
-                   JOptionPane.showMessageDialog(this, "Item Added Failed..!!","Error",JOptionPane.ERROR_MESSAGE);
-               } 
-               searchItems si = new searchItems();
-               ResultSet rs = si.showUpdatedItemDetails();
-               this.tbl_addItems.setModel(DbUtils.resultSetToTableModel(rs));
-               //this.store_movie_data.dispose();
-                
-                
-           }
-           else{
-               getToolkit().beep();
-                JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields To Add a Item..!!","Error",JOptionPane.ERROR_MESSAGE);
-           }
-           
+
 //            this.txt_add_itemName.setText("");
 //            this.txt_add_packSize.setText("");
 //            this.txt_add_qty.setText("");
 //            this.txt_add_wPrice.setText("");
 //            this.txt_add_retailPrice.setText("");
 //            this.txt_add_qty1.setText("");
-           
-           
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -10242,29 +10270,26 @@ public class MainManue1 extends javax.swing.JFrame {
         this.txt_add_wPrice.setText("");
         this.txt_add_retailPrice.setText("");
         this.txt_add_qty1.setText("");
-        
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         searchItems s = new searchItems();
-        
-        if(this.com_box_searchTyp.getSelectedItem().toString().equals("Item Name")){
+
+        if (this.com_box_searchTyp.getSelectedItem().toString().equals("Item Name")) {
             ResultSet a = s.searchByItemName(this.txt_search_text.getText().toString());
             System.out.println(a);
             this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.com_box_searchTyp.getSelectedItem().toString().equals("Serial Number")){
+        } else if (this.com_box_searchTyp.getSelectedItem().toString().equals("Serial Number")) {
             ResultSet a = s.searchByItemCode(this.txt_search_text.getText().toString());
             this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.com_box_searchTyp.getSelectedItem().toString().equals("Item Code")){
+        } else if (this.com_box_searchTyp.getSelectedItem().toString().equals("Item Code")) {
             ResultSet a = s.searchByProductCode(this.txt_search_text.getText().toString());
             this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.com_box_searchTyp.getSelectedItem().toString().equals("Category")){
+        } else if (this.com_box_searchTyp.getSelectedItem().toString().equals("Category")) {
             ResultSet a = s.searchByItemType(this.txt_search_text.getText().toString());
             this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(a));
-        } 
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void com_box_searchTypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_box_searchTypActionPerformed
@@ -10273,21 +10298,22 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         int selectedRow = this.tbl_items_search.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a Item to delete","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.adminLogin_item_delete.setSize(375,175);
-                this.adminLogin_item_delete.setTitle("Admin Access");   
-                this.adminLogin_item_delete.setLocationRelativeTo(this);
-                this.adminLogin_item_delete.setVisible(true);
-            }
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Item to delete", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.adminLogin_item_delete.setSize(375, 175);
+            this.adminLogin_item_delete.setTitle("Admin Access");
+            this.adminLogin_item_delete.setLocationRelativeTo(this);
+            this.adminLogin_item_delete.setVisible(true);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         editItemData ei = new editItemData();
         searchItems si = new searchItems();
-
+        barcode bb = new barcode();
+        storeItemData ssdd = new storeItemData();
+        
         String itmId = this.txt_edt_company.getText();
         String name = this.txt_edt_itemName.getText();
         int warranty = Integer.parseInt(this.txt_edt_packSize.getText());
@@ -10295,22 +10321,117 @@ public class MainManue1 extends javax.swing.JFrame {
         double w_price = Double.parseDouble(this.txt_edt_wPrice.getText());
         double r_price = Double.parseDouble(this.txt_edt_rPrice.getText());
         String type = this.com_box_searchTyp2.getSelectedItem().toString();
- 
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        String date = df.format(dChooser_edt_expDate.getDate());
+        String rPrice = this.txt_edt_rPrice.getText();
         
-        ei.UpdateItemData(name, warranty, qty, w_price, r_price, date,type, itmId, itemEdit);
+        String bbLabla = si.getBCodeLableIDByItemCode(itmId);
+        String itmBarcodeId = si.getBBCodeByItemCode(itmId);
+        String barcodeType = si.getBarCodeTypeByItemCode(itmId);
+        int currentQty = Integer.parseInt(si.getQtyByItemCode(itmId));
+        
+        int dif = qty - currentQty;
+        String rrrr = "";
+        String btype = "MF";
+        
+        if(barcodeType.equals("yes")){
+            System.out.println(barcodeType + "   jjjjjjjjjj");          
+            rrrr = bb.addBundelBarcode(name, btype, qty, rPrice, "yes", this);
+           
+            String snn = "";
+            for (int i = 0; i < qty; i++) {
+                snn = bb.addBarcodeItems3(bbLabla,name, this, btype, this, this, rPrice, "pending");
+            }
+            
+            try{
+                String query = "delete from a where bb_id=?";
+                PreparedStatement pstf = conn.prepareStatement(query);
 
-        ResultSet rs;
-        rs = si.showItemDetails();
+                pstf.setString(1, itmBarcodeId);
+                pstf.executeUpdate();
+            }
+            catch(Exception e){
+                //do nuthing
+            }
+            
+            try{
+                String query = "delete from barcode_bundel where bb_id=?";
+                PreparedStatement pstfd = conn.prepareStatement(query);
+
+                pstfd.setString(1, itmBarcodeId);
+                pstfd.executeUpdate();
+            }
+            catch(Exception e){
+                //do nuthing
+            }
+
+        }
+        else if (barcodeType.equals("no") && (dif >= 0)){
+            rrrr = bb.addBundelBarcode(name, btype, qty, rPrice, "no", this);
+            List<String> barcodeList = new ArrayList<>();
+            barcodeList = si.getBBCodesByItemCode(itmId);
+            if(dif > 0){
+                for (int i = 0; i < dif; i++) {
+                    String sn = bb.addBarcodeItems1(name, this, btype, this, this, rPrice, "pending");
+
+                    ssdd.addSubItems(sn, itmId, "yes", this);
+                }
+                
+                
+                for (String barcode : barcodeList) {
+                    bb.addBarcodeItems3(barcode,name, this, btype, this, this, rPrice, "pending");
+                }
+            }
+            else{
+                
+                for (String barcode : barcodeList) {
+                    bb.addBarcodeItems3(barcode,name, this, btype, this, this, rPrice, "pending");
+                }     
+            }
+            
+            try{
+                String query = "delete from a where bb_id=?";
+                PreparedStatement pstf = conn.prepareStatement(query);
+
+                pstf.setString(1, itmBarcodeId);
+                pstf.executeUpdate();
+                }
+            catch(Exception e){
+                    //do nuthing
+            }
+
+            try{
+                String query = "delete from barcode_bundel where bb_id=?";
+                PreparedStatement pstfd = conn.prepareStatement(query);
+
+                pstfd.setString(1, itmBarcodeId);
+                pstfd.executeUpdate();
+            }
+            catch(Exception e){
+                //do nuthing
+            }
+        }
         
-        if(rs ==null){
-            JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Details!","Database Error",JOptionPane.ERROR_MESSAGE);
+        if (barcodeType.equals("no") && (dif < 0)){
+            JOptionPane.showMessageDialog(itemEdit, "Cannot Edite Quantity if it is less than current quantity, for Non-Duplicate Barcode Items!", "Error.!", JOptionPane.ERROR_MESSAGE);
         }
         else{
-            this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String date = df.format(dChooser_edt_expDate.getDate());
+
+            ei.UpdateItemData(name, warranty, qty, w_price, r_price, date, type, itmId, rrrr, itemEdit);
+
+            ResultSet rs;
+            rs = si.showItemDetails();
+
+            if (rs == null) {
+                JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Details!", "Database Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
+            }
+            this.itemEdit.dispose();
         }
-        this.itemEdit.dispose();
+            
+
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
@@ -10333,38 +10454,36 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         items_add_to_bill juki = new items_add_to_bill();
-        
+
         String eID = this.jTextField5.getText();
         String custID = this.jTextField4.getText();
         String totall = this.jTextField7.getText();
-        
-        if(juki.validateCustomer(custID) & juki.validateEmp(eID) & juki.validateTotal(totall)){
-            this.billSubmition.setSize(840,410);
-            this.billSubmition.setTitle("Print Invoce");   
+
+        if (juki.validateCustomer(custID) & juki.validateEmp(eID) & juki.validateTotal(totall)) {
+            this.billSubmition.setSize(840, 410);
+            this.billSubmition.setTitle("Print Invoce");
             this.billSubmition.setLocationRelativeTo(this);
             this.billSubmition.setVisible(true);
 
             double total = Double.parseDouble(this.jTextField7.getText());
-            int bill_dis = Integer.parseInt(this.jTextField8.getText());    
-            double net_amount = (total)-(bill_dis);
+            int bill_dis = Integer.parseInt(this.jTextField8.getText());
+            double net_amount = (total) - (bill_dis);
             this.jTextField111.setText(String.valueOf(net_amount));
-            
+
             this.jTextField108.setEditable(false);
             this.jTextField112.setEditable(false);
             this.jTextField113.setEditable(false);
             this.jDateChooser1.setEnabled(false);
-            
+
             this.jCheckBox14.setSelected(false);
             this.jTextField108.setText("");
             this.jTextField112.setText("0");
             this.jTextField113.setText("#");
             this.jDateChooser1.setDate(null);
+        } else {
+            JOptionPane.showMessageDialog(this, "Customer, Sales Rep, Total can't be EMPTY.!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        else{
-            JOptionPane.showMessageDialog(this, "Customer, Sales Rep, Total can't be EMPTY.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
+
 //        cashBalancing cbb = new cashBalancing();
 //        items_add_to_bill fff = new items_add_to_bill();
 //        
@@ -10488,56 +10607,54 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        items_add_to_bill iii = new items_add_to_bill(); 
+        items_add_to_bill iii = new items_add_to_bill();
         String billIDD = this.jLabel47.getText();
-         
+
         int selectedRow = this.jTable3.getSelectedRow();
-        
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billItemCode = this.jTable3.getModel().getValueAt(selectedRow, 0).toString();
             String aaa = iii.checkSNAvailability(billItemCode);
-            
-            if(aaa.equals("")){
-                int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection == 0){  
+
+            if (aaa.equals("")) {
+                int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                if (userSelection == 0) {
                     boolean gg = iii.deleteAddedBillItems(billItemCode);
-                    
-                    if(gg){
+
+                    if (gg) {
                         try {
                             String query = "update items set qty = qty+ ? where itm_code = ?";
                             PreparedStatement pst = conn.prepareStatement(query);
 
-                                for(int i=0; i<jTable3.getRowCount(); i++){
-                                    String itemId = (String)jTable3.getValueAt(i, 1);
-                                    int qty = (int)jTable3.getValueAt(i, 4);
+                            for (int i = 0; i < jTable3.getRowCount(); i++) {
+                                String itemId = (String) jTable3.getValueAt(i, 1);
+                                int qty = (int) jTable3.getValueAt(i, 4);
 
-                                    pst.setInt(1, qty);
-                                    pst.setString(2, itemId);
-                                    pst.executeUpdate();
-                                }
+                                pst.setInt(1, qty);
+                                pst.setString(2, itemId);
+                                pst.executeUpdate();
+                            }
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        
+
                         double rrrrrPrice1 = iii.getRetailPrice(billItemCode);
 
                         double wwwwwPrice1 = iii.getCostPrice(billItemCode);
 
                         int qqqqqty1 = iii.getQTY(billItemCode);
 
-                        double NewValue1 = calculateBillItemValue(qqqqqty1,rrrrrPrice1);
-                        double NewCostValue1 = calculateBillItemCostValue(qqqqqty1,wwwwwPrice1);
-                        
+                        double NewValue1 = calculateBillItemValue(qqqqqty1, rrrrrPrice1);
+                        double NewCostValue1 = calculateBillItemCostValue(qqqqqty1, wwwwwPrice1);
+
                         double calculatedValue = iii.calculateTotal(billIDD);
                         this.jTextField7.setText(String.valueOf(calculatedValue));
-                                //bill total eka update karanna    
+                        //bill total eka update karanna    
                     }
-                    
-                    
+
                     String billID = iii.generateBill_id(this);
                     ResultSet rs = iii.getAddedItemsBy_bill_ID(billID);
 
@@ -10547,17 +10664,15 @@ public class MainManue1 extends javax.swing.JFrame {
                     double calculatedValue = iii.calculateTotal(billID);
                     this.jTextField7.setText(String.valueOf(calculatedValue));
                 }
-            }
-            else{
+            } else {
                 items_add_to_bill jiu87 = new items_add_to_bill();
                 int selectedRow321123 = this.jTable3.getSelectedRow();
 
-                if(selectedRow321123 == -1){
-                    JOptionPane.showMessageDialog(this, "Select a Product to Edit.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.edit_billed_Items.setSize(425,340);
-                    this.edit_billed_Items.setTitle("Edit Bill Items");   
+                if (selectedRow321123 == -1) {
+                    JOptionPane.showMessageDialog(this, "Select a Product to Edit.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    this.edit_billed_Items.setSize(425, 340);
+                    this.edit_billed_Items.setTitle("Edit Bill Items");
                     this.edit_billed_Items.setLocationRelativeTo(this);
                     this.edit_billed_Items.setVisible(true);
 
@@ -10566,7 +10681,7 @@ public class MainManue1 extends javax.swing.JFrame {
                     ResultSet jjuy = jiu87.getSubItemDataFromBill(ProductItmCode);
                     this.jTable34.setModel(DbUtils.resultSetToTableModel(jjuy));
                 }
-                
+
 //                int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
 //                if(userSelection == 0){  
 //                    iii.deleteAddedBillItems(billItemCode);
@@ -10580,7 +10695,6 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    double calculatedValue = iii.calculateTotal(billID);
 //                    this.jTextField7.setText(String.valueOf(calculatedValue));
 //                }
-            
             }
         }
 //            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
@@ -10600,59 +10714,51 @@ public class MainManue1 extends javax.swing.JFrame {
 //            }
 //        }
 
-            
-            
 
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         billSearch bs = new billSearch();
-        
+
         DateFormat dff = new SimpleDateFormat("yyyy-MM-dd");
 
-   
-        if((this.jComboBox2.getSelectedItem().toString().equals("Invoice No"))){
-            ResultSet rs1= bs.showCompleteBillDetailsByBillId(this.jTextField24.getText().toString());
+        if ((this.jComboBox2.getSelectedItem().toString().equals("Invoice No"))) {
+            ResultSet rs1 = bs.showCompleteBillDetailsByBillId(this.jTextField24.getText().toString());
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1));
-        }
-        else if((this.jComboBox2.getSelectedItem().toString().equals("Customer"))){
-            ResultSet rs2= bs.showCompleteBillDetailsByParmacyName(this.jTextField24.getText().toString());
+        } else if ((this.jComboBox2.getSelectedItem().toString().equals("Customer"))) {
+            ResultSet rs2 = bs.showCompleteBillDetailsByParmacyName(this.jTextField24.getText().toString());
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
-        }
-        else if((this.jComboBox2.getSelectedItem().toString().equals("Date"))){
+        } else if ((this.jComboBox2.getSelectedItem().toString().equals("Date"))) {
             String FromSelectedDate = dff.format(dChooser_edt_expDate1.getDate());
             String ToSelectedDate = dff.format(dChooser_edt_expDate2.getDate());
-            ResultSet rs2= bs.showCompleteBillDetailsByDate(FromSelectedDate,ToSelectedDate);
+            ResultSet rs2 = bs.showCompleteBillDetailsByDate(FromSelectedDate, ToSelectedDate);
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
-        }
-        else if((this.jComboBox2.getSelectedItem().toString().equals("Customer & Date"))){
+        } else if ((this.jComboBox2.getSelectedItem().toString().equals("Customer & Date"))) {
             String FromSelectedDate2 = dff.format(dChooser_edt_expDate1.getDate());
             String ToSelectedDate2 = dff.format(dChooser_edt_expDate2.getDate());
-            ResultSet rs2= bs.showCompleteBillDetailsByDateANDcustomer(FromSelectedDate2,ToSelectedDate2,this.jTextField24.getText().toString());
+            ResultSet rs2 = bs.showCompleteBillDetailsByDateANDcustomer(FromSelectedDate2, ToSelectedDate2, this.jTextField24.getText().toString());
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs2));
-        }      
-        else if((this.jComboBox2.getSelectedItem().toString().equals("Serial Number"))){
+        } else if ((this.jComboBox2.getSelectedItem().toString().equals("Serial Number"))) {
             System.out.println("ffffffffffffffff");
             String ddd = bs.getBillItemIDBySN(this.jTextField24.getText().toString());
             System.out.println(ddd);
             String ggg = bs.getBillIDByBillItemID(ddd);
             System.out.println(ggg);
-            ResultSet rs111= bs.showCompleteBillDetailsByBillId(ggg);
+            ResultSet rs111 = bs.showCompleteBillDetailsByBillId(ggg);
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs111));
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         int selectedRow = this.jTable4.getSelectedRow();
-        
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Select a Invoice to Preview.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Invoice to Preview.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
             String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
-            
-            if(invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")){
+
+            if (invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -10668,8 +10774,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")){
+            } else if (invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -10685,8 +10790,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Credit")){
+            } else if (invoTypeee.equals("Credit")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -10702,8 +10806,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Credit Advanced")){
+            } else if (invoTypeee.equals("Credit Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -10719,8 +10822,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Cheque")){
+            } else if (invoTypeee.equals("Cheque")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -10736,16 +10838,16 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }     
-        } 
+            }
+        }
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        this.profit.setSize(635,377);
-        this.profit.setTitle("Calculate Profit");   
+        this.profit.setSize(635, 377);
+        this.profit.setTitle("Calculate Profit");
         this.profit.setLocationRelativeTo(this);
         this.profit.setVisible(true);
-       
+
         this.txt_edt_company1.setText("");
         this.txt_edt_company2.setText("");
         this.txt_edt_company3.setText("");
@@ -10764,51 +10866,49 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField26ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-       int selectedRow = this.jTable1.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Customer to calculate!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            
+        int selectedRow = this.jTable1.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Customer to calculate!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+
             String custID = this.jTable1.getModel().getValueAt(selectedRow, 0).toString();
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String from = df.format(jDateChooser5.getDate());
             String to = df.format(jDateChooser4.getDate());
-            
+
             try {
-            Statement stmnt6 = conn.createStatement();
-            ResultSet rs = stmnt6.executeQuery("SELECT SUM(net_amount) FROM bill where cust_id='"+custID+"' and bill_date BETWEEN '"+from+"' AND '"+to+"'");
-            while(rs.next()){
-                double calc = rs.getDouble("SUM(net_amount)");
-                this.jTextField26.setText(String.valueOf(calc));
+                Statement stmnt6 = conn.createStatement();
+                ResultSet rs = stmnt6.executeQuery("SELECT SUM(net_amount) FROM bill where cust_id='" + custID + "' and bill_date BETWEEN '" + from + "' AND '" + to + "'");
+                while (rs.next()) {
+                    double calc = rs.getDouble("SUM(net_amount)");
+                    this.jTextField26.setText(String.valueOf(calc));
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
+
         }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        hr hrr =new hr();
-        
+        hr hrr = new hr();
+
         String name = this.jTextField10.getText();
         String addr1 = this.jTextField12.getText();
         String addr2 = this.jTextField32.getText();
         String city = this.jTextField33.getText();
         String state = this.jTextField34.getText();
         String conNo = this.jTextField35.getText();
-        
-        if(hrr.validateCustName(name)& hrr.validateCustAddrL1(addr1) & hrr.validateCustAddrL2(addr2) & hrr.validateCustCity(city) & hrr.validateCustConNo(conNo) & hrr.validateCustState(state)){
-            Date d = new Date();     
+
+        if (hrr.validateCustName(name) & hrr.validateCustAddrL1(addr1) & hrr.validateCustAddrL2(addr2) & hrr.validateCustCity(city) & hrr.validateCustConNo(conNo) & hrr.validateCustState(state)) {
+            Date d = new Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
             String reg_date = sdf1.format(d);
             double credit_bal = 0;
-            
 
-            String custID = hrr.addCustomer(name, addr1, addr2, city, state, conNo, reg_date,credit_bal, this);
-            JOptionPane.showMessageDialog(this, "Customer Added Successfully","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+            String custID = hrr.addCustomer(name, addr1, addr2, city, state, conNo, reg_date, credit_bal, this);
+            JOptionPane.showMessageDialog(this, "Customer Added Successfully", "Movie Details", JOptionPane.INFORMATION_MESSAGE);
 
             ResultSet rs = hrr.showUpdatedCustDetails();
             this.jTable1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -10819,13 +10919,12 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField33.setText("");
             this.jTextField34.setText("");
             this.jTextField35.setText("");
-        }
-        else{
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields..!!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields..!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
+
+
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
@@ -10835,31 +10934,30 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jTextField33.setText("");
         this.jTextField34.setText("");
         this.jTextField35.setText("");
-        
+
         this.jButton27.setEnabled(false);
         this.jButton16.setEnabled(true);
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         int selectedRow = this.jTable1.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Customer to edit details!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Customer to edit details!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String custID = this.jTable1.getModel().getValueAt(selectedRow, 0).toString();
- 
+
             hr hrrr = new hr();
-            try{
+            try {
                 ResultSet rs = hrrr.getCustomerDetails(custID);
-                while(rs.next()){
-                   String cust_id = rs.getString("cust_id");
-                   String name = rs.getString("name");
-                   String address_nile_1 = rs.getString("address_nile_1");
-                   String address_nile_2 = rs.getString("address_nile_2");
-                   String city = rs.getString("city");
-                   String state = rs.getString("state");
-                   String contactNo = rs.getString("contactNo");
-                    
+                while (rs.next()) {
+                    String cust_id = rs.getString("cust_id");
+                    String name = rs.getString("name");
+                    String address_nile_1 = rs.getString("address_nile_1");
+                    String address_nile_2 = rs.getString("address_nile_2");
+                    String city = rs.getString("city");
+                    String state = rs.getString("state");
+                    String contactNo = rs.getString("contactNo");
+
                     this.jLabel55.setText(cust_id);
                     this.jTextField10.setText(name);
                     this.jTextField12.setText(address_nile_1);
@@ -10867,13 +10965,12 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.jTextField33.setText(city);
                     this.jTextField34.setText(state);
                     this.jTextField35.setText(contactNo);
-                    
+
                     this.jButton27.setEnabled(true);
                     this.jButton16.setEnabled(false);
-                    
+
                 }
-            }
-            catch(Exception e){
+            } catch (Exception e) {
                 //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -10881,18 +10978,18 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         int selectedRow = this.jTable1.getSelectedRow();
-    
+
         String custID = this.jTable1.getModel().getValueAt(selectedRow, 0).toString();
         String name = this.jTable1.getModel().getValueAt(selectedRow, 1).toString();
-        
+
         this.jLabel84.setText(custID);
         this.jLabel86.setText(name);
-        
+
     }//GEN-LAST:event_jTable1MousePressed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        hr hrrr =new hr();
-        
+        hr hrrr = new hr();
+
         String name = this.jTextField10.getText();
         String addr1 = this.jTextField12.getText();
         String addr2 = this.jTextField32.getText();
@@ -10900,40 +10997,38 @@ public class MainManue1 extends javax.swing.JFrame {
         String state = this.jTextField34.getText();
         String conNo = this.jTextField35.getText();
         String custID = this.jLabel55.getText();
-   
+
         hrrr.UpdateCustomerData(name, addr1, addr2, city, state, conNo, custID, this);
 
         ResultSet rs;
         rs = hrrr.showUpdatedCustDetails();
-        
-        if(rs ==null){
-            JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Customer Details!","Database Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (rs == null) {
+            JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Customer Details!", "Database Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             this.jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         }
-        
+
         this.jTextField10.setText("");
         this.jTextField12.setText("");
         this.jTextField32.setText("");
         this.jTextField33.setText("");
         this.jTextField34.setText("");
         this.jTextField35.setText("");
-        
+
         this.jButton27.setEnabled(false);
         this.jButton16.setEnabled(true);
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        hr hhr=new hr();
+        hr hhr = new hr();
         int selectedRow = this.jTable1.getSelectedRow();
-        
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Select a Customer to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Customer?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Customer to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Customer?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 searchItems s = new searchItems();
                 String custID = this.jTable1.getModel().getValueAt(selectedRow, 0).toString();
                 hhr.deleteCustomer(custID);
@@ -10945,40 +11040,37 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         hr hhrr = new hr();
-        
-        if(this.jComboBox1.getSelectedItem().toString().equals("Name")){
+
+        if (this.jComboBox1.getSelectedItem().toString().equals("Name")) {
             ResultSet ar = hhrr.searchByCusName(this.jTextField1.getText().toString());
             this.jTable1.setModel(DbUtils.resultSetToTableModel(ar));
-        }
-        else if(this.jComboBox1.getSelectedItem().toString().equals("Customer ID")){
+        } else if (this.jComboBox1.getSelectedItem().toString().equals("Customer ID")) {
             ResultSet arr = hhrr.searchByCusID(this.jTextField1.getText().toString());
             this.jTable1.setModel(DbUtils.resultSetToTableModel(arr));
-        }
-        else if(this.jComboBox1.getSelectedItem().toString().equals("City")){
+        } else if (this.jComboBox1.getSelectedItem().toString().equals("City")) {
             ResultSet arrr = hhrr.searchByCusCity(this.jTextField1.getText().toString());
             this.jTable1.setModel(DbUtils.resultSetToTableModel(arrr));
-        }
-        else if(this.jComboBox1.getSelectedItem().toString().equals("State")){
+        } else if (this.jComboBox1.getSelectedItem().toString().equals("State")) {
             ResultSet arrrr = hhrr.searchByCusState(this.jTextField1.getText().toString());
             this.jTable1.setModel(DbUtils.resultSetToTableModel(arrrr));
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-       hr hr1 =new hr();
-        
+        hr hr1 = new hr();
+
         String fname = this.jTextField19.getText();
         String lname = this.jTextField20.getText();
         String addr = this.jTextField21.getText();
         String conNo = this.jTextField22.getText();
-        
-        if(hr1.validateRepName1(fname) & hr1.validateRepName2(lname) & hr1.validateRepAddr(addr) & hr1.validateRepConn(conNo)){
-            Date d = new Date();     
+
+        if (hr1.validateRepName1(fname) & hr1.validateRepName2(lname) & hr1.validateRepAddr(addr) & hr1.validateRepConn(conNo)) {
+            Date d = new Date();
             SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd");
             String regdate = sdf12.format(d);
 
             String repID = hr1.addRep(fname, lname, addr, conNo, regdate, this);
-            JOptionPane.showMessageDialog(this, "Employee Added Successfully","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Employee Added Successfully", "Movie Details", JOptionPane.INFORMATION_MESSAGE);
 
             ResultSet rs = hr1.showUpdatedRepDetails();
             this.jTable7.setModel(DbUtils.resultSetToTableModel(rs));
@@ -10987,81 +11079,75 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField20.setText("");
             this.jTextField21.setText("");
             this.jTextField22.setText("");
-        }
-        else{
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields To Add a Employee..!!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Pleace Fill the all Text Fields To Add a Employee..!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
 
-     
+
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         int selectedRow = this.jTable7.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Sales Rep to edit details!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Sales Rep to edit details!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String repID = this.jTable7.getModel().getValueAt(selectedRow, 0).toString();
- 
+
             hr hr2 = new hr();
-            try{
+            try {
                 ResultSet rs = hr2.getRepDetails(repID);
-                while(rs.next()){
-                   String rep_id = rs.getString("e_id");
-                   String fname = rs.getString("f_name");
-                   String lname = rs.getString("l_name");
-                   String address = rs.getString("address");
-                   String contactNo = rs.getString("contactNo");
-                   
-                    
+                while (rs.next()) {
+                    String rep_id = rs.getString("e_id");
+                    String fname = rs.getString("f_name");
+                    String lname = rs.getString("l_name");
+                    String address = rs.getString("address");
+                    String contactNo = rs.getString("contactNo");
+
                     this.jLabel63.setText(rep_id);
                     this.jTextField19.setText(fname);
                     this.jTextField20.setText(lname);
                     this.jTextField21.setText(address);
                     this.jTextField22.setText(contactNo);
-                    
+
                     this.jButton31.setEnabled(true);
                     this.jButton30.setEnabled(false);
-                    
+
                 }
-            }
-            catch(Exception e){
+            } catch (Exception e) {
                 //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        hr hr3 =new hr();
-        
+        hr hr3 = new hr();
+
         String fname = this.jTextField19.getText();
         String lname = this.jTextField20.getText();
         String addr = this.jTextField21.getText();
         String contact = this.jTextField22.getText();
         String repID = this.jLabel63.getText();
-   
+
         hr3.UpdateRepData(fname, lname, addr, contact, repID, this);
 
         ResultSet rss;
         rss = hr3.showUpdatedRepDetails();
-        
-        if(rss ==null){
-            JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Employee Details!","Database Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (rss == null) {
+            JOptionPane.showMessageDialog(itemEdit, "Cannot Refresh Employee Details!", "Database Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             this.jTable7.setModel(DbUtils.resultSetToTableModel(rss));
         }
-        
+
         this.jTextField19.setText("");
         this.jTextField20.setText("");
         this.jTextField21.setText("");
         this.jTextField22.setText("");
-        
+
         this.jButton31.setEnabled(false);
         this.jButton30.setEnabled(true);
-        
+
         String repCode = hr3.generateRepCode(this);
         this.jLabel63.setText(repCode);
     }//GEN-LAST:event_jButton31ActionPerformed
@@ -11071,32 +11157,31 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jTextField20.setText("");
         this.jTextField21.setText("");
         this.jTextField22.setText("");
-        
+
         this.jButton31.setEnabled(false);
         this.jButton30.setEnabled(true);
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jTable7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable7MousePressed
         int selectedRow = this.jTable7.getSelectedRow();
-        
+
         String repID = this.jTable7.getModel().getValueAt(selectedRow, 0).toString();
         String repFName = this.jTable7.getModel().getValueAt(selectedRow, 1).toString();
         String repLName = this.jTable7.getModel().getValueAt(selectedRow, 2).toString();
-        
+
         this.jLabel72.setText(repID);
-        this.jLabel79.setText(repFName +"  "+ repLName);
+        this.jLabel79.setText(repFName + "  " + repLName);
     }//GEN-LAST:event_jTable7MousePressed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        hr hr4=new hr();
+        hr hr4 = new hr();
         int selectedRow = this.jTable7.getSelectedRow();
-        
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Select a Employee to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Employee?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Employee to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Employee?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 String repID = this.jTable7.getModel().getValueAt(selectedRow, 0).toString();
                 hr4.deleteRep(repID);
                 ResultSet rs8 = hr4.showUpdatedRepDetails();
@@ -11107,35 +11192,34 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         int selectedRow = this.jTable7.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Employee to calculate!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Employee to calculate!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+
             String reppID = this.jTable7.getModel().getValueAt(selectedRow, 0).toString();
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String fromm = df.format(jDateChooser3.getDate());
             String too = df.format(jDateChooser2.getDate());
-            
+
             try {
-            Statement stmnt6 = conn.createStatement();
-            ResultSet rs = stmnt6.executeQuery("SELECT SUM(net_amount) FROM bill where e_id='"+reppID+"' and bill_date BETWEEN '"+fromm+"' AND '"+too+"'");
-            while(rs.next()){
-                double calcu = rs.getDouble("SUM(net_amount)");
-                this.jTextField23.setText(String.valueOf(calcu));
+                Statement stmnt6 = conn.createStatement();
+                ResultSet rs = stmnt6.executeQuery("SELECT SUM(net_amount) FROM bill where e_id='" + reppID + "' and bill_date BETWEEN '" + fromm + "' AND '" + too + "'");
+                while (rs.next()) {
+                    double calcu = rs.getDouble("SUM(net_amount)");
+                    this.jTextField23.setText(String.valueOf(calcu));
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
+
         }
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         items_add_to_bill aaa = new items_add_to_bill();
-         
-        try{
+
+        try {
             String itmCode = this.jLabel69.getText();
             String name = this.jTextArea1.getText();
             int packSize = 0;
@@ -11144,43 +11228,37 @@ public class MainManue1 extends javax.swing.JFrame {
             //double price = Double.parseDouble(this.jTextField3.getText());
             int free = 0;
             int dis = 0;
-            
+
             double r_price = Double.parseDouble(this.jTextField29.getText());
-            double valu = ((qty * r_price)-((qty * r_price)*dis/100));
-            
+            double valu = ((qty * r_price) - ((qty * r_price) * dis / 100));
+
             String billID = aaa.generateBill_id(this);
 
             Date d = new Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-            String date = sdf1.format(d); 
-            
+            String date = sdf1.format(d);
+
             double costValue = (w_price * qty);
             String cashBalID = "no";
-            String billItemCode = aaa.addItemsToBill(itmCode, name, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalID, this);
-            JOptionPane.showMessageDialog(this, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
-            
-          
-            
+            String billItemCode = aaa.addItemsToBill(itmCode, name, packSize, qty, free, w_price, dis, r_price, date, valu, billID, costValue, cashBalID, this);
+            JOptionPane.showMessageDialog(this, "Item Added Successfully", "Item Details", JOptionPane.INFORMATION_MESSAGE);
+
             ResultSet rs = aaa.getAddedItemsBy_bill_ID(billID);
             this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
-            
+
             double calculatedValue = aaa.calculateTotal(billID);
             this.jTextField7.setText(String.valueOf(calculatedValue));
-            
-            }      
-        
-        catch(Exception e){
-                 e.printStackTrace();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        
-       
 
         this.jTextArea1.setText("");
         this.jTextField28.setText("");
         this.jTextField29.setText("");
-        
+
         storeItemData sss = new storeItemData();
-        
+
         sss.increaseNoOfItemsByOne();
         this.jLabel69.setText(sss.generateItemCode(this));
     }//GEN-LAST:event_jButton22ActionPerformed
@@ -11190,135 +11268,131 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-            DateFormat dfd = new SimpleDateFormat("yyyy-MM-dd");
-            String ff = dfd.format(jDateChooser6.getDate());
-            String tt = dfd.format(jDateChooser7.getDate());
-        if( ff.equals("")& tt.equals("")){
-                JOptionPane.showMessageDialog(profit, "Pleas Select both Days.!","Error",JOptionPane.ERROR_MESSAGE);
+        DateFormat dfd = new SimpleDateFormat("yyyy-MM-dd");
+        String ff = dfd.format(jDateChooser6.getDate());
+        String tt = dfd.format(jDateChooser7.getDate());
+        if (ff.equals("") & tt.equals("")) {
+            JOptionPane.showMessageDialog(profit, "Pleas Select both Days.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            String from = df.format(jDateChooser6.getDate());
+            String to = df.format(jDateChooser7.getDate());
+
+            if (jRadioButton6.isSelected()) {
+                try {
+                    Statement stmnt8 = conn.createStatement();
+                    ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where bill_date BETWEEN '" + from + "' AND '" + to + "' AND status='COMPLETE'");
+                    while (rs.next()) {
+                        double NetAmtSUM = rs.getDouble("SUM(net_amount)");
+                        this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
+                        System.out.println(NetAmtSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+
+                try {
+                    Statement stmnt7 = conn.createStatement();
+                    ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.bill_date BETWEEN '" + from + "' AND '" + to + "' AND bill.status='COMPLETE'");
+
+                    while (r2.next()) {
+                        double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
+                        this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
+                        System.out.println(wPriceSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
+                this.txt_edt_company3.setText(String.valueOf(prof));
+            } else if (jRadioButton7.isSelected()) {
+                try {
+                    Statement stmnt8 = conn.createStatement();
+                    ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='computer' AND bill_date BETWEEN '" + from + "' AND '" + to + "' AND status='COMPLETE'");
+                    while (rs.next()) {
+                        double NetAmtSUM = rs.getDouble("SUM(net_amount)");
+                        this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
+                        System.out.println(NetAmtSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+
+                try {
+                    Statement stmnt7 = conn.createStatement();
+                    ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='computer' AND bill.bill_date BETWEEN '" + from + "' AND '" + to + "' AND bill.status='COMPLETE'");
+
+                    while (r2.next()) {
+                        double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
+                        this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
+                        System.out.println(wPriceSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
+                this.txt_edt_company3.setText(String.valueOf(prof));
+            } else if (jRadioButton8.isSelected()) {
+                try {
+                    Statement stmnt8 = conn.createStatement();
+                    ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='print' AND bill_date BETWEEN '" + from + "' AND '" + to + "' AND status='COMPLETE'");
+                    while (rs.next()) {
+                        double NetAmtSUM = rs.getDouble("SUM(net_amount)");
+                        this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
+                        System.out.println(NetAmtSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+
+                try {
+                    Statement stmnt7 = conn.createStatement();
+                    ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='print' AND bill.bill_date BETWEEN '" + from + "' AND '" + to + "' AND bill.status='COMPLETE'");
+
+                    while (r2.next()) {
+                        double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
+                        this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
+                        System.out.println(wPriceSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
+                this.txt_edt_company3.setText(String.valueOf(prof));
+            } else if (jRadioButton7.isSelected()) {
+                try {
+                    Statement stmnt8 = conn.createStatement();
+                    ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='zag' AND bill_date BETWEEN '" + from + "' AND '" + to + "' AND status='COMPLETE'");
+                    while (rs.next()) {
+                        double NetAmtSUM = rs.getDouble("SUM(net_amount)");
+                        this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
+                        System.out.println(NetAmtSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+
+                try {
+                    Statement stmnt7 = conn.createStatement();
+                    ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='zag' AND bill.bill_date BETWEEN '" + from + "' AND '" + to + "' AND bill.status='COMPLETE'");
+
+                    while (r2.next()) {
+                        double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
+                        this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
+                        System.out.println(wPriceSUM);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
+                this.txt_edt_company3.setText(String.valueOf(prof));
             }
-            else{
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                String from = df.format(jDateChooser6.getDate());
-                String to = df.format(jDateChooser7.getDate());
-            
-                if(jRadioButton6.isSelected()){
-                    try {
-                        Statement stmnt8 = conn.createStatement();
-                        ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where bill_date BETWEEN '"+from+"' AND '"+to+"' AND status='COMPLETE'");
-                            while(rs.next()){
-                                double NetAmtSUM = rs.getDouble("SUM(net_amount)");
-                                this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
-                                System.out.println(NetAmtSUM);
-                            }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-
-                    try {
-                        Statement stmnt7 = conn.createStatement();
-                        ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.bill_date BETWEEN '"+from+"' AND '"+to+"' AND bill.status='COMPLETE'");
-
-                        while(r2.next()){
-                            double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
-                            this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
-                            System.out.println(wPriceSUM);
-                        }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                    double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
-                    this.txt_edt_company3.setText(String.valueOf(prof));
-                }
-                else if(jRadioButton7.isSelected()){
-                    try {
-                        Statement stmnt8 = conn.createStatement();
-                        ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='computer' AND bill_date BETWEEN '"+from+"' AND '"+to+"' AND status='COMPLETE'");
-                            while(rs.next()){
-                                double NetAmtSUM = rs.getDouble("SUM(net_amount)");
-                                this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
-                                System.out.println(NetAmtSUM);
-                            }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-
-                    try {
-                        Statement stmnt7 = conn.createStatement();
-                        ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='computer' AND bill.bill_date BETWEEN '"+from+"' AND '"+to+"' AND bill.status='COMPLETE'");
-
-                        while(r2.next()){
-                            double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
-                            this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
-                            System.out.println(wPriceSUM);
-                        }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                    double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
-                    this.txt_edt_company3.setText(String.valueOf(prof));      
-                }
-                else if(jRadioButton8.isSelected()){
-                    try {
-                        Statement stmnt8 = conn.createStatement();
-                        ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='print' AND bill_date BETWEEN '"+from+"' AND '"+to+"' AND status='COMPLETE'");
-                            while(rs.next()){
-                                double NetAmtSUM = rs.getDouble("SUM(net_amount)");
-                                this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
-                                System.out.println(NetAmtSUM);
-                            }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-
-                    try {
-                        Statement stmnt7 = conn.createStatement();
-                        ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='print' AND bill.bill_date BETWEEN '"+from+"' AND '"+to+"' AND bill.status='COMPLETE'");
-
-                        while(r2.next()){
-                            double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
-                            this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
-                            System.out.println(wPriceSUM);
-                        }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                    double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
-                    this.txt_edt_company3.setText(String.valueOf(prof));       
-                }
-                else if(jRadioButton7.isSelected()){
-                    try {
-                        Statement stmnt8 = conn.createStatement();
-                        ResultSet rs = stmnt8.executeQuery("SELECT SUM(net_amount) FROM bill where setle_days='zag' AND bill_date BETWEEN '"+from+"' AND '"+to+"' AND status='COMPLETE'");
-                            while(rs.next()){
-                                double NetAmtSUM = rs.getDouble("SUM(net_amount)");
-                                this.txt_edt_company2.setText(String.valueOf(NetAmtSUM));
-                                System.out.println(NetAmtSUM);
-                            }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-
-                    try {
-                        Statement stmnt7 = conn.createStatement();
-                        ResultSet r2 = stmnt7.executeQuery("SELECT SUM(bill_items.costValue) FROM bill bill INNER JOIN bill_items bill_items ON bill.bill_id = bill_items.bill_id where bill.setle_days='zag' AND bill.bill_date BETWEEN '"+from+"' AND '"+to+"' AND bill.status='COMPLETE'");
-
-                        while(r2.next()){
-                            double wPriceSUM = r2.getDouble("SUM(bill_items.costValue)");
-                            this.txt_edt_company1.setText(String.valueOf(wPriceSUM));
-                            System.out.println(wPriceSUM);
-                        }    
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                    }
-                    double prof = (Double.parseDouble(this.txt_edt_company2.getText())) - (Double.parseDouble(this.txt_edt_company1.getText()));
-                    this.txt_edt_company3.setText(String.valueOf(prof));      
-                }
-            }
+        }
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jTabbedPane1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTabbedPane1AncestorAdded
         hr hhg = new hr();
-        
+
         String jobid = hhg.generateJobCode(this);
         //this.jLabel97.setText(jobid);
     }//GEN-LAST:event_jTabbedPane1AncestorAdded
@@ -11348,10 +11422,9 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jPanel16.setVisible(true);
         this.jPanel55.setVisible(false);
         this.jPanel56.setVisible(false);
-        
-//        setJobTypes();
 
-        hr hrhr=new hr();
+//        setJobTypes();
+        hr hrhr = new hr();
         this.jLabel55.setText(hrhr.generateCustomerCode(this));
 
         ResultSet rs = hrhr.showUpdatedCustDetails();
@@ -11369,7 +11442,6 @@ public class MainManue1 extends javax.swing.JFrame {
 
 //        ResultSet rs333 = hrhr.showUpdatedJobDetails();
 //        this.jTable6.setModel(DbUtils.resultSetToTableModel(rs333));
-        
         quotation kkl = new quotation();
         boolean avla = kkl.checkQuotationRecordAvailability(this);
 //        System.out.println(avl);
@@ -11383,21 +11455,19 @@ public class MainManue1 extends javax.swing.JFrame {
         int qItmCount = 0;
         String status = "noComplete";
 
-        if(avla){
+        if (avla) {
             System.out.println("true");
-        }
-        else{
+        } else {
             System.out.println("false");
             kkl.addTempDataToQuotation(q_date, totall, q_dis, q_net_amount, qItmCount, discription, qcust_id, this);
         }
-        
+
         advancedCustomer jkkl = new advancedCustomer();
         boolean availabe = jkkl.checkAdvancedCustRecordAvailability(this);
-        
-        if(availabe){
+
+        if (availabe) {
             System.out.println("true");
-        }
-        else{
+        } else {
             System.out.println("false");
             jkkl.addTempDataToAdvancedCust(q_date, totall, q_net_amount, q_net_amount, qItmCount, discription, qcust_id, status, this);
         }
@@ -11405,28 +11475,26 @@ public class MainManue1 extends javax.swing.JFrame {
         String qqid = kkl.generateQuotation_id(this);
         ResultSet rsw = kkl.getAddedItemsBy_qid(qqid);
         this.jTable13.setModel(DbUtils.resultSetToTableModel(rsw));
-        
+
         this.jLabel149.setText(qqid);
-        
+
         items_add_to_bill dfds = new items_add_to_bill();
         ResultSet rs32 = dfds.showCustomersDetails();
         this.jTable14.setModel(DbUtils.resultSetToTableModel(rs32));
-        
+
         ResultSet rs322 = dfds.showCustomersDetails();
         this.jTable11.setModel(DbUtils.resultSetToTableModel(rs322));
-        
-        
+
         double calculatTot = kkl.calculate_q_Total(qqid);
         this.jTextField66.setText(String.valueOf(calculatTot));
-        
-        
+
         String Adv_idd = jkkl.generateAdvancedCust_id(this);
         ResultSet rswwfl = jkkl.getAddedItemsBy_advancedCust_ID(Adv_idd);
         this.jTable10.setModel(DbUtils.resultSetToTableModel(rswwfl));
-        
+
         double calTot = jkkl.calculate_adv_Total(Adv_idd);
         this.jTextField54.setText(String.valueOf(calTot));
-        
+
         this.jLabel135.setText(Adv_idd);
 
     }//GEN-LAST:event_btn_hrMousePressed
@@ -11440,7 +11508,7 @@ public class MainManue1 extends javax.swing.JFrame {
         resetColor(btn_hr2);
         resetColor(btn_hr4);
         //resetColor(btn_billing1);
-        
+
         this.pnl_settings.setVisible(false);
         this.pnl_hr.setVisible(false);
         this.pnl_searchItm.setVisible(false);
@@ -11461,7 +11529,7 @@ public class MainManue1 extends javax.swing.JFrame {
         billSearch kkk = new billSearch();
         ResultSet rs1 = kkk.showAllPendingBillDetails();
         this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1));
-        
+
         items_add_to_bill dfdd = new items_add_to_bill();
         ResultSet rs11 = dfdd.showEmployeeDetails();
         this.jTable21.setModel(DbUtils.resultSetToTableModel(rs11));
@@ -11524,18 +11592,16 @@ public class MainManue1 extends javax.swing.JFrame {
         String billID = dfd.generateBill_id(this);
         double calculatedValue = dfd.calculateTotal(billID);
         this.jTextField7.setText(String.valueOf(calculatedValue));
-        
-         this.txt_search_bill_itm11.requestFocusInWindow();
-        
+
+        this.txt_search_bill_itm11.requestFocusInWindow();
+
         searchItems sii = new searchItems();
         ResultSet a = sii.showItemDetails();
         this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(a));
-        
-        
-        
+
         items_add_to_bill ddd = new items_add_to_bill();
         //ddd.checkBillRecordAvailability(this);
-        
+
         boolean avl = ddd.checkBillRecordAvailability(this);
 //        System.out.println(avl);
 
@@ -11549,15 +11615,13 @@ public class MainManue1 extends javax.swing.JFrame {
         String status = "PENDIN";
         int days = 0;
 
-        if(avl){
+        if (avl) {
             System.out.println("true");
-        }
-        else{
+        } else {
             System.out.println("false");
-            ddd.addTempDataToBill(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days,status,days, this);
+            ddd.addTempDataToBill(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, days, this);
         }
-        
-        
+
         this.txt_search_bill_itm11.setText("");
     }//GEN-LAST:event_btn_billingMousePressed
 
@@ -11595,25 +11659,27 @@ public class MainManue1 extends javax.swing.JFrame {
 
         storeItemData stf = new storeItemData();
         Component comp = null;
-        
+
         String id = stf.generateItemCode(comp);
         this.jLabel313.setText(id);
-        
+
         ResultSet rsff = stf.getSubItemData(id);
         this.jTable31.setModel(DbUtils.resultSetToTableModel(rsff));
-        
+
         int subItemsCount = stf.getSubItemCount(id);
         this.txt_add_qty.setText(String.valueOf(subItemsCount));
-        
+
         searchItems si = new searchItems();
         ResultSet rs = si.showUpdatedItemDetails();
         this.tbl_addItems.setModel(DbUtils.resultSetToTableModel(rs));
-        
+
         setItemTypes();
         
+        jCheckBox17.setSelected(true);
+
         storeItemData ghyt = new storeItemData();
         //ddd.checkBillRecordAvailability(this);
-        
+
         boolean avlb = ghyt.checkItemRecordAvailability(this);
 //        System.out.println(avl);
 
@@ -11625,10 +11691,9 @@ public class MainManue1 extends javax.swing.JFrame {
         String type = "no";
         String date = "2021-01-01";
 
-        if(avlb){
+        if (avlb) {
             System.out.println("true");
-        }
-        else{
+        } else {
             System.out.println("false");
             ghyt.addTempItem(itm_name, warranty, qty, w_price, r_price, date, type, comp);
         }
@@ -11652,7 +11717,6 @@ public class MainManue1 extends javax.swing.JFrame {
         this.pnl_hr.setVisible(false);
         this.pnl_barcode.setVisible(false);
         this.pnl_quickBill.setVisible(false);
-        
 
         this.jPanel10.setVisible(true);
         this.jPanel13.setVisible(false);
@@ -11665,7 +11729,7 @@ public class MainManue1 extends javax.swing.JFrame {
         searchItems si = new searchItems();
         ResultSet rs = si.showItemDetails();
         this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
-        
+
         this.txt_search_text.requestFocusInWindow();
 
     }//GEN-LAST:event_btn_searchMousePressed
@@ -11682,27 +11746,63 @@ public class MainManue1 extends javax.swing.JFrame {
         barcode bb = new barcode();
         int selectedRow = this.jTable8.getSelectedRow();
         
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Select a Barcode to Print.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String bbbb = this.jTable8.getModel().getValueAt(selectedRow, 1).toString();
+
+        int[] selectedRows = this.jTable8.getSelectedRows();
+        
+        if (selectedRows.length > 1) {
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < selectedRows.length; i++) { 
+                int row = selectedRows[i];
+                String id = this.jTable8.getModel().getValueAt(row, 0).toString();
+                result.append("'").append(id).append("'");
+
+                // Add a comma if it's not the last element
+                if (i < selectedRows.length - 1) {
+                    result.append(",");
+                }
+            }
             
             
-            HashMap abb = new HashMap();
-            abb.put("mainBarcodeID", bbbb);
+            System.out.println(result);
+            HashMap abbb = new HashMap();
+            
+            abbb.put("mainBarcodeID", result.toString());
             try {
-                InputStream file3 = getClass().getResourceAsStream("/classes/barCord.jrxml");
+                InputStream file3 = getClass().getResourceAsStream("/classes/barCord_multi.jrxml");
                 JasperDesign jdesign = JRXmlLoader.load(file3);
 
                 JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                JasperPrint jprint = JasperFillManager.fillReport(jreport, abb, conn);
+                JasperPrint jprint = JasperFillManager.fillReport(jreport, abbb, conn);
 
-                JasperViewer.viewReport(jprint, false);       
+                JasperViewer.viewReport(jprint, false);
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            
+        } else {
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Select a Barcode to Print.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String bbbb = this.jTable8.getModel().getValueAt(selectedRow, 0).toString();
+
+                HashMap abb = new HashMap();
+                abb.put("mainBarcodeID", bbbb);
+                try {
+                    InputStream file3 = getClass().getResourceAsStream("/classes/barCord.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file3);
+
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, abb, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+        
 //       boolean avlbl = bb.checkBarcodeDataAvailability(this);
 //       
 //       if(avlbl){
@@ -11742,7 +11842,7 @@ public class MainManue1 extends javax.swing.JFrame {
 //                e.printStackTrace();
 //            }
 //       }
-        
+
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jTextField44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField44ActionPerformed
@@ -11759,39 +11859,39 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
         barcode bb = new barcode();
-        
+
         int qty = Integer.parseInt(this.jTextField6.getText());
         String mobel = this.jTextField9.getText();
         String type = this.jTextField44.getText();
         String price = this.jTextField46.getText();
-       
+
         String duplicate = "";
-        if(jCheckBox11.isSelected()){
-            for(int i=0; i<qty; i++){
-                bb.addBarcodeItems2(mobel, this, type,this, price);
-               
+        String rrrr = bb.addBundelBarcode(mobel, type, qty, price, duplicate, this);
+        if (jCheckBox11.isSelected()) {
+            for (int i = 0; i < qty; i++) {
+                bb.addBarcodeItems2(mobel, this, type, this, this, price, "done");
+
                 duplicate = "yes";
             }
             bb.increaseNoOfBarcodeItmsByOne();
-        }
-        else{
-            for(int i=0; i<qty; i++){
-                bb.addBarcodeItems1(mobel, this, type,this, price);
+        } else {
+            for (int i = 0; i < qty; i++) {
+                bb.addBarcodeItems1(mobel, this, type, this, this, price, "done");
             }
             duplicate = "no";
         }
-        
-        String rrrr = bb.addBundelBarcode(mobel, type, qty, price, duplicate, this);
-        
-        if(rrrr != null){
+
+
+
+        if (rrrr != null) {
             this.jTextField9.setText("");
             this.jTextField6.setText("");
             this.jTextField46.setText("");
-        
+
             ResultSet rs4 = bb.ShowBundelBarcodes();
             this.jTable8.setModel(DbUtils.resultSetToTableModel(rs4));
 
-            String mb = bb.getMainBarCode(this);
+            String mb = bb.getBarCodeBundalID(this);
             HashMap abb = new HashMap();
             abb.put("mainBarcodeID", mb);
             try {
@@ -11801,14 +11901,14 @@ public class MainManue1 extends javax.swing.JFrame {
                 JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                 JasperPrint jprint = JasperFillManager.fillReport(jreport, abb, conn);
 
-                JasperViewer.viewReport(jprint, false);       
+                JasperViewer.viewReport(jprint, false);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             bb.addMainBarcode(this);
         }
-        
+
     }//GEN-LAST:event_jButton42ActionPerformed
 
     private void btn_hr2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_hr2MousePressed
@@ -11820,7 +11920,7 @@ public class MainManue1 extends javax.swing.JFrame {
         setColor(btn_hr2);
         resetColor(btn_hr4);
 //        resetColor(btn_billing1);
-        
+
         this.pnl_settings.setVisible(false);
         this.pnl_hr.setVisible(false);
         this.pnl_searchItm.setVisible(false);
@@ -11838,7 +11938,7 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jPanel23.setVisible(true);
         this.jPanel55.setVisible(false);
         this.jPanel56.setVisible(false);
-        
+
         barcode fg = new barcode();
         ResultSet rs4 = fg.ShowBundelBarcodes();
         this.jTable8.setModel(DbUtils.resultSetToTableModel(rs4));
@@ -11846,22 +11946,20 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable9MousePressed
         int selectedRow784 = this.jTable9.getSelectedRow();
-        
+
         String itmCordee = this.jTable9.getModel().getValueAt(selectedRow784, 0).toString();
         String itmDiscripe = this.jTable9.getModel().getValueAt(selectedRow784, 1).toString();
-        int itmQTye = (int)jTable9.getValueAt(selectedRow784, 3);
-            String Warrantye = String.valueOf(this.jTable9.getModel().getValueAt(selectedRow784, 2).toString());
-            String r_pricee = String.valueOf(this.jTable9.getModel().getValueAt(selectedRow784, 4).toString());
-            //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
-            
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
-            this.jTextField48.setText(itmCordee);
-            this.jTextField49.setText(itmDiscripe);
-            this.jTextField52.setText(Integer.toString(itmQTye));
-            this.jTextField50.setText(r_pricee);
-            this.jTextField53.setText(Warrantye);
+        int itmQTye = (int) jTable9.getValueAt(selectedRow784, 3);
+        String Warrantye = String.valueOf(this.jTable9.getModel().getValueAt(selectedRow784, 2).toString());
+        String r_pricee = String.valueOf(this.jTable9.getModel().getValueAt(selectedRow784, 4).toString());
+        //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
+
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+        this.jTextField48.setText(itmCordee);
+        this.jTextField49.setText(itmDiscripe);
+        this.jTextField52.setText(Integer.toString(itmQTye));
+        this.jTextField50.setText(r_pricee);
+        this.jTextField53.setText(Warrantye);
     }//GEN-LAST:event_jTable9MousePressed
 
     private void jTextField47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField47ActionPerformed
@@ -11887,35 +11985,31 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         quotation qwe = new quotation();
         advancedCustomer ggghi = new advancedCustomer();
-        
+
         int selectedRowgl = this.jTable9.getSelectedRow();
-        
-        if(selectedRowgl == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Add..!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRowgl == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Add..!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             int qtyy = Integer.parseInt(this.jTextField106.getText());
-            try{   
-                if(qwe.validateQTY(String.valueOf(qtyy))){
+            try {
+                if (qwe.validateQTY(String.valueOf(qtyy))) {
                     String itmCode = this.jTextField48.getText();
                     String nameq = this.jTextField49.getText();
                     int warrantyy = Integer.parseInt(this.jTextField53.getText());
-
-
 
                     int free = 0;
                     int dis = 0;
 
                     double r_price = Double.parseDouble(this.jTextField50.getText());
-                    double valuees = ((qtyy * r_price)-((qtyy * r_price)*dis/100));
+                    double valuees = ((qtyy * r_price) - ((qtyy * r_price) * dis / 100));
 
                     //double costValue = (w_price * qtyy);
-
                     String qid13 = ggghi.generateAdvancedCust_id(this);
-                    
+
                     Date d = new Date();
                     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                    String date = sdf1.format(d); 
+                    String date = sdf1.format(d);
                     ggghi.addItemsToAdvancedCust(itmCode, nameq, warrantyy, qtyy, r_price, date, qid13, valuees, this);
                     this.jTextField106.setText("1");
 
@@ -11924,15 +12018,12 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     double calculatTott = ggghi.calculate_adv_Total(qid13);
                     this.jTextField54.setText(String.valueOf(calculatTott));
-                }
-                else{
+                } else {
                     getToolkit().beep();
-                    JOptionPane.showMessageDialog(this, "Billing QTY can't be 0 ..!","Error",JOptionPane.ERROR_MESSAGE);
-                }   
-            }      
-
-            catch(Exception e){
-                     e.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "Billing QTY can't be 0 ..!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }//GEN-LAST:event_jButton43ActionPerformed
@@ -11952,7 +12043,7 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jTextField57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField57ActionPerformed
         double Amt = Double.parseDouble(this.jTextField57.getText());
         double t = Double.parseDouble(this.jTextField54.getText());
-        
+
         this.jTextField58.setText(String.valueOf(t - Amt));
     }//GEN-LAST:event_jTextField57ActionPerformed
 
@@ -11964,91 +12055,74 @@ public class MainManue1 extends javax.swing.JFrame {
         advancedCustomer gty = new advancedCustomer();
         quotation ghj = new quotation();
         //items_add_to_bill fff = new items_add_to_bill();
-        
+
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tt = sdf.format(d);
-        
-                
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String dad = sdf1.format(d);
-        
-        
+
         String avd_id = gty.generateAdvancedCust_id(this);
-        
-        
+
         //String s3=s1.concat(s2);  
-                
         String bill_date = dad.concat(tt);
         double totalel = gty.calculate_adv_Total(avd_id);
-        
+
         String cust_id = this.jTextField55.getText();
         String q_discrip = this.jTextArea3.getText();
-        
-        
+
         //String uu = String.valueOf(advAmt);
-        
         int rCount = this.jTable10.getRowCount();
         String statatat = "Not Completed";
-        
 
-        
+        if (ghj.validateCustomer(cust_id) & ghj.validateDiscription(this.jTextField57.getText())) {
 
-        
-        
-        
-        if(ghj.validateCustomer(cust_id) & ghj.validateDiscription(this.jTextField57.getText())){
-            
             int advAmt = Integer.parseInt(this.jTextField57.getText());
-            double due_amountt = (totalel)-(advAmt);
+            double due_amountt = (totalel) - (advAmt);
             String ooo = gty.updateAdvancedCustData(bill_date, totalel, advAmt, due_amountt, rCount, q_discrip, cust_id, statatat, avd_id, this);
-            
-            if(ooo==null){
+
+            if (ooo == null) {
                 System.out.println("ERROR");
-            }
-            else{
+            } else {
                 HashMap aa = new HashMap();
                 aa.put("invoNum", avd_id);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/advancedCust.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, aa, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                
-                        String q_date = "2002-02-15";
-                        double totall = 1;
-                        String qcust_id = "C000001";
-                        String discription = "temp";
-                        double q_net_amount = 1;
-                        int qItmCount = 0;
-                        String status = "noComplete";
 
-                        
+                String q_date = "2002-02-15";
+                double totall = 1;
+                String qcust_id = "C000001";
+                String discription = "temp";
+                double q_net_amount = 1;
+                int qItmCount = 0;
+                String status = "noComplete";
 
-                        advancedCustomer jkkl = new advancedCustomer();
-                        boolean availabe = jkkl.checkAdvancedCustRecordAvailability(this);
+                advancedCustomer jkkl = new advancedCustomer();
+                boolean availabe = jkkl.checkAdvancedCustRecordAvailability(this);
 
-                        if(availabe){
-                            System.out.println("true");
-                        }
-                        else{
-                            System.out.println("false");
-                            jkkl.addTempDataToAdvancedCust(q_date, totall, q_net_amount, q_net_amount, qItmCount, discription, qcust_id, status, this);
-                        }
+                if (availabe) {
+                    System.out.println("true");
+                } else {
+                    System.out.println("false");
+                    jkkl.addTempDataToAdvancedCust(q_date, totall, q_net_amount, q_net_amount, qItmCount, discription, qcust_id, status, this);
+                }
             }
             this.jTextField59.setText("");
             this.jTextField55.setText("");
@@ -12056,51 +12130,44 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextField57.setText("");
             this.jTextField58.setText("");
             this.jTextField54.setText("");
-            
+
             String Adv_idd = gty.generateAdvancedCust_id(this);
             this.jLabel135.setText(Adv_idd);
-            
+
             String note = "Advanced Payment from ".concat(avd_id).concat(". Customer - ").concat(cust_id);
             cashBalancing jow = new cashBalancing();
             jow.addDebitePayments(note, advAmt, dad, tt, this);
             setCashBalance();
-                
-        }
-        else{
+
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "Pleace Fill the all Data...!!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Pleace Fill the all Data...!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
-        
-        
-        
-        
+
         String Adv_idd = gty.generateAdvancedCust_id(this);
         ResultSet rswwf = gty.getAddedItemsBy_advancedCust_ID(Adv_idd);
         this.jTable10.setModel(DbUtils.resultSetToTableModel(rswwf));
-        
+
     }//GEN-LAST:event_jButton45ActionPerformed
 
     private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
         int selectedRowgl = this.jTable10.getSelectedRow();
-        
-        if(selectedRowgl == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowgl == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 advancedCustomer jki = new advancedCustomer();
                 String advDtemCode = this.jTable10.getModel().getValueAt(selectedRowgl, 0).toString();
                 jki.deleteAddedAdvancedCustItems(advDtemCode);
-                
+
                 String advCusID = this.jLabel135.getText();
                 ResultSet rsd4 = jki.getAddedItemsBy_advancedCust_ID(advCusID);
-                
+
                 //ResultSet rs = s.showItemDetails();
                 this.jTable10.setModel(DbUtils.resultSetToTableModel(rsd4));
-                
+
                 double calculatedValueee = jki.calculate_adv_Total(advCusID);
                 this.jTextField54.setText(String.valueOf(calculatedValueee));
             }
@@ -12118,42 +12185,38 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField53ActionPerformed
 
     private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
-            this.edit_advancedCust.setSize(845,390);
-            this.edit_advancedCust.setTitle("Edit Advanced");   
-            this.edit_advancedCust.setLocationRelativeTo(this);
-            this.edit_advancedCust.setVisible(true);
-            
-            advancedCustomer klods = new advancedCustomer();
-        
-        
-            ResultSet agss = klods.getAllAdvancedCust();
-            this.jTable42.setModel(DbUtils.resultSetToTableModel(agss));
-            
-            this.jTextField129.setText("");
-            this.jTextField130.setText("");
-            this.jTextField150.setText("");
+        this.edit_advancedCust.setSize(845, 390);
+        this.edit_advancedCust.setTitle("Edit Advanced");
+        this.edit_advancedCust.setLocationRelativeTo(this);
+        this.edit_advancedCust.setVisible(true);
+
+        advancedCustomer klods = new advancedCustomer();
+
+        ResultSet agss = klods.getAllAdvancedCust();
+        this.jTable42.setModel(DbUtils.resultSetToTableModel(agss));
+
+        this.jTextField129.setText("");
+        this.jTextField130.setText("");
+        this.jTextField150.setText("");
     }//GEN-LAST:event_jButton50ActionPerformed
 
     private void jTable12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable12MousePressed
         int selectedRow78 = this.jTable12.getSelectedRow();
-        
+
         String itmCorde = this.jTable12.getModel().getValueAt(selectedRow78, 0).toString();
         String itmDiscrip = this.jTable12.getModel().getValueAt(selectedRow78, 1).toString();
-        int itmQTy = (int)jTable12.getValueAt(selectedRow78, 3);
-            String Warranty = String.valueOf(this.jTable12.getModel().getValueAt(selectedRow78, 2).toString());
-            String r_price = String.valueOf(this.jTable12.getModel().getValueAt(selectedRow78, 4).toString());
-            
-            //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
-            
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
-            this.jTextField60.setText(itmCorde);
-            this.jTextField61.setText(itmDiscrip);
-            this.jTextField64.setText(Integer.toString(itmQTy));
-            this.jTextField62.setText(r_price);
-            
-            this.jTextField65.setText(Warranty);
+        int itmQTy = (int) jTable12.getValueAt(selectedRow78, 3);
+        String Warranty = String.valueOf(this.jTable12.getModel().getValueAt(selectedRow78, 2).toString());
+        String r_price = String.valueOf(this.jTable12.getModel().getValueAt(selectedRow78, 4).toString());
+
+        //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+        this.jTextField60.setText(itmCorde);
+        this.jTextField61.setText(itmDiscrip);
+        this.jTextField64.setText(Integer.toString(itmQTy));
+        this.jTextField62.setText(r_price);
+
+        this.jTextField65.setText(Warranty);
     }//GEN-LAST:event_jTable12MousePressed
 
     private void jTextField56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField56ActionPerformed
@@ -12178,35 +12241,30 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
         quotation qwe = new quotation();
-        
+
         int selectedRowgl = this.jTable12.getSelectedRow();
-        
-        if(selectedRowgl == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Add..!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRowgl == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Add..!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             int qtyy = Integer.parseInt(this.jTextField86.getText());
-            try{   
-                if(qwe.validateQTY(String.valueOf(qtyy))){
+            try {
+                if (qwe.validateQTY(String.valueOf(qtyy))) {
                     String itmCode = this.jTextField60.getText();
                     String nameq = this.jTextField61.getText();
                     int warrantyy = Integer.parseInt(this.jTextField65.getText());
-
-
 
                     int free = 0;
                     int dis = 0;
 
                     double r_price = Double.parseDouble(this.jTextField62.getText());
-                    double valuee = ((qtyy * r_price)-((qtyy * r_price)*dis/100));
-
+                    double valuee = ((qtyy * r_price) - ((qtyy * r_price) * dis / 100));
 
                     String qid = qwe.generateQuotation_id(this);
 
-
                     Date d = new Date();
                     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                    String date = sdf1.format(d); 
+                    String date = sdf1.format(d);
                     qwe.addItemsToQuotation(itmCode, nameq, warrantyy, qtyy, r_price, date, qid, valuee, this);
                     this.jTextField86.setText("1");
 
@@ -12215,18 +12273,15 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     double calculatTot = qwe.calculate_q_Total(qid);
                     this.jTextField66.setText(String.valueOf(calculatTot));
-                }
-                else{
+                } else {
                     getToolkit().beep();
-                    JOptionPane.showMessageDialog(this, "Quotation QTY can't be 0 ..!","Error",JOptionPane.ERROR_MESSAGE);
-                }   
-            }      
-
-            catch(Exception e){
-                     e.printStackTrace();
+                    JOptionPane.showMessageDialog(this, "Quotation QTY can't be 0 ..!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-        
+
     }//GEN-LAST:event_jButton44ActionPerformed
 
     private void jTextField65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField65ActionPerformed
@@ -12248,7 +12303,7 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jTextField68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField68ActionPerformed
         double tot = Double.parseDouble(this.jTextField66.getText());
         double discc = Double.parseDouble(this.jTextField68.getText());
-        
+
         this.jTextField69.setText(String.valueOf(tot - discc));
     }//GEN-LAST:event_jTextField68ActionPerformed
 
@@ -12258,23 +12313,22 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
         int selectedRowg = this.jTable13.getSelectedRow();
-        
-        if(selectedRowg == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowg == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 quotation jki = new quotation();
                 String qtemCode = this.jTable13.getModel().getValueAt(selectedRowg, 0).toString();
                 jki.deleteAddedQuotationItems(qtemCode);
-                
+
                 String qqID = jki.generateQuotation_id(this);
                 ResultSet rsd = jki.getAddedItemsBy_qid(qqID);
-                
+
                 //ResultSet rs = s.showItemDetails();
                 this.jTable13.setModel(DbUtils.resultSetToTableModel(rsd));
-                
+
                 double calculatedValuee = jki.calculate_q_Total(qqID);
                 this.jTextField66.setText(String.valueOf(calculatedValuee));
             }
@@ -12284,66 +12338,57 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         quotation ghy = new quotation();
         //items_add_to_bill fff = new items_add_to_bill();
-        
+
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String t = sdf.format(d);
-        
-                
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String da = sdf1.format(d);
-        
-        
+
         String qiid = ghy.generateQuotation_id(this);
-        
-        
+
         //String s3=s1.concat(s2);  
-                
         String bill_date = da.concat(t);
         double totale = ghy.calculate_q_Total(qiid);
         int q_dis = Integer.parseInt(this.jTextField68.getText());
         String cust_id = this.jTextField67.getText();
         String q_discrip = this.jTextArea4.getText();
-        double net_amountt = (totale)-(q_dis);
-        
+        double net_amountt = (totale) - (q_dis);
 
         int no_extra_bonous;
-            
-            if(jCheckBox13.isSelected()){
-                no_extra_bonous=1;
-            }
-            else{
-                no_extra_bonous=0;
-            }
+
+        if (jCheckBox13.isSelected()) {
+            no_extra_bonous = 1;
+        } else {
+            no_extra_bonous = 0;
+        }
 
         System.out.println(bill_date);
-        
-        
-        if(ghy.validateCustomer(cust_id)){
-            
+
+        if (ghy.validateCustomer(cust_id)) {
+
             String ggggg = ghy.updateQuotationData(da, totale, q_dis, net_amountt, no_extra_bonous, q_discrip, cust_id, qiid, this);
-            if(ggggg == null){
+            if (ggggg == null) {
                 System.out.println("Erroe");
-            }
-            else{
+            } else {
                 HashMap aa = new HashMap();
                 aa.put("invoNum", qiid);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/quotation.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, aa, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -12354,11 +12399,10 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField66.setText("");
                 this.jTextField70.setText("");
             }
-            
-            
+
             String qiidd = ghy.generateQuotation_id(this);
             this.jLabel149.setText(qiidd);
-            
+
             quotation kkl = new quotation();
             boolean avla = kkl.checkQuotationRecordAvailability(this);
 
@@ -12370,52 +12414,45 @@ public class MainManue1 extends javax.swing.JFrame {
             double q_net_amount = 1;
             int qItmCount = 0;
 
-            if(avla){
+            if (avla) {
                 System.out.println("true");
-            }
-            else{
+            } else {
                 System.out.println("false");
                 kkl.addTempDataToQuotation(q_date, totall, q_diss, q_net_amount, qItmCount, discription, qcust_id, this);
             }
-                
-        }
-        else{
+
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(this, "Pleace Fill the all Data...!!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Pleace Fill the all Data...!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         items_add_to_bill ff = new items_add_to_bill();
-        
+
         String id = ghy.getQuotation_id(this);
-        
-        
+
         String qqidd = ghy.generateQuotation_id(this);
         ResultSet rsww = ghy.getAddedItemsBy_qid(qqidd);
         this.jTable13.setModel(DbUtils.resultSetToTableModel(rsww));
-        
-      
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
-            this.edit_advancedCust1.setSize(845,390);
-            this.edit_advancedCust1.setTitle("Edit Quotations");   
-            this.edit_advancedCust1.setLocationRelativeTo(this);
-            this.edit_advancedCust1.setVisible(true);
-            
-            quotation qqwwqq2 = new quotation();
-        
-        
-            ResultSet agss22 = qqwwqq2.getAllQuotations();
-            this.jTable43.setModel(DbUtils.resultSetToTableModel(agss22));
-            
-            this.jTextField151.setText("");
-            this.jTextField152.setText("");
-            this.jTextField154.setText("");
-            this.jTextArea19.setText("");
-            this.jTextField110.setText("");
+        this.edit_advancedCust1.setSize(845, 390);
+        this.edit_advancedCust1.setTitle("Edit Quotations");
+        this.edit_advancedCust1.setLocationRelativeTo(this);
+        this.edit_advancedCust1.setVisible(true);
+
+        quotation qqwwqq2 = new quotation();
+
+        ResultSet agss22 = qqwwqq2.getAllQuotations();
+        this.jTable43.setModel(DbUtils.resultSetToTableModel(agss22));
+
+        this.jTextField151.setText("");
+        this.jTextField152.setText("");
+        this.jTextField154.setText("");
+        this.jTextArea19.setText("");
+        this.jTextField110.setText("");
     }//GEN-LAST:event_jButton52ActionPerformed
 
     private void jTextField70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField70ActionPerformed
@@ -12427,27 +12464,25 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
         items_add_to_bill hghh = new items_add_to_bill();
         cashBalancing hyt = new cashBalancing();
-        
+
         int selectedRow = this.jTable4.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Warranty","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            this.Warranty.setSize(1280,720);
-            this.Warranty.setTitle("Warranty Exchanges");   
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Warranty", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.Warranty.setSize(1280, 720);
+            this.Warranty.setTitle("Warranty Exchanges");
             this.Warranty.setLocationRelativeTo(this);
             this.Warranty.setVisible(true);
             String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
             String Customer = this.jTable4.getModel().getValueAt(selectedRow, 2).toString();
-            int dis = (int)jTable4.getValueAt(selectedRow, 5);
+            int dis = (int) jTable4.getValueAt(selectedRow, 5);
             String total = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 4).toString());
             //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
             String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
             String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
             String billType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
             //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
+
             this.jLabel157.setText(invoID);
             this.jTextField72.setText(Customer);
             this.jTextField73.setText(Integer.toString(dis));
@@ -12456,24 +12491,22 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jTextArea5.setText(billDiscrip);
             this.jLabel161.setText(billType);
             //this.jLabel179.setText(invoID);
-            
-            
-            
+
             ResultSet rs3 = hghh.getAddedItemsBy_bill_ID(invoID);
             this.jTable15.setModel(DbUtils.resultSetToTableModel(rs3));
-            
+
             ResultSet rs99 = hyt.getAllNonClaimedWarranties();
             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
- 
+
             this.jTextField76.setText("");
-            
+
             this.jTextArea7.setText("");
             this.jTextField84.setText("");
             this.jTextField83.setText("");
             this.jTextField82.setText("");
-            
+
             String hhh = hyt.getInvoiceDis(invoID);
-                
+
             this.jTextArea5.setText(hhh);
 //            this.jTextArea7.setText("");
 //            this.jTextField81.setText("");
@@ -12482,33 +12515,31 @@ public class MainManue1 extends javax.swing.JFrame {
 //            this.jTextField84.setText("");
 //            this.jTextField135.setText("");
 //            this.jTextField85.setText("");
-            
+
         }
-        
+
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
         items_add_to_bill hgh = new items_add_to_bill();
         cashBalancing fff = new cashBalancing();
         int selectedRow = this.jTable4.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Return items!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            this.returnItms.setSize(1280,720);
-            this.returnItms.setTitle("Return Items");   
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Return items!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.returnItms.setSize(1280, 720);
+            this.returnItms.setTitle("Return Items");
             this.returnItms.setLocationRelativeTo(this);
             this.returnItms.setVisible(true);
             String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
             String Customer = this.jTable4.getModel().getValueAt(selectedRow, 2).toString();
-            int dis = (int)jTable4.getValueAt(selectedRow, 5);
+            int dis = (int) jTable4.getValueAt(selectedRow, 5);
             String total = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 4).toString());
             //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
             String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
             String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
             String invoType = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
-            
-            
+
             this.jLabel179.setText(invoID);
             this.jTextField88.setText(Customer);
             this.jTextField89.setText(Integer.toString(dis));
@@ -12518,19 +12549,15 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jLabel186.setText(invoType);
             this.jTextField96.setText("");
             this.jTextField93.setText("");
-            
-            
-            
+
             ResultSet rs = hgh.getAddedItemsBy_bill_ID(invoID);
             this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
-            
+
             ResultSet rs99dgf = fff.getAllReturnItemsByInvoice(invoID);
             this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgf));
-        }    
-        
-        
-        
-            
+        }
+
+
     }//GEN-LAST:event_jButton56ActionPerformed
 
     private void jTextField95ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField95ActionPerformed
@@ -12554,35 +12581,33 @@ public class MainManue1 extends javax.swing.JFrame {
         String billIDD = this.jLabel229.getText();
 
         int selectedRow7bgg = this.jTable17.getSelectedRow();
-        if(selectedRow7bgg == -1){
-            JOptionPane.showMessageDialog(returnItms, "Select a Item to Return.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow7bgg == -1) {
+            JOptionPane.showMessageDialog(returnItms, "Select a Item to Return.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billItemCodeh = this.jTable17.getModel().getValueAt(selectedRow7bgg, 0).toString();
             String strItemCode = this.jTable17.getModel().getValueAt(selectedRow7bgg, 1).toString();
             String qyyt = this.jTable17.getModel().getValueAt(selectedRow7bgg, 4).toString();
             String r_pprice = this.jTable17.getModel().getValueAt(selectedRow7bgg, 7).toString();
             int INTqty = Integer.parseInt(qyyt);
             String aaa = iii.checkSNAvailability(billItemCodeh);
-            if(aaa.equals("")){
-                this.edit_edit_billed_Items4.setSize(340,85);
+            if (aaa.equals("")) {
+                this.edit_edit_billed_Items4.setSize(340, 85);
                 this.edit_edit_billed_Items4.setTitle("Non-serial items Return");
                 this.edit_edit_billed_Items4.setLocationRelativeTo(this);
                 this.edit_edit_billed_Items4.setVisible(true);
-            }
-            else{
+            } else {
                 items_add_to_bill jiu87dsf = new items_add_to_bill();
-                
-                    this.edit_edit_billed_Items3.setSize(340,300);
-                    this.edit_edit_billed_Items3.setTitle("Serial items Return");
-                    this.edit_edit_billed_Items3.setLocationRelativeTo(this);
-                    this.edit_edit_billed_Items3.setVisible(true);
 
-                    String ProductItmCoded = this.jTable17.getModel().getValueAt(selectedRow7bgg, 0).toString();
+                this.edit_edit_billed_Items3.setSize(340, 300);
+                this.edit_edit_billed_Items3.setTitle("Serial items Return");
+                this.edit_edit_billed_Items3.setLocationRelativeTo(this);
+                this.edit_edit_billed_Items3.setVisible(true);
 
-                    ResultSet jjuyyfa = jiu87dsf.getSubItemDataFromBill(ProductItmCoded);
-                    this.jTable41.setModel(DbUtils.resultSetToTableModel(jjuyyfa));
-                
+                String ProductItmCoded = this.jTable17.getModel().getValueAt(selectedRow7bgg, 0).toString();
+
+                ResultSet jjuyyfa = jiu87dsf.getSubItemDataFromBill(ProductItmCoded);
+                this.jTable41.setModel(DbUtils.resultSetToTableModel(jjuyyfa));
+
             }
         }
 //        System.out.println("ffffff");
@@ -12713,9 +12738,8 @@ public class MainManue1 extends javax.swing.JFrame {
 //            ggg.addReturnedItems(returnVlu, itemCodee, returnQTY, billIdd, billItmID, day, tt, this);
 //            JOptionPane.showMessageDialog(returnItms, "Item Return Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
 //        }
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton60ActionPerformed
 
     private void jTextField90ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField90ActionPerformed
@@ -12737,42 +12761,41 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jTable17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable17MousePressed
         int selectedRow1 = this.jTable17.getSelectedRow();
         returnItem hhtt = new returnItem();
-        
+
         String itmCorde = this.jTable17.getModel().getValueAt(selectedRow1, 1).toString();
         String billItmCorde = this.jTable17.getModel().getValueAt(selectedRow1, 0).toString();
         //String itmDiscrip = this.jTable17.getModel().getValueAt(selectedRow1, 2).toString();
-        int QQTy = (int)jTable17.getValueAt(selectedRow1, 4);
-            String Warranty = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 3).toString());
-            String r_price = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 5).toString());
-            //String w_price = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 5).toString());
-            //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
-            
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            String  itmDiscrip = hhtt.getBillItemName(billItmCorde); 
-            
-            this.jTextField91.setText(itmCorde);
-            this.jTextArea9.setText(itmDiscrip);
-            this.jTextField94.setText(Integer.toString(QQTy));
-            this.jTextField92.setText(r_price);
-            this.jTextField95.setText(Warranty);
+        int QQTy = (int) jTable17.getValueAt(selectedRow1, 4);
+        String Warranty = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 3).toString());
+        String r_price = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 5).toString());
+        //String w_price = String.valueOf(this.jTable17.getModel().getValueAt(selectedRow1, 5).toString());
+        //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
+
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+        String itmDiscrip = hhtt.getBillItemName(billItmCorde);
+
+        this.jTextField91.setText(itmCorde);
+        this.jTextArea9.setText(itmDiscrip);
+        this.jTextField94.setText(Integer.toString(QQTy));
+        this.jTextField92.setText(r_price);
+        this.jTextField95.setText(Warranty);
     }//GEN-LAST:event_jTable17MousePressed
 
     private void jButton62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton62ActionPerformed
-         
+
         String billl = this.jLabel179.getText();
         String invoTypeee = this.jLabel186.getText();
         String netAmount = this.jTextField90.getText();
-        
+
         String Ramount = this.jTextField96.getText();
-        
-        if(!Ramount.equals("")){
-            
+
+        if (!Ramount.equals("")) {
+
             double netAmt = Double.parseDouble(netAmount);
             double RAmt = Double.parseDouble(Ramount);
-            
+
             double finalBillAmt = netAmt - RAmt;
-            
+
             try {
                 String queryyy = "update bill set net_amount=? where bill_id = ?";
                 PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -12784,28 +12807,27 @@ public class MainManue1 extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-            
+
             String allRetuneItems = getReturnItemsGroupByName(billl);
-        
+
             String RNote = "Returned -".concat(allRetuneItems).concat(" for ").concat(Ramount).concat("/=");
 
             updateInvoiceDiscriptionForReturn(RNote, billl);
 
             updateInvoiceDiscription(billl);
-            
-                        cashBalancing jju98 = new cashBalancing();
-                        
-                        String Note = allRetuneItems.concat(" Items returned from ").concat(billl).concat(" Invoice.");
-                        Date d = new Date();
-                        SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                        String ttttt = sdf.format(d);
 
-                        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                        String dddddd = sdf1.format(d);
-                        jju98.addCreditedPayments(Note, RAmt, dddddd, ttttt, returnItms);
+            cashBalancing jju98 = new cashBalancing();
 
+            String Note = allRetuneItems.concat(" Items returned from ").concat(billl).concat(" Invoice.");
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+            String ttttt = sdf.format(d);
 
-            if(invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")){
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+            String dddddd = sdf1.format(d);
+            jju98.addCreditedPayments(Note, RAmt, dddddd, ttttt, returnItms);
+
+            if (invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -12821,8 +12843,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")){
+            } else if (invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -12838,8 +12859,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Credit")){
+            } else if (invoTypeee.equals("Credit")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -12855,8 +12875,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Credit Advanced")){
+            } else if (invoTypeee.equals("Credit Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -12872,8 +12891,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoTypeee.equals("Cheque")){
+            } else if (invoTypeee.equals("Cheque")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", billl);
                 try {
@@ -12889,21 +12907,20 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } 
+            }
             this.returnItms.dispose();
             billSearch kkk1 = new billSearch();
             ResultSet rs11 = kkk1.showAllPendingBillDetails();
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs11));
+        } else {
+            JOptionPane.showMessageDialog(returnItms, "Please Enter return Amount.!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        else{
-            JOptionPane.showMessageDialog(returnItms, "Please Enter return Amount.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-                
-        
+
+
     }//GEN-LAST:event_jButton62ActionPerformed
 
     private void txt_search_textKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_textKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             searchItems fs = new searchItems();
             ResultSet aaa = fs.searchByItemCode(this.txt_search_text.getText().toString());
             this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(aaa));
@@ -12913,70 +12930,63 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton65ActionPerformed
         items_add_to_bill iii1 = new items_add_to_bill();
         cashBalancing kkl = new cashBalancing();
-        
+
         int selectedRow123 = this.jTable17.getSelectedRow();
-        
-        
-        if(selectedRow123 == -1){
-            JOptionPane.showMessageDialog(returnItms, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(returnItms,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
-                
-                
+
+        if (selectedRow123 == -1) {
+            JOptionPane.showMessageDialog(returnItms, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(returnItms, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
+
                 String billItemCode = this.jTable17.getModel().getValueAt(selectedRow123, 0).toString();
                 String cashBalCode = this.jTable17.getModel().getValueAt(selectedRow123, 9).toString();
-                
+
                 kkl.deleteDebitedPayment(cashBalCode);
                 iii1.deleteAddedBillItems(billItemCode);
-                
+
                 String billID = this.jLabel179.getText();
                 ResultSet rsss = iii1.getAddedItemsBy_bill_ID(billID);
-                
+
                 //ResultSet rs = s.showItemDetails();
                 this.jTable17.setModel(DbUtils.resultSetToTableModel(rsss));
-                
+
                 try {
-                    int qtyy12m = (int)jTable17.getValueAt(selectedRow123, 4);
+                    int qtyy12m = (int) jTable17.getValueAt(selectedRow123, 4);
                     String itemCodee1 = this.jTable17.getModel().getValueAt(selectedRow123, 1).toString();
                     String query = "update items set qty = qty+ ? where itm_code = ?";
                     PreparedStatement pst = conn.prepareStatement(query);
 
-                        pst.setInt(1, qtyy12m);
-                        pst.setString(2, itemCodee1);
-                        pst.executeUpdate();
-
+                    pst.setInt(1, qtyy12m);
+                    pst.setString(2, itemCodee1);
+                    pst.executeUpdate();
 
                     //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
             setCashBalance();
         }
-        
-        
+
+
     }//GEN-LAST:event_jButton65ActionPerformed
 
     private void jButton66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton66ActionPerformed
         searchItems s = new searchItems();
-        
-        if(this.jComboBox6.getSelectedItem().toString().equals("Item Name")){
+
+        if (this.jComboBox6.getSelectedItem().toString().equals("Item Name")) {
             ResultSet a = s.searchByItemName(this.jTextField56.getText().toString());
             this.jTable12.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.jComboBox6.getSelectedItem().toString().equals("Serial Number")){
+        } else if (this.jComboBox6.getSelectedItem().toString().equals("Serial Number")) {
             ResultSet ab = s.searchByItemCode(this.jTextField56.getText().toString());
             this.jTable12.setModel(DbUtils.resultSetToTableModel(ab));
-        }
-        else if(this.jComboBox6.getSelectedItem().toString().equals("Item Code")){
+        } else if (this.jComboBox6.getSelectedItem().toString().equals("Item Code")) {
             ResultSet a = s.searchByProductCode(this.jTextField56.getText().toString());
             this.jTable12.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.jComboBox6.getSelectedItem().toString().equals("Category")){
+        } else if (this.jComboBox6.getSelectedItem().toString().equals("Category")) {
             ResultSet abb = s.searchByItemCatogary(this.jTextField56.getText().toString());
             this.jTable12.setModel(DbUtils.resultSetToTableModel(abb));
         }
@@ -12984,20 +12994,17 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton67ActionPerformed
         searchItems s = new searchItems();
-        
-        if(this.jComboBox7.getSelectedItem().toString().equals("Item Name")){
+
+        if (this.jComboBox7.getSelectedItem().toString().equals("Item Name")) {
             ResultSet a = s.searchByItemName(this.jTextField47.getText().toString());
             this.jTable9.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.jComboBox7.getSelectedItem().toString().equals("Serial Number")){
+        } else if (this.jComboBox7.getSelectedItem().toString().equals("Serial Number")) {
             ResultSet ab = s.searchByItemCode(this.jTextField47.getText().toString());
             this.jTable9.setModel(DbUtils.resultSetToTableModel(ab));
-        }
-        else if(this.jComboBox7.getSelectedItem().toString().equals("Item Code")){
+        } else if (this.jComboBox7.getSelectedItem().toString().equals("Item Code")) {
             ResultSet a = s.searchByProductCode(this.jTextField47.getText().toString());
             this.jTable9.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.jComboBox7.getSelectedItem().toString().equals("Category")){
+        } else if (this.jComboBox7.getSelectedItem().toString().equals("Category")) {
             ResultSet abb = s.searchByItemCatogary(this.jTextField47.getText().toString());
             this.jTable9.setModel(DbUtils.resultSetToTableModel(abb));
         }
@@ -13012,28 +13019,27 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField106ActionPerformed
 
     private void jTable11KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable11KeyPressed
-    
-        
+
+
     }//GEN-LAST:event_jTable11KeyPressed
 
     private void jTable11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable11MousePressed
         int selectedRow124 = this.jTable11.getSelectedRow();
-        
-        
-            String custIDD = this.jTable11.getModel().getValueAt(selectedRow124, 0).toString();
-            this.jTextField55.setText(custIDD);
+
+        String custIDD = this.jTable11.getModel().getValueAt(selectedRow124, 0).toString();
+        this.jTextField55.setText(custIDD);
     }//GEN-LAST:event_jTable11MousePressed
 
     private void jTable18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable18MousePressed
         int selectedRow1u1 = this.jTable18.getSelectedRow();
-        
+
         //double advAmounte = (double)jTable18.getValueAt(selectedRow1u1, 2);
         double advAmounte = Double.parseDouble(String.valueOf(this.jTable18.getModel().getValueAt(selectedRow1u1, 2).toString()));
         int bill_dis = Integer.parseInt(this.jTextField8.getText());
-        
+
         double tot = Double.parseDouble(this.jTextField7.getText());
         double netaaaa = tot - bill_dis;
-        
+
         this.jTextField111.setText(String.valueOf(netaaaa - advAmounte));
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
@@ -13042,47 +13048,44 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton69ActionPerformed
         try {
-                String query = "update bill_items set item_name = ? where bill_item_id = ?";
-                PreparedStatement pstd = conn.prepareStatement(query);
+            String query = "update bill_items set item_name = ? where bill_item_id = ?";
+            PreparedStatement pstd = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        
-                        String billItemId = (String)jTable3.getValueAt(i, 0);
-                        String name = (String)jTable3.getValueAt(i, 2);
-                        
-                        String billedSN = getBillItemSN(billItemId);
+            for (int i = 0; i < jTable3.getRowCount(); i++) {
 
-                        String newName = "";
-                        
-                        if(!billedSN.equals("")){
-                            newName = name.concat(" - ").concat(billedSN);
-                        }
-                        else{
-                            newName = name;
-                        }
-                        
-                        pstd.setString(1, newName);
-                        pstd.setString(2, billItemId);
-                        pstd.executeUpdate();
-                    }
+                String billItemId = (String) jTable3.getValueAt(i, 0);
+                String name = (String) jTable3.getValueAt(i, 2);
+
+                String billedSN = getBillItemSN(billItemId);
+
+                String newName = "";
+
+                if (!billedSN.equals("")) {
+                    newName = name.concat(" - ").concat(billedSN);
+                } else {
+                    newName = name;
+                }
+
+                pstd.setString(1, newName);
+                pstd.setString(2, billItemId);
+                pstd.executeUpdate();
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
         }
         String setle_days = "";
-        if(jRadioButton3.isSelected()){
+        if (jRadioButton3.isSelected()) {
             setle_days = "computer";
-        }
-        else if(jRadioButton4.isSelected()){
+        } else if (jRadioButton4.isSelected()) {
             setle_days = "print";
-        }
-        else if(jRadioButton5.isSelected()){
+        } else if (jRadioButton5.isSelected()) {
             setle_days = "zag";
         }
-           
-        if(this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & jCheckBox14.isSelected() ){
+
+        if (this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & jCheckBox14.isSelected()) {
             System.out.println("cash advances");
-            
+
             items_add_to_bill ffff = new items_add_to_bill();
             cashBalancing cbbb = new cashBalancing();
             Date d = new Date();
@@ -13096,35 +13099,30 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = ffff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = ffff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
-            
+            double net_amount = (total) - (bill_dis);
 
             String status = "COMPLETE";
 
             int itmCount = jTable3.getRowCount();
-            
+
             int selectedRow1u = this.jTable18.getSelectedRow();
-        
+
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
 //            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
-            
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = this.jTable18.getModel().getValueAt(selectedRow1u, 0).toString();
             double advAmount = Double.parseDouble(String.valueOf(this.jTable18.getModel().getValueAt(selectedRow1u, 2).toString()));
             String invoiceType = "Cash Advanced";
@@ -13134,16 +13132,16 @@ public class MainManue1 extends javax.swing.JFrame {
             String discrip = this.jTextArea16.getText();
 
             System.out.println(bill_date);
-            boolean isOkk = ffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = ffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+            if (isOkk) {
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13153,14 +13151,14 @@ public class MainManue1 extends javax.swing.JFrame {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-               
-               try {
-                String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
-                PreparedStatement pstdd = conn.prepareStatement(query);
+
+                try {
+                    String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
+                    PreparedStatement pstdd = conn.prepareStatement(query);
                     pstdd.setString(1, "Completed");
                     pstdd.setString(2, advancedCode);
                     pstdd.executeUpdate();
-                    
+
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
@@ -13169,26 +13167,25 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13197,9 +13194,8 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 cbbb.addDebitePayments(note, grangAmount, da, t, this);
                 setCashBalance();
-                
-                saveInvoiceDiscriptionForNewInvoices(discrip, id);
 
+                saveInvoiceDiscriptionForNewInvoices(discrip, id);
 
                 items_add_to_bill dfdd = new items_add_to_bill();
                 String billid = dfdd.generateBill_id(this);
@@ -13213,13 +13209,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 this.jTextField7.setText("");
 
-                this.jTextField8.setText("0"); 
-                
+                this.jTextField8.setText("0");
+
                 items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -13231,18 +13227,16 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & jCheckBox14.isSelected() ){
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & jCheckBox14.isSelected()) {
             System.out.println("Bank Deposit");
-            
+
             items_add_to_bill ffff = new items_add_to_bill();
             cashBalancing cbbb = new cashBalancing();
             Date d = new Date();
@@ -13256,34 +13250,30 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = ffff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = ffff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
+            double net_amount = (total) - (bill_dis);
 
             String status = "PENDING";
 
             int itmCount = jTable3.getRowCount();
-            
+
             int selectedRow1u = this.jTable18.getSelectedRow();
-        
+
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
 //            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
-            
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = this.jTable18.getModel().getValueAt(selectedRow1u, 0).toString();
             double advAmount = Double.parseDouble(String.valueOf(this.jTable18.getModel().getValueAt(selectedRow1u, 2).toString()));
             String invoiceType = "Bank Advanced";
@@ -13293,16 +13283,16 @@ public class MainManue1 extends javax.swing.JFrame {
             String discrip = this.jTextArea16.getText();
 
             System.out.println(bill_date);
-            boolean isOkk = ffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = ffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+            if (isOkk) {
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13312,14 +13302,14 @@ public class MainManue1 extends javax.swing.JFrame {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-               
-               try {
-                String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
-                PreparedStatement pstdd = conn.prepareStatement(query);
+
+                try {
+                    String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
+                    PreparedStatement pstdd = conn.prepareStatement(query);
                     pstdd.setString(1, "Completed");
                     pstdd.setString(2, advancedCode);
                     pstdd.executeUpdate();
-                    
+
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
@@ -13328,26 +13318,25 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13356,9 +13345,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 //cbbb.addDebitePayments(note, grangAmount, da, t, this);
                 //setCashBalance();
-                
                 saveInvoiceDiscriptionForNewInvoices(discrip, id);
-
 
                 items_add_to_bill dfdd = new items_add_to_bill();
                 String billid = dfdd.generateBill_id(this);
@@ -13372,13 +13359,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 this.jTextField7.setText("");
 
-                this.jTextField8.setText("0"); 
-                
-                                items_add_to_bill ddde = new items_add_to_bill();
+                this.jTextField8.setText("0");
+
+                items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -13390,16 +13377,14 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & !jCheckBox14.isSelected() ){
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Bank Deposit") & !jCheckBox14.isSelected()) {
             System.out.println("Bank Deposit");
             //        cashBalancing cbb = new cashBalancing();
             items_add_to_bill fff = new items_add_to_bill();
@@ -13415,15 +13400,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = fff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = fff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
+            double net_amount = (total) - (bill_dis);
 
             String status = "PENDING";
 
@@ -13431,12 +13414,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = "no";
             double advAmount = 0;
             String invoiceType = "Bank Deposit";
@@ -13446,16 +13428,16 @@ public class MainManue1 extends javax.swing.JFrame {
             String discrip = this.jTextArea16.getText();
 
             System.out.println(bill_date);
-            boolean isOkk = fff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = fff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+            if (isOkk) {
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13469,26 +13451,25 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprintf = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprintf, false); 
+                    JasperViewer.viewReport(jprintf, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13498,7 +13479,6 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 //cbb.addDebitePayments(note, net_amount, da, t, this);
                 //setCashBalance();
-                
                 saveInvoiceDiscriptionForNewInvoices(discrip, id);
 
                 items_add_to_bill dfdd = new items_add_to_bill();
@@ -13507,20 +13487,19 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 ResultSet rs = dfdd.getAddedItemsBy_bill_ID(billid);
                 this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
-                
-                
+
                 this.jTextField4.setText("");
                 this.jTextField5.setText("");
 
                 this.jTextField7.setText("");
 
-                this.jTextField8.setText("0"); 
-                
+                this.jTextField8.setText("0");
+
                 items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -13532,17 +13511,15 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-            
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & !jCheckBox14.isSelected() ){
+
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice") & !jCheckBox14.isSelected()) {
             System.out.println("cash only");
             //        cashBalancing cbb = new cashBalancing();
             items_add_to_bill fff = new items_add_to_bill();
@@ -13558,15 +13535,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = fff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = fff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
+            double net_amount = (total) - (bill_dis);
 
             String status = "COMPLETE";
 
@@ -13574,12 +13549,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = "no";
             double advAmount = 0;
             String invoiceType = "Cash";
@@ -13589,16 +13563,16 @@ public class MainManue1 extends javax.swing.JFrame {
             String discrip = this.jTextArea16.getText();
 
             System.out.println(bill_date);
-            boolean isOkk = fff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = fff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+            if (isOkk) {
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13612,26 +13586,25 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
-                
-                try { 
+
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprintf = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprintf, false); 
+                    JasperViewer.viewReport(jprintf, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13641,7 +13614,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 cbb.addDebitePayments(note, net_amount, da, t, this);
                 setCashBalance();
-                
+
                 saveInvoiceDiscriptionForNewInvoices(discrip, id);
 
                 items_add_to_bill dfdd = new items_add_to_bill();
@@ -13650,20 +13623,19 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 ResultSet rs = dfdd.getAddedItemsBy_bill_ID(billid);
                 this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
-                
-                
+
                 this.jTextField4.setText("");
                 this.jTextField5.setText("");
 
                 this.jTextField7.setText("");
 
-                this.jTextField8.setText("0"); 
-                
+                this.jTextField8.setText("0");
+
                 items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -13675,19 +13647,17 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-            
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice") & jCheckBox14.isSelected() ){
+
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice") & jCheckBox14.isSelected()) {
             System.out.println("credit adv");
-            
+
             items_add_to_bill fffff = new items_add_to_bill();
             cashBalancing cbbbb = new cashBalancing();
             Date d = new Date();
@@ -13697,66 +13667,62 @@ public class MainManue1 extends javax.swing.JFrame {
 
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
             String da = sdf1.format(d);
-           //lbl_main_date.setText(da);
+            //lbl_main_date.setText(da);
 
             String billID = fffff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = fffff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
+            double net_amount = (total) - (bill_dis);
 
             String status = "PENDING";
 
             int itmCount = jTable3.getRowCount();
-            
+
             int selectedRow1u = this.jTable18.getSelectedRow();
-        
+
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
 //            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
-            
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = this.jTable18.getModel().getValueAt(selectedRow1u, 0).toString();
             double advAmount = Double.parseDouble(String.valueOf(this.jTable18.getModel().getValueAt(selectedRow1u, 2).toString()));
-            
+
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
+
             String invoiceType = "Credit Advanced";
             String recevingDate = df.format(jDateChooser1.getDate());
             String creditCodeChequeCode = fffff.generateCreditInvoiceCode(this);
             double grangAmount = net_amount - advAmount;
             double duePayment = grangAmount - (Double.parseDouble(this.jTextField108.getText()));
             this.jTextField112.setText(String.valueOf(duePayment));
-            
+
             double payed = advAmount + (Double.parseDouble(this.jTextField108.getText()));
             double payment = Double.parseDouble(this.jTextField108.getText());
-            
+
             String discrip = this.jTextArea16.getText();
-            boolean isOkk = fffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = fffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-                String crICode = fffff.addCreditInvoice(billID, net_amount, payed, duePayment, recevingDate,cust_id, this);
+            if (isOkk) {
+                String crICode = fffff.addCreditInvoice(billID, net_amount, payed, duePayment, recevingDate, cust_id, this);
                 fffff.addCreditSubInvoice(payment, da, crICode, this);
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13766,14 +13732,14 @@ public class MainManue1 extends javax.swing.JFrame {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-               
-               try {
-                String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
-                PreparedStatement pstdd = conn.prepareStatement(query);
+
+                try {
+                    String query = "update advancedcust set statuss = ? where idadvancedCustID=?";
+                    PreparedStatement pstdd = conn.prepareStatement(query);
                     pstdd.setString(1, "Completed");
                     pstdd.setString(2, advancedCode);
                     pstdd.executeUpdate();
-                    
+
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
@@ -13782,29 +13748,28 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
                 this.billSubmition.dispose();
-                
+
                 double creditSum = calculateCreditAmtByCustomer(cust_id);
                 setNewCreditValue(creditSum, cust_id);
-                try { 
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13815,7 +13780,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 setCashBalance();
 
                 saveInvoiceDiscriptionForNewInvoices(discrip, id);
-                
+
                 items_add_to_bill dfdd = new items_add_to_bill();
                 String billid = dfdd.generateBill_id(this);
                 this.jLabel47.setText(billid);
@@ -13828,13 +13793,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
                 this.jTextField7.setText("");
 
-                this.jTextField8.setText("0"); 
-                
-                                items_add_to_bill ddde = new items_add_to_bill();
+                this.jTextField8.setText("0");
+
+                items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -13846,19 +13811,18 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-            
+
         }
-        if(this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice") & !jCheckBox14.isSelected() ){
+        if (this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice") & !jCheckBox14.isSelected()) {
             System.out.println("credit only");
-            
+
             items_add_to_bill ffffff = new items_add_to_bill();
             cashBalancing cbbbbb = new cashBalancing();
             Date d = new Date();
@@ -13872,61 +13836,57 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = ffffff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = ffffff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
+            double net_amount = (total) - (bill_dis);
 
             String status = "PENDING";
 
             int itmCount = jTable3.getRowCount();
-            
+
             int selectedRow1u = this.jTable18.getSelectedRow();
-        
+
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
 //            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
-            
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = "no";
             double advAmount = 0;
-            
+
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
+
             String invoiceType = "Credit";
             String recevingDate = df.format(jDateChooser1.getDate());
             String creditCodeChequeCode = ffffff.generateCreditInvoiceCode(this);
             double grangAmount = net_amount;
             double duePayment = grangAmount - (Double.parseDouble(this.jTextField108.getText()));
             this.jTextField112.setText(String.valueOf(duePayment));
-            
+
             double payed = Double.parseDouble(this.jTextField108.getText());
             double payment = Double.parseDouble(this.jTextField108.getText());
             String discrip = this.jTextArea16.getText();
-            boolean isOkk = ffffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
+            boolean isOkk = ffffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
 
-            if (isOkk){
-                String crICodee = ffffff.addCreditInvoice(billID, net_amount, payed, duePayment, recevingDate,cust_id, this);
+            if (isOkk) {
+                String crICodee = ffffff.addCreditInvoice(billID, net_amount, payed, duePayment, recevingDate, cust_id, this);
                 ffffff.addCreditSubInvoice(payment, da, crICodee, this);
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -13940,29 +13900,28 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
                 this.billSubmition.dispose();
-                
+
                 double creditSum = calculateCreditAmtByCustomer(cust_id);
                 setNewCreditValue(creditSum, cust_id);
-                try { 
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -13987,12 +13946,12 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0");
-                
-                                items_add_to_bill ddde = new items_add_to_bill();
+
+                items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -14004,18 +13963,16 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Cheque Invoice")){
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Cheque Invoice")) {
             System.out.println("cheque");
-            
+
             items_add_to_bill fffffff = new items_add_to_bill();
             cashBalancing cbbbbbb = new cashBalancing();
             Date d = new Date();
@@ -14029,39 +13986,35 @@ public class MainManue1 extends javax.swing.JFrame {
 
             String billID = fffffff.generateBill_id(this);
 
-
             //String s3=s1.concat(s2);  
-
             String bill_date = da.concat(t);
             double total = fffffff.calculateTotal(billID);
             int bill_dis = Integer.parseInt(this.jTextField8.getText());
             String cust_id = this.jTextField4.getText();
             String e_id = this.jTextField5.getText();
-            double net_amount = (total)-(bill_dis);
-            
+            double net_amount = (total) - (bill_dis);
+
             String status = "PENDING";
 
             int itmCount = jTable3.getRowCount();
-            
+
             int selectedRow1u = this.jTable18.getSelectedRow();
-        
+
 //            String itmCorde = this.jTable18.getModel().getValueAt(selectedRow1, 1).toString();
 //            String itmDiscrip = this.jTable18.getModel().getValueAt(selectedRow1, 2).toString();
 //            int QQTy = (int)jTable18.getValueAt(selectedRow1, 2);
-            
             int no_extra_bonous;
 
-                if(jCheckBox2.isSelected()){
-                    no_extra_bonous=1;
-                }
-                else{
-                    no_extra_bonous=0;
-                }
+            if (jCheckBox2.isSelected()) {
+                no_extra_bonous = 1;
+            } else {
+                no_extra_bonous = 0;
+            }
             String advancedCode = "no";
             double advAmount = 0;
-            
+
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
+
             String invoiceType = "Cheque";
             String recevingDate = df.format(jDateChooser1.getDate());
             String creditCodeChequeCode = fffffff.generateChequeInvoiceCode(this);
@@ -14069,23 +14022,23 @@ public class MainManue1 extends javax.swing.JFrame {
 //            double duePayment = grangAmount - (Double.parseDouble(this.jTextField108.getText()));
 //            this.jTextField112.setText(String.valueOf(duePayment));
             String chequeNo = this.jTextField113.getText();
-            
+
 //            double payed = Double.parseDouble(this.jTextField108.getText());
 //            double payment = Double.parseDouble(this.jTextField108.getText());
             String discrip = this.jTextArea16.getText();
-            
-            boolean isOkk = fffffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount,t,discrip, billID, billSubmition); 
 
-            if (isOkk){
+            boolean isOkk = fffffff.UpdateBillData(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, itmCount, no_extra_bonous, advancedCode, advAmount, invoiceType, recevingDate, creditCodeChequeCode, grangAmount, t, discrip, billID, billSubmition);
+
+            if (isOkk) {
                 //fffffff.addCreditInvoice(billID, net_amount, payed, duePayment, payment, da, recevingDate, this);
                 fffffff.addChequeInvoice(billID, da, recevingDate, net_amount, chequeNo, status, this);
-               try {
-                String query = "update items set qty = qty- ? where itm_code = ?";
-                PreparedStatement pst = conn.prepareStatement(query);
+                try {
+                    String query = "update items set qty = qty- ? where itm_code = ?";
+                    PreparedStatement pst = conn.prepareStatement(query);
 
-                    for(int i=0; i<jTable3.getRowCount(); i++){
-                        String itemId = (String)jTable3.getValueAt(i, 1);
-                        int qty = (int)jTable3.getValueAt(i, 4);
+                    for (int i = 0; i < jTable3.getRowCount(); i++) {
+                        String itemId = (String) jTable3.getValueAt(i, 1);
+                        int qty = (int) jTable3.getValueAt(i, 4);
 
                         pst.setInt(1, qty);
                         pst.setString(2, itemId);
@@ -14099,26 +14052,25 @@ public class MainManue1 extends javax.swing.JFrame {
                 items_add_to_bill ff = new items_add_to_bill();
 
                 String id = ff.getBill_id(this);
-                
+
                 String eid = this.jTextField5.getText();
                 HashMap a = new HashMap();
                 a.put("invoNum", id);
                 this.billSubmition.dispose();
-                try { 
+                try {
                     InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
                     JasperDesign jdesign = JRXmlLoader.load(file);
 
                     JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                     JasperPrint jprint = JasperFillManager.fillReport(jreport, a, conn);
 
-                    JasperViewer.viewReport(jprint, false); 
+                    JasperViewer.viewReport(jprint, false);
 
 //                    try {
 //                    updateBill();
 //                    } catch (ParseException ex) {
 //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
 //                    }
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -14129,7 +14081,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 setCashBalance();
 
                 saveInvoiceDiscriptionForNewInvoices(discrip, id);
-                
+
                 items_add_to_bill dfdd = new items_add_to_bill();
                 String billid = dfdd.generateBill_id(this);
                 this.jLabel47.setText(billid);
@@ -14143,12 +14095,12 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField7.setText("");
 
                 this.jTextField8.setText("0");
-                
-                                items_add_to_bill ddde = new items_add_to_bill();
+
+                items_add_to_bill ddde = new items_add_to_bill();
                 //ddd.checkBillRecordAvailability(this);
-        
+
                 boolean avl = ddde.checkBillRecordAvailability(this);
-        //        System.out.println(avl);
+                //        System.out.println(avl);
 
                 String bill_datee = "2002-02-15 05:03:42";
                 double totale = 1;
@@ -14160,12 +14112,11 @@ public class MainManue1 extends javax.swing.JFrame {
                 String statuse = "PENDIN";
                 int dayse = 0;
 
-                if(avl){
+                if (avl) {
                     System.out.println("true");
-                }
-                else{
+                } else {
                     System.out.println("false");
-                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse,statuse,dayse, this);
+                    ddde.addTempDataToBill(bill_datee, totale, bill_dise, cust_ide, e_ide, net_amounte, setle_dayse, statuse, dayse, this);
                 }
             }
         }
@@ -14173,12 +14124,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton68ActionPerformed
         advancedCustomer klo = new advancedCustomer();
-        
-        if(this.jComboBox9.getSelectedItem().toString().equals("Advanced Code")){
+
+        if (this.jComboBox9.getSelectedItem().toString().equals("Advanced Code")) {
             ResultSet ag = klo.getAdvancedCustBy_id(this.jTextField107.getText().toString());
             this.jTable18.setModel(DbUtils.resultSetToTableModel(ag));
-        }
-        else if(this.jComboBox9.getSelectedItem().toString().equals("Customer Name")){
+        } else if (this.jComboBox9.getSelectedItem().toString().equals("Customer Name")) {
             ResultSet agf = klo.getAdvancedCustBy_CustName(this.jTextField107.getText().toString());
             this.jTable18.setModel(DbUtils.resultSetToTableModel(agf));
         }
@@ -14194,110 +14144,103 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton76ActionPerformed
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            
+
         String pDate = df.format(jDateChooser8.getDate());
-        
+
         cashBalancing las = new cashBalancing();
-        
+
         ResultSet rsy = las.showDebitedDetailsByDate(pDate);
         this.jTable25.setModel(DbUtils.resultSetToTableModel(rsy));
-        
+
         ResultSet rsyy = las.showCreditedDetailsByDate(pDate);
         this.jTable26.setModel(DbUtils.resultSetToTableModel(rsyy));
-        
+
         double dd = las.calculateDebitedMoney(pDate);
         double cc = las.calculateCreditedMoney(pDate);
-        
+
         this.jLabel221.setText(String.valueOf(dd));
         this.jLabel222.setText(String.valueOf(cc));
-        
-        this.jLabel213.setText(String.valueOf(dd-cc));
-        
-        
+
+        this.jLabel213.setText(String.valueOf(dd - cc));
+
+
     }//GEN-LAST:event_jButton76ActionPerformed
 
     private void jButton77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton77ActionPerformed
         cashBalancing po = new cashBalancing();
-        
+
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttt = sdf.format(d);
-        
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String ddddd = sdf1.format(d);
-            
-        
+
         String addNote = this.jTextArea12.getText();
         double addAmt = Double.parseDouble(this.jTextField114.getText());
-        
-        
-        
-        if(jRadioButton1.isSelected()){
+
+        if (jRadioButton1.isSelected()) {
             String truee = po.addDebitePayments(addNote, addAmt, ddddd, tttt, dailyCashBal);
-            if(truee == null){
-                JOptionPane.showMessageDialog(dailyCashBal, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-            }
-            else{                
-                JOptionPane.showMessageDialog(dailyCashBal, "Cash IN Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE);
+            if (truee == null) {
+                JOptionPane.showMessageDialog(dailyCashBal, "Cash IN Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(dailyCashBal, "Cash IN Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                 this.jTextArea12.setText("");
                 this.jTextField114.setText("");
             }
-            
-        }
-        else if(jRadioButton2.isSelected()){
-            String trueee =  po.addCreditedPayments(addNote, addAmt, ddddd, tttt, dailyCashBal);
-            if(trueee == null){
-                JOptionPane.showMessageDialog(dailyCashBal, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                JOptionPane.showMessageDialog(dailyCashBal, "Cash OUT Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE); 
+
+        } else if (jRadioButton2.isSelected()) {
+            String trueee = po.addCreditedPayments(addNote, addAmt, ddddd, tttt, dailyCashBal);
+            if (trueee == null) {
+                JOptionPane.showMessageDialog(dailyCashBal, "Cash OUT Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(dailyCashBal, "Cash OUT Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                 this.jTextArea12.setText("");
                 this.jTextField114.setText("");
             }
         }
         setCashBalance();
-        
+
         ResultSet rsy = po.showDebitedDetailsByDate(ddddd);
         this.jTable25.setModel(DbUtils.resultSetToTableModel(rsy));
-        
+
         ResultSet rsyy = po.showCreditedDetailsByDate(ddddd);
         this.jTable26.setModel(DbUtils.resultSetToTableModel(rsyy));
-        
+
         double ddd = po.calculateDebitedMoney(ddddd);
         double ccc = po.calculateCreditedMoney(ddddd);
-        
+
         this.jLabel221.setText(String.valueOf(ddd));
         this.jLabel222.setText(String.valueOf(ccc));
-        
-        this.jLabel213.setText(String.valueOf(ddd-ccc));
-        
+
+        this.jLabel213.setText(String.valueOf(ddd - ccc));
+
     }//GEN-LAST:event_jButton77ActionPerformed
 
     private void jButton74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton74ActionPerformed
         int selectedRowglf = this.jTable25.getSelectedRow();
         cashBalancing kiu = new cashBalancing();
-        
-        if(selectedRowglf == -1){
-            JOptionPane.showMessageDialog(dailyCashBal, "Select a Payment to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal,"Are you sure to delete this Payment?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowglf == -1) {
+            JOptionPane.showMessageDialog(dailyCashBal, "Select a Payment to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal, "Are you sure to delete this Payment?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 String dCode = this.jTable25.getModel().getValueAt(selectedRowglf, 0).toString();
                 String dDate = this.jTable25.getModel().getValueAt(selectedRowglf, 3).toString();
                 kiu.deleteDebitedPayment(dCode);
-                
+
                 ResultSet rsyg = kiu.showDebitedDetailsByDate(dDate);
                 this.jTable25.setModel(DbUtils.resultSetToTableModel(rsyg));
-                
+
                 double ddd1 = kiu.calculateDebitedMoney(dDate);
                 double ccc1 = kiu.calculateCreditedMoney(dDate);
 
                 this.jLabel221.setText(String.valueOf(ddd1));
                 this.jLabel222.setText(String.valueOf(ccc1));
 
-                this.jLabel213.setText(String.valueOf(ddd1-ccc1));
-                
+                this.jLabel213.setText(String.valueOf(ddd1 - ccc1));
+
                 setCashBalance();
             }
         }
@@ -14306,28 +14249,27 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton75ActionPerformed
         int selectedRowglfe = this.jTable26.getSelectedRow();
         cashBalancing kiuu = new cashBalancing();
-        
-        if(selectedRowglfe == -1){
-            JOptionPane.showMessageDialog(dailyCashBal, "Select a Payment to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal,"Are you sure to delete this Payment?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowglfe == -1) {
+            JOptionPane.showMessageDialog(dailyCashBal, "Select a Payment to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal, "Are you sure to delete this Payment?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 String dCode = this.jTable26.getModel().getValueAt(selectedRowglfe, 0).toString();
                 String dDatew = this.jTable26.getModel().getValueAt(selectedRowglfe, 3).toString();
                 kiuu.deleteCreditPayment(dCode);
-                
+
                 ResultSet rsyyf = kiuu.showCreditedDetailsByDate(dDatew);
                 this.jTable26.setModel(DbUtils.resultSetToTableModel(rsyyf));
-                
+
                 double ddd11 = kiuu.calculateDebitedMoney(dDatew);
                 double ccc11 = kiuu.calculateCreditedMoney(dDatew);
 
                 this.jLabel221.setText(String.valueOf(ddd11));
                 this.jLabel222.setText(String.valueOf(ccc11));
 
-                this.jLabel213.setText(String.valueOf(ddd11-ccc11));
-                
+                this.jLabel213.setText(String.valueOf(ddd11 - ccc11));
+
                 setCashBalance();
             }
         }
@@ -14335,62 +14277,60 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton70ActionPerformed
         int selectedRow = this.jTable4.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.adminLogin2.setSize(375,175);
-                this.adminLogin2.setTitle("Admin Access");   
-                this.adminLogin2.setLocationRelativeTo(this);
-                this.adminLogin2.setVisible(true);
-            }  
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.adminLogin2.setSize(375, 175);
+            this.adminLogin2.setTitle("Admin Access");
+            this.adminLogin2.setLocationRelativeTo(this);
+            this.adminLogin2.setVisible(true);
+        }
     }//GEN-LAST:event_jButton70ActionPerformed
 
     private void jButton72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton72ActionPerformed
         items_add_to_bill jjkkii1 = new items_add_to_bill();
-        searchItems pissaa = new searchItems(); 
-        
+        searchItems pissaa = new searchItems();
+
         Date d = new Date();
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf1.format(d); 
-        
+        String date = sdf1.format(d);
+
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String ttttt = sdf.format(d);
-        
+
         String selectedSN = this.jTextField126.getText();
-        
+
         String status = jjkkii1.getItemStatus(selectedSN);
-        
-        if(status.equals("no")){
-            JOptionPane.showMessageDialog(editEnvoice, "This "+selectedSN+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (status.equals("no")) {
+            JOptionPane.showMessageDialog(editEnvoice, "This " + selectedSN + " Item has already been added.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String SearchedItmName = pissaa.getItemCodeBySubItemName(selectedSN);
-        
+
             String SearchedItmCode = pissaa.getItemCodeBySubItemCode(selectedSN);
 
             String NextBillid = this.jLabel229.getText();
 
-            String SavedItemName = jjkkii1.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+            String SavedItemName = jjkkii1.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-            if(SearchedItmName.equals(SavedItemName)){
-                String BillItemID = jjkkii1.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+            if (SearchedItmName.equals(SavedItemName)) {
+                String BillItemID = jjkkii1.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                 String bbbbbbbbb = jjkkii1.addBillSubItems(selectedSN, BillItemID, editEnvoice);
 
-                if(bbbbbbbbb != null){
-                   try {
+                if (bbbbbbbbb != null) {
+                    try {
                         String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, BillItemID);      
+                        pstl.setString(1, BillItemID);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   try {
+                    try {
                         String query = "update items set qty = qty- ? where itm_code = ?";
                         PreparedStatement pst = conn.prepareStatement(query);
 
@@ -14398,11 +14338,11 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, SearchedItmCode);
                         pst.executeUpdate();
 
-                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
                     } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 
                     try {
                         String queryyy = "update sub_items set inStock=? where sn = ?";
@@ -14412,19 +14352,19 @@ public class MainManue1 extends javax.swing.JFrame {
                         pstlu.setString(2, selectedSN);
                         pstlu.executeUpdate();
 
-                     } catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                     }
+                    }
 
                     double rrrrrPrice = jjkkii1.getRetailPrice(BillItemID);
-                    
+
                     double wwwwwPrice = jjkkii1.getCostPrice(BillItemID);
-                    
+
                     int qqqqqty = jjkkii1.getQTY(BillItemID);
-                    
-                    double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                    double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+
+                    double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                    double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                     try {
                         String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -14438,120 +14378,111 @@ public class MainManue1 extends javax.swing.JFrame {
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
-                    
-                    cashBalancing jju98d = new cashBalancing();
-                        
-                    String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");         
-                    jju98d.addDebitePayments(Note, rrrrrPrice, date, ttttt, editEnvoice);
-                    
-                    storeItemData jukifg = new storeItemData(); 
-                    ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                    this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h));  
-                    
-                    
-                }
+                    }
 
+                    cashBalancing jju98d = new cashBalancing();
+
+                    String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");
+                    jju98d.addDebitePayments(Note, rrrrrPrice, date, ttttt, editEnvoice);
+
+                    storeItemData jukifg = new storeItemData();
+                    ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                    this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h));
+
+                }
 
                 ResultSet rs = jjkkii1.getAddedItemsBy_bill_ID(NextBillid);
                 this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
 
                 double calculatedValuee = jjkkii1.calculateTotal(NextBillid);
                 this.jTextField115.setText(String.valueOf(calculatedValuee));
-                
+
                 this.jTextField126.setText("");
                 this.jTextField126.requestFocusInWindow();
-                
+
                 double billDiss = Double.parseDouble(this.jTextField117.getText());
 
-                this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+                this.jTextField118.setText(String.valueOf(calculatedValuee - billDiss));
                 UpdateBillPrices();
-            }
-            else{
+            } else {
                 String rppp = this.jTextField132.getText();
-                if(rppp.equals("")){
-                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    
-                    String itmCode ="";
-                    String name="";
-                    String warranty="";
-                    String w_price="";
-                    String r_price= this.jTextField132.getText();
-                    String type="";
+                if (rppp.equals("")) {
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                } else {
 
+                    String itmCode = "";
+                    String name = "";
+                    String warranty = "";
+                    String w_price = "";
+                    String r_price = this.jTextField132.getText();
+                    String type = "";
 
-
-                    int qty,free,dis;
-                    try{
+                    int qty, free, dis;
+                    try {
                         ResultSet rsg = jjkkii1.getItemDetails(selectedSN);
-                        while(rsg.next()){
+                        while (rsg.next()) {
                             itmCode = rsg.getString("itm_code");
                             name = rsg.getString("itm_name");
-                            warranty = rsg.getString("warranty");   
+                            warranty = rsg.getString("warranty");
                             w_price = rsg.getString("w_price");
                             //r_price = rsg.getString("r_price");
-                            type = rsg.getString("type");              
+                            type = rsg.getString("type");
                         }
-                    qty = 1;
-                    free = 0;
-                    dis = 0;
-                    int wwarranty = Integer.parseInt(warranty);
-                    double ww_price = Double.parseDouble(w_price);
-                    double rr_price = Double.parseDouble(r_price);
-                    String cashBalID = "no";
-                    String billID = this.jLabel229.getText();
-                    double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                        qty = 1;
+                        free = 0;
+                        dis = 0;
+                        int wwarranty = Integer.parseInt(warranty);
+                        double ww_price = Double.parseDouble(w_price);
+                        double rr_price = Double.parseDouble(r_price);
+                        String cashBalID = "no";
+                        String billID = this.jLabel229.getText();
+                        double valu = calculateBillItemValue(qty, rr_price);
+                        double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                    String billItemCode = jjkkii1.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, editEnvoice);
+                        String billItemCode = jjkkii1.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID, costValue, cashBalID, editEnvoice);
 
-                    if(billItemCode != null){
-                        jjkkii1.addBillSubItems(selectedSN, billItemCode, this);
-                        try {
-                            String queryyy = "update sub_items set inStock=? where sn = ?";
-                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+                        if (billItemCode != null) {
+                            jjkkii1.addBillSubItems(selectedSN, billItemCode, this);
+                            try {
+                                String queryyy = "update sub_items set inStock=? where sn = ?";
+                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                            pstlu.setString(1, "no");
-                            pstlu.setString(2, selectedSN);
-                            pstlu.executeUpdate();
+                                pstlu.setString(1, "no");
+                                pstlu.setString(2, selectedSN);
+                                pstlu.executeUpdate();
 
-                         } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
-
-                        try {
-                            String query = "update items set qty = qty- ? where itm_code = ?";
-                            PreparedStatement pst = conn.prepareStatement(query);
-
-                            pst.setInt(1, 1);
-                            pst.setString(2, SearchedItmCode);
-                            pst.executeUpdate();
-
-                                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                        } catch (SQLException ex) {
+                            } catch (SQLException ex) {
                                 ex.printStackTrace();
                                 Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                             }
 
-                        cashBalancing jju989 = new cashBalancing();
+                            try {
+                                String query = "update items set qty = qty- ? where itm_code = ?";
+                                PreparedStatement pst = conn.prepareStatement(query);
 
-                        String Note = ("One ").concat(itmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");        
-                        jju989.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
+                                pst.setInt(1, 1);
+                                pst.setString(2, SearchedItmCode);
+                                pst.executeUpdate();
 
-                        storeItemData jukifg = new storeItemData(); 
-                        ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
+                                //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 
+                            cashBalancing jju989 = new cashBalancing();
 
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(editEnvoice, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    }
-                    catch(Exception e){
+                            String Note = ("One ").concat(itmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");
+                            jju989.addDebitePayments(Note, valu, date, ttttt, editEnvoice);
+
+                            storeItemData jukifg = new storeItemData();
+                            ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                            this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h));
+
+                        } else {
+                            JOptionPane.showMessageDialog(editEnvoice, "Date Base Error.!", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (Exception e) {
                         //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                     }
 
@@ -14566,15 +14497,15 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     double billDiss = Double.parseDouble(this.jTextField117.getText());
 
-                    this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+                    this.jTextField118.setText(String.valueOf(calculatedValuee - billDiss));
 
                     UpdateBillPrices();
-                    
+
                 }
-                
+
             }
-            
-        }   
+
+        }
     }//GEN-LAST:event_jButton72ActionPerformed
 
     private void jTextField131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField131ActionPerformed
@@ -14623,33 +14554,30 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable19MousePressed
         int selectedRow1 = this.jTable19.getSelectedRow();
-        
+
         String itmCorde = this.jTable19.getModel().getValueAt(selectedRow1, 1).toString();
         String itmDiscrip = this.jTable19.getModel().getValueAt(selectedRow1, 2).toString();
-        int QQTy = (int)jTable19.getValueAt(selectedRow1, 4);
-            String Warranty = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 3).toString());
-            String r_price = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 6).toString());
-            String w_price = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 5).toString());
-            //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
-            
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
-            this.jTextField119.setText(itmCorde);
-            this.jTextArea14.setText(itmDiscrip);
-            this.jTextField122.setText(Integer.toString(QQTy));
-            //this.jTextField103.setText(Integer.toString(QQTy));
-            this.jTextField120.setText(r_price);
-            this.jTextField121.setText(w_price);
-            this.jTextField123.setText(Warranty);
+        int QQTy = (int) jTable19.getValueAt(selectedRow1, 4);
+        String Warranty = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 3).toString());
+        String r_price = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 6).toString());
+        String w_price = String.valueOf(this.jTable19.getModel().getValueAt(selectedRow1, 5).toString());
+        //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
+
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+        this.jTextField119.setText(itmCorde);
+        this.jTextArea14.setText(itmDiscrip);
+        this.jTextField122.setText(Integer.toString(QQTy));
+        //this.jTextField103.setText(Integer.toString(QQTy));
+        this.jTextField120.setText(r_price);
+        this.jTextField121.setText(w_price);
+        this.jTextField123.setText(Warranty);
     }//GEN-LAST:event_jTable19MousePressed
 
     private void jTable20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable20MousePressed
         int selectedRow1245 = this.jTable20.getSelectedRow();
-        
-        
-            String custIDDd = this.jTable20.getModel().getValueAt(selectedRow1245, 0).toString();
-            this.jTextField116.setText(custIDDd);
+
+        String custIDDd = this.jTable20.getModel().getValueAt(selectedRow1245, 0).toString();
+        this.jTextField116.setText(custIDDd);
     }//GEN-LAST:event_jTable20MousePressed
 
     private void jTable20KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable20KeyPressed
@@ -14664,10 +14592,9 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable21MousePressed
         int selectedRow12456 = this.jTable21.getSelectedRow();
-        
-        
-            String custIDDd = this.jTable21.getModel().getValueAt(selectedRow12456, 0).toString();
-            this.jTextField133.setText(custIDDd);
+
+        String custIDDd = this.jTable21.getModel().getValueAt(selectedRow12456, 0).toString();
+        this.jTextField133.setText(custIDDd);
     }//GEN-LAST:event_jTable21MousePressed
 
     private void jTable21KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable21KeyPressed
@@ -14678,206 +14605,194 @@ public class MainManue1 extends javax.swing.JFrame {
         items_add_to_bill hyt5 = new items_add_to_bill();
         billSearch juyy = new billSearch();
         searchItems dddddd = new searchItems();
-        
+
         try {
             String query = "update bill_items set item_name = ? where bill_item_id = ?";
             PreparedStatement pstd = conn.prepareStatement(query);
 
-                for(int i=0; i<jTable19.getRowCount(); i++){
+            for (int i = 0; i < jTable19.getRowCount(); i++) {
 
-                    String billItemId = (String)jTable19.getValueAt(i, 0);
-                    String id = (String)jTable19.getValueAt(i, 1);
-                    String name = dddddd.getItemNameByItemCode(id);
+                String billItemId = (String) jTable19.getValueAt(i, 0);
+                String id = (String) jTable19.getValueAt(i, 1);
+                String name = dddddd.getItemNameByItemCode(id);
 
-                    String billedSN = getBillItemSN(billItemId);
-                    
-                    String newName = "";
-                    
-                    if(!billedSN.equals("")){
-                        newName = name.concat(" - ").concat(billedSN);
-                    }
-                    else{
-                        newName = name;
-                    }
+                String billedSN = getBillItemSN(billItemId);
 
-                    pstd.setString(1, newName);
-                    pstd.setString(2, billItemId);
-                    pstd.executeUpdate();
+                String newName = "";
+
+                if (!billedSN.equals("")) {
+                    newName = name.concat(" - ").concat(billedSN);
+                } else {
+                    newName = name;
                 }
+
+                pstd.setString(1, newName);
+                pstd.setString(2, billItemId);
+                pstd.executeUpdate();
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         String invoIDDD = this.jLabel229.getText();
         String custt = this.jTextField116.getText();
         String emplee = this.jTextField133.getText();
         int dissco = Integer.parseInt(this.jTextField117.getText());
         double ttotal = Double.parseDouble(this.jTextField115.getText());
-        double netAmmt = ttotal-dissco;
+        double netAmmt = ttotal - dissco;
         String dd = this.jTextArea13.getText();
-        
+
         int itmCountd = jTable19.getRowCount();
-        
+
         double oldPayedAmt = juyy.getPayedCeditAmt(invoIDDD);
         String status = this.jLabel320.getText();
-        
-        if(this.jCheckBox16.isEnabled()){
-            if(this.jCheckBox16.isSelected()){
+
+        if (this.jCheckBox16.isEnabled()) {
+            if (this.jCheckBox16.isSelected()) {
                 status = "COMPLETE";
-            }
-            else{
+            } else {
                 status = "PENDING";
             }
         }
-        
-        boolean isOK = hyt5.EditBillData(ttotal, dissco, custt, emplee, netAmmt, itmCountd,dd,status, invoIDDD, editEnvoice);
-        
-        if(isOK){
-            
-            
+
+        boolean isOK = hyt5.EditBillData(ttotal, dissco, custt, emplee, netAmmt, itmCountd, dd, status, invoIDDD, editEnvoice);
+
+        if (isOK) {
+
             int selectedRow = this.jTable4.getSelectedRow();
-                    
-                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
 
-                        if(invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+            String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+            String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
 
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+            if (invoTypeee.equals("Cash") || invoTypeee.equals("Bank Deposit")) {
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                    JasperViewer.viewReport(jprint, false);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (invoTypeee.equals("Cash Advanced") || invoTypeee.equals("Bank Advanced")) {
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                    InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                JasperViewer.viewReport(jprint, false);
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            
-                        }
-                        else if(invoTypeee.equals("Credit")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
-                                try {
-                                        //warran = this.jTable15.getModel().getValueAt(selectedRow9456, 9).toString();
-                        
-                                        String query = "update creditedinvoices set invoTotal = ?, dueAmt = ? where bill_id = ?";
-                                        PreparedStatement pst5 = conn.prepareStatement(query);
+                    JasperViewer.viewReport(jprint, false);
 
-                                        pst5.setDouble(1, netAmmt);
-                                        pst5.setDouble(2, netAmmt-oldPayedAmt);
-                                        pst5.setString(3, invoIDDD);
-                                        pst5.executeUpdate();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
+            } else if (invoTypeee.equals("Credit")) {
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
+                    try {
+                        //warran = this.jTable15.getModel().getValueAt(selectedRow9456, 9).toString();
 
+                        String query = "update creditedinvoices set invoTotal = ?, dueAmt = ? where bill_id = ?";
+                        PreparedStatement pst5 = conn.prepareStatement(query);
 
-                                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                                } catch (SQLException ex) {
-                                    ex.printStackTrace();
-                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                                
-                                String STRcust_id1 = this.jTextField116.getText();
-                                double creditSum1 = calculateCreditAmtByCustomer(STRcust_id1);
-                                setNewCreditValue(creditSum1, STRcust_id1);
-                                
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                        pst5.setDouble(1, netAmmt);
+                        pst5.setDouble(2, netAmmt - oldPayedAmt);
+                        pst5.setString(3, invoIDDD);
+                        pst5.executeUpdate();
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
 
-                                JasperViewer.viewReport(jprint, false);
+                    String STRcust_id1 = this.jTextField116.getText();
+                    double creditSum1 = calculateCreditAmtByCustomer(STRcust_id1);
+                    setNewCreditValue(creditSum1, STRcust_id1);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Credit Advanced")){
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
-                                try {
-                                        //warran = this.jTable15.getModel().getValueAt(selectedRow9456, 9).toString();
-                        
-                                        String query = "update creditedinvoices set invoTotal = ?, dueAmt = ? where bill_id = ?";
-                                        PreparedStatement pst5 = conn.prepareStatement(query);
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                                        pst5.setDouble(1, netAmmt);
-                                        pst5.setDouble(2, netAmmt-oldPayedAmt);
-                                        pst5.setString(3, invoIDDD);
-                                        pst5.executeUpdate();
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
+                    JasperViewer.viewReport(jprint, false);
 
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (invoTypeee.equals("Credit Advanced")) {
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
+                    try {
+                        //warran = this.jTable15.getModel().getValueAt(selectedRow9456, 9).toString();
 
-                                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                                } catch (SQLException ex) {
-                                    ex.printStackTrace();
-                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                                String STRcust_id1 = this.jTextField116.getText();
-                                double creditSum1 = calculateCreditAmtByCustomer(STRcust_id1);
-                                setNewCreditValue(creditSum1, STRcust_id1);
+                        String query = "update creditedinvoices set invoTotal = ?, dueAmt = ? where bill_id = ?";
+                        PreparedStatement pst5 = conn.prepareStatement(query);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                        pst5.setDouble(1, netAmmt);
+                        pst5.setDouble(2, netAmmt - oldPayedAmt);
+                        pst5.setString(3, invoIDDD);
+                        pst5.executeUpdate();
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    String STRcust_id1 = this.jTextField116.getText();
+                    double creditSum1 = calculateCreditAmtByCustomer(STRcust_id1);
+                    setNewCreditValue(creditSum1, STRcust_id1);
 
-                                JasperViewer.viewReport(jprint, false);
+                    InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        else if(invoTypeee.equals("Cheque")){
-                            items_add_to_bill klo09 = new items_add_to_bill();
-                            klo09.updateChequeTable(netAmmt, billl, editEnvoice);
-                            HashMap ab = new HashMap();
-                            ab.put("invoNum", billl);
-                            try {
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
 
-                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
-                                JasperDesign jdesign = JRXmlLoader.load(file);
+                    JasperViewer.viewReport(jprint, false);
 
-                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (invoTypeee.equals("Cheque")) {
+                items_add_to_bill klo09 = new items_add_to_bill();
+                klo09.updateChequeTable(netAmmt, billl, editEnvoice);
+                HashMap ab = new HashMap();
+                ab.put("invoNum", billl);
+                try {
 
-                                JasperViewer.viewReport(jprint, false);
+                    InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+                    JasperDesign jdesign = JRXmlLoader.load(file);
 
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        ResultSet rs4js = juyy.showAllPendingBillDetails();
+                    JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+                    JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+
+                    JasperViewer.viewReport(jprint, false);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            ResultSet rs4js = juyy.showAllPendingBillDetails();
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4js));
             this.editEnvoice.dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(editEnvoice, "Have to provide Customer ID and Employee ID!","Error",JOptionPane.ERROR_MESSAGE); 
+        } else {
+            JOptionPane.showMessageDialog(editEnvoice, "Have to provide Customer ID and Employee ID!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton73ActionPerformed
 
@@ -14885,16 +14800,15 @@ public class MainManue1 extends javax.swing.JFrame {
         items_add_to_bill hghhd = new items_add_to_bill();
         cashBalancing hyt = new cashBalancing();
         billSearch jk8 = new billSearch();
-        
+
         int selectedRow = this.jTable4.getSelectedRow();
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(chequeInvo, "Pleace select a Invoice","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(chequeInvo, "Pleace select a Invoice", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String invoTypee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
-            if(invoTypee.equals("Cheque")){
-                this.chequeInvo.setSize(415,390);
-                this.chequeInvo.setTitle("Cheque Invoice");   
+            if (invoTypee.equals("Cheque")) {
+                this.chequeInvo.setSize(415, 390);
+                this.chequeInvo.setTitle("Cheque Invoice");
                 this.chequeInvo.setLocationRelativeTo(this);
                 this.chequeInvo.setVisible(true);
                 this.jTextField125.requestFocusInWindow();
@@ -14905,54 +14819,44 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jLabel253.setText(invoID);
                 this.jLabel251.setText(chequeID);
                 this.jLabel255.setText(invoDatee);
-                
-                try{
+
+                try {
                     ResultSet rsf = jk8.getChequeDetails(chequeID);
-                    while(rsf.next()){
+                    while (rsf.next()) {
                         String dueeData = rsf.getString("dueeDate");
                         String netAmtt = rsf.getString("netAmtt");
                         String statess = rsf.getString("statess");
                         String chequeNum = rsf.getString("chequeNo");
-                        
 
                         this.jLabel257.setText(dueeData);
                         this.jLabel259.setText(netAmtt);
                         this.jLabel261.setText(statess);
                         this.jTextField125.setText(chequeNum);
-                    } 
-                }
-                catch(Exception ex){  
+                    }
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+            } else {
+                JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Cheque Invoice.!", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            else{
-               JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Cheque Invoice.!","Error",JOptionPane.ERROR_MESSAGE); 
-            }
-            
-            
+
             //String Customer = this.jTable4.getModel().getValueAt(selectedRow, 2).toString();
             //int dis = (int)jTable4.getValueAt(selectedRow, 5);
             //String total = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 4).toString());
             //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
             //String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
             //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            
-            
 //            this.jLabel157.setText(invoID);
 //            this.jTextField72.setText(Customer);
 //            this.jTextField73.setText(Integer.toString(dis));
 //            this.jTextField71.setText(total);
 //            this.jTextField74.setText(netAmt);
             //this.jLabel179.setText(invoID);
-            
-            
-            
 //            ResultSet rs3 = hghhd.getAddedItemsBy_bill_ID(invoID);
 //            this.jTable15.setModel(DbUtils.resultSetToTableModel(rs3));
 //            
 //            ResultSet rs99 = hyt.getAllNonClaimedWarranties();
 //            this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
-            
         }
     }//GEN-LAST:event_jButton80ActionPerformed
 
@@ -14960,16 +14864,15 @@ public class MainManue1 extends javax.swing.JFrame {
         items_add_to_bill hghhd = new items_add_to_bill();
         cashBalancing hyt = new cashBalancing();
         billSearch jk8d = new billSearch();
-        
+
         int selectedRown = this.jTable4.getSelectedRow();
-        if(selectedRown == -1){
-            JOptionPane.showMessageDialog(creditInvo, "Pleace select a Invoice","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRown == -1) {
+            JOptionPane.showMessageDialog(creditInvo, "Pleace select a Invoice", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String invoTypee = this.jTable4.getModel().getValueAt(selectedRown, 7).toString();
-            if(invoTypee.equals("Credit")|| invoTypee.equals("Credit Advanced")){
-                this.creditInvo.setSize(960,400);
-                this.creditInvo.setTitle("Credit Invoice");   
+            if (invoTypee.equals("Credit") || invoTypee.equals("Credit Advanced")) {
+                this.creditInvo.setSize(960, 400);
+                this.creditInvo.setTitle("Credit Invoice");
                 this.creditInvo.setLocationRelativeTo(this);
                 this.creditInvo.setVisible(true);
                 this.jTextField134.requestFocusInWindow();
@@ -14981,62 +14884,56 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jLabel263.setText(invoID);
                 this.jLabel269.setText(invoTypee);
                 this.jLabel265.setText(invoDatee);
-                
-                try{
+
+                try {
                     ResultSet rsfff = jk8d.showCreditInvoData(invoID);
-                    while(rsfff.next()){
+                    while (rsfff.next()) {
                         String ciID = rsfff.getString("cdID");
-                        String invoTotal = rsfff.getString("invoTotal");      
+                        String invoTotal = rsfff.getString("invoTotal");
                         String payed = rsfff.getString("payed");
                         String dueAmt = rsfff.getString("dueAmt");
                         String dueDate = rsfff.getString("dueDate");
-                        
 
                         this.jLabel279.setText(ciID);
                         this.jLabel281.setText(invoTotal);
                         this.jLabel283.setText(payed);
                         this.jLabel285.setText(dueAmt);
                         this.jLabel287.setText(dueDate);
-                    } 
                     }
-                    catch(Exception ex){  
-                        ex.printStackTrace();
-                    }    
-                
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
                 ResultSet rs1hg = jk8d.showCreditSubInvoData(chequeID);
                 this.jTable22.setModel(DbUtils.resultSetToTableModel(rs1hg));
-                
+
                 this.jTextField134.setText("");
-                
-                if(AdvaCode.equals("no")){
+
+                if (AdvaCode.equals("no")) {
                     this.jLabel271.setText("NO");
                     this.jLabel273.setText("NO");
                     this.jLabel275.setText("NO");
                     this.jLabel277.setText("NO");
-                }
-                else{
-                    try{
-                    ResultSet rsff = jk8d.getAdvancedDetails(AdvaCode);
-                    while(rsff.next()){
-                        String advIDDDD = rsff.getString("idadvancedCustID");
-                        String AdvDate = rsff.getString("adv_date");      
-                        String advPayment = rsff.getString("adv_amount");
-                        String dueeAmtt = rsff.getString("adv_duePayment");
-                        
+                } else {
+                    try {
+                        ResultSet rsff = jk8d.getAdvancedDetails(AdvaCode);
+                        while (rsff.next()) {
+                            String advIDDDD = rsff.getString("idadvancedCustID");
+                            String AdvDate = rsff.getString("adv_date");
+                            String advPayment = rsff.getString("adv_amount");
+                            String dueeAmtt = rsff.getString("adv_duePayment");
 
-                        this.jLabel271.setText(advIDDDD);
-                        this.jLabel273.setText(AdvDate);
-                        this.jLabel275.setText(advPayment);
-                        this.jLabel277.setText(dueeAmtt);
-                    } 
-                    }
-                    catch(Exception ex){  
+                            this.jLabel271.setText(advIDDDD);
+                            this.jLabel273.setText(AdvDate);
+                            this.jLabel275.setText(advPayment);
+                            this.jLabel277.setText(dueeAmtt);
+                        }
+                    } catch (Exception ex) {
                         ex.printStackTrace();
-                    }    
-                }    
-            }
-            else{
-               JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Credit Invoice.!","Error",JOptionPane.ERROR_MESSAGE); 
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(chequeInvo, "You can only edit the Credit Invoice.!", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton81ActionPerformed
@@ -15051,55 +14948,52 @@ public class MainManue1 extends javax.swing.JFrame {
         String chequeNum = this.jTextField125.getText();
         String Status = "COMPLETE";
         billSearch kdf = new billSearch();
-        
-        boolean d = kdf.EditChequeData(Status,chequeNum, chequeCode, this);
+
+        boolean d = kdf.EditChequeData(Status, chequeNum, chequeCode, this);
         boolean f = kdf.EditBillData(Status, invoHCode, this);
-        
-        if(d & f){
-            JOptionPane.showMessageDialog(chequeInvo, "Payment Caimed Successfully!","Movie Details",JOptionPane.INFORMATION_MESSAGE);
+
+        if (d & f) {
+            JOptionPane.showMessageDialog(chequeInvo, "Payment Caimed Successfully!", "Movie Details", JOptionPane.INFORMATION_MESSAGE);
             ResultSet rs1 = kdf.showAllPendingBillDetails();
             this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1));
-            
+
             this.chequeInvo.dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(chequeInvo, "failed!","Database Error",JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(chequeInvo, "failed!", "Database Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton79ActionPerformed
 
     private void jButton82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton82ActionPerformed
-        
-            //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+
+        //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
         int selectedRowr = this.jTable4.getSelectedRow();
-        
+
         items_add_to_bill loi = new items_add_to_bill();
         billSearch kio = new billSearch();
         cashBalancing kiu8 = new cashBalancing();
-        
+
         Date df = new Date();
         SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
-        String datef = sdf1h.format(df); 
-        
+        String datef = sdf1h.format(df);
+
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttttt = sdf.format(df);
-        
-        
+
         String invoNuM = this.jLabel263.getText();
         double advP = 0;
         double paymens = 0;
         double totPay = 0;
         String text = this.jLabel275.getText();
         String newStatus = "COMPLETE";
-        
+
         double peyMent = Double.parseDouble(this.jTextField134.getText());
-        
-        if(text.equals("NO")){
+
+        if (text.equals("NO")) {
             advP = 0;
-        }
-        else{
+        } else {
             advP = Double.parseDouble(this.jLabel275.getText());
         }
-        
+
 //        for(int i=0; i<jTable22.getRowCount(); i++){
 //            paymens = Double.parseDouble(String.valueOf(jTable22.getValueAt(i, 4)));
 //            
@@ -15113,231 +15007,217 @@ public class MainManue1 extends javax.swing.JFrame {
         double newPayedAmt = currentPayed + peyMent;
         double newDueAmt = currentDuePayed - peyMent;
         String cccc = this.jLabel279.getText();
-        
+
         String cusIFDg = getCustIDFromCrediID(cccc);
-        
-        
+
         //String dueDate = "0000-00-00";
         String noteer = "Credit Invoice Payment for ".concat(invoNuM);
-        if(this.jTextField134.getText().equals("")){
-            JOptionPane.showMessageDialog(creditInvo, "Payment Can't be Empty.!","Database Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            
+        if (this.jTextField134.getText().equals("")) {
+            JOptionPane.showMessageDialog(creditInvo, "Payment Can't be Empty.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+
             String qoutItemCod = loi.addCreditSubInvoice(peyMent, datef, this.jLabel279.getText(), this);
             ResultSet rs1hg = kio.showCreditSubInvoData(invoNuM);
             this.jTable22.setModel(DbUtils.resultSetToTableModel(rs1hg));
-            
+
             loi.updateCreditInvoice(newPayedAmt, newDueAmt, cccc, this);
-            
+
             ResultSet rs1hgd = kio.showCreditSubInvoData(cccc);
             this.jTable22.setModel(DbUtils.resultSetToTableModel(rs1hgd));
 
-            JOptionPane.showMessageDialog(creditInvo, "Payment Successfully!","Credit Details",JOptionPane.INFORMATION_MESSAGE);
-            
-            try{
-                    ResultSet rsfff = kio.showCreditInvoData(invoNuM);
-                    while(rsfff.next()){
-                        String ciID = rsfff.getString("cdID");
-                        String invoTotal = rsfff.getString("invoTotal");      
-                        String payed = rsfff.getString("payed");
-                        String dueAmt = rsfff.getString("dueAmt");
-                        String dueDate = rsfff.getString("dueDate");
-                        
+            JOptionPane.showMessageDialog(creditInvo, "Payment Successfully!", "Credit Details", JOptionPane.INFORMATION_MESSAGE);
 
-                        this.jLabel279.setText(ciID);
-                        this.jLabel281.setText(invoTotal);
-                        this.jLabel283.setText(payed);
-                        this.jLabel285.setText(dueAmt);
-                        this.jLabel287.setText(dueDate);
-                    } 
-                    }
-                    catch(Exception ex){  
-                        ex.printStackTrace();
-                    }
-            
-            if(qoutItemCod.equals(null)){
-                JOptionPane.showMessageDialog(creditInvo, "Payment Adding Fail.!","Database Error",JOptionPane.ERROR_MESSAGE);
+            try {
+                ResultSet rsfff = kio.showCreditInvoData(invoNuM);
+                while (rsfff.next()) {
+                    String ciID = rsfff.getString("cdID");
+                    String invoTotal = rsfff.getString("invoTotal");
+                    String payed = rsfff.getString("payed");
+                    String dueAmt = rsfff.getString("dueAmt");
+                    String dueDate = rsfff.getString("dueDate");
+
+                    this.jLabel279.setText(ciID);
+                    this.jLabel281.setText(invoTotal);
+                    this.jLabel283.setText(payed);
+                    this.jLabel285.setText(dueAmt);
+                    this.jLabel287.setText(dueDate);
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-            else{
+
+            if (qoutItemCod.equals(null)) {
+                JOptionPane.showMessageDialog(creditInvo, "Payment Adding Fail.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 kiu8.addDebitePayments(noteer, peyMent, datef, tttttt, this);
                 setCashBalance();
-                if(newDueAmt==0){
+                if (newDueAmt == 0) {
                     kio.EditBillData(newStatus, invoNuM, this);
-                    
+
                     ResultSet rs1 = kio.showAllPendingBillDetails();
                     this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1));
-                    
+
                 }
             }
         }
-        double creditSumd = calculateCreditAmtByCustomer(cusIFDg);      
+        double creditSumd = calculateCreditAmtByCustomer(cusIFDg);
         setNewCreditValue(creditSumd, cusIFDg);
-        
+
     }//GEN-LAST:event_jButton82ActionPerformed
 
     private void jButton83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton83ActionPerformed
         items_add_to_bill loik = new items_add_to_bill();
         String invoNumb = this.jLabel263.getText();
-        
+
         String ciCodeee = this.jLabel279.getText();
         double payied = Double.parseDouble(this.jLabel283.getText());
         double toPay = 0;
         billSearch kiu = new billSearch();
         String ssss = "COMPLETE";
-                
+
         kiu.EditBillData(ssss, invoNumb, this);
-        
+
         loik.updateCreditInvoice(payied, toPay, ciCodeee, this);
-        
+
         ResultSet rs1h = kiu.showAllPendingBillDetails();
         this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1h));
-        
+
         String cusIFD = getCustIDFromCrediID(ciCodeee);
-        
+
         double creditSum = calculateCreditAmtByCustomer(cusIFD);
         setNewCreditValue(creditSum, cusIFD);
     }//GEN-LAST:event_jButton83ActionPerformed
 
     private void jTable5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MousePressed
         int selectedRow1245 = this.jTable5.getSelectedRow();
-        
-        
-            String custIDDd = this.jTable5.getModel().getValueAt(selectedRow1245, 0).toString();
-            this.jTextField4.setText(custIDDd);
+
+        String custIDDd = this.jTable5.getModel().getValueAt(selectedRow1245, 0).toString();
+        this.jTextField4.setText(custIDDd);
     }//GEN-LAST:event_jTable5MousePressed
 
     private void jTable2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MousePressed
         int selectedRow12456 = this.jTable2.getSelectedRow();
-        
-        
-            String eIDD = this.jTable2.getModel().getValueAt(selectedRow12456, 0).toString();
-            this.jTextField5.setText(eIDD);
-    
+
+        String eIDD = this.jTable2.getModel().getValueAt(selectedRow12456, 0).toString();
+        this.jTextField5.setText(eIDD);
+
     }//GEN-LAST:event_jTable2MousePressed
 
     private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
-  
-        if(this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice")){
+
+        if (this.jComboBox8.getSelectedItem().toString().equals("Cash Invoice")) {
             this.jTextField108.setEditable(false);
             this.jTextField112.setEditable(false);
             this.jTextField113.setEditable(false);
             this.jDateChooser1.setEnabled(false);
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice")){
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Credit Invoice")) {
             this.jTextField108.setEditable(true);
             this.jTextField112.setEditable(true);
             this.jTextField113.setEditable(false);
             this.jDateChooser1.setEnabled(true);
-        }
-        else if(this.jComboBox8.getSelectedItem().toString().equals("Cheque Invoice")){
+        } else if (this.jComboBox8.getSelectedItem().toString().equals("Cheque Invoice")) {
             this.jTextField108.setEditable(false);
             this.jTextField112.setEditable(false);
             this.jTextField113.setEditable(true);
             this.jDateChooser1.setEnabled(true);
         }
-        
+
     }//GEN-LAST:event_jComboBox8ActionPerformed
 
     private void jButton78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton78ActionPerformed
         items_add_to_bill kkiu = new items_add_to_bill();
-          
-        
+
         int selectedRow12456 = this.jTable4.getSelectedRow();
         String billType = this.jTable4.getModel().getValueAt(selectedRow12456, 7).toString();
         String chequeORcreditID = this.jTable4.getModel().getValueAt(selectedRow12456, 9).toString();
-        
-        
-        if(billType.equals("Cheque")){
-            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection1 == 0){
-                    try {
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst1 = conn.prepareStatement(query);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 1);
-                            int qty = (int)jTable19.getValueAt(i, 4);
+        if (billType.equals("Cheque")) {
+            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
+                try {
+                    String query = "update items set qty = qty+ ? where itm_code = ?";
+                    PreparedStatement pst1 = conn.prepareStatement(query);
 
-                            pst1.setInt(1, qty);
-                            pst1.setString(2, itemId);
-                            pst1.executeUpdate();
-                        }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 1);
+                        int qty = (int) jTable19.getValueAt(i, 4);
+
+                        pst1.setInt(1, qty);
+                        pst1.setString(2, itemId);
+                        pst1.executeUpdate();
                     }
-                    
-                    //item sub table eke item no -> yes
-                    try{
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String Bill_itemId = (String)jTable19.getValueAt(i, 0);
-                            String aaas = kkiu.checkSNAvailability(Bill_itemId);
-                            
-                            if(aaas != ""){
-                                ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
-                                for(int ii=0; ii<listA.size(); ii++){
-                                    kkiu.updateItemSerial(listA.get(ii));   
-                                }
-                            }  
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
+                }
+
+                //item sub table eke item no -> yes
+                try {
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String Bill_itemId = (String) jTable19.getValueAt(i, 0);
+                        String aaas = kkiu.checkSNAvailability(Bill_itemId);
+
+                        if (aaas != "") {
+                            ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
+                            for (int ii = 0; ii < listA.size(); ii++) {
+                                kkiu.updateItemSerial(listA.get(ii));
+                            }
                         }
-                    
+                    }
+
                     // sn delet from bill_sub_items 
-                        for(int j=0; j<jTable19.getRowCount(); j++){
-                            String Bill_itemId1 = (String)jTable19.getValueAt(j, 0);
-                            String aaass = kkiu.checkSNAvailability(Bill_itemId1);
-                            
-                            if(aaass != ""){
-                                System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
-                                kkiu.deleteBillSN(Bill_itemId1);
-                            }                                  
-                        }      
-                    }
-                    catch (Exception eg) {
-                        eg.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
-                    }
+                    for (int j = 0; j < jTable19.getRowCount(); j++) {
+                        String Bill_itemId1 = (String) jTable19.getValueAt(j, 0);
+                        String aaass = kkiu.checkSNAvailability(Bill_itemId1);
 
-                    try{
-                        String query = "delete from chequeinvo where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoIDD = this.jLabel229.getText();
-                        pstf.setString(1, invoIDD);
-                        pstf.executeUpdate();
+                        if (aaass != "") {
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
+                            kkiu.deleteBillSN(Bill_itemId1);
+                        }
                     }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    try {
-                        String query = "delete from bill_items where bill_item_id=?";
-                        PreparedStatement pstff = conn.prepareStatement(query);
+                } catch (Exception eg) {
+                    eg.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
+                }
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 0);
-                            pstff.setString(1, itemId);
-                            pstff.executeUpdate();
+                try {
+                    String query = "delete from chequeinvo where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoIDD = this.jLabel229.getText();
+                    pstf.setString(1, invoIDD);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+                try {
+                    String query = "delete from bill_items where bill_item_id=?";
+                    PreparedStatement pstff = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 0);
+                        pstff.setString(1, itemId);
+                        pstff.executeUpdate();
                     }
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
-                    //cheque=> if complete then add credited table date vice
-                    try{
-                        String query = "delete from bill where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoID = this.jLabel229.getText();
-                        pstf.setString(1, invoID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
+                //cheque=> if complete then add credited table date vice
+                try {
+                    String query = "delete from bill where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoID = this.jLabel229.getText();
+                    pstf.setString(1, invoID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+
 //                    cashBalancing huji = new cashBalancing();
 //                    
 //                    Date df = new Date();
@@ -15349,510 +15229,493 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    String invoIDD = this.jLabel229.getText();
 //                    String noteeeeee =invoIDD.concat(" whole invoice got deleted.");
 //                    double amtr = Double.parseDouble(this.jTextField118.getText());
-                    
 //                    huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
-                    setCashBalance();
-                    this.editEnvoice.dispose();
-                    
-                    billSearch iuiu = new billSearch();
-                    ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
-                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
-                    
+                setCashBalance();
+                this.editEnvoice.dispose();
+
+                billSearch iuiu = new billSearch();
+                ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
+                this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
+
+            }
+
+        } else if (billType.equals("Cash")) {
+            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
+                try {
+                    String query = "update items set qty = qty+ ? where itm_code = ?";
+                    PreparedStatement pst1 = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 1);
+                        int qty = (int) jTable19.getValueAt(i, 4);
+
+                        pst1.setInt(1, qty);
+                        pst1.setString(2, itemId);
+                        pst1.executeUpdate();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
                 }
-  
-        }
-        else if(billType.equals("Cash")){   
-            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection1 == 0){
-                    try {
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst1 = conn.prepareStatement(query);
+                //item sub table eke item no -> yes
+                try {
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String Bill_itemId = (String) jTable19.getValueAt(i, 0);
+                        String aaas = kkiu.checkSNAvailability(Bill_itemId);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 1);
-                            int qty = (int)jTable19.getValueAt(i, 4);
-
-                            pst1.setInt(1, qty);
-                            pst1.setString(2, itemId);
-                            pst1.executeUpdate();
+                        if (aaas != "") {
+                            ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
+                            for (int ii = 0; ii < listA.size(); ii++) {
+                                kkiu.updateItemSerial(listA.get(ii));
+                            }
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
                     }
-                    //item sub table eke item no -> yes
-                    try{
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String Bill_itemId = (String)jTable19.getValueAt(i, 0);
-                            String aaas = kkiu.checkSNAvailability(Bill_itemId);
-                            
-                            if(aaas != ""){
-                                ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
-                                for(int ii=0; ii<listA.size(); ii++){
-                                    kkiu.updateItemSerial(listA.get(ii));   
-                                }
-                            }  
-                        }
-                    
+
                     // sn delet from bill_sub_items 
-                        for(int j=0; j<jTable19.getRowCount(); j++){
-                            String Bill_itemId1 = (String)jTable19.getValueAt(j, 0);
-                            String aaass = kkiu.checkSNAvailability(Bill_itemId1);
-                            
-                            if(aaass != ""){
-                                System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
-                                kkiu.deleteBillSN(Bill_itemId1);
-                            }                                  
-                        }      
-                    }
-                    catch (Exception eg) {
-                        eg.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
-                    }
-                    try {
-                        String query = "delete from bill_items where bill_item_id=?";
-                        PreparedStatement pstff = conn.prepareStatement(query);
+                    for (int j = 0; j < jTable19.getRowCount(); j++) {
+                        String Bill_itemId1 = (String) jTable19.getValueAt(j, 0);
+                        String aaass = kkiu.checkSNAvailability(Bill_itemId1);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 0);
-                            pstff.setString(1, itemId);
-                            pstff.executeUpdate();
-                    }
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
-                    //cheque=> if complete then add credited table date vice
-                    try{
-                        String query = "delete from bill where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoID = this.jLabel229.getText();
-                        pstf.setString(1, invoID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    
-                    cashBalancing huji = new cashBalancing();
-                    
-                    Date df = new Date();
-                    SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
-                    String dateff = sdf1h.format(df); 
-        
-                    SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                    String ttttttf = sdf.format(df);
-                    String invoIDD = this.jLabel229.getText();
-                    String noteeeeee =invoIDD.concat(" whole invoice got deleted.");
-                    double amtr = Double.parseDouble(this.jTextField118.getText());
-                    
-                    huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
-                    setCashBalance();
-                    this.editEnvoice.dispose();
-                    
-                    billSearch iuiu = new billSearch();
-                    ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
-                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
-                    
-                }       
-        }
-        else if(billType.equals("Cash Advanced")){   
-            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection1 == 0){
-                    try {
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst1 = conn.prepareStatement(query);
-
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 1);
-                            int qty = (int)jTable19.getValueAt(i, 4);
-
-                            pst1.setInt(1, qty);
-                            pst1.setString(2, itemId);
-                            pst1.executeUpdate();
+                        if (aaass != "") {
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
+                            kkiu.deleteBillSN(Bill_itemId1);
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
                     }
-                    //item sub table eke item no -> yes
-                    try{
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String Bill_itemId = (String)jTable19.getValueAt(i, 0);
-                            String aaas = kkiu.checkSNAvailability(Bill_itemId);
-                            
-                            if(aaas != ""){
-                                ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
-                                for(int ii=0; ii<listA.size(); ii++){
-                                    kkiu.updateItemSerial(listA.get(ii));   
-                                }
-                            }  
+                } catch (Exception eg) {
+                    eg.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
+                }
+                try {
+                    String query = "delete from bill_items where bill_item_id=?";
+                    PreparedStatement pstff = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 0);
+                        pstff.setString(1, itemId);
+                        pstff.executeUpdate();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
+                //cheque=> if complete then add credited table date vice
+                try {
+                    String query = "delete from bill where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoID = this.jLabel229.getText();
+                    pstf.setString(1, invoID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+
+                cashBalancing huji = new cashBalancing();
+
+                Date df = new Date();
+                SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
+                String dateff = sdf1h.format(df);
+
+                SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+                String ttttttf = sdf.format(df);
+                String invoIDD = this.jLabel229.getText();
+                String noteeeeee = invoIDD.concat(" whole invoice got deleted.");
+                double amtr = Double.parseDouble(this.jTextField118.getText());
+
+                huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
+                setCashBalance();
+                this.editEnvoice.dispose();
+
+                billSearch iuiu = new billSearch();
+                ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
+                this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
+
+            }
+        } else if (billType.equals("Cash Advanced")) {
+            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
+                try {
+                    String query = "update items set qty = qty+ ? where itm_code = ?";
+                    PreparedStatement pst1 = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 1);
+                        int qty = (int) jTable19.getValueAt(i, 4);
+
+                        pst1.setInt(1, qty);
+                        pst1.setString(2, itemId);
+                        pst1.executeUpdate();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
+                }
+                //item sub table eke item no -> yes
+                try {
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String Bill_itemId = (String) jTable19.getValueAt(i, 0);
+                        String aaas = kkiu.checkSNAvailability(Bill_itemId);
+
+                        if (aaas != "") {
+                            ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
+                            for (int ii = 0; ii < listA.size(); ii++) {
+                                kkiu.updateItemSerial(listA.get(ii));
+                            }
                         }
-                    
+                    }
+
                     // sn delet from bill_sub_items 
-                        for(int j=0; j<jTable19.getRowCount(); j++){
-                            String Bill_itemId1 = (String)jTable19.getValueAt(j, 0);
-                            String aaass = kkiu.checkSNAvailability(Bill_itemId1);
-                            
-                            if(aaass != ""){
-                                System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
-                                kkiu.deleteBillSN(Bill_itemId1);
-                            }                                  
-                        }      
-                    }
-                    catch (Exception eg) {
-                        eg.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
-                    }
-                    try {
-                        String query = "delete from bill_items where bill_item_id=?";
-                        PreparedStatement pstff = conn.prepareStatement(query);
+                    for (int j = 0; j < jTable19.getRowCount(); j++) {
+                        String Bill_itemId1 = (String) jTable19.getValueAt(j, 0);
+                        String aaass = kkiu.checkSNAvailability(Bill_itemId1);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 0);
-                            pstff.setString(1, itemId);
-                            pstff.executeUpdate();
-                    }
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
-                    //cheque=> if complete then add credited table date vice
-                    billSearch hhyy = new billSearch();
-                    String invoIDg = this.jLabel229.getText();
-                    double adAMT = hhyy.getadvancedAmt(invoIDg);
-                    
-                    try{
-                        String query = "delete from bill where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoID = this.jLabel229.getText();
-                        pstf.setString(1, invoID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    
-                    cashBalancing huji = new cashBalancing();
-                    
-                    Date df = new Date();
-                    SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
-                    String dateff = sdf1h.format(df); 
-        
-                    SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                    String ttttttf = sdf.format(df);
-                    String invoIDD = this.jLabel229.getText();
-                    String noteeeeee =invoIDD.concat(" whole advanced cash invoice got deleted.");
-                    double amtr = (Double.parseDouble(this.jTextField118.getText())) - adAMT;
-                    
-                    huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
-                    setCashBalance();
-                    this.editEnvoice.dispose();
-                    
-                    billSearch iuiu = new billSearch();
-                    ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
-                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
-                    
-                }       
-        }
-        else if(billType.equals("Credit")){   
-            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection1 == 0){
-                    try {
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst1 = conn.prepareStatement(query);
-
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 1);
-                            int qty = (int)jTable19.getValueAt(i, 4);
-
-                            pst1.setInt(1, qty);
-                            pst1.setString(2, itemId);
-                            pst1.executeUpdate();
+                        if (aaass != "") {
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
+                            kkiu.deleteBillSN(Bill_itemId1);
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
                     }
-                    //item sub table eke item no -> yes
-                    try{
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String Bill_itemId = (String)jTable19.getValueAt(i, 0);
-                            String aaas = kkiu.checkSNAvailability(Bill_itemId);
-                            
-                            if(aaas != ""){
-                                ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
-                                for(int ii=0; ii<listA.size(); ii++){
-                                    kkiu.updateItemSerial(listA.get(ii));   
-                                }
-                            }  
+                } catch (Exception eg) {
+                    eg.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
+                }
+                try {
+                    String query = "delete from bill_items where bill_item_id=?";
+                    PreparedStatement pstff = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 0);
+                        pstff.setString(1, itemId);
+                        pstff.executeUpdate();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
+                //cheque=> if complete then add credited table date vice
+                billSearch hhyy = new billSearch();
+                String invoIDg = this.jLabel229.getText();
+                double adAMT = hhyy.getadvancedAmt(invoIDg);
+
+                try {
+                    String query = "delete from bill where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoID = this.jLabel229.getText();
+                    pstf.setString(1, invoID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+
+                cashBalancing huji = new cashBalancing();
+
+                Date df = new Date();
+                SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
+                String dateff = sdf1h.format(df);
+
+                SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+                String ttttttf = sdf.format(df);
+                String invoIDD = this.jLabel229.getText();
+                String noteeeeee = invoIDD.concat(" whole advanced cash invoice got deleted.");
+                double amtr = (Double.parseDouble(this.jTextField118.getText())) - adAMT;
+
+                huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
+                setCashBalance();
+                this.editEnvoice.dispose();
+
+                billSearch iuiu = new billSearch();
+                ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
+                this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
+
+            }
+        } else if (billType.equals("Credit")) {
+            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
+                try {
+                    String query = "update items set qty = qty+ ? where itm_code = ?";
+                    PreparedStatement pst1 = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 1);
+                        int qty = (int) jTable19.getValueAt(i, 4);
+
+                        pst1.setInt(1, qty);
+                        pst1.setString(2, itemId);
+                        pst1.executeUpdate();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
+                }
+                //item sub table eke item no -> yes
+                try {
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String Bill_itemId = (String) jTable19.getValueAt(i, 0);
+                        String aaas = kkiu.checkSNAvailability(Bill_itemId);
+
+                        if (aaas != "") {
+                            ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
+                            for (int ii = 0; ii < listA.size(); ii++) {
+                                kkiu.updateItemSerial(listA.get(ii));
+                            }
                         }
-                    
+                    }
+
                     // sn delet from bill_sub_items 
-                        for(int j=0; j<jTable19.getRowCount(); j++){
-                            String Bill_itemId1 = (String)jTable19.getValueAt(j, 0);
-                            String aaass = kkiu.checkSNAvailability(Bill_itemId1);
-                            
-                            if(aaass != ""){
-                                System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
-                                kkiu.deleteBillSN(Bill_itemId1);
-                            }                                  
-                        }      
+                    for (int j = 0; j < jTable19.getRowCount(); j++) {
+                        String Bill_itemId1 = (String) jTable19.getValueAt(j, 0);
+                        String aaass = kkiu.checkSNAvailability(Bill_itemId1);
+
+                        if (aaass != "") {
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
+                            kkiu.deleteBillSN(Bill_itemId1);
+                        }
                     }
-                    catch (Exception eg) {
-                        eg.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
-                    }
-                    
-                    try{
-                        
-                        String query = "delete from credit_invoice_sub where cdID=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
+                } catch (Exception eg) {
+                    eg.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
+                }
+
+                try {
+
+                    String query = "delete from credit_invoice_sub where cdID=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
 //                        String invoIDD = this.jLabel229.getText();
-                        pstf.setString(1, chequeORcreditID);
-                        System.out.println(chequeORcreditID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    try {
-                        String query = "delete from bill_items where bill_item_id=?";
-                        PreparedStatement pstff = conn.prepareStatement(query);
+                    pstf.setString(1, chequeORcreditID);
+                    System.out.println(chequeORcreditID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+                try {
+                    String query = "delete from bill_items where bill_item_id=?";
+                    PreparedStatement pstff = conn.prepareStatement(query);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 0);
-                            pstff.setString(1, itemId);
-                            pstff.executeUpdate();
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 0);
+                        pstff.setString(1, itemId);
+                        pstff.executeUpdate();
                     }
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
-                    billSearch jk8dg = new billSearch();
-                    String invoIDDj = this.jLabel229.getText();
-                    double amtr = jk8dg.getPayedCeditAmt(invoIDDj);
-                    
-                    try{
-                        
-                        String query = "delete from creditedinvoices where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoIDF = this.jLabel229.getText();
-                        pstf.setString(1, invoIDF);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
-                    //cheque=> if complete then add credited table date vice
-                    try{
-                        String query = "delete from bill where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoID = this.jLabel229.getText();
-                        pstf.setString(1, invoID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-                    cashBalancing huji = new cashBalancing();
-                    
-                    Date df = new Date();
-                    SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
-                    String dateff = sdf1h.format(df); 
-        
-                    SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                    String ttttttf = sdf.format(df);      
-                    String noteeeeee =invoIDDj.concat(" whole credit invoice got deleted.");
+                billSearch jk8dg = new billSearch();
+                String invoIDDj = this.jLabel229.getText();
+                double amtr = jk8dg.getPayedCeditAmt(invoIDDj);
 
-                    huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
-                    setCashBalance();
-                    this.editEnvoice.dispose();
-                    
-                    billSearch iuiu = new billSearch();
-                    ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
-                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
-                    
-                }       
-        }
-        else if(billType.equals("Credit Advanced")){   
-            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection1 == 0){
-                    try {
-                        String query = "update items set qty = qty+ ? where itm_code = ?";
-                        PreparedStatement pst1 = conn.prepareStatement(query);
+                try {
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 1);
-                            int qty = (int)jTable19.getValueAt(i, 4);
+                    String query = "delete from creditedinvoices where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
 
-                            pst1.setInt(1, qty);
-                            pst1.setString(2, itemId);
-                            pst1.executeUpdate();
+                    String invoIDF = this.jLabel229.getText();
+                    pstf.setString(1, invoIDF);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+                // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
+                //cheque=> if complete then add credited table date vice
+                try {
+                    String query = "delete from bill where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoID = this.jLabel229.getText();
+                    pstf.setString(1, invoID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+
+                cashBalancing huji = new cashBalancing();
+
+                Date df = new Date();
+                SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
+                String dateff = sdf1h.format(df);
+
+                SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+                String ttttttf = sdf.format(df);
+                String noteeeeee = invoIDDj.concat(" whole credit invoice got deleted.");
+
+                huji.addCreditedPayments(noteeeeee, amtr, dateff, ttttttf, this);
+                setCashBalance();
+                this.editEnvoice.dispose();
+
+                billSearch iuiu = new billSearch();
+                ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
+                this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
+
+            }
+        } else if (billType.equals("Credit Advanced")) {
+            int userSelection1 = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Invoice ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
+                try {
+                    String query = "update items set qty = qty+ ? where itm_code = ?";
+                    PreparedStatement pst1 = conn.prepareStatement(query);
+
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 1);
+                        int qty = (int) jTable19.getValueAt(i, 4);
+
+                        pst1.setInt(1, qty);
+                        pst1.setString(2, itemId);
+                        pst1.executeUpdate();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
+                }
+                //item sub table eke item no -> yes
+                try {
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String Bill_itemId = (String) jTable19.getValueAt(i, 0);
+                        String aaas = kkiu.checkSNAvailability(Bill_itemId);
+
+                        if (aaas != "") {
+                            ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
+                            for (int ii = 0; ii < listA.size(); ii++) {
+                                kkiu.updateItemSerial(listA.get(ii));
+                            }
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, e);
                     }
-                    //item sub table eke item no -> yes
-                    try{
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String Bill_itemId = (String)jTable19.getValueAt(i, 0);
-                            String aaas = kkiu.checkSNAvailability(Bill_itemId);
-                            
-                            if(aaas != ""){
-                                ArrayList<String> listA = kkiu.getBilledSN(Bill_itemId);
-                                for(int ii=0; ii<listA.size(); ii++){
-                                    kkiu.updateItemSerial(listA.get(ii));   
-                                }
-                            }  
-                        }
-                    
+
                     // sn delet from bill_sub_items 
-                        for(int j=0; j<jTable19.getRowCount(); j++){
-                            String Bill_itemId1 = (String)jTable19.getValueAt(j, 0);
-                            String aaass = kkiu.checkSNAvailability(Bill_itemId1);
-                            
-                            if(aaass != ""){
-                                System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
-                                kkiu.deleteBillSN(Bill_itemId1);
-                            }                                  
-                        }      
+                    for (int j = 0; j < jTable19.getRowCount(); j++) {
+                        String Bill_itemId1 = (String) jTable19.getValueAt(j, 0);
+                        String aaass = kkiu.checkSNAvailability(Bill_itemId1);
+
+                        if (aaass != "") {
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee");
+                            kkiu.deleteBillSN(Bill_itemId1);
+                        }
                     }
-                    catch (Exception eg) {
-                        eg.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
-                    }
-                    
-                    try{
-                        
-                        String query = "delete from credit_invoice_sub where cdID=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
+                } catch (Exception eg) {
+                    eg.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, eg);
+                }
+
+                try {
+
+                    String query = "delete from credit_invoice_sub where cdID=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
 //                        String invoIDD = this.jLabel229.getText();
-                        pstf.setString(1, chequeORcreditID);
-                        System.out.println(chequeORcreditID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    try {
-                        String query = "delete from bill_items where bill_item_id=?";
-                        PreparedStatement pstff = conn.prepareStatement(query);
+                    pstf.setString(1, chequeORcreditID);
+                    System.out.println(chequeORcreditID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+                try {
+                    String query = "delete from bill_items where bill_item_id=?";
+                    PreparedStatement pstff = conn.prepareStatement(query);
 
-                        for(int i=0; i<jTable19.getRowCount(); i++){
-                            String itemId = (String)jTable19.getValueAt(i, 0);
-                            pstff.setString(1, itemId);
-                            pstff.executeUpdate();
+                    for (int i = 0; i < jTable19.getRowCount(); i++) {
+                        String itemId = (String) jTable19.getValueAt(i, 0);
+                        pstff.setString(1, itemId);
+                        pstff.executeUpdate();
                     }
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
-                    billSearch jk8dg = new billSearch();
-                    String invoIDDj = this.jLabel229.getText();
-                    double amtr = jk8dg.getPayedCeditAmt(invoIDDj);
-                    
-                    double adAMT = jk8dg.getadvancedAmt(invoIDDj);
-                    
-                    try{
-                        
-                        String query = "delete from creditedinvoices where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoIDF = this.jLabel229.getText();
-                        pstf.setString(1, invoIDF);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
-                    // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
-                    //cheque=> if complete then add credited table date vice
-                    try{
-                        String query = "delete from bill where bill_id=?";
-                        PreparedStatement pstf = conn.prepareStatement(query);
-                        
-                        String invoID = this.jLabel229.getText();
-                        pstf.setString(1, invoID);
-                        pstf.executeUpdate();
-                    }
-                    catch(SQLException exe){
-                        exe.printStackTrace();
-                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
-                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-                    cashBalancing huji = new cashBalancing();
-                    
-                    Date df = new Date();
-                    SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
-                    String dateff = sdf1h.format(df); 
-        
-                    SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
-                    String ttttttf = sdf.format(df);      
-                    String noteeeeee =invoIDDj.concat(" whole advanced credit invoice got deleted.");
+                billSearch jk8dg = new billSearch();
+                String invoIDDj = this.jLabel229.getText();
+                double amtr = jk8dg.getPayedCeditAmt(invoIDDj);
 
-                    huji.addCreditedPayments(noteeeeee, (amtr - adAMT), dateff, ttttttf, this);
-                    setCashBalance();
-                    this.editEnvoice.dispose();
-                    
-                    billSearch iuiu = new billSearch();
-                    ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
-                    this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
-                    
-                }       
+                double adAMT = jk8dg.getadvancedAmt(invoIDDj);
+
+                try {
+
+                    String query = "delete from creditedinvoices where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoIDF = this.jLabel229.getText();
+                    pstf.setString(1, invoIDF);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+                // check the invo type.. delete invoID from cheque and creditinvo=>sub and add for credited table date vice
+                //cheque=> if complete then add credited table date vice
+                try {
+                    String query = "delete from bill where bill_id=?";
+                    PreparedStatement pstf = conn.prepareStatement(query);
+
+                    String invoID = this.jLabel229.getText();
+                    pstf.setString(1, invoID);
+                    pstf.executeUpdate();
+                } catch (SQLException exe) {
+                    exe.printStackTrace();
+                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exe);
+                }
+
+                cashBalancing huji = new cashBalancing();
+
+                Date df = new Date();
+                SimpleDateFormat sdf1h = new SimpleDateFormat("yyyy-MM-dd");
+                String dateff = sdf1h.format(df);
+
+                SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
+                String ttttttf = sdf.format(df);
+                String noteeeeee = invoIDDj.concat(" whole advanced credit invoice got deleted.");
+
+                huji.addCreditedPayments(noteeeeee, (amtr - adAMT), dateff, ttttttf, this);
+                setCashBalance();
+                this.editEnvoice.dispose();
+
+                billSearch iuiu = new billSearch();
+                ResultSet rs4jsd = iuiu.showAllPendingBillDetails();
+                this.jTable4.setModel(DbUtils.resultSetToTableModel(rs4jsd));
+
+            }
         }
     }//GEN-LAST:event_jButton78ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         billSearch hryu = new billSearch();
-        
+
         String typee = this.jComboBox10.getSelectedItem().toString();
-        
+
         ResultSet rty = hryu.showCompleteBillDetailsByType(typee);
         this.jTable4.setModel(DbUtils.resultSetToTableModel(rty));
-        
+
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jTextField108KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField108KeyTyped
         char ssss = evt.getKeyChar();
-       
-        if(!(Character.isDigit(ssss)) || (ssss == KeyEvent.VK_BACK_SPACE) || (ssss == KeyEvent.VK_DELETE)){
+
+        if (!(Character.isDigit(ssss)) || (ssss == KeyEvent.VK_BACK_SPACE) || (ssss == KeyEvent.VK_DELETE)) {
             evt.consume();
-        }          
+        }
     }//GEN-LAST:event_jTextField108KeyTyped
 
     private void jTextField108ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField108ActionPerformed
-        if(!this.jTextField108.getText().equals("")){
+        if (!this.jTextField108.getText().equals("")) {
             double rrrAmt = Double.parseDouble(this.jTextField108.getText());
             double gggAmt = Double.parseDouble(this.jTextField111.getText());
-            
-            this.jTextField112.setText(String.valueOf(gggAmt - rrrAmt)); 
-        
-       }
+
+            this.jTextField112.setText(String.valueOf(gggAmt - rrrAmt));
+
+        }
     }//GEN-LAST:event_jTextField108ActionPerformed
 
     private void txt_search_text1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text1KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jTextArea17.requestFocusInWindow();
         }
     }//GEN-LAST:event_txt_search_text1KeyPressed
@@ -15862,84 +15725,78 @@ public class MainManue1 extends javax.swing.JFrame {
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttt = sdf.format(d);
-        
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String ddddd = sdf1.format(d);
 
         String addNote = this.jTextArea17.getText();
         String AMT = this.txt_search_text1.getText();
-        
-        if(addNote.equals(" ") || addNote.trim().isEmpty()){
+
+        if (addNote.equals(" ") || addNote.trim().isEmpty()) {
             addNote = "-";
         }
-        
-        
-        if(AMT.equals(" ") || AMT.trim().isEmpty()){
-            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+
+        if (AMT.equals(" ") || AMT.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
             this.txt_search_text1.requestFocusInWindow();
-        }
-        else{
+        } else {
             double addAmt = Double.parseDouble(AMT);
             String trueee = pooo.addDebitePayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
-            if(trueee == null){
-                JOptionPane.showMessageDialog(this, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-            }
-            else{                
-                JOptionPane.showMessageDialog(this, "Cash IN Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE);
+            if (trueee == null) {
+                JOptionPane.showMessageDialog(this, "Cash IN Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Cash IN Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                 this.txt_search_text1.setText("");
                 this.jTextArea17.setText("");
             }
             ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
-            this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu)); 
-        }     
+            this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu));
+        }
     }//GEN-LAST:event_jButton85ActionPerformed
 
     private void txt_search_text2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text2KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jTextArea18.requestFocusInWindow();
         }
     }//GEN-LAST:event_txt_search_text2KeyPressed
 
     private void jButton86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton86ActionPerformed
-        cashBalancing poo = new cashBalancing(); 
+        cashBalancing poo = new cashBalancing();
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String tttt = sdf.format(d);
-        
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String ddddd = sdf1.format(d);
-        
+
         String addNote = this.jTextArea18.getText();
         String cashAMT = this.txt_search_text2.getText();
         System.out.println("111111");
         System.out.println(addNote);
         System.out.println("111111");
-        if(addNote.trim().isEmpty()){
+        if (addNote.trim().isEmpty()) {
             System.out.println("baaaaaaaaank");
         }
-        
-        if(addNote.equals("") || addNote.trim().isEmpty()){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
-                this.jTextArea18.requestFocusInWindow();
-            }
-        else if(cashAMT.equals(" ") || cashAMT.trim().isEmpty()){
-            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+
+        if (addNote.equals("") || addNote.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+            this.jTextArea18.requestFocusInWindow();
+        } else if (cashAMT.equals(" ") || cashAMT.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
             this.txt_search_text2.requestFocusInWindow();
-        }
-        else{
+        } else {
             double addAmt = Double.parseDouble(cashAMT);
-            String trueee =  poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
-            if(trueee == null){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE); 
+            String trueee = poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
+            if (trueee == null) {
+                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                 this.jTextArea18.setText("");
                 this.txt_search_text2.setText("");
             }
             ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
-            this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp)); 
-        }    
+            this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp));
+        }
     }//GEN-LAST:event_jButton86ActionPerformed
 
     private void jTable27MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable27MousePressed
@@ -15951,12 +15808,12 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable28MousePressed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        this.addItemTypes.setSize(483,400);
-        this.addItemTypes.setTitle("Edit Item Types");  
+        this.addItemTypes.setSize(483, 400);
+        this.addItemTypes.setTitle("Edit Item Types");
         this.addItemTypes.setLocationRelativeTo(this);
         this.addItemTypes.setVisible(true);
         this.jTextField144.requestFocusInWindow();
-        
+
         typesHandler juy = new typesHandler();
         ResultSet rsyo = juy.showAllItemTypes();
         this.jTable30.setModel(DbUtils.resultSetToTableModel(rsyo));
@@ -15964,11 +15821,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton87ActionPerformed
         userController usrg = new userController();
-        
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField136.getText(), "yes", adminLogin);
-        if(accessOK){
-            this.dailyCashBal.setSize(835,520);
-            this.dailyCashBal.setTitle("Daily Cash Balance");   
+
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField136.getText(), "yes", adminLogin);
+        if (accessOK) {
+            this.dailyCashBal.setSize(835, 520);
+            this.dailyCashBal.setTitle("Daily Cash Balance");
             this.dailyCashBal.setLocationRelativeTo(this);
             this.dailyCashBal.setVisible(true);
 
@@ -15991,13 +15848,12 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jLabel221.setText(String.valueOf(dddd));
             this.jLabel222.setText(String.valueOf(cccc));
 
-            this.jLabel213.setText(String.valueOf(dddd-cccc));
+            this.jLabel213.setText(String.valueOf(dddd - cccc));
             setCashBalance();
             adminLogin.dispose();
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            JOptionPane.showMessageDialog(adminLogin, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField136.setText("");
     }//GEN-LAST:event_jButton87ActionPerformed
@@ -16043,29 +15899,23 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton91ActionPerformed
 
     private void btn_hr4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_hr4MousePressed
-        
 
 //        this.txt_add_itemName.setText("");
 //        this.txt_add_packSize.setText("");
 //        this.txt_add_qty.setText("");
 //        this.txt_add_wPrice.setText("");
 //        this.txt_add_retailPrice.setText("");
-            resetColor(btn_search);
-            resetColor(btn_add);
-            resetColor(btn_billing);
-            resetColor(btn_bill_summ);
-            resetColor(btn_hr);
-            resetColor(btn_hr2);
-            setColor(btn_hr4);
+        resetColor(btn_search);
+        resetColor(btn_add);
+        resetColor(btn_billing);
+        resetColor(btn_bill_summ);
+        resetColor(btn_hr);
+        resetColor(btn_hr2);
+        setColor(btn_hr4);
 //            resetColor(btn_billing1);
 
-        
-
-
-            
-        
-        this.adminLogin1.setSize(375,175);
-        this.adminLogin1.setTitle("Admin Access");   
+        this.adminLogin1.setSize(375, 175);
+        this.adminLogin1.setTitle("Admin Access");
         this.adminLogin1.setLocationRelativeTo(this);
         this.adminLogin1.setVisible(true);
     }//GEN-LAST:event_btn_hr4MousePressed
@@ -16080,58 +15930,52 @@ public class MainManue1 extends javax.swing.JFrame {
         String pw1 = this.jTextField139.getText();
         String pw2 = this.jTextField140.getText();
         String userName = this.txt_search_text4.getText();
-        String PWW ="";
-        if(jCheckBox15.isSelected()){
+        String PWW = "";
+        if (jCheckBox15.isSelected()) {
             PWW = "yes";
-        }
-        else{
+        } else {
             PWW = "no";
         }
-        
-        if(pw1.equals(pw2)){
+
+        if (pw1.equals(pw2)) {
             hyr.addNewUser(userName, pw1, PWW, this);
-            
+
             this.jTextField139.setText("");
             this.txt_search_text4.setText("");
             this.jTextField140.setText("");
             this.jCheckBox15.setSelected(false);
-            
+
             ResultSet gdddf = loii.showAllUer();
             this.jTable29.setModel(DbUtils.resultSetToTableModel(gdddf));
-        }
-        else{
-            JOptionPane.showMessageDialog(this, "Confirmation password should be same.!","User Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Confirmation password should be same.!", "User Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton93ActionPerformed
 
     private void jTable29MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable29MousePressed
         int selectedRow = this.jTable29.getSelectedRow();
-        String PP ="";
-        if(selectedRow == -1){
-            JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String IDDD = this.jTable29.getModel().getValueAt(selectedRow, 0).toString();    
+        String PP = "";
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String IDDD = this.jTable29.getModel().getValueAt(selectedRow, 0).toString();
             userController sdf = new userController();
-            try{
+            try {
                 ResultSet rsg = sdf.getUserDetails(IDDD);
-                while(rsg.next()){
+                while (rsg.next()) {
                     this.txt_search_text4.setText(rsg.getString("u_name"));
                     this.jTextField140.setText(rsg.getString("password"));
                     this.jTextField139.setText(rsg.getString("password"));
-                    PP = rsg.getString("power");     
+                    PP = rsg.getString("power");
                 }
-            }
-            
-            catch(Exception e){
+            } catch (Exception e) {
                 //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
             }
-            if(PP.equals("yes")){
-                        this.jCheckBox15.setSelected(true);     
-                    }
-                    else{
-                        this.jCheckBox15.setSelected(false);
-                    }
+            if (PP.equals("yes")) {
+                this.jCheckBox15.setSelected(true);
+            } else {
+                this.jCheckBox15.setSelected(false);
+            }
         }
     }//GEN-LAST:event_jTable29MousePressed
 
@@ -16139,39 +15983,36 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRowglfg = this.jTable29.getSelectedRow();
         userController kiugf = new userController();
         userLogin loig = new userLogin();
-        
-        if(selectedRowglfg == -1){
-            JOptionPane.showMessageDialog(dailyCashBal, "Select a user account to Update.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal,"Are you sure to Edit this account?", "Confirm Edit", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowglfg == -1) {
+            JOptionPane.showMessageDialog(dailyCashBal, "Select a user account to Update.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal, "Are you sure to Edit this account?", "Confirm Edit", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 int accID = Integer.parseInt(this.jTable29.getModel().getValueAt(selectedRowglfg, 0).toString());
                 String pw11 = this.jTextField139.getText();
                 String pw22 = this.jTextField140.getText();
                 String userName1 = this.txt_search_text4.getText();
-                String PWW ="";
-                    if(jCheckBox15.isSelected()){
-                        PWW = "yes";
-                    }
-                    else{
-                        PWW = "no";
-                    }
+                String PWW = "";
+                if (jCheckBox15.isSelected()) {
+                    PWW = "yes";
+                } else {
+                    PWW = "no";
+                }
 
-                    if(pw11.equals(pw22)){
-                        kiugf.UpdateUser(userName1, pw11, PWW, accID, this);
+                if (pw11.equals(pw22)) {
+                    kiugf.UpdateUser(userName1, pw11, PWW, accID, this);
 
-                        this.jTextField139.setText("");
-                        this.txt_search_text4.setText("");
-                        this.jTextField140.setText("");
-                        this.jCheckBox15.setSelected(false);
+                    this.jTextField139.setText("");
+                    this.txt_search_text4.setText("");
+                    this.jTextField140.setText("");
+                    this.jCheckBox15.setSelected(false);
 
-                        ResultSet gdddff = loig.showAllUer();
-                        this.jTable29.setModel(DbUtils.resultSetToTableModel(gdddff));
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(this, "Confirmation password should be same.!","User Error", JOptionPane.ERROR_MESSAGE);
-                    }              
+                    ResultSet gdddff = loig.showAllUer();
+                    this.jTable29.setModel(DbUtils.resultSetToTableModel(gdddff));
+                } else {
+                    JOptionPane.showMessageDialog(this, "Confirmation password should be same.!", "User Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
         ResultSet gdddf = loig.showAllUer();
@@ -16182,33 +16023,31 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRowglfg = this.jTable29.getSelectedRow();
         userController kiug = new userController();
         userLogin loi = new userLogin();
-        
-        if(selectedRowglfg == -1){
-            JOptionPane.showMessageDialog(dailyCashBal, "Select a user account to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal,"Are you sure to delete this account?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRowglfg == -1) {
+            JOptionPane.showMessageDialog(dailyCashBal, "Select a user account to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(dailyCashBal, "Are you sure to delete this account?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 int accID = Integer.parseInt(this.jTable29.getModel().getValueAt(selectedRowglfg, 0).toString());
-                
+
                 kiug.deleteUser(accID);
-                
-                             
+
             }
         }
         ResultSet gdddf = loi.showAllUer();
-        this.jTable29.setModel(DbUtils.resultSetToTableModel(gdddf)); 
+        this.jTable29.setModel(DbUtils.resultSetToTableModel(gdddf));
     }//GEN-LAST:event_jButton95ActionPerformed
 
     private void jButton92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton92ActionPerformed
         userController usrg = new userController();
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField141.getText(), "yes", adminLogin1);
-        if(accessOK){
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField141.getText(), "yes", adminLogin1);
+        if (accessOK) {
             userLogin hhhu = new userLogin();
-            
+
             ResultSet rsyyy = hhhu.showAllUer();
             this.jTable29.setModel(DbUtils.resultSetToTableModel(rsyyy));
-            
+
             this.jPanel10.setVisible(false);
             this.jPanel13.setVisible(false);
             this.jPanel14.setVisible(false);
@@ -16217,7 +16056,6 @@ public class MainManue1 extends javax.swing.JFrame {
             this.jPanel23.setVisible(false);
             this.jPanel55.setVisible(false);
             this.jPanel56.setVisible(true);
-            
 
             this.pnl_settings.setVisible(true);
             this.pnl_hr.setVisible(false);
@@ -16227,37 +16065,34 @@ public class MainManue1 extends javax.swing.JFrame {
             this.pnl_billingSumm.setVisible(false);
             this.pnl_barcode.setVisible(false);
             this.pnl_quickBill.setVisible(false);
-            
-            
+
             adminLogin1.dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin1,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(adminLogin1, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField141.setText("");
     }//GEN-LAST:event_jButton92ActionPerformed
 
     private void jButton96ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton96ActionPerformed
         userController usrg = new userController();
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField142.getText(), "yes", adminLogin2);
-        if(accessOK){
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField142.getText(), "yes", adminLogin2);
+        if (accessOK) {
             items_add_to_bill hghhf = new items_add_to_bill();
             cashBalancing hyt = new cashBalancing();
 
             int selectedRow = this.jTable4.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.editEnvoice.setSize(1280,720);
-                this.editEnvoice.setTitle("Edit Invoice");   
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                this.editEnvoice.setSize(1280, 720);
+                this.editEnvoice.setTitle("Edit Invoice");
                 this.editEnvoice.setLocationRelativeTo(this);
                 this.editEnvoice.setVisible(true);
 
                 String invoIDD = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
                 String invodatee = this.jTable4.getModel().getValueAt(selectedRow, 1).toString();
                 String Customer = this.jTable4.getModel().getValueAt(selectedRow, 2).toString();
-                int dis = (int)jTable4.getValueAt(selectedRow, 5);
+                int dis = (int) jTable4.getValueAt(selectedRow, 5);
                 String total = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 4).toString());
                 //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
                 String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
@@ -16265,7 +16100,6 @@ public class MainManue1 extends javax.swing.JFrame {
                 String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
                 String invoType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
                 String status = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 11).toString());
-
 
                 this.jLabel229.setText(invoIDD);
                 this.jTextField116.setText(Customer);
@@ -16277,7 +16111,6 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextArea13.setText(billDiscrip);
                 this.jLabel320.setText(status);
 
-
                 ResultSet rs3s = hghhf.getAddedItemsBy_bill_ID(invoIDD);
                 this.jTable19.setModel(DbUtils.resultSetToTableModel(rs3s));
 
@@ -16288,25 +16121,22 @@ public class MainManue1 extends javax.swing.JFrame {
 //                this.jTextField130.setText("");
 //                this.jTextField132.setText("");
                 this.jTextField131.setText("");
-                
-                if(invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")){
-                    if(status.equals("COMPLETE")){
+
+                if (invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")) {
+                    if (status.equals("COMPLETE")) {
                         this.jCheckBox16.setEnabled(true);
                         this.jCheckBox16.setSelected(true);
-                    }
-                    else{
+                    } else {
                         this.jCheckBox16.setEnabled(true);
                         this.jCheckBox16.setSelected(false);
                     }
-                }
-                else{
+                } else {
                     this.jCheckBox16.setEnabled(false);
                 }
             }
             adminLogin2.dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin2,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(adminLogin2, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField142.setText("");
     }//GEN-LAST:event_jButton96ActionPerformed
@@ -16339,25 +16169,23 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRowglfgh = this.jTable30.getSelectedRow();
         typesHandler kiugg = new typesHandler();
 
-        if(selectedRowglfgh == -1){
-            JOptionPane.showMessageDialog(addItemTypes, "Select a Type to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(addItemTypes,"Are you sure to delete this Type?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+        if (selectedRowglfgh == -1) {
+            JOptionPane.showMessageDialog(addItemTypes, "Select a Type to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(addItemTypes, "Are you sure to delete this Type?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 int accID = Integer.parseInt(this.jTable30.getModel().getValueAt(selectedRowglfgh, 0).toString());
-                
+
                 boolean ttt = kiugg.deleteItemType(accID);
-                if(ttt){
-                    JOptionPane.showMessageDialog(addItemTypes, "Type deleted Successfully!","User Details",JOptionPane.INFORMATION_MESSAGE);
+                if (ttt) {
+                    JOptionPane.showMessageDialog(addItemTypes, "Type deleted Successfully!", "User Details", JOptionPane.INFORMATION_MESSAGE);
                 }
-                
-                             
+
             }
         }
         ResultSet gdddfg = kiugg.showAllItemTypes();
-        this.jTable30.setModel(DbUtils.resultSetToTableModel(gdddfg)); 
-        
+        this.jTable30.setModel(DbUtils.resultSetToTableModel(gdddfg));
+
         setItemTypes();
     }//GEN-LAST:event_jButton99ActionPerformed
 
@@ -16365,49 +16193,47 @@ public class MainManue1 extends javax.swing.JFrame {
         int selectedRowglfgh = this.jTable32.getSelectedRow();
         typesHandler kiugg = new typesHandler();
 
-        if(selectedRowglfgh == -1){
-            JOptionPane.showMessageDialog(addJobTypes, "Select a Type to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(addJobTypes,"Are you sure to delete this Type?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+        if (selectedRowglfgh == -1) {
+            JOptionPane.showMessageDialog(addJobTypes, "Select a Type to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(addJobTypes, "Are you sure to delete this Type?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 int accID = Integer.parseInt(this.jTable32.getModel().getValueAt(selectedRowglfgh, 0).toString());
-                
+
                 boolean ttt = kiugg.deleteJobType(accID);
-                if(ttt){
-                    JOptionPane.showMessageDialog(addJobTypes, "Type deleted Successfully!","User Details",JOptionPane.INFORMATION_MESSAGE);
+                if (ttt) {
+                    JOptionPane.showMessageDialog(addJobTypes, "Type deleted Successfully!", "User Details", JOptionPane.INFORMATION_MESSAGE);
                 }
-                
-                             
+
             }
         }
         ResultSet gdddfgf = kiugg.showAllJobTypes();
-        this.jTable32.setModel(DbUtils.resultSetToTableModel(gdddfgf)); 
-        
+        this.jTable32.setModel(DbUtils.resultSetToTableModel(gdddfgf));
+
 //        setJobTypes();
     }//GEN-LAST:event_jButton103ActionPerformed
 
     private void jButton98ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton98ActionPerformed
         typesHandler poq = new typesHandler();
-        
+
         String typeName = this.jTextField144.getText();
-        
+
         poq.addItemType(typeName, addItemTypes);
-        
+
         this.jTextField144.setText("");
         ResultSet gdddfgd = poq.showAllItemTypes();
         this.jTable30.setModel(DbUtils.resultSetToTableModel(gdddfgd));
         setItemTypes();
-        
+
     }//GEN-LAST:event_jButton98ActionPerformed
 
     private void jButton102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton102ActionPerformed
         typesHandler poqq = new typesHandler();
-        
+
         String typeNamee = this.jTextField146.getText();
-        
+
         poqq.addJobType(typeNamee, addJobTypes);
-        
+
         this.jTextField146.setText("");
         ResultSet gdddfgdf = poqq.showAllJobTypes();
         this.jTable32.setModel(DbUtils.resultSetToTableModel(gdddfgdf));
@@ -16415,168 +16241,144 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton102ActionPerformed
 
     private void txt_add_retailPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_retailPriceKeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_add_retailPrice.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_add_retailPrice.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_add_retailPriceKeyTyped
 
     private void txt_add_wPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_wPriceKeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_add_wPrice.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_add_wPrice.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_add_wPriceKeyTyped
 
     private void txt_add_qtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_qtyKeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_add_qty.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_add_qty.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_add_qtyKeyTyped
 
     private void txt_add_qty1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_qty1KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_add_qty1.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_add_qty1.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_add_qty1KeyTyped
 
     private void jTextField106KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField106KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField106.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField106.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField106KeyTyped
 
     private void jTextField86KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField86KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField86.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField86.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField86KeyTyped
 
     private void txt_search_text1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text1KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_search_text1.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_search_text1.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_search_text1KeyTyped
 
     private void txt_search_text2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text2KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_search_text2.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_search_text2.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_txt_search_text2KeyTyped
 
     private void jTextField134KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField134KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField134.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField134.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField134KeyTyped
 
     private void jTextField131KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField131KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField131.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField131.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField131KeyTyped
 
     private void jTextField114KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField114KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField114.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField114.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField114KeyTyped
 
     private void jTextField111KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField111KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField111.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField111.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
@@ -16591,149 +16393,150 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable31KeyPressed
 
     private void txt_add_itemNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_itemNameKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             storeItemData fsd = new storeItemData();
-            
+
             String isStock = "yes";
-            
+
             String ItmCode = fsd.generateItemCode(this);
             String sn = this.txt_add_itemName.getText().toString();
-            
-            String isOk = fsd.addSubItems(sn, ItmCode,isStock, this);
-            if(isOk != null){
+
+            String isOk = fsd.addSubItems(sn, ItmCode, isStock, this);
+            if (isOk != null) {
                 this.txt_add_itemName.setText("");
                 ResultSet rs33 = fsd.getSubItemData(ItmCode);
                 this.jTable31.setModel(DbUtils.resultSetToTableModel(rs33));
-                
+
                 int SubItemCount = fsd.getSubItemCount(ItmCode);
                 this.txt_add_qty.setText(String.valueOf(SubItemCount));
             }
-            
+
         }
     }//GEN-LAST:event_txt_add_itemNameKeyPressed
 
     private void jButton100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton100ActionPerformed
-        
+
         storeItemData sgg = new storeItemData();
-        
+
         String nextItmCode = sgg.generateItemCode(this);
         int selectedRow123 = this.jTable31.getSelectedRow();
-        
-        
-        
-        if(selectedRow123 == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(null,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
-                
+
+        if (selectedRow123 == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
+
                 String snID = this.jTable31.getModel().getValueAt(selectedRow123, 0).toString();
                 sgg.deleteSubItem(snID);
                 ResultSet rsf = sgg.getSubItemData(nextItmCode);
                 this.jTable31.setModel(DbUtils.resultSetToTableModel(rsf));
-                
+
                 int cc = sgg.getSubItemCount(nextItmCode);
                 this.txt_add_qty.setText(String.valueOf(cc));
-                
+
             }
         }
     }//GEN-LAST:event_jButton100ActionPerformed
 
     private void jButton101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton101ActionPerformed
         int selectedRow = this.tbl_items_search1.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a SN to Delete","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.adminLogin_item_delete_sn.setSize(375,175);
-                this.adminLogin_item_delete_sn.setTitle("Admin Access");   
-                this.adminLogin_item_delete_sn.setLocationRelativeTo(this);
-                this.adminLogin_item_delete_sn.setVisible(true);
-            }
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pleace select a SN to Delete", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.adminLogin_item_delete_sn.setSize(375, 175);
+            this.adminLogin_item_delete_sn.setTitle("Admin Access");
+            this.adminLogin_item_delete_sn.setLocationRelativeTo(this);
+            this.adminLogin_item_delete_sn.setVisible(true);
+        }
     }//GEN-LAST:event_jButton101ActionPerformed
 
     private void tbl_items_searchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_items_searchMousePressed
         storeItemData jukiff = new storeItemData();
+        searchItems sf = new searchItems();
         int selectedRow1777 = this.tbl_items_search.getSelectedRow();
-        
+
         String itmCordee = this.tbl_items_search.getModel().getValueAt(selectedRow1777, 0).toString();
+        String barcodeType = sf.getBarCodeTypeByItemCode(itmCordee);
         
         ResultSet rs3333 = jukiff.getAllSubItemData(itmCordee);
         this.tbl_items_search1.setModel(DbUtils.resultSetToTableModel(rs3333));
+        
+        if(barcodeType.equals("yes")){
+            this.txt_search_text3.setEditable(false);
+        }
+        if(barcodeType.equals("no")){
+            this.txt_search_text3.setEditable(true);
+        }
     }//GEN-LAST:event_tbl_items_searchMousePressed
 
     private void txt_search_text3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_text3KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             storeItemData fsdg = new storeItemData();
-            
+
             int selectedRow321 = this.tbl_items_search.getSelectedRow();
-        
-            if(selectedRow321 == -1){
-                JOptionPane.showMessageDialog(this, "Select a Item to Add New SN.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+
+            if (selectedRow321 == -1) {
+                JOptionPane.showMessageDialog(this, "Select a Item to Add New SN.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 String isStock = "yes";
-            
+
                 String ItmCode = this.tbl_items_search.getModel().getValueAt(selectedRow321, 0).toString();
                 String sn1 = this.txt_search_text3.getText().toString();
 
-                String isOkk = fsdg.addSubItems(sn1, ItmCode,isStock, this);
-                if(isOkk != null){
+                String isOkk = fsdg.addSubItems(sn1, ItmCode, isStock, this);
+                if (isOkk != null) {
                     this.txt_search_text3.setText("");
                     ResultSet rs33 = fsdg.getAllSubItemData(ItmCode);
                     this.tbl_items_search1.setModel(DbUtils.resultSetToTableModel(rs33));
-                    
+
                     try {
                         String queryy = "update items set qty=qty+1 where itm_code = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, ItmCode);      
+                        pstl.setString(1, ItmCode);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+
                     this.txt_search_text3.requestFocusInWindow();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Can Not Add Added Items.!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                
-                else{
-                    JOptionPane.showMessageDialog(this, "Can Not Add Added Items.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-            }      
+            }
         }
     }//GEN-LAST:event_txt_search_text3KeyPressed
 
     private void jTable34MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable34MousePressed
-        
+
     }//GEN-LAST:event_jTable34MousePressed
 
     private void jButton104ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton104ActionPerformed
         items_add_to_bill opiu = new items_add_to_bill();
         searchItems pissas = new searchItems();
-        
+
         int selectedRow3212 = this.jTable34.getSelectedRow();
         int selectedRow32123 = this.jTable3.getSelectedRow();
 
-        if(selectedRow3212 == -1){
-            JOptionPane.showMessageDialog(edit_billed_Items, "Select a Item to Delete SN.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow3212 == -1) {
+            JOptionPane.showMessageDialog(edit_billed_Items, "Select a Item to Delete SN.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             DefaultTableModel ttt = (DefaultTableModel) jTable3.getModel();
-            int userSelection1 = JOptionPane.showConfirmDialog(edit_billed_Items,"Are you sure to delete this Item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection1 == 0){
+            int userSelection1 = JOptionPane.showConfirmDialog(edit_billed_Items, "Are you sure to delete this Item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection1 == 0) {
                 String billItemCode = this.jTable3.getModel().getValueAt(selectedRow32123, 0).toString();
-                
+
                 String billSubItemID = this.jTable34.getModel().getValueAt(selectedRow3212, 0).toString();
                 String snnnn = this.jTable34.getModel().getValueAt(selectedRow3212, 1).toString();
                 String itmCode = pissas.getItemCodeBySubItemCode(snnnn);
                 boolean isItOk = opiu.deleteBillSN(billSubItemID);
 //                boolean gg = sf.deleteSN(SNid);
 
-                if(isItOk){
-                    
+                if (isItOk) {
+
                     try {
                         String queryyy = "update sub_items set inStock=? where sn = ?";
                         PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -16742,7 +16545,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pstlu.setString(2, snnnn);
                         pstlu.executeUpdate();
 
-                    }catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -16751,10 +16554,10 @@ public class MainManue1 extends javax.swing.JFrame {
                         String queryy = "update items set qty=qty+1 where itm_code = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, itmCode);      
+                        pstl.setString(1, itmCode);
                         pstl.executeUpdate();
 
-                    }catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -16763,27 +16566,27 @@ public class MainManue1 extends javax.swing.JFrame {
                         String queryy = "update bill_items set qty=qty-1 where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, billItemCode);      
+                        pstl.setString(1, billItemCode);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
-                    
+                    }
+
                     double rrrrrPrice1 = opiu.getRetailPrice(billItemCode);
 
                     double wwwwwPrice1 = opiu.getCostPrice(billItemCode);
 
                     int qqqqqty1 = opiu.getQTY(billItemCode);
-                    
+
                     ttt.setValueAt(qqqqqty1, selectedRow32123, 4);
 
-                    double NewValue1 = calculateBillItemValue(qqqqqty1,rrrrrPrice1);
-                    double NewCostValue1 = calculateBillItemCostValue(qqqqqty1,wwwwwPrice1);
-                    
+                    double NewValue1 = calculateBillItemValue(qqqqqty1, rrrrrPrice1);
+                    double NewCostValue1 = calculateBillItemCostValue(qqqqqty1, wwwwwPrice1);
+
                     ttt.setValueAt(NewValue1, selectedRow32123, 7);
-                    
+
                     try {
                         String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
@@ -16799,43 +16602,40 @@ public class MainManue1 extends javax.swing.JFrame {
                     }
                     String aaaa = this.jLabel47.getText();
 
-
                     double calculatedValue = opiu.calculateTotal(aaaa);
                     this.jTextField7.setText(String.valueOf(calculatedValue));
 
-                    JOptionPane.showMessageDialog(edit_billed_Items, "Item Deleted Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(edit_billed_Items, "Item Deleted Successfully", "Item Details", JOptionPane.INFORMATION_MESSAGE);
 
                     ResultSet jjuy = opiu.getSubItemDataFromBill(billItemCode);
                     this.jTable34.setModel(DbUtils.resultSetToTableModel(jjuy));
-                    
+
                     String itmQTY = this.jTable3.getModel().getValueAt(selectedRow32123, 4).toString();
                     System.out.println(itmQTY);
                     int qqq = Integer.parseInt(itmQTY);
-                    
+
                     System.out.println(qqq);
-                    if(qqq == 0){
+                    if (qqq == 0) {
                         opiu.deleteBillItem(billItemCode);
                         ResultSet rs = opiu.getAddedItemsBy_bill_ID(aaaa);
                         this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
                     }
-                } 
-            }   
+                }
+            }
         }
     }//GEN-LAST:event_jButton104ActionPerformed
 
     private void jButton105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton105ActionPerformed
 
         this.txt_search_bill_itm11.requestFocusInWindow();
-        
+
         searchItems siir = new searchItems();
         ResultSet a = siir.showItemDetails();
         this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(a));
-        
-        
-        
+
         items_add_to_bill ddd = new items_add_to_bill();
         //ddd.checkBillRecordAvailability(this);
-        
+
         boolean avl = ddd.checkBillRecordAvailability(this);
 //        System.out.println(avl);
 
@@ -16849,27 +16649,25 @@ public class MainManue1 extends javax.swing.JFrame {
         String status = "PENDIN";
         int days = 0;
 
-        if(avl){
+        if (avl) {
             System.out.println("true");
-        }
-        else{
+        } else {
             System.out.println("false");
-            ddd.addTempDataToBill(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days,status,days, this);
+            ddd.addTempDataToBill(bill_date, total, bill_dis, cust_id, e_id, net_amount, setle_days, status, days, this);
         }
-        
-        
+
         this.txt_search_bill_itm11.setText("");
         this.edit_billed_Items.dispose();
     }//GEN-LAST:event_jButton105ActionPerformed
 
     private void jTextArea17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea17KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jButton85.requestFocusInWindow();
         }
     }//GEN-LAST:event_jTextArea17KeyPressed
 
     private void jButton85KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton85KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             cashBalancing pooo = new cashBalancing();
             Date d = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
@@ -16881,41 +16679,38 @@ public class MainManue1 extends javax.swing.JFrame {
             String addNote = this.jTextArea17.getText();
             String AMT = this.txt_search_text1.getText();
 
-            if(addNote.equals(" ") || addNote.trim().isEmpty()){
+            if (addNote.equals(" ") || addNote.trim().isEmpty()) {
                 addNote = "-";
             }
 
-
-            if(AMT.equals(" ") || AMT.trim().isEmpty()){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            if (AMT.equals(" ") || AMT.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
                 this.txt_search_text1.requestFocusInWindow();
-            }
-            else{
+            } else {
                 double addAmt = Double.parseDouble(AMT);
                 String trueee = pooo.addDebitePayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
-                if(trueee == null){
-                    JOptionPane.showMessageDialog(this, "Cash IN Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-                }
-                else{                
-                    JOptionPane.showMessageDialog(this, "Cash IN Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE);
+                if (trueee == null) {
+                    JOptionPane.showMessageDialog(this, "Cash IN Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Cash IN Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                     this.txt_search_text1.setText("");
                     this.jTextArea17.setText("");
                 }
                 ResultSet rsyu = pooo.showDebitedDetailsByDate(ddddd);
-                this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu)); 
+                this.jTable28.setModel(DbUtils.resultSetToTableModel(rsyu));
             }
         }
     }//GEN-LAST:event_jButton85KeyPressed
 
     private void jTextArea18KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextArea18KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.jButton86.requestFocusInWindow();
         }
     }//GEN-LAST:event_jTextArea18KeyPressed
 
     private void jButton86KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton86KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            cashBalancing poo = new cashBalancing(); 
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            cashBalancing poo = new cashBalancing();
             Date d = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
             String tttt = sdf.format(d);
@@ -16927,27 +16722,24 @@ public class MainManue1 extends javax.swing.JFrame {
             String cashAMT = this.txt_search_text2.getText();
 
             System.out.println(addNote);
-            if(addNote.equals("") || addNote.trim().isEmpty()){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            if (addNote.equals("") || addNote.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Note.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
                 this.jTextArea18.requestFocusInWindow();
-            }
-            else if(cashAMT.equals(" ") || cashAMT.trim().isEmpty()){
-                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!","Cash Tray", JOptionPane.ERROR_MESSAGE);
+            } else if (cashAMT.equals(" ") || cashAMT.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(pnl_quickBill, "Please Enter the Cash Amount.!", "Cash Tray", JOptionPane.ERROR_MESSAGE);
                 this.txt_search_text2.requestFocusInWindow();
-            }
-            else{
+            } else {
                 double addAmt = Double.parseDouble(cashAMT);
-                String trueee =  poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
-                if(trueee == null){
-                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed","Cash Tray", JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully","Cash Tray", JOptionPane.INFORMATION_MESSAGE); 
+                String trueee = poo.addCreditedPayments(addNote, addAmt, ddddd, tttt, pnl_quickBill);
+                if (trueee == null) {
+                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Added Failed", "Cash Tray", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(pnl_quickBill, "Cash OUT Successfully", "Cash Tray", JOptionPane.INFORMATION_MESSAGE);
                     this.jTextArea18.setText("");
                     this.txt_search_text2.setText("");
                 }
                 ResultSet rsyyp = poo.showCreditedDetailsByDate(ddddd);
-                this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp)); 
+                this.jTable27.setModel(DbUtils.resultSetToTableModel(rsyyp));
             }
         }
     }//GEN-LAST:event_jButton86KeyPressed
@@ -16959,27 +16751,26 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton107ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton107ActionPerformed
         items_add_to_bill opiuu = new items_add_to_bill();
         searchItems pissass = new searchItems();
-        
+
         int selectedRow32122 = this.jTable35.getSelectedRow();
         int selectedRow321233 = this.jTable19.getSelectedRow();
-        
+
         String billItemCode = this.jTable19.getModel().getValueAt(selectedRow321233, 0).toString();
         String retailPrice = this.jTable19.getModel().getValueAt(selectedRow321233, 5).toString();
         String itmCood = this.jTable19.getModel().getValueAt(selectedRow321233, 1).toString();
         String billSubItemID = this.jTable35.getModel().getValueAt(selectedRow32122, 0).toString();
         String snnnn = this.jTable35.getModel().getValueAt(selectedRow32122, 1).toString();
-        
+
         String itmCode = pissass.getItemCodeBySubItemCode(snnnn);
-        int userSelection1 = JOptionPane.showConfirmDialog(edit_edit_billed_Items,"Are you sure to delete this Item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-        if(userSelection1 == 0){
-            if(selectedRow32122 == -1){
-            JOptionPane.showMessageDialog(edit_edit_billed_Items, "Select a Item to Delete SN.!","Error",JOptionPane.ERROR_MESSAGE);
-            }   
-            else{
+        int userSelection1 = JOptionPane.showConfirmDialog(edit_edit_billed_Items, "Are you sure to delete this Item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (userSelection1 == 0) {
+            if (selectedRow32122 == -1) {
+                JOptionPane.showMessageDialog(edit_edit_billed_Items, "Select a Item to Delete SN.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 boolean isItOk = opiuu.deleteBillSN(billSubItemID);
 
-                if(isItOk){
-                    
+                if (isItOk) {
+
                     try {
                         String queryyy = "update sub_items set inStock=? where sn = ?";
                         PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -16988,7 +16779,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pstlu.setString(2, snnnn);
                         pstlu.executeUpdate();
 
-                    }catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -16997,10 +16788,10 @@ public class MainManue1 extends javax.swing.JFrame {
                         String queryy = "update items set qty=qty+1 where itm_code = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, itmCode);      
+                        pstl.setString(1, itmCode);
                         pstl.executeUpdate();
 
-                    }catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -17009,7 +16800,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         String queryy = "update bill_items set qty=qty-1 where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, billItemCode);      
+                        pstl.setString(1, billItemCode);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
@@ -17023,8 +16814,8 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     int qqqqqty1 = opiuu.getQTY(billItemCode);
 
-                    double NewValue1 = calculateBillItemValue(qqqqqty1,rrrrrPrice1);
-                    double NewCostValue1 = calculateBillItemCostValue(qqqqqty1,wwwwwPrice1);
+                    double NewValue1 = calculateBillItemValue(qqqqqty1, rrrrrPrice1);
+                    double NewCostValue1 = calculateBillItemCostValue(qqqqqty1, wwwwwPrice1);
 
                     try {
                         String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -17046,45 +16837,43 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     double calculatedValue = opiuu.calculateTotal(aaaaa);
                     this.jTextField115.setText(String.valueOf(calculatedValue));
-                    
+
                     double value = Double.parseDouble(retailPrice);
-                    
+
                     Date d = new Date();
                     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                     String invoDate = sdf1.format(d);
                     SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
                     String tt = sdf.format(d);
-                    
+
                     String noteee = "One ".concat(itmCood).concat(" Item Remove from ").concat(aaaaa).concat(" invoice.");
-                    
+
                     cashBalancing lllk = new cashBalancing();
-                    
+
                     lllk.addCreditedPayments(noteee, value, invoDate, tt, this);
                     setCashBalance();
-                    
+
                     double discou = Double.parseDouble(this.jTextField117.getText());
                     this.jTextField118.setText(String.valueOf(calculatedValue - discou));
 
-                    JOptionPane.showMessageDialog(edit_edit_billed_Items, "Item Deleted Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(edit_edit_billed_Items, "Item Deleted Successfully", "Item Details", JOptionPane.INFORMATION_MESSAGE);
 
                     this.edit_edit_billed_Items.dispose();
-                    
-                    
+
                     String prodQTY = this.jTable19.getModel().getValueAt(selectedRow321233, 4).toString();
                     int IntProdQTY = Integer.parseInt(prodQTY);
-                    
+
                     UpdateBillPrices();
 
-                    
-                    if(IntProdQTY == 0){
+                    if (IntProdQTY == 0) {
                         opiuu.deleteAddedBillItems(billItemCode);
                         ResultSet rss = opiuu.getAddedItemsBy_bill_ID(aaaaa);
                         this.jTable19.setModel(DbUtils.resultSetToTableModel(rss));
-                        
+
                         UpdateBillPrices();
                     }
-                        
-                } 
+
+                }
             }
         }
     }//GEN-LAST:event_jButton107ActionPerformed
@@ -17098,27 +16887,26 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton108ActionPerformed
 
     private void jTextField142KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField142KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField142.getText(), "yes", adminLogin2);
-            if(accessOK){
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField142.getText(), "yes", adminLogin2);
+            if (accessOK) {
                 items_add_to_bill hghhf = new items_add_to_bill();
                 cashBalancing hyt = new cashBalancing();
 
                 int selectedRow = this.jTable4.getSelectedRow();
-                if(selectedRow == -1){
-                    JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.editEnvoice.setSize(1280,720);
-                    this.editEnvoice.setTitle("Edit Invoice");   
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(this, "Pleace select a Invoice to Edit", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    this.editEnvoice.setSize(1280, 720);
+                    this.editEnvoice.setTitle("Edit Invoice");
                     this.editEnvoice.setLocationRelativeTo(this);
                     this.editEnvoice.setVisible(true);
 
                     String invoIDD = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
                     String invodatee = this.jTable4.getModel().getValueAt(selectedRow, 1).toString();
                     String Customer = this.jTable4.getModel().getValueAt(selectedRow, 2).toString();
-                    int dis = (int)jTable4.getValueAt(selectedRow, 5);
+                    int dis = (int) jTable4.getValueAt(selectedRow, 5);
                     String total = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 4).toString());
                     //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
                     String netAmt = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 6).toString());
@@ -17126,7 +16914,6 @@ public class MainManue1 extends javax.swing.JFrame {
                     String billDiscrip = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 8).toString());
                     String invoType = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 7).toString());
                     String status = String.valueOf(this.jTable4.getModel().getValueAt(selectedRow, 11).toString());
-
 
                     this.jLabel229.setText(invoIDD);
                     this.jTextField116.setText(Customer);
@@ -17138,7 +16925,6 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.jTextArea13.setText(billDiscrip);
                     this.jLabel320.setText(status);
 
-
                     ResultSet rs3s = hghhf.getAddedItemsBy_bill_ID(invoIDD);
                     this.jTable19.setModel(DbUtils.resultSetToTableModel(rs3s));
 
@@ -17149,26 +16935,23 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    this.jTextField130.setText("");
 //                    this.jTextField132.setText("");
                     this.jTextField131.setText("");
-                    
-                    if(invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")){
-                    if(status.equals("COMPLETE")){
-                        this.jCheckBox16.setEnabled(true);
-                        this.jCheckBox16.setSelected(true);
+
+                    if (invoType.equals("Bank Deposit") || invoType.equals("Bank Advanced")) {
+                        if (status.equals("COMPLETE")) {
+                            this.jCheckBox16.setEnabled(true);
+                            this.jCheckBox16.setSelected(true);
+                        } else {
+                            this.jCheckBox16.setEnabled(true);
+                            this.jCheckBox16.setSelected(false);
+                        }
+                    } else {
+                        this.jCheckBox16.setEnabled(false);
                     }
-                    else{
-                        this.jCheckBox16.setEnabled(true);
-                        this.jCheckBox16.setSelected(false);
-                    }
-                }
-                else{
-                    this.jCheckBox16.setEnabled(false);
-                }
 
                 }
                 adminLogin2.dispose();
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin2,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin2, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField142.setText("");
         }
@@ -17185,14 +16968,14 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jTable38MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable38MousePressed
         storeItemData jukifg = new storeItemData();
         int selectedRow1777 = this.jTable38.getSelectedRow();
-        
+
         String itmCorde = this.jTable38.getModel().getValueAt(selectedRow1777, 0).toString();
         String rPrice = this.jTable38.getModel().getValueAt(selectedRow1777, 4).toString();
-        
+
         this.jTextField132.setText(rPrice);
-        
+
         ResultSet rs33334 = jukifg.getSubItemData(itmCorde);
-        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334));  
+        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334));
     }//GEN-LAST:event_jTable38MousePressed
 
     private void jTable38KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable38KeyPressed
@@ -17201,40 +16984,38 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton110ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton110ActionPerformed
         searchItems kio = new searchItems();
-        int qty,free,dis;
-        String qytVAR = this.jTextField131.getText();    
-        
-        if(qytVAR.equals("")){
-            JOptionPane.showMessageDialog(editEnvoice, "Item quantity cannot be Empty.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        int qty, free, dis;
+        String qytVAR = this.jTextField131.getText();
+
+        if (qytVAR.equals("")) {
+            JOptionPane.showMessageDialog(editEnvoice, "Item quantity cannot be Empty.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             qty = Integer.parseInt(qytVAR);
             items_add_to_bill jjkkii22 = new items_add_to_bill();
 
             int selectedRow120 = this.jTable38.getSelectedRow();
-            
-            if(selectedRow120 == -1){
-                JOptionPane.showMessageDialog(editEnvoice, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+
+            if (selectedRow120 == -1) {
+                JOptionPane.showMessageDialog(editEnvoice, "Select a Item to Add.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 String SearchedItmCode = this.jTable38.getModel().getValueAt(selectedRow120, 0).toString();
 
                 String NextBillid = this.jLabel229.getText();
 
-                String SavedItemName = jjkkii22.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+                String SavedItemName = jjkkii22.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-                if(SearchedItmCode.equals(SavedItemName)){
+                if (SearchedItmCode.equals(SavedItemName)) {
 
-                    String BillItemID = jjkkii22.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+                    String BillItemID = jjkkii22.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                     //String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, itemsAdder);
-                   int sqty = Integer.parseInt(this.jTextField131.getText());
-                   try {
+                    int sqty = Integer.parseInt(this.jTextField131.getText());
+                    try {
                         String queryy = "update bill_items set qty=qty+? where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
                         pstl.setInt(1, sqty);
-                        pstl.setString(2, BillItemID);      
+                        pstl.setString(2, BillItemID);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
@@ -17245,9 +17026,9 @@ public class MainManue1 extends javax.swing.JFrame {
                         String query = "update items set qty = qty- ? where itm_code = ?";
                         PreparedStatement pst = conn.prepareStatement(query);
 
-                            pst.setInt(1, qty);
-                            pst.setString(2, SearchedItmCode);
-                            pst.executeUpdate();
+                        pst.setInt(1, qty);
+                        pst.setString(2, SearchedItmCode);
+                        pst.executeUpdate();
 
                         //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
                     } catch (SQLException ex) {
@@ -17261,8 +17042,8 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     int qqqqqty = jjkkii22.getQTY(BillItemID);
 
-                    double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                    double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+                    double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                    double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                     try {
                         String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -17276,60 +17057,55 @@ public class MainManue1 extends javax.swing.JFrame {
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
-
-
+                    }
 
                     ResultSet rs = jjkkii22.getAddedItemsBy_bill_ID(NextBillid);
                     this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
 
                     double calculatedValue = jjkkii22.calculateTotal(NextBillid);
                     this.jTextField115.setText(String.valueOf(calculatedValue));
-                    
+
                     double billDis = Double.parseDouble(this.jTextField117.getText());
 
-                    this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
+                    this.jTextField118.setText(String.valueOf(calculatedValue - billDis));
 
                     this.jTextField131.setText("");
                     //this.txt_search_bill_itm.requestFocusInWindow();
-                }
-                else{
-                    
+                } else {
+
                     String rppp = this.jTextField132.getText();
-                    if(rppp.equals("")){
-                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    else{
+                    if (rppp.equals("")) {
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
                         String ittemmCoodde = this.jTable38.getModel().getValueAt(selectedRow120, 0).toString();
                         String SNthibeda = jjkkii22.checkSNAvailabilityOnItemsTable(ittemmCoodde);
                         System.out.println(SNthibeda);
-                        if(SNthibeda.equals("")){
+                        if (SNthibeda.equals("")) {
 
                             String VARavlQTY = this.jTable38.getModel().getValueAt(selectedRow120, 3).toString();
                             int AVLqty = Integer.parseInt(VARavlQTY);
 
-                            if(AVLqty >=qty ){
-                                String itmCode ="";
-                                String name="";
-                                String warranty="";
-                                String w_price="";
-                                String r_price= this.jTextField132.getText();
-                                String type="";
+                            if (AVLqty >= qty) {
+                                String itmCode = "";
+                                String name = "";
+                                String warranty = "";
+                                String w_price = "";
+                                String r_price = this.jTextField132.getText();
+                                String type = "";
 
                                 Date d = new Date();
                                 SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                                String date = sdf1.format(d); 
+                                String date = sdf1.format(d);
 
-
-                                try{
+                                try {
                                     ResultSet rsg = kio.getItemDetails(ittemmCoodde);
-                                    while(rsg.next()){
+                                    while (rsg.next()) {
                                         itmCode = rsg.getString("itm_code");
                                         name = rsg.getString("itm_name");
-                                        warranty = rsg.getString("warranty");   
+                                        warranty = rsg.getString("warranty");
                                         w_price = rsg.getString("w_price");
                                         //r_price = rsg.getString("r_price");
-                                        type = rsg.getString("type");              
+                                        type = rsg.getString("type");
                                     }
 
                                     free = 0;
@@ -17339,11 +17115,11 @@ public class MainManue1 extends javax.swing.JFrame {
                                     double rr_price = Double.parseDouble(r_price);
                                     String cashBalID = "no";
                                     String billID = this.jLabel229.getText();
-                                    double valu = calculateBillItemValue(qty,rr_price);
-                                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                                    double valu = calculateBillItemValue(qty, rr_price);
+                                    double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                                    String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, this);
-                                    if(billItemCode != null){   
+                                    String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID, costValue, cashBalID, this);
+                                    if (billItemCode != null) {
                                         String NextBillidd = this.jLabel229.getText();
 
                                         ResultSet rs20 = jjkkii22.getAddedItemsBy_bill_ID(NextBillidd);
@@ -17354,17 +17130,17 @@ public class MainManue1 extends javax.swing.JFrame {
 
                                         double billDis = Double.parseDouble(this.jTextField117.getText());
 
-                                        this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
+                                        this.jTextField118.setText(String.valueOf(calculatedValue - billDis));
 
                                         try {
-                                        String query = "update items set qty = qty- ? where itm_code = ?";
-                                        PreparedStatement pst = conn.prepareStatement(query);
+                                            String query = "update items set qty = qty- ? where itm_code = ?";
+                                            PreparedStatement pst = conn.prepareStatement(query);
 
                                             pst.setInt(1, qty);
                                             pst.setString(2, ittemmCoodde);
                                             pst.executeUpdate();
 
-                                        //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                                            //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
                                         } catch (SQLException ex) {
                                             ex.printStackTrace();
                                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
@@ -17382,31 +17158,26 @@ public class MainManue1 extends javax.swing.JFrame {
 
                                         UpdateBillPrices();
                                     }
-                                }
-                                catch (SQLException exa) {
+                                } catch (SQLException exa) {
                                     exa.printStackTrace();
                                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
                                 }
-                            }
-                            else{
-                                JOptionPane.showMessageDialog(editEnvoice,"No Enough quantity to Add.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                            } else {
+                                JOptionPane.showMessageDialog(editEnvoice, "No Enough quantity to Add.!", "Item Adding Fail", JOptionPane.ERROR_MESSAGE);
                             }
 
-
-                        }
-                        else if(SNthibeda==null){
-                            JOptionPane.showMessageDialog(editEnvoice,"Data Base Error.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(editEnvoice,"You can add only NON serial Items.!","Item Adding Fail",JOptionPane.ERROR_MESSAGE);
+                        } else if (SNthibeda == null) {
+                            JOptionPane.showMessageDialog(editEnvoice, "Data Base Error.!", "Item Adding Fail", JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(editEnvoice, "You can add only NON serial Items.!", "Item Adding Fail", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-                    
+
                 }
-                
+
             }
         }
-        
+
     }//GEN-LAST:event_jButton110ActionPerformed
 
     private void jTextField126ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField126ActionPerformed
@@ -17415,34 +17186,31 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton112ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton112ActionPerformed
         searchItems sfff = new searchItems();
-        
-        if(this.jComboBox11.getSelectedItem().toString().equals("Item Name")){
+
+        if (this.jComboBox11.getSelectedItem().toString().equals("Item Name")) {
             ResultSet a = sfff.searchByItemName(this.jTextField126.getText().toString());
             System.out.println(a);
             this.jTable38.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.jComboBox11.getSelectedItem().toString().equals("Serial Number")){
+        } else if (this.jComboBox11.getSelectedItem().toString().equals("Serial Number")) {
             ResultSet ab = sfff.searchByItemCode(this.jTextField126.getText().toString());
             this.jTable38.setModel(DbUtils.resultSetToTableModel(ab));
-        }
-        else if(this.jComboBox11.getSelectedItem().toString().equals("Item Code")){
+        } else if (this.jComboBox11.getSelectedItem().toString().equals("Item Code")) {
             ResultSet ab = sfff.searchByProductCode(this.jTextField126.getText().toString());
             this.jTable38.setModel(DbUtils.resultSetToTableModel(ab));
-        }
-        else if(this.jComboBox11.getSelectedItem().toString().equals("Category")){
+        } else if (this.jComboBox11.getSelectedItem().toString().equals("Category")) {
             ResultSet aj = sfff.searchByItemType(this.jTextField126.getText().toString());
             this.jTable38.setModel(DbUtils.resultSetToTableModel(aj));
         }
     }//GEN-LAST:event_jButton112ActionPerformed
 
     private void jTextField136KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField136KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-        
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField136.getText(), "yes", adminLogin);
-            if(accessOK){
-                this.dailyCashBal.setSize(835,520);
-                this.dailyCashBal.setTitle("Daily Cash Balance");   
+
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField136.getText(), "yes", adminLogin);
+            if (accessOK) {
+                this.dailyCashBal.setSize(835, 520);
+                this.dailyCashBal.setTitle("Daily Cash Balance");
                 this.dailyCashBal.setLocationRelativeTo(this);
                 this.dailyCashBal.setVisible(true);
 
@@ -17465,23 +17233,22 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jLabel221.setText(String.valueOf(dddd));
                 this.jLabel222.setText(String.valueOf(cccc));
 
-                this.jLabel213.setText(String.valueOf(dddd-cccc));
+                this.jLabel213.setText(String.valueOf(dddd - cccc));
                 setCashBalance();
                 adminLogin.dispose();
 
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField136.setText("");
         }
     }//GEN-LAST:event_jTextField136KeyPressed
 
     private void jTextField141KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField141KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField141.getText(), "yes", adminLogin1);
-            if(accessOK){
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField141.getText(), "yes", adminLogin1);
+            if (accessOK) {
                 userLogin hhhu = new userLogin();
 
                 ResultSet rsyyy = hhhu.showAllUer();
@@ -17495,7 +17262,6 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jPanel55.setVisible(false);
                 this.jPanel56.setVisible(true);
 
-
                 this.pnl_settings.setVisible(true);
                 this.pnl_hr.setVisible(false);
                 this.pnl_searchItm.setVisible(false);
@@ -17505,11 +17271,9 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.pnl_barcode.setVisible(false);
                 this.pnl_quickBill.setVisible(false);
 
-
                 adminLogin1.dispose();
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin1,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin1, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField141.setText("");
         }
@@ -17517,15 +17281,15 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTextField126KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField126KeyPressed
         storeItemData juki = new storeItemData();
-        if(evt.getKeyCode() == 10){
+        if (evt.getKeyCode() == 10) {
             jTextField126.requestFocus();
         }
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             searchItems st = new searchItems();
             ResultSet abb = st.searchByItemCode(this.jTextField126.getText().toString());
             this.jTable38.setModel(DbUtils.resultSetToTableModel(abb));
-            
-            if(abb!= null){
+
+            if (abb != null) {
                 String SearchedItmCode = st.getItemCodeBySubItemCode(this.jTextField126.getText().toString());
                 ResultSet rs333 = juki.getSubItemData(SearchedItmCode);
                 this.jTable37.setModel(DbUtils.resultSetToTableModel(rs333));
@@ -17535,59 +17299,54 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton111ActionPerformed
         items_add_to_bill jjkkii22 = new items_add_to_bill();
-        searchItems pissaa = new searchItems(); 
-        
+        searchItems pissaa = new searchItems();
+
         Date dd = new Date();
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-        String date4 = sdf1.format(dd); 
-        
+        String date4 = sdf1.format(dd);
+
         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
         String ttttt4 = sdf.format(dd);
-        
+
         //String selectedSN = this.txt_search_bill_itm.getText();
-        
         int selectedRow1237890 = this.jTable37.getSelectedRow();
-        
+
         String selectedSN = this.jTable37.getModel().getValueAt(selectedRow1237890, 1).toString();
         String status = jjkkii22.getItemStatus(selectedSN);
-        
-        if(selectedRow1237890 == -1){
-            JOptionPane.showMessageDialog(editEnvoice, "Select a Item to ADD.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            
-            if(status.equals("no")){
-            JOptionPane.showMessageDialog(editEnvoice, "This "+selectedSN+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+
+        if (selectedRow1237890 == -1) {
+            JOptionPane.showMessageDialog(editEnvoice, "Select a Item to ADD.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+
+            if (status.equals("no")) {
+                JOptionPane.showMessageDialog(editEnvoice, "This " + selectedSN + " Item has already been added.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 String SearchedItmName = pissaa.getItemCodeBySubItemName(selectedSN);
 
                 String SearchedItmCode = pissaa.getItemCodeBySubItemCode(selectedSN);
 
                 String NextBillid = this.jLabel229.getText();
 
-                String SavedItemName = jjkkii22.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+                String SavedItemName = jjkkii22.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-                if(SearchedItmName.equals(SavedItemName)){
-                    String BillItemID = jjkkii22.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+                if (SearchedItmName.equals(SavedItemName)) {
+                    String BillItemID = jjkkii22.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                     String bbbbbbbbbd = jjkkii22.addBillSubItems(selectedSN, BillItemID, editEnvoice);
 
-                    if(bbbbbbbbbd != null){
-                       try {
-                        String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
-                        PreparedStatement pstl = conn.prepareStatement(queryy);
+                    if (bbbbbbbbbd != null) {
+                        try {
+                            String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
+                            PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, BillItemID);      
-                        pstl.executeUpdate();
+                            pstl.setString(1, BillItemID);
+                            pstl.executeUpdate();
 
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                       
-                        
-                        
+
                         try {
                             String query = "update items set qty = qty- ? where itm_code = ?";
                             PreparedStatement pst = conn.prepareStatement(query);
@@ -17601,7 +17360,6 @@ public class MainManue1 extends javax.swing.JFrame {
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
 
-
                         try {
                             String queryyy = "update sub_items set inStock=? where sn = ?";
                             PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -17610,19 +17368,19 @@ public class MainManue1 extends javax.swing.JFrame {
                             pstlu.setString(2, selectedSN);
                             pstlu.executeUpdate();
 
-                         } catch (SQLException ex) {
+                        } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
+                        }
 
                         double rrrrrPrice = jjkkii22.getRetailPrice(BillItemID);
-                        
+
                         double wwwwwPrice = jjkkii22.getCostPrice(BillItemID);
-                        
+
                         int qqqqqty = jjkkii22.getQTY(BillItemID);
-                        
-                        double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                        double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+
+                        double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                        double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                         try {
                             String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -17638,16 +17396,15 @@ public class MainManue1 extends javax.swing.JFrame {
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         cashBalancing jju98d1 = new cashBalancing();
-                        
-                        String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");         
-                        jju98d1.addDebitePayments(Note, rrrrrPrice, date4, ttttt4, editEnvoice);
-                        
-                        storeItemData jukifg = new storeItemData(); 
-                        ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
-                        
-                    }
 
+                        String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");
+                        jju98d1.addDebitePayments(Note, rrrrrPrice, date4, ttttt4, editEnvoice);
+
+                        storeItemData jukifg = new storeItemData();
+                        ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                        this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h));
+
+                    }
 
                     ResultSet rs = jjkkii22.getAddedItemsBy_bill_ID(NextBillid);
                     this.jTable19.setModel(DbUtils.resultSetToTableModel(rs));
@@ -17660,98 +17417,93 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     double billDiss = Double.parseDouble(this.jTextField117.getText());
 
-                    this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+                    this.jTextField118.setText(String.valueOf(calculatedValuee - billDiss));
                     UpdateBillPrices();
-                    
-                }
-                else{
-                    String rppp = this.jTextField132.getText();
-                    if(rppp.equals("")){
-                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    else{
-                        
-                        String itmCode ="";
-                        String name="";
-                        String warranty="";
-                        String w_price="";
-                        String r_price= this.jTextField132.getText();
-                        String type="";
 
-                        int qty,free,dis;
-                        try{
+                } else {
+                    String rppp = this.jTextField132.getText();
+                    if (rppp.equals("")) {
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+
+                        String itmCode = "";
+                        String name = "";
+                        String warranty = "";
+                        String w_price = "";
+                        String r_price = this.jTextField132.getText();
+                        String type = "";
+
+                        int qty, free, dis;
+                        try {
                             ResultSet rsg = jjkkii22.getItemDetails(selectedSN);
-                            while(rsg.next()){
+                            while (rsg.next()) {
                                 itmCode = rsg.getString("itm_code");
                                 name = rsg.getString("itm_name");
-                                warranty = rsg.getString("warranty");   
+                                warranty = rsg.getString("warranty");
                                 w_price = rsg.getString("w_price");
                                 //r_price = rsg.getString("r_price");
-                                type = rsg.getString("type");              
+                                type = rsg.getString("type");
                             }
-                        qty = 1;
-                        free = 0;
-                        dis = 0;
-                        int wwarranty = Integer.parseInt(warranty);
-                        double ww_price = Double.parseDouble(w_price);
-                        double rr_price = Double.parseDouble(r_price);
-                        String cashBalID = "no";
-                        String billID = this.jLabel229.getText();
-                        double valu = calculateBillItemValue(qty,rr_price);
-                        double costValue = calculateBillItemCostValue(qty,ww_price);
+                            qty = 1;
+                            free = 0;
+                            dis = 0;
+                            int wwarranty = Integer.parseInt(warranty);
+                            double ww_price = Double.parseDouble(w_price);
+                            double rr_price = Double.parseDouble(r_price);
+                            String cashBalID = "no";
+                            String billID = this.jLabel229.getText();
+                            double valu = calculateBillItemValue(qty, rr_price);
+                            double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                        String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date4, valu, billID,costValue,cashBalID, this);
+                            String billItemCode = jjkkii22.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date4, valu, billID, costValue, cashBalID, this);
 
-                        if(billItemCode != null){
-                            jjkkii22.addBillSubItems(selectedSN, billItemCode, this);
-                            try {
-                                String queryyy = "update sub_items set inStock=? where sn = ?";
-                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
+                            if (billItemCode != null) {
+                                jjkkii22.addBillSubItems(selectedSN, billItemCode, this);
+                                try {
+                                    String queryyy = "update sub_items set inStock=? where sn = ?";
+                                    PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                                pstlu.setString(1, "no");
-                                pstlu.setString(2, selectedSN);
-                                pstlu.executeUpdate();
+                                    pstlu.setString(1, "no");
+                                    pstlu.setString(2, selectedSN);
+                                    pstlu.executeUpdate();
 
-                             } catch (SQLException ex) {
-                                ex.printStackTrace();
-                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                             }
-                            try {
-                            String query = "update items set qty = qty- ? where itm_code = ?";
-                            PreparedStatement pst = conn.prepareStatement(query);
-
-                            pst.setInt(1, 1);
-                            pst.setString(2, SearchedItmCode);
-                            pst.executeUpdate();
-
-                                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                            } catch (SQLException ex) {
+                                } catch (SQLException ex) {
                                     ex.printStackTrace();
                                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                                try {
+                                    String query = "update items set qty = qty- ? where itm_code = ?";
+                                    PreparedStatement pst = conn.prepareStatement(query);
+
+                                    pst.setInt(1, 1);
+                                    pst.setString(2, SearchedItmCode);
+                                    pst.executeUpdate();
+
+                                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+                                } catch (SQLException ex) {
+                                    ex.printStackTrace();
+                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+
+                                cashBalancing jju98d1 = new cashBalancing();
+
+                                String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");
+                                jju98d1.addDebitePayments(Note, rr_price, date4, ttttt4, editEnvoice);
+
+                                double tot = Double.parseDouble(this.jTextField115.getText());
+                                int disd = Integer.parseInt(this.jTextField117.getText());
+                                double netAmt = Double.parseDouble(this.jTextField118.getText());
+                                int itmCountd = jTable19.getRowCount();
+                                jjkkii22.updateBillWithPrices(tot, disd, netAmt, itmCountd, NextBillid, editEnvoice);
+
+                                storeItemData jukifg = new storeItemData();
+                                ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
+                                this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h));
+
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Date Base Error.!", "Error", JOptionPane.ERROR_MESSAGE);
                             }
-
-                            cashBalancing jju98d1 = new cashBalancing();
-
-                            String Note = "One ".concat(SearchedItmCode).concat(" Item Add to ").concat(NextBillid).concat(" Invoice.");         
-                            jju98d1.addDebitePayments(Note, rr_price, date4, ttttt4, editEnvoice);
-
-                            double tot = Double.parseDouble(this.jTextField115.getText());
-                            int disd = Integer.parseInt(this.jTextField117.getText());
-                            double netAmt = Double.parseDouble(this.jTextField118.getText());
-                            int itmCountd = jTable19.getRowCount();
-                            jjkkii22.updateBillWithPrices(tot, disd, netAmt, itmCountd, NextBillid, editEnvoice);
-
-                            storeItemData jukifg = new storeItemData(); 
-                            ResultSet rs33334h = jukifg.getSubItemData(SearchedItmCode);
-                            this.jTable37.setModel(DbUtils.resultSetToTableModel(rs33334h)); 
-
-                        }
-
-                        else{
-                            JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                        }
-                        }
-                        catch(Exception e){
+                        } catch (Exception e) {
                             //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                         }
 
@@ -17766,37 +17518,36 @@ public class MainManue1 extends javax.swing.JFrame {
 
                         double billDiss = Double.parseDouble(this.jTextField117.getText());
 
-                        this.jTextField118.setText(String.valueOf(calculatedValuee-billDiss));
+                        this.jTextField118.setText(String.valueOf(calculatedValuee - billDiss));
 
                         UpdateBillPrices();
                     }
-                    
+
                 }
             }
         }
     }//GEN-LAST:event_jButton111ActionPerformed
 
     private void jButton113ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton113ActionPerformed
-        items_add_to_bill iii = new items_add_to_bill(); 
+        items_add_to_bill iii = new items_add_to_bill();
         String billIDD = this.jLabel229.getText();
-         
-        int selectedRow7b = this.jTable19.getSelectedRow();   
-        if(selectedRow7b == -1){
-            JOptionPane.showMessageDialog(editEnvoice, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        int selectedRow7b = this.jTable19.getSelectedRow();
+        if (selectedRow7b == -1) {
+            JOptionPane.showMessageDialog(editEnvoice, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billItemCodeh = this.jTable19.getModel().getValueAt(selectedRow7b, 0).toString();
             String strItemCode = this.jTable19.getModel().getValueAt(selectedRow7b, 1).toString();
             String qyyt = this.jTable19.getModel().getValueAt(selectedRow7b, 4).toString();
             String r_pprice = this.jTable19.getModel().getValueAt(selectedRow7b, 7).toString();
             int INTqty = Integer.parseInt(qyyt);
             String aaa = iii.checkSNAvailability(billItemCodeh);
-            if(aaa.equals("")){
-                int userSelection = JOptionPane.showConfirmDialog(editEnvoice,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection == 0){  
+            if (aaa.equals("")) {
+                int userSelection = JOptionPane.showConfirmDialog(editEnvoice, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                if (userSelection == 0) {
                     boolean gg = iii.deleteAddedBillItems(billItemCodeh);
-                    
-                    if(gg){
+
+                    if (gg) {
                         try {
                             String query = "update items set qty = qty+ ? where itm_code = ?";
                             PreparedStatement pst = conn.prepareStatement(query);
@@ -17804,12 +17555,12 @@ public class MainManue1 extends javax.swing.JFrame {
                             pst.setInt(1, INTqty);
                             pst.setString(2, strItemCode);
                             pst.executeUpdate();
-                               
+
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        
+
                         ResultSet rs20 = iii.getAddedItemsBy_bill_ID(billIDD);
                         this.jTable19.setModel(DbUtils.resultSetToTableModel(rs20));
 
@@ -17818,12 +17569,12 @@ public class MainManue1 extends javax.swing.JFrame {
 
                         double billDis = Double.parseDouble(this.jTextField117.getText());
 
-                        this.jTextField118.setText(String.valueOf(calculatedValue-billDis));
- 
+                        this.jTextField118.setText(String.valueOf(calculatedValue - billDis));
+
                         double dr_price = Double.parseDouble(r_pprice);
-                        
+
                         cashBalancing jju98 = new cashBalancing();
-                        
+
                         String Note = qyyt.concat(" - ").concat(strItemCode).concat(" Items remove from ").concat(billIDD).concat(" Invoice.");
                         Date d = new Date();
                         SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
@@ -17832,26 +17583,23 @@ public class MainManue1 extends javax.swing.JFrame {
                         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                         String dddddd = sdf1.format(d);
                         jju98.addCreditedPayments(Note, dr_price, dddddd, ttttt, editEnvoice);
-                        
+
                         UpdateBillPrices();
-                        
-                       
-                                //bill total eka update karanna    
+
+                        //bill total eka update karanna    
                     }
 
                 }
-            }
-            else{
+            } else {
                 //JOptionPane.showMessageDialog(editEnvoice, "Cannot delete this Item.!","Error",JOptionPane.ERROR_MESSAGE);
                 items_add_to_bill jiu87d = new items_add_to_bill();
                 int selectedRow321123d = this.jTable19.getSelectedRow();
 
-                if(selectedRow321123d == -1){
-                    JOptionPane.showMessageDialog(editEnvoice, "Select a Product to Edit.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.edit_edit_billed_Items.setSize(340,300);
-                    this.edit_edit_billed_Items.setTitle("Edit Bill Items");   
+                if (selectedRow321123d == -1) {
+                    JOptionPane.showMessageDialog(editEnvoice, "Select a Product to Edit.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    this.edit_edit_billed_Items.setSize(340, 300);
+                    this.edit_edit_billed_Items.setTitle("Edit Bill Items");
                     this.edit_edit_billed_Items.setLocationRelativeTo(this);
                     this.edit_edit_billed_Items.setVisible(true);
 
@@ -17859,9 +17607,9 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     ResultSet jjuyy = jiu87d.getSubItemDataFromBill(ProductItmCode);
                     this.jTable35.setModel(DbUtils.resultSetToTableModel(jjuyy));
-                } 
-            }           
-        }      
+                }
+            }
+        }
     }//GEN-LAST:event_jButton113ActionPerformed
 
     private void jTextField132ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField132ActionPerformed
@@ -17873,7 +17621,7 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField132KeyTyped
 
     private void tbl_items_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_items_searchMouseClicked
-        
+
     }//GEN-LAST:event_tbl_items_searchMouseClicked
 
     private void jButton1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jButton1AncestorAdded
@@ -17882,26 +17630,24 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton115ActionPerformed
         userController usrg = new userController();
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField145.getText(), "yes", adminLogin_item_edit);
-        if(accessOK){
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField145.getText(), "yes", adminLogin_item_edit);
+        if (accessOK) {
             adminLogin_item_edit.dispose();
             int selectedRow = this.tbl_items_search.getSelectedRow();
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                this.itemEdit.setSize(560,430);
-                this.itemEdit.setTitle("Edit Item Details");   
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                this.itemEdit.setSize(560, 430);
+                this.itemEdit.setTitle("Edit Item Details");
                 this.itemEdit.setLocationRelativeTo(this);
                 this.itemEdit.setVisible(true);
-
 
                 String itemID = this.tbl_items_search.getModel().getValueAt(selectedRow, 0).toString();
                 String itmCode, name, w_price, warranty, r_price, company, qty, type;
                 searchItems sd = new searchItems();
-                try{
+                try {
                     ResultSet rs = sd.getItemDetails(itemID);
-                    while(rs.next()){
+                    while (rs.next()) {
                         itmCode = rs.getString("itm_code");
                         name = rs.getString("itm_name");
                         warranty = rs.getString("warranty");
@@ -17919,112 +17665,162 @@ public class MainManue1 extends javax.swing.JFrame {
                         this.txt_edt_rPrice.setText(r_price);
                         this.com_box_searchTyp2.setSelectedItem(type);
 
-                        try{
+                        try {
                             Date stored_date = new SimpleDateFormat("yyyy-MM-DD").parse(Date);
                             this.dChooser_edt_expDate.setDate(stored_date);
-                        }
-                        catch(Exception ex){  
+                        } catch (Exception ex) {
                         }
                     }
                     setItemTypesForEditItems();
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin_item_edit,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(adminLogin_item_edit, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField145.setText("");
     }//GEN-LAST:event_jButton115ActionPerformed
 
     private void jButton116ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton116ActionPerformed
         userController usrg = new userController();
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField147.getText(), "yes", adminLogin1);
-        if(accessOK){
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField147.getText(), "yes", adminLogin1);
+        if (accessOK) {
             adminLogin_item_delete.dispose();
             int selectedRow = this.tbl_items_search.getSelectedRow();
-        
-            if(selectedRow == -1){
-                JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                int userSelection = JOptionPane.showConfirmDialog(this,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                if(userSelection == 0){
-                    searchItems s = new searchItems();
+
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                int userSelection = JOptionPane.showConfirmDialog(this, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                if (userSelection == 0) {
                     String itemCode = this.tbl_items_search.getModel().getValueAt(selectedRow, 0).toString();
+                    searchItems s = new searchItems();
+
+                    String itmBarcodeId = s.getBBCodeByItemCode(itemCode);
+                    String barcodeType = s.getBarCodeTypeByItemCode(itemCode);
+
+                    
+                    if(barcodeType.equals("yes")){
+                        
+                        try{
+                            String query = "delete from sub_items where itm_code=?";
+                            PreparedStatement pstf = conn.prepareStatement(query);
+
+                            pstf.setString(1, itemCode);
+                            pstf.executeUpdate();
+                        }
+                        catch(Exception e){
+                            //cvjmn
+                        }
+                    }
+                    
+                    try{
+                        String query = "delete from a where bb_id=?";
+                        PreparedStatement pstf = conn.prepareStatement(query);
+
+                        pstf.setString(1, itmBarcodeId);
+                        pstf.executeUpdate();
+                    }
+                    catch(Exception e){
+                        //do nuthing
+                    }
+
+                    try{
+                        String query = "delete from barcode_bundel where bb_id=?";
+                        PreparedStatement pstfd = conn.prepareStatement(query);
+
+                        pstfd.setString(1, itmBarcodeId);
+                        pstfd.executeUpdate();
+                    }
+                    catch(Exception e){
+                        //do nuthing
+                    }
+                    
                     s.deleteItemCode(itemCode);
                     ResultSet rs = s.showItemDetails();
                     this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
                 }
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin_item_delete,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(adminLogin_item_delete, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField147.setText("");
     }//GEN-LAST:event_jButton116ActionPerformed
 
     private void jButton117ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton117ActionPerformed
         userController usrg = new userController();
-        boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField148.getText(), "yes", adminLogin_item_delete);
-        if(accessOK){
+        boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField148.getText(), "yes", adminLogin_item_delete);
+        if (accessOK) {
             adminLogin_item_delete_sn.dispose();
             searchItems sf = new searchItems();
             storeItemData juio = new storeItemData();
             int selectedRowjjf = this.tbl_items_search.getSelectedRow();
             int selectedRowjj = this.tbl_items_search1.getSelectedRow();
 
-            if(selectedRowjjf == -1){
-                JOptionPane.showMessageDialog(this, "Select a Item to Delete SN.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                if(selectedRowjj == -1){
-                JOptionPane.showMessageDialog(this, "Select a SN to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    int userSelectionn = JOptionPane.showConfirmDialog(null,"Are you sure to delete this SN?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                    if(userSelectionn == 0){
-
+            if (selectedRowjjf == -1) {
+                JOptionPane.showMessageDialog(this, "Select a Item to Delete SN.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (selectedRowjj == -1) {
+                    JOptionPane.showMessageDialog(this, "Select a SN to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    int userSelectionn = JOptionPane.showConfirmDialog(null, "Are you sure to delete this SN?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                    if (userSelectionn == 0) {
+                        String itemCode = this.tbl_items_search.getModel().getValueAt(selectedRowjjf, 0).toString();
                         String SNid = this.tbl_items_search1.getModel().getValueAt(selectedRowjj, 0).toString();
+                        String SN = this.tbl_items_search1.getModel().getValueAt(selectedRowjj, 1).toString();
                         String avability = this.tbl_items_search1.getModel().getValueAt(selectedRowjj, 2).toString();
                         boolean gg = sf.deleteSN(SNid);
+                        
+                        String itmBarcodeId = sf.getBBCodeByItemCode(itemCode);
+                        String barcodeType = sf.getBarCodeTypeByItemCode(itemCode);
 
-                        if(gg){
+
+                        if(barcodeType.equals("no")){
+                            try{
+                                String query = "delete from a where itmCode1=?";
+                                PreparedStatement pstf = conn.prepareStatement(query);
+
+                                pstf.setString(1, SN);
+                                pstf.executeUpdate();
+                            }
+                            catch(Exception e){
+                                System.out.println("eroooooooooooooooooo");
+                            }
+                        }
+
+                        if (gg) {
                             String itmCode = this.tbl_items_search.getModel().getValueAt(selectedRowjjf, 0).toString();
                             ResultSet rs111 = juio.getAllSubItemData(itmCode);
                             this.tbl_items_search1.setModel(DbUtils.resultSetToTableModel(rs111));
 
                             // upadate the product qty
-                            if(avability.equals("yes")){
+                            if (avability.equals("yes")) {
                                 try {
-                                String queryyf = "update items set qty=qty-1 where itm_code = ?";
-                                PreparedStatement pstlh = conn.prepareStatement(queryyf);
+                                    String queryyf = "update items set qty=qty-1 where itm_code = ?";
+                                    PreparedStatement pstlh = conn.prepareStatement(queryyf);
 
-                                pstlh.setString(1, itmCode);      
-                                pstlh.executeUpdate();
+                                    pstlh.setString(1, itmCode);
+                                    pstlh.executeUpdate();
 
                                 } catch (SQLException ex) {
                                     ex.printStackTrace();
                                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                                 }
                             }
-                            int qtttty=0;
-                            try{
+                            int qtttty = 0;
+                            try {
                                 Statement stmnt = conn.createStatement();
-                                ResultSet rss10 = stmnt.executeQuery("select qty from items where itm_code='"+itmCode+"'");
-                                while(rss10.next()){
-                                    qtttty = rss10.getInt("qty");    
+                                ResultSet rss10 = stmnt.executeQuery("select qty from items where itm_code='" + itmCode + "'");
+                                while (rss10.next()) {
+                                    qtttty = rss10.getInt("qty");
                                 }
-                            }
-                            catch(Exception e){
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             DefaultTableModel model = (DefaultTableModel) tbl_items_search.getModel();
                             model.setValueAt(qtttty, tbl_items_search.getSelectedRow(), 3);
                             // update item table
-
 
                             // auto select same table row selected befour deletion
                         }
@@ -18032,38 +17828,34 @@ public class MainManue1 extends javax.swing.JFrame {
                     }
                 }
             }
-            
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(adminLogin_item_delete_sn,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            JOptionPane.showMessageDialog(adminLogin_item_delete_sn, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextField148.setText("");
     }//GEN-LAST:event_jButton117ActionPerformed
 
     private void jTextField145KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField145KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField145.getText(), "yes", adminLogin_item_edit);
-            if(accessOK){
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField145.getText(), "yes", adminLogin_item_edit);
+            if (accessOK) {
                 adminLogin_item_edit.dispose();
                 int selectedRow = this.tbl_items_search.getSelectedRow();
-                if(selectedRow == -1){
-                    JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.itemEdit.setSize(560,430);
-                    this.itemEdit.setTitle("Edit Item Details");   
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(this, "Pleace select a Item to edit details!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    this.itemEdit.setSize(560, 430);
+                    this.itemEdit.setTitle("Edit Item Details");
                     this.itemEdit.setLocationRelativeTo(this);
                     this.itemEdit.setVisible(true);
-
 
                     String itemID = this.tbl_items_search.getModel().getValueAt(selectedRow, 0).toString();
                     String itmCode, name, w_price, warranty, r_price, company, expDate, qty, type;
                     searchItems sd = new searchItems();
-                    try{
+                    try {
                         ResultSet rs = sd.getItemDetails(itemID);
-                        while(rs.next()){
+                        while (rs.next()) {
                             itmCode = rs.getString("itm_code");
                             name = rs.getString("itm_name");
                             warranty = rs.getString("warranty");
@@ -18081,43 +17873,38 @@ public class MainManue1 extends javax.swing.JFrame {
                             this.txt_edt_rPrice.setText(r_price);
                             this.com_box_searchTyp2.setSelectedItem(type);
 
-                            try{
+                            try {
                                 Date stored_date = new SimpleDateFormat("yyyy-MM-DD").parse(Date);
                                 this.dChooser_edt_expDate.setDate(stored_date);
-                            }
-                            catch(Exception ex){  
+                            } catch (Exception ex) {
                             }
                         }
                         setItemTypesForEditItems();
-                    }
-                    catch(Exception e){
+                    } catch (Exception e) {
                         //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
 
-                
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin_item_edit,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin_item_edit, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField145.setText("");
         }
     }//GEN-LAST:event_jTextField145KeyPressed
 
     private void jTextField147KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField147KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField147.getText(), "yes", adminLogin1);
-            if(accessOK){
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField147.getText(), "yes", adminLogin1);
+            if (accessOK) {
                 adminLogin_item_delete.dispose();
                 int selectedRow = this.tbl_items_search.getSelectedRow();
 
-                if(selectedRow == -1){
-                    JOptionPane.showMessageDialog(this, "Select a Item to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    int userSelection = JOptionPane.showConfirmDialog(this,"Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                    if(userSelection == 0){
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(this, "Select a Item to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    int userSelection = JOptionPane.showConfirmDialog(this, "Are you sure to delete this Item?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                    if (userSelection == 0) {
                         searchItems s = new searchItems();
                         String itemCode = this.tbl_items_search.getModel().getValueAt(selectedRow, 0).toString();
                         s.deleteItemCode(itemCode);
@@ -18125,74 +17912,69 @@ public class MainManue1 extends javax.swing.JFrame {
                         this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
                     }
                 }
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin_item_delete,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin_item_delete, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField147.setText("");
         }
     }//GEN-LAST:event_jTextField147KeyPressed
 
     private void jTextField148KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField148KeyPressed
-       if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             userController usrg = new userController();
-            boolean accessOK=usrg.validateAdminLoginDetails(this.jTextField148.getText(), "yes", adminLogin_item_delete);
-            if(accessOK){
+            boolean accessOK = usrg.validateAdminLoginDetails(this.jTextField148.getText(), "yes", adminLogin_item_delete);
+            if (accessOK) {
                 adminLogin_item_delete_sn.dispose();
                 searchItems sf = new searchItems();
                 storeItemData juio = new storeItemData();
                 int selectedRowjjf = this.tbl_items_search.getSelectedRow();
                 int selectedRowjj = this.tbl_items_search1.getSelectedRow();
 
-                if(selectedRowjjf == -1){
-                    JOptionPane.showMessageDialog(this, "Select a Item to Delete SN.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    if(selectedRowjj == -1){
-                    JOptionPane.showMessageDialog(this, "Select a SN to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    else{
-                        int userSelectionn = JOptionPane.showConfirmDialog(null,"Are you sure to delete this SN?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-                        if(userSelectionn == 0){
+                if (selectedRowjjf == -1) {
+                    JOptionPane.showMessageDialog(this, "Select a Item to Delete SN.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    if (selectedRowjj == -1) {
+                        JOptionPane.showMessageDialog(this, "Select a SN to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        int userSelectionn = JOptionPane.showConfirmDialog(null, "Are you sure to delete this SN?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+                        if (userSelectionn == 0) {
 
                             String SNid = this.tbl_items_search1.getModel().getValueAt(selectedRowjj, 0).toString();
                             String avability = this.tbl_items_search1.getModel().getValueAt(selectedRowjj, 2).toString();
                             boolean gg = sf.deleteSN(SNid);
 
-                            if(gg){
+                            if (gg) {
                                 String itmCode = this.tbl_items_search.getModel().getValueAt(selectedRowjjf, 0).toString();
                                 ResultSet rs111 = juio.getAllSubItemData(itmCode);
                                 this.tbl_items_search1.setModel(DbUtils.resultSetToTableModel(rs111));
 
                                 // upadate the product qty
-                                if(avability.equals("yes")){
+                                if (avability.equals("yes")) {
                                     try {
-                                    String queryyf = "update items set qty=qty-1 where itm_code = ?";
-                                    PreparedStatement pstlh = conn.prepareStatement(queryyf);
+                                        String queryyf = "update items set qty=qty-1 where itm_code = ?";
+                                        PreparedStatement pstlh = conn.prepareStatement(queryyf);
 
-                                    pstlh.setString(1, itmCode);      
-                                    pstlh.executeUpdate();
+                                        pstlh.setString(1, itmCode);
+                                        pstlh.executeUpdate();
 
                                     } catch (SQLException ex) {
                                         ex.printStackTrace();
                                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                                     }
                                 }
-                                int qtttty=0;
-                                try{
+                                int qtttty = 0;
+                                try {
                                     Statement stmnt = conn.createStatement();
-                                    ResultSet rss10 = stmnt.executeQuery("select qty from items where itm_code='"+itmCode+"'");
-                                    while(rss10.next()){
-                                        qtttty = rss10.getInt("qty");    
+                                    ResultSet rss10 = stmnt.executeQuery("select qty from items where itm_code='" + itmCode + "'");
+                                    while (rss10.next()) {
+                                        qtttty = rss10.getInt("qty");
                                     }
-                                }
-                                catch(Exception e){
+                                } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                                 DefaultTableModel model = (DefaultTableModel) tbl_items_search.getModel();
                                 model.setValueAt(qtttty, tbl_items_search.getSelectedRow(), 3);
                                 // update item table
-
 
                                 // auto select same table row selected befour deletion
                             }
@@ -18201,13 +17983,11 @@ public class MainManue1 extends javax.swing.JFrame {
                     }
                 }
 
-
-            }
-            else{
-                JOptionPane.showMessageDialog(adminLogin_item_delete_sn,"Incorrect Password or No access !","Sign In Failed",JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(adminLogin_item_delete_sn, "Incorrect Password or No access !", "Sign In Failed", JOptionPane.ERROR_MESSAGE);
             }
             this.jTextField148.setText("");
-       }
+        }
     }//GEN-LAST:event_jTextField148KeyPressed
 
     private void txt_add_qty2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_add_qty2KeyTyped
@@ -18227,10 +18007,9 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable14MousePressed
         int selectedRow124d = this.jTable14.getSelectedRow();
-        
-        
-            String custIDDd = this.jTable14.getModel().getValueAt(selectedRow124d, 0).toString();
-            this.jTextField67.setText(custIDDd);
+
+        String custIDDd = this.jTable14.getModel().getValueAt(selectedRow124d, 0).toString();
+        this.jTextField67.setText(custIDDd);
     }//GEN-LAST:event_jTable14MousePressed
 
     private void jTable39MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable39MousePressed
@@ -18242,57 +18021,51 @@ public class MainManue1 extends javax.swing.JFrame {
         searchItems dddd = new searchItems();
         cashBalancing ggg = new cashBalancing();
         String billIdd = this.jLabel157.getText();
-        
+
         int selectedRow011 = this.jTable39.getSelectedRow();
         int selectedRow21 = this.jTable15.getSelectedRow();
-        
-        if(selectedRow011 == -1){
-            JOptionPane.showMessageDialog(edit_edit_billed_Items2, "Pleace select an Serial to Warranty!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{   
+
+        if (selectedRow011 == -1) {
+            JOptionPane.showMessageDialog(edit_edit_billed_Items2, "Pleace select an Serial to Warranty!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String itemCodeee = this.jTable15.getModel().getValueAt(selectedRow21, 1).toString();
             String serial = this.jTable39.getModel().getValueAt(selectedRow011, 1).toString();
- 
+
             Date d = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat(" HH:mm:ss");
             String tt = sdf.format(d);
 
-
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
             String day = sdf1.format(d);
-            
+
             String itemName = dddd.getItemNameByItemCode(itemCodeee);
-        
-            
-            
+
             String notee = "SN- ".concat(serial).concat(" of ").concat(itemName).concat(" item warranty. Date- ").concat(day);
-            
-            
+
             int WarrantyMonths = parseInt(this.jTextField80.getText());
             String claim = "no";
             String itmbillDate = this.jTable15.getModel().getValueAt(selectedRow21, 6).toString();
-            
-            String isItOkay = ggg.addWarrantyItems(notee, itmbillDate, WarrantyMonths, day, billIdd, claim,serial, edit_edit_billed_Items2);
-            
-            if(!isItOkay.equals(null)){
-                JOptionPane.showMessageDialog(Warranty, "Save Warranty Item Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
-                
-                String FullNote = getAllWarrantyNotices(billIdd); 
+
+            String isItOkay = ggg.addWarrantyItems(notee, itmbillDate, WarrantyMonths, day, billIdd, claim, serial, edit_edit_billed_Items2);
+
+            if (!isItOkay.equals(null)) {
+                JOptionPane.showMessageDialog(Warranty, "Save Warranty Item Successfully", "Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+
+                String FullNote = getAllWarrantyNotices(billIdd);
                 updateInvoiceDiscriptionForWarranty(FullNote, billIdd);
-                
+
                 //update main bill discription
-                
                 updateInvoiceDiscription(billIdd);
-                
+
                 String hhh = ggg.getInvoiceDis(billIdd);
-                
+
                 this.jTextArea5.setText(hhh);
-                
+
                 ResultSet rs99dg = ggg.getAllNonClaimedWarranties();
                 this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99dg));
             }
         }
-        
+
         ResultSet rs99 = ggg.getAllNonClaimedWarranties();
         this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton118ActionPerformed
@@ -18308,13 +18081,12 @@ public class MainManue1 extends javax.swing.JFrame {
         cashBalancing lloo = new cashBalancing();
         int selectedRow9456d = this.jTable16.getSelectedRow();
 
-        if(selectedRow9456d == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Warranty to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow9456d == -1) {
+            JOptionPane.showMessageDialog(Warranty, "Select a Warranty to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+            int userSelection = JOptionPane.showConfirmDialog(Warranty, "Are you sure.! You want to delete this warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
 
                 String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456d, 0).toString();
                 String warrantyNote = this.jTable16.getModel().getValueAt(selectedRow9456d, 1).toString();
@@ -18332,12 +18104,11 @@ public class MainManue1 extends javax.swing.JFrame {
                 lloo.deleteWarrantyItem(warrantyItemCode);
                 String kkG = updateInvoiceDiscription(invoID);
 
-                if(kkG==null){
+                if (kkG == null) {
                     ResultSet rs99dd = lloo.getAllNonClaimedWarranties();
                     this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99dd));
-                }
-                else{
-                    JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully", "Warranty Details", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
@@ -18349,11 +18120,10 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
         cashBalancing gggu = new cashBalancing();
-        if(jCheckBox12.isSelected()){
+        if (jCheckBox12.isSelected()) {
             ResultSet rs993 = gggu.getAllClaimedWarranties();
             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs993));
-        }
-        else{
+        } else {
             ResultSet rs994 = gggu.getAllNonClaimedWarranties();
             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs994));
         }
@@ -18369,10 +18139,9 @@ public class MainManue1 extends javax.swing.JFrame {
 
         int selectedRow011 = this.jTable16.getSelectedRow();
 
-        if(selectedRow011 == -1){
-            JOptionPane.showMessageDialog(Warranty, "Pleace select one to claim WARRANTY!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow011 == -1) {
+            JOptionPane.showMessageDialog(Warranty, "Pleace select one to claim WARRANTY!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String wCodee = this.jTable16.getModel().getValueAt(selectedRow011, 0).toString();
             String WarrantySN = this.jTable16.getModel().getValueAt(selectedRow011, 6).toString();
             String invoID = this.jTable16.getModel().getValueAt(selectedRow011, 5).toString();
@@ -18394,8 +18163,8 @@ public class MainManue1 extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
 
-            try{
-                String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
+            try {
+                String SQL = "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
 
                 PreparedStatement pstf = conn.prepareStatement(SQL);
                 pstf.setString(1, wCodee);
@@ -18403,8 +18172,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 pstf.setString(3, WarrantySN);
 
                 pstf.execute();
-            }
-            catch(Exception ed){
+            } catch (Exception ed) {
                 ed.printStackTrace();
             }
 
@@ -18414,7 +18182,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
             this.Warranty.dispose();
 
-            if(invoType.equals("Cash")){
+            if (invoType.equals("Cash")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", invoID);
                 try {
@@ -18430,8 +18198,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoType.equals("Cash Advanced")){
+            } else if (invoType.equals("Cash Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", invoID);
                 try {
@@ -18447,8 +18214,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoType.equals("Credit")){
+            } else if (invoType.equals("Credit")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", invoID);
                 try {
@@ -18464,8 +18230,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoType.equals("Credit Advanced")){
+            } else if (invoType.equals("Credit Advanced")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", invoID);
                 try {
@@ -18480,8 +18245,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else if(invoType.equals("Cheque")){
+            } else if (invoType.equals("Cheque")) {
                 HashMap ab = new HashMap();
                 ab.put("invoNum", invoID);
                 try {
@@ -18539,24 +18303,22 @@ public class MainManue1 extends javax.swing.JFrame {
 
         //String billID = this.jLabel157.getText();
         //String invoTypee = this.jLabel161.getText();
-
         int selectedRow9456gg = 0;
         selectedRow9456gg = this.jTable16.getSelectedRow();
 
-        if(selectedRow9456gg == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Item from warranty Item List.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow9456gg == -1) {
+            JOptionPane.showMessageDialog(Warranty, "Select a Item from warranty Item List.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String wCode = this.jTable16.getModel().getValueAt(selectedRow9456gg, 0).toString();
             String invoID = this.jTable16.getModel().getValueAt(selectedRow9456gg, 5).toString();
             String invoType = kkiidd.getBillTypeByBillID(invoID);
-            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure you want to claim this item.?", "Confirm Warranty Claim", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+            int userSelection = JOptionPane.showConfirmDialog(Warranty, "Are you sure you want to claim this item.?", "Confirm Warranty Claim", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
 
                 String sItemCodeed = this.jTextField76.getText();
                 String statusd = gghhjj.getItemStatus(sItemCodeed);
 
-                if(statusd.equals("yes")){
+                if (statusd.equals("yes")) {
                     String notee = " --> Claimed By SN- ".concat(sItemCodeed).concat(". Date - ").concat(datee);
                     try {
                         String queryyyd = "update warranty set claimedSerial=?, notee=CONCAT( notee, ?), claim=? where wCode = ?";
@@ -18572,8 +18334,8 @@ public class MainManue1 extends javax.swing.JFrame {
                         ex.printStackTrace();
                     }
 
-                    try{
-                        String SQL= "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
+                    try {
+                        String SQL = "insert into warranty_claims(warrantyItemId, Note, serialNumber) values(?,?,?)";
 
                         PreparedStatement pstf = conn.prepareStatement(SQL);
                         pstf.setString(1, wCode);
@@ -18581,8 +18343,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pstf.setString(3, sItemCodeed);
 
                         pstf.execute();
-                    }
-                    catch(Exception ed){
+                    } catch (Exception ed) {
                         ed.printStackTrace();
                     }
 
@@ -18608,7 +18369,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, itmCode);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -18619,7 +18380,7 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     this.Warranty.dispose();
 
-                    if(invoType.equals("Cash") || invoType.equals("Bank Deposit")){
+                    if (invoType.equals("Cash") || invoType.equals("Bank Deposit")) {
                         HashMap ab = new HashMap();
                         ab.put("invoNum", invoID);
                         try {
@@ -18635,8 +18396,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                    else if(invoType.equals("Cash Advanced") || invoType.equals("Bank Advanced")){
+                    } else if (invoType.equals("Cash Advanced") || invoType.equals("Bank Advanced")) {
                         HashMap ab = new HashMap();
                         ab.put("invoNum", invoID);
                         try {
@@ -18652,8 +18412,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                    else if(invoType.equals("Credit")){
+                    } else if (invoType.equals("Credit")) {
                         HashMap ab = new HashMap();
                         ab.put("invoNum", invoID);
                         try {
@@ -18669,8 +18428,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                    else if(invoType.equals("Credit Advanced")){
+                    } else if (invoType.equals("Credit Advanced")) {
                         HashMap ab = new HashMap();
                         ab.put("invoNum", invoID);
                         try {
@@ -18685,8 +18443,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                    else if(invoType.equals("Cheque")){
+                    } else if (invoType.equals("Cheque")) {
                         HashMap ab = new HashMap();
                         ab.put("invoNum", invoID);
                         try {
@@ -18703,18 +18460,17 @@ public class MainManue1 extends javax.swing.JFrame {
                             e.printStackTrace();
                         }
                     }
-                    
+
                     billSearch kkkd = new billSearch();
                     ResultSet rs1d = kkkd.showAllPendingBillDetails();
                     this.jTable4.setModel(DbUtils.resultSetToTableModel(rs1d));
-                    
+
                     this.jTextArea7.setText("");
                     this.jTextField84.setText("");
                     this.jTextField83.setText("");
                     this.jTextField82.setText("");
-                }
-                else{
-                    JOptionPane.showMessageDialog(Warranty, "Something went wrong with selected item.!","Error",JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(Warranty, "Something went wrong with selected item.!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 
             }
@@ -18752,119 +18508,119 @@ public class MainManue1 extends javax.swing.JFrame {
         //            int avl_qty1 = Integer.parseInt(this.jTextField83.getText());
         //            String finalName = name.concat(" --").concat(wCode).concat("--").concat("(Claimed item/s for the WARRANTY item/s. ").concat(date).concat(" )");
         //            if(avl_qty1 >= (qty+free)){
-            //                String cashBalanceID = "W";
-            //                String billItemCode = aaas.addItemsToBill(itmCode1, finalName, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalanceID, this);
-            //                JOptionPane.showMessageDialog(itemsAdder, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
-            //
-            //                try {
-                //                    String query = "update items set qty = qty- ? where itm_code = ?";
-                //                    PreparedStatement pst = conn.prepareStatement(query);
-                //
-                //                        pst.setInt(1, qty);
-                //                        pst.setString(2, itmCode1);
-                //                        pst.executeUpdate();
-                //
-                //                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                //                    } catch (SQLException ex) {
-                //                        ex.printStackTrace();
-                //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                //                    }
-            //                    int selectedRow = this.jTable4.getSelectedRow();
-            //
-            //                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-            //                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
-            //
-            //                        if(invoTypeee.equals("Cash")){
-                //                            HashMap ab = new HashMap();
-                //                            ab.put("invoNum", billl);
-                //                            try {
-                    //
-                    //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
-                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
-                    //
-                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-                    //
-                    //                                JasperViewer.viewReport(jprint, false);
-                    //
-                    //                            } catch (Exception e) {
-                    //                                e.printStackTrace();
-                    //                            }
-                //                        }
-            //                        else if(invoTypeee.equals("Cash Advanced")){
-                //                            HashMap ab = new HashMap();
-                //                            ab.put("invoNum", billl);
-                //                            try {
-                    //
-                    //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
-                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
-                    //
-                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-                    //
-                    //                                JasperViewer.viewReport(jprint, false);
-                    //
-                    //                            } catch (Exception e) {
-                    //                                e.printStackTrace();
-                    //                            }
-                //                        }
-            //                        else if(invoTypeee.equals("Credit")){
-                //                            HashMap ab = new HashMap();
-                //                            ab.put("invoNum", billl);
-                //                            try {
-                    //
-                    //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
-                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
-                    //
-                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-                    //
-                    //                                JasperViewer.viewReport(jprint, false);
-                    //
-                    //                            } catch (Exception e) {
-                    //                                e.printStackTrace();
-                    //                            }
-                //                        }
-            //                        else if(invoTypeee.equals("Credit Advanced")){
-                //                            HashMap ab = new HashMap();
-                //                            ab.put("invoNum", billl);
-                //                            try {
-                    //
-                    //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
-                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
-                    //
-                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-                    //
-                    //                                JasperViewer.viewReport(jprint, false);
-                    //
-                    //                            } catch (Exception e) {
-                    //                                e.printStackTrace();
-                    //                            }
-                //                        }
-            //                        else if(invoTypeee.equals("Cheque")){
-                //                            HashMap ab = new HashMap();
-                //                            ab.put("invoNum", billl);
-                //                            try {
-                    //
-                    //                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
-                    //                                JasperDesign jdesign = JRXmlLoader.load(file);
-                    //
-                    //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-                    //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
-                    //
-                    //                                JasperViewer.viewReport(jprint, false);
-                    //
-                    //                            } catch (Exception e) {
-                    //                                e.printStackTrace();
-                    //                            }
-                //                        }
-            //
-            //                this.Warranty.dispose();
-            //            }
+        //                String cashBalanceID = "W";
+        //                String billItemCode = aaas.addItemsToBill(itmCode1, finalName, packSize, qty, free, w_price, dis, r_price, date, valu, billID,costValue,cashBalanceID, this);
+        //                JOptionPane.showMessageDialog(itemsAdder, "Item Added Successfully","Item Details", JOptionPane.INFORMATION_MESSAGE);
+        //
+        //                try {
+        //                    String query = "update items set qty = qty- ? where itm_code = ?";
+        //                    PreparedStatement pst = conn.prepareStatement(query);
+        //
+        //                        pst.setInt(1, qty);
+        //                        pst.setString(2, itmCode1);
+        //                        pst.executeUpdate();
+        //
+        //                    //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
+        //                    } catch (SQLException ex) {
+        //                        ex.printStackTrace();
+        //                        Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+        //                    }
+        //                    int selectedRow = this.jTable4.getSelectedRow();
+        //
+        //                        String billl = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
+        //                        String invoTypeee = this.jTable4.getModel().getValueAt(selectedRow, 7).toString();
+        //
+        //                        if(invoTypeee.equals("Cash")){
+        //                            HashMap ab = new HashMap();
+        //                            ab.put("invoNum", billl);
+        //                            try {
+        //
+        //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo.jrxml");
+        //                                JasperDesign jdesign = JRXmlLoader.load(file);
+        //
+        //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+        //
+        //                                JasperViewer.viewReport(jprint, false);
+        //
+        //                            } catch (Exception e) {
+        //                                e.printStackTrace();
+        //                            }
+        //                        }
+        //                        else if(invoTypeee.equals("Cash Advanced")){
+        //                            HashMap ab = new HashMap();
+        //                            ab.put("invoNum", billl);
+        //                            try {
+        //
+        //                                InputStream file = getClass().getResourceAsStream("/classes/cashInvo_1.jrxml");
+        //                                JasperDesign jdesign = JRXmlLoader.load(file);
+        //
+        //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+        //
+        //                                JasperViewer.viewReport(jprint, false);
+        //
+        //                            } catch (Exception e) {
+        //                                e.printStackTrace();
+        //                            }
+        //                        }
+        //                        else if(invoTypeee.equals("Credit")){
+        //                            HashMap ab = new HashMap();
+        //                            ab.put("invoNum", billl);
+        //                            try {
+        //
+        //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo.jrxml");
+        //                                JasperDesign jdesign = JRXmlLoader.load(file);
+        //
+        //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+        //
+        //                                JasperViewer.viewReport(jprint, false);
+        //
+        //                            } catch (Exception e) {
+        //                                e.printStackTrace();
+        //                            }
+        //                        }
+        //                        else if(invoTypeee.equals("Credit Advanced")){
+        //                            HashMap ab = new HashMap();
+        //                            ab.put("invoNum", billl);
+        //                            try {
+        //
+        //                                InputStream file = getClass().getResourceAsStream("/classes/CreditInvo_1.jrxml");
+        //                                JasperDesign jdesign = JRXmlLoader.load(file);
+        //
+        //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+        //
+        //                                JasperViewer.viewReport(jprint, false);
+        //
+        //                            } catch (Exception e) {
+        //                                e.printStackTrace();
+        //                            }
+        //                        }
+        //                        else if(invoTypeee.equals("Cheque")){
+        //                            HashMap ab = new HashMap();
+        //                            ab.put("invoNum", billl);
+        //                            try {
+        //
+        //                                InputStream file = getClass().getResourceAsStream("/classes/Cheque.jrxml");
+        //                                JasperDesign jdesign = JRXmlLoader.load(file);
+        //
+        //                                JasperReport jreport = JasperCompileManager.compileReport(jdesign);
+        //                                JasperPrint jprint = JasperFillManager.fillReport(jreport, ab, conn);
+        //
+        //                                JasperViewer.viewReport(jprint, false);
+        //
+        //                            } catch (Exception e) {
+        //                                e.printStackTrace();
+        //                            }
+        //                        }
+        //
+        //                this.Warranty.dispose();
+        //            }
         //            else{
-            //                JOptionPane.showMessageDialog(itemsAdder, "Available quantity is not enought","Error",JOptionPane.ERROR_MESSAGE);
-            //            }
+        //                JOptionPane.showMessageDialog(itemsAdder, "Available quantity is not enought","Error",JOptionPane.ERROR_MESSAGE);
+        //            }
         //
         //
         //            ResultSet rs = aaas.getAddedItemsBy_bill_ID(billID);
@@ -18872,23 +18628,22 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton58ActionPerformed
 
     private void jTextField76KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField76KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             items_add_to_bill jjkkiig = new items_add_to_bill();
 
             String sItemCodee = this.jTextField76.getText();
             String status = jjkkiig.getItemStatus(sItemCodee);
 
-            if(status.equals("no") || status.equals("w")){
+            if (status.equals("no") || status.equals("w")) {
 
-                JOptionPane.showMessageDialog(Warranty, "This "+sItemCodee+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+                JOptionPane.showMessageDialog(Warranty, "This " + sItemCodee + " Item has already been added.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 String name, warranty, r_price, qty;
                 searchItems sd = new searchItems();
-                try{
+                try {
                     ResultSet rs = sd.searchByItemCodeeeee(sItemCodee);
                     System.out.println(rs);
-                    while(rs.next()){
+                    while (rs.next()) {
                         name = rs.getString("itm_name");
                         warranty = rs.getString("warranty");
                         qty = rs.getString("qty");
@@ -18900,8 +18655,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         this.jTextField83.setText(qty);
                         this.jTextField82.setText(warranty);
                     }
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -18933,28 +18687,25 @@ public class MainManue1 extends javax.swing.JFrame {
         String billIDD = this.jLabel229.getText();
 
         int selectedRow7b = this.jTable15.getSelectedRow();
-        if(selectedRow7b == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Item to Warranty.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow7b == -1) {
+            JOptionPane.showMessageDialog(Warranty, "Select a Item to Warranty.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billItemCodeh = this.jTable15.getModel().getValueAt(selectedRow7b, 0).toString();
             String strItemCode = this.jTable15.getModel().getValueAt(selectedRow7b, 1).toString();
             String qyyt = this.jTable15.getModel().getValueAt(selectedRow7b, 4).toString();
             String r_pprice = this.jTable15.getModel().getValueAt(selectedRow7b, 7).toString();
             int INTqty = Integer.parseInt(qyyt);
             String aaa = iii.checkSNAvailability(billItemCodeh);
-            if(aaa.equals("")){
-                JOptionPane.showMessageDialog(Warranty, "Cannot Warranty nun serial items.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+            if (aaa.equals("")) {
+                JOptionPane.showMessageDialog(Warranty, "Cannot Warranty nun serial items.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 items_add_to_bill jiu87ds = new items_add_to_bill();
                 int selectedRow321123ds = this.jTable15.getSelectedRow();
 
-                if(selectedRow321123ds == -1){
-                    JOptionPane.showMessageDialog(Warranty, "Select a Serial Number to warranty.!","Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    this.edit_edit_billed_Items2.setSize(340,300);
+                if (selectedRow321123ds == -1) {
+                    JOptionPane.showMessageDialog(Warranty, "Select a Serial Number to warranty.!", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    this.edit_edit_billed_Items2.setSize(340, 300);
                     this.edit_edit_billed_Items2.setTitle("Warranty ");
                     this.edit_edit_billed_Items2.setLocationRelativeTo(this);
                     this.edit_edit_billed_Items2.setVisible(true);
@@ -18989,14 +18740,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
         String itmCorde = this.jTable15.getModel().getValueAt(selectedRow1, 1).toString();
         String itmDiscrip = this.jTable15.getModel().getValueAt(selectedRow1, 2).toString();
-        int QQTy = (int)jTable15.getValueAt(selectedRow1, 4);
+        int QQTy = (int) jTable15.getValueAt(selectedRow1, 4);
         String Warranty = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 3).toString());
         String r_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 5).toString());
         //String w_price = String.valueOf(this.jTable15.getModel().getValueAt(selectedRow1, 4).toString());
         //int dis = this.jTable4.getModel().getValueAt(selectedRow, 5).toString();
 
         //String invoID = this.jTable4.getModel().getValueAt(selectedRow, 0).toString();
-
         this.jTextField75.setText(itmCorde);
         this.jTextArea6.setText(itmDiscrip);
         this.jTextField79.setText(Integer.toString(QQTy));
@@ -19009,13 +18759,12 @@ public class MainManue1 extends javax.swing.JFrame {
         cashBalancing lloof = new cashBalancing();
         int selectedRow9456dg = this.jTable16.getSelectedRow();
 
-        if(selectedRow9456dg == -1){
-            JOptionPane.showMessageDialog(Warranty, "Select a Claimed Warranty to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+        if (selectedRow9456dg == -1) {
+            JOptionPane.showMessageDialog(Warranty, "Select a Claimed Warranty to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
 
-            int userSelection = JOptionPane.showConfirmDialog(Warranty,"Are you sure.! You want to delete this Claimed warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+            int userSelection = JOptionPane.showConfirmDialog(Warranty, "Are you sure.! You want to delete this Claimed warranty item ?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
 
                 String warrantyItemCode = this.jTable16.getModel().getValueAt(selectedRow9456dg, 0).toString();
                 String warrantyNote = this.jTable16.getModel().getValueAt(selectedRow9456dg, 1).toString();
@@ -19023,11 +18772,11 @@ public class MainManue1 extends javax.swing.JFrame {
                 String claimStatus = this.jTable16.getModel().getValueAt(selectedRow9456dg, 7).toString();
                 String claimedItemSireal = this.jTable16.getModel().getValueAt(selectedRow9456dg, 8).toString();
                 String invoID = this.jTable16.getModel().getValueAt(selectedRow9456dg, 5).toString();
-                
+
                 String warrantyClaimedNote = lloof.getWarrantyClaimDiscription(warrantyItemCode);
-                
-                if(claimStatus.equals("yes")){
-                    if(itemSireal.equals("Claimed by same item")){
+
+                if (claimStatus.equals("yes")) {
+                    if (itemSireal.equals("Claimed by same item")) {
                         String newWarrantyNote = warrantyNote.replaceAll(warrantyClaimedNote, "");
                         System.out.println(newWarrantyNote);
                         try {
@@ -19043,22 +18792,20 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                         }
-                        
+
                         lloof.deleteClaimedWarranty(warrantyItemCode);
-                        
+
                         String FullNoted = getAllWarrantyNotices(invoID);
                         updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
-                        
+
                         String kkG = updateInvoiceDiscription(invoID);
 
-                        if(kkG==null){
+                        if (kkG == null) {
 
+                        } else {
+                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully", "Warranty Details", JOptionPane.INFORMATION_MESSAGE);
                         }
-                        else{
-                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
-                        }
-                    }
-                    else{
+                    } else {
                         String newWarrantyNote = warrantyNote.replaceAll(warrantyClaimedNote, "");
                         System.out.println(newWarrantyNote);
                         try {
@@ -19074,7 +18821,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                         }
-                        
+
                         try {
                             String queryyy = "update sub_items set inStock=? where sn = ?";
                             PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -19097,35 +18844,31 @@ public class MainManue1 extends javax.swing.JFrame {
                             pst.setString(2, itmCode);
                             pst.executeUpdate();
 
-                        } catch(SQLException ex){
+                        } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                         }
 
                         lloof.deleteClaimedWarranty(warrantyItemCode);
-                        
+
                         String FullNoted = getAllWarrantyNotices(invoID);
                         updateInvoiceDiscriptionForWarranty(FullNoted, invoID);
-                        
+
                         String kkG = updateInvoiceDiscription(invoID);
 
-                        if(kkG==null){
+                        if (kkG == null) {
                             ResultSet rs99d = lloof.getAllNonClaimedWarranties();
                             this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99d));
+                        } else {
+                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully", "Warranty Details", JOptionPane.INFORMATION_MESSAGE);
+
                         }
-                        else{
-                            JOptionPane.showMessageDialog(Warranty, "Selected Warranty Item deleted Successfully","Warranty Details", JOptionPane.INFORMATION_MESSAGE);
-                            
-                            
-                        } 
-                    }      
-                }
-                else{
-                    JOptionPane.showMessageDialog(Warranty, "You can only delete Claimed Warrantys.!","Error",JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(Warranty, "You can only delete Claimed Warrantys.!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 //iii1.deleteAddedBillItems(billItemCode);
 
-                
             }
         }
     }//GEN-LAST:event_jButton119ActionPerformed
@@ -19140,22 +18883,21 @@ public class MainManue1 extends javax.swing.JFrame {
         cashBalancing ggg1 = new cashBalancing();
         String billIdd = this.jLabel179.getText();
         returnItem jjuu = new returnItem();
-        
+
         int selectedRow011wf = this.jTable40.getSelectedRow();
-        
-        if(selectedRow011wf == -1){
-            JOptionPane.showMessageDialog(returnItms, "Pleace select a Return.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            int userSelection = JOptionPane.showConfirmDialog(returnItms,"Are you sure to delete this Item from return?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
+
+        if (selectedRow011wf == -1) {
+            JOptionPane.showMessageDialog(returnItms, "Pleace select a Return.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int userSelection = JOptionPane.showConfirmDialog(returnItms, "Are you sure to delete this Item from return?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
                 String rcode = this.jTable40.getModel().getValueAt(selectedRow011wf, 0).toString();
                 String serial = this.jTable40.getModel().getValueAt(selectedRow011wf, 6).toString();
                 String itemCode = this.jTable40.getModel().getValueAt(selectedRow011wf, 1).toString();
                 String itemName = this.jTable40.getModel().getValueAt(selectedRow011wf, 2).toString();
                 String Rqty = this.jTable40.getModel().getValueAt(selectedRow011wf, 3).toString();
 
-                if(serial.equals("Non-Serial")){
+                if (serial.equals("Non-Serial")) {
                     // update item stock qty
                     System.out.println("ddddddddddddddddddddd");
                     int r_qty = Integer.parseInt(Rqty);
@@ -19167,7 +18909,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, itemCode);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -19181,27 +18923,25 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(3, itemCode);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     // delete from return table
                     boolean isOkay = jjuu.deleteReturnItems(rcode);
-                    if(isOkay){
-                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!","Return Details", JOptionPane.INFORMATION_MESSAGE);
-                        
+                    if (isOkay) {
+                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!", "Return Details", JOptionPane.INFORMATION_MESSAGE);
+
                         ResultSet rs99dgf = ggg1.getAllReturnItemsByInvoice(billIdd);
                         this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgf));
-                        
+
                         ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
                         this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
-                        
+
+                    } else {
+                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                    else{
-                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                }
-                else{
+                } else {
                     // update item stock qty
                     try {
                         String query = "update items set qty = qty- ? where itm_code = ?";
@@ -19211,7 +18951,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, itemCode);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -19238,7 +18978,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, rSerial);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -19261,18 +19001,17 @@ public class MainManue1 extends javax.swing.JFrame {
                     }
                     // delete from return table
                     boolean isOkayc = jjuu.deleteReturnItems(rcode);
-                    if(isOkayc){
-                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!","Return Details", JOptionPane.INFORMATION_MESSAGE);
-                        
+                    if (isOkayc) {
+                        JOptionPane.showMessageDialog(returnItms, "Return Item deleted.!", "Return Details", JOptionPane.INFORMATION_MESSAGE);
+
                         ResultSet rs99dgfc = ggg1.getAllReturnItemsByInvoice(billIdd);
                         this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dgfc));
-                        
+
                         ResultSet rsc = hghhf.getAddedItemsBy_bill_ID(billIdd);
                         this.jTable17.setModel(DbUtils.resultSetToTableModel(rsc));
-                        
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!","Error",JOptionPane.ERROR_MESSAGE);
+
+                    } else {
+                        JOptionPane.showMessageDialog(returnItms, "Return deletion failed.!", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
@@ -19288,44 +19027,38 @@ public class MainManue1 extends javax.swing.JFrame {
         searchItems dddd = new searchItems();
         cashBalancing ggg1 = new cashBalancing();
         returnItem jjkkii = new returnItem();
-                
+
         String billIdd = this.jLabel179.getText();
-        
-        
-        
+
         int selectedRow011w = this.jTable41.getSelectedRow();
         int selectedRow21w = this.jTable17.getSelectedRow();
-        
-        if(selectedRow011w == -1){
-            JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Pleace select an Serial to Return.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();   
+
+        if (selectedRow011w == -1) {
+            JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Pleace select an Serial to Return.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();
             String itemCodeee = this.jTable17.getModel().getValueAt(selectedRow21w, 1).toString();
             String serial = this.jTable41.getModel().getValueAt(selectedRow011w, 1).toString();
-            
+
             String wCode = ggg1.checkSNAvailabilityInWarranty(serial);
-            
-            if(wCode.equals("")){
+
+            if (wCode.equals("")) {
                 Date d = new Date();
                 SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                 String day = sdf1.format(d);
 
                 String itemName = dddd.getItemNameByItemCode(itemCodeee);
 
-
                 double rAmount = 0;
                 int r_qty = 1;
                 String notee = "SN- ".concat(serial).concat(" of ").concat(itemName).concat(" item Returned.");
 
+                //            int WarrantyMonths = parseInt(this.jTextField80.getText());
+                //            String claim = "no";
+                //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
+                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee, itemName, r_qty, billIdd, day, serial, notee, edit_edit_billed_Items3);
 
-    //            int WarrantyMonths = parseInt(this.jTextField80.getText());
-    //            String claim = "no";
-    //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
-
-                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee,itemName, r_qty, billIdd, day, serial,notee, edit_edit_billed_Items3);
-
-                if(!isItOkay.equals(null)){
+                if (!isItOkay.equals(null)) {
 
                     try {
                         String queryyy = "update bill_sub_items set snn=CONCAT( snn, ?) where snn = ?";
@@ -19339,7 +19072,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
+
                     try {
                         String query = "update bill_items set item_name = ? where bill_item_id = ?";
                         PreparedStatement pstd = conn.prepareStatement(query);
@@ -19379,7 +19112,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, itmCode);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -19394,26 +19127,24 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    String hhhd = ggg1.getInvoiceDis(billIdd);
 //
 //                    this.jTextArea8.setText(hhhd);
-
                     ResultSet rs99dg = ggg1.getAllReturnItemsByInvoice(billIdd);
                     this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dg));
-                    
-                    String  itmDiscrip = jjkkii.getBillItemName(billItemCode);
+
+                    String itmDiscrip = jjkkii.getBillItemName(billItemCode);
                     this.jTextArea9.setText(itmDiscrip);
 //                    ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
 //                    this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
-                    
+
                     ResultSet jjuyyfaf = hghhf.getSubItemDataFromBill(billItemCode);
                     this.jTable41.setModel(DbUtils.resultSetToTableModel(jjuyyfaf));
 
-                    JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
-                } 
-            }
-            else{
-                JOptionPane.showMessageDialog(edit_edit_billed_Items3, "This Item allready in Warranty.!","Error",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(edit_edit_billed_Items3, "Save Return Item Successfully", "Return Details", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(edit_edit_billed_Items3, "This Item allready in Warranty.!", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
+
         ResultSet rs99 = ggg1.getAllNonClaimedWarranties();
         this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton120ActionPerformed
@@ -19423,53 +19154,45 @@ public class MainManue1 extends javax.swing.JFrame {
         searchItems dddd = new searchItems();
         cashBalancing ggg1 = new cashBalancing();
         returnItem jjkkiid = new returnItem();
-        
+
         String billIdd = this.jLabel179.getText();
-        
+
         String itmQtyString = this.jTextField149.getText();
-        
-        
+
         int selectedRow21w = this.jTable17.getSelectedRow();
-        
-        if(selectedRow21w == -1){
-            JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Select item to Return.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();   
+
+        if (selectedRow21w == -1) {
+            JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Select item to Return.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            String billItemCode = this.jTable17.getModel().getValueAt(selectedRow21w, 0).toString();
             String itemCodeee = this.jTable17.getModel().getValueAt(selectedRow21w, 1).toString();
             String itemnameeeee = this.jTable17.getModel().getValueAt(selectedRow21w, 2).toString();
-            
-            
-            if(itmQtyString.equals("")){
-                JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Enter the Return Quantity.!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-                
+
+            if (itmQtyString.equals("")) {
+                JOptionPane.showMessageDialog(edit_edit_billed_Items4, "Pleace Enter the Return Quantity.!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+
                 Date d = new Date();
                 SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                 String day = sdf1.format(d);
 
                 String itemName = dddd.getItemNameByItemCode(itemCodeee);
 
-
                 double rAmount = 0;
                 int r_qty = Integer.parseInt(itmQtyString);
-                String notee = "Item- ".concat(itemName).concat(" Returned. QTY- ").concat(itmQtyString);    
+                String notee = "Item- ".concat(itemName).concat(" Returned. QTY- ").concat(itmQtyString);
 
+                //            int WarrantyMonths = parseInt(this.jTextField80.getText());
+                //            String claim = "no";
+                //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
+                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee, itemName, r_qty, billIdd, day, "Non-Serial", notee, edit_edit_billed_Items3);
 
-    //            int WarrantyMonths = parseInt(this.jTextField80.getText());
-    //            String claim = "no";
-    //            String itmbillDate = this.jTable17.getModel().getValueAt(selectedRow21w, 6).toString();
-
-                String isItOkay = ggg1.addReturnedItems(rAmount, itemCodeee,itemName, r_qty, billIdd, day, "Non-Serial",notee, edit_edit_billed_Items3);
-
-                if(!isItOkay.equals(null)){
+                if (!isItOkay.equals(null)) {
 
                     try {
                         String query = "update bill_items set item_name = ? where bill_item_id = ?";
                         PreparedStatement pstd = conn.prepareStatement(query);
 
-                        
                         String newName = itemnameeeee.concat("(R)- ").concat(itmQtyString);
 
                         pstd.setString(1, newName);
@@ -19489,7 +19212,7 @@ public class MainManue1 extends javax.swing.JFrame {
                         pst.setString(2, itemCodeee);
                         pst.executeUpdate();
 
-                    } catch(SQLException ex){
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -19504,20 +19227,19 @@ public class MainManue1 extends javax.swing.JFrame {
 //                    String hhhd = ggg1.getInvoiceDis(billIdd);
 //
 //                    this.jTextArea8.setText(hhhd);
-
                     ResultSet rs99dg = ggg1.getAllReturnItemsByInvoice(billIdd);
                     this.jTable40.setModel(DbUtils.resultSetToTableModel(rs99dg));
-                    
-                    String  itmDiscrip = jjkkiid.getBillItemName(billItemCode);
+
+                    String itmDiscrip = jjkkiid.getBillItemName(billItemCode);
                     this.jTextArea9.setText(itmDiscrip);
 //                    ResultSet rs = hghhf.getAddedItemsBy_bill_ID(billIdd);
 //                    this.jTable17.setModel(DbUtils.resultSetToTableModel(rs));
 
-                    JOptionPane.showMessageDialog(returnItms, "Save Return Item Successfully","Return Details", JOptionPane.INFORMATION_MESSAGE);
-                } 
-            }             
+                    JOptionPane.showMessageDialog(returnItms, "Save Return Item Successfully", "Return Details", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
         }
-           
+
         ResultSet rs99 = ggg1.getAllNonClaimedWarranties();
         this.jTable16.setModel(DbUtils.resultSetToTableModel(rs99));
     }//GEN-LAST:event_jButton121ActionPerformed
@@ -19535,66 +19257,64 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField96ActionPerformed
 
     private void jTextField96KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField96KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             String netAmount = this.jTextField90.getText();
-        
+
             String Ramount = this.jTextField96.getText();
 
-            if(!Ramount.equals("")){
+            if (!Ramount.equals("")) {
 
                 double netAmt = Double.parseDouble(netAmount);
                 double RAmt = Double.parseDouble(Ramount);
 
                 double finalBillAmt = netAmt - RAmt;
-                
+
                 this.jTextField93.setText(String.valueOf(finalBillAmt));
             }
         }
     }//GEN-LAST:event_jTextField96KeyPressed
 
     private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
-        this.add_new_cust.setSize(340,300);
-        this.add_new_cust.setTitle("Add New Customer");   
+        this.add_new_cust.setSize(340, 300);
+        this.add_new_cust.setTitle("Add New Customer");
         this.add_new_cust.setLocationRelativeTo(this);
         this.add_new_cust.setVisible(true);
-        
-        hr hrhrss=new hr();
+
+        hr hrhrss = new hr();
         this.jLabel243.setText(hrhrss.generateCustomerCode(this));
     }//GEN-LAST:event_jButton49ActionPerformed
 
     private void jButton122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton122ActionPerformed
-       hr hrrvv =new hr();
-        
+        hr hrrvv = new hr();
+
         String name = this.jTextField127.getText();
         String addr = this.jTextArea15.getText();
         String addr2 = "--";
         String city = "--";
         String state = "--";
         String conNo = this.jTextField128.getText();
-        
-        if(hrrvv.validateCustName(name)& hrrvv.validateCustAddrL1(addr) & hrrvv.validateCustConNo(conNo)){
-            Date d = new Date();     
+
+        if (hrrvv.validateCustName(name) & hrrvv.validateCustAddrL1(addr) & hrrvv.validateCustConNo(conNo)) {
+            Date d = new Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
             String reg_date = sdf1.format(d);
             double credit_bal = 0;
-            
 
-            String custID = hrrvv.addCustomer(name, addr, addr2, city, state, conNo, reg_date,credit_bal, add_new_cust);
-            if(!custID.equals(null)){
-                JOptionPane.showMessageDialog(add_new_cust, "Customer Added Successfully","Movie Details", JOptionPane.INFORMATION_MESSAGE);
-                
+            String custID = hrrvv.addCustomer(name, addr, addr2, city, state, conNo, reg_date, credit_bal, add_new_cust);
+            if (!custID.equals(null)) {
+                JOptionPane.showMessageDialog(add_new_cust, "Customer Added Successfully", "Movie Details", JOptionPane.INFORMATION_MESSAGE);
+
                 this.jTextField127.setText("");
                 this.jTextArea15.setText("");
                 this.jTextField128.setText("");
-                
+
                 this.jTextField4.setText(custID);
-                
+
                 this.add_new_cust.dispose();
             }
-        }
-        else{
+        } else {
             getToolkit().beep();
-            JOptionPane.showMessageDialog(add_new_cust, "Pleace Fill the all Text Fields..!!","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(add_new_cust, "Pleace Fill the all Text Fields..!!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton122ActionPerformed
 
@@ -19608,13 +19328,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable42MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable42MousePressed
         advancedCustomer klodff = new advancedCustomer();
-        
+
         int selectedRow21wc = this.jTable42.getSelectedRow();
         String aID = this.jTable42.getModel().getValueAt(selectedRow21wc, 0).toString();
         String total, advanced, due;
-        try{
+        try {
             ResultSet rsgg = klodff.getAllAdvacedCusByAID(aID);
-            while(rsgg.next()){
+            while (rsgg.next()) {
                 total = rsgg.getString("adv_total");
                 advanced = rsgg.getString("adv_amount");
                 due = rsgg.getString("adv_duePayment");
@@ -19623,20 +19343,18 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField130.setText(advanced);
                 this.jTextField150.setText(due);
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jTable42MousePressed
 
     private void jButton123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton123ActionPerformed
         advancedCustomer klod = new advancedCustomer();
-        
-        if(this.jComboBox13.getSelectedItem().toString().equals("Advanced Code")){
+
+        if (this.jComboBox13.getSelectedItem().toString().equals("Advanced Code")) {
             ResultSet ag = klod.getAdvancedCustBy_id(this.jTextField109.getText().toString());
             this.jTable42.setModel(DbUtils.resultSetToTableModel(ag));
-        }
-        else if(this.jComboBox13.getSelectedItem().toString().equals("Customer Name")){
+        } else if (this.jComboBox13.getSelectedItem().toString().equals("Customer Name")) {
             ResultSet agf = klod.getAdvancedCustBy_CustName(this.jTextField109.getText().toString());
             this.jTable42.setModel(DbUtils.resultSetToTableModel(agf));
         }
@@ -19648,28 +19366,27 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton124ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton124ActionPerformed
         int selectedRow21wfff = this.jTable42.getSelectedRow();
-        
-        if(selectedRow21wfff == -1){
-            JOptionPane.showMessageDialog(edit_advancedCust, "Pleace Select a Advanced Slip to Print.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow21wfff == -1) {
+            JOptionPane.showMessageDialog(edit_advancedCust, "Pleace Select a Advanced Slip to Print.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String avd_id = this.jTable42.getModel().getValueAt(selectedRow21wfff, 0).toString();
             HashMap aa = new HashMap();
             aa.put("invoNum", avd_id);
 
-            try { 
+            try {
                 InputStream file = getClass().getResourceAsStream("/classes/advancedCust.jrxml");
                 JasperDesign jdesign = JRXmlLoader.load(file);
 
                 JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                 JasperPrint jprint = JasperFillManager.fillReport(jreport, aa, conn);
 
-                JasperViewer.viewReport(jprint, false); 
-                
+                JasperViewer.viewReport(jprint, false);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } 
+        }
     }//GEN-LAST:event_jButton124ActionPerformed
 
     private void jTextField130KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField130KeyTyped
@@ -19679,41 +19396,38 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton125ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton125ActionPerformed
         advancedCustomer lllloo = new advancedCustomer();
         cashBalancing kkiioo = new cashBalancing();
-        
+
         Date dff = new Date();
         SimpleDateFormat sdff = new SimpleDateFormat("HH:mm:ss");
         String tttttt = sdff.format(dff);
-        
+
         SimpleDateFormat sdf1f = new SimpleDateFormat("yyyy-MM-dd");
         String ddddddd = sdf1f.format(dff);
-        
+
         int selectedRow111 = this.jTable42.getSelectedRow();
-        
-        if(selectedRow111 == -1){
-            JOptionPane.showMessageDialog(edit_advancedCust, "Select a Advanced customer to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow111 == -1) {
+            JOptionPane.showMessageDialog(edit_advancedCust, "Select a Advanced customer to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String billItemCode = this.jTable42.getModel().getValueAt(selectedRow111, 0).toString();
-            
-            int userSelection = JOptionPane.showConfirmDialog(edit_advancedCust,"Are you sure to delete this Advanced customer?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
- 
+
+            int userSelection = JOptionPane.showConfirmDialog(edit_advancedCust, "Are you sure to delete this Advanced customer?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
+
                 lllloo.deleteAddedAdvancedCustItemsByID(billItemCode);
                 boolean dd = lllloo.deleteAdvancedCust(billItemCode);
-                if(dd){
-                    JOptionPane.showMessageDialog(edit_advancedCust, "Advanced Customer Deleted Successfully","Advanced Details", JOptionPane.INFORMATION_MESSAGE);
-                    
+                if (dd) {
+                    JOptionPane.showMessageDialog(edit_advancedCust, "Advanced Customer Deleted Successfully", "Advanced Details", JOptionPane.INFORMATION_MESSAGE);
+
                     String Note = billItemCode.concat(" - this Advanced customer got deleted");
                     double advAmt = Double.parseDouble(this.jTextField130.getText());
-                    
+
                     kkiioo.addCreditedPayments(Note, advAmt, ddddddd, tttttt, edit_advancedCust);
-                        
-                    
+
                     ResultSet agssd = lllloo.getAllAdvancedCust();
                     this.jTable42.setModel(DbUtils.resultSetToTableModel(agssd));
-                }
-                else{
-                    JOptionPane.showMessageDialog(edit_advancedCust, "Selected Advanced Customer already added to an Invoice OR database error.!","Error",JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(edit_advancedCust, "Selected Advanced Customer already added to an Invoice OR database error.!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
@@ -19727,28 +19441,26 @@ public class MainManue1 extends javax.swing.JFrame {
         Date df = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String tine = sdf.format(df);
-        
+
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String dane = sdf1.format(df);
-        
+
         String total = this.jTextField129.getText();
         String adv = this.jTextField130.getText();
         String newAdd = this.jTextField135.getText();
-        
+
         int selectedRow21wffsf = this.jTable42.getSelectedRow();
-        
-        if(selectedRow21wffsf == -1){
-            JOptionPane.showMessageDialog(edit_advancedCust, "Pleace Select a Advanced Slip to Add more advance!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow21wffsf == -1) {
+            JOptionPane.showMessageDialog(edit_advancedCust, "Pleace Select a Advanced Slip to Add more advance!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String avd_id = this.jTable42.getModel().getValueAt(selectedRow21wffsf, 0).toString();
             double totalD = Double.parseDouble(total);
             double advD = Double.parseDouble(adv);
             double newAddD = Double.parseDouble(newAdd);
-            if(totalD < (advD+newAddD)){
-                JOptionPane.showMessageDialog(edit_advancedCust, "Added amount exceeding the Invoice Total..!","Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+            if (totalD < (advD + newAddD)) {
+                JOptionPane.showMessageDialog(edit_advancedCust, "Added amount exceeding the Invoice Total..!", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 try {
                     String query = "update advancedcust set adv_amount = adv_amount+ ?, adv_duePayment = adv_duePayment- ? where idadvancedCustID = ?";
                     PreparedStatement pst = conn.prepareStatement(query);
@@ -19758,20 +19470,20 @@ public class MainManue1 extends javax.swing.JFrame {
                     pst.setString(3, avd_id);
                     pst.executeUpdate();
 
-                } catch(SQLException ex){
+                } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
-                this.jTextField130.setText(String.valueOf(advD+newAddD));
-                this.jTextField150.setText(String.valueOf(totalD - (advD+newAddD)));
+
+                this.jTextField130.setText(String.valueOf(advD + newAddD));
+                this.jTextField150.setText(String.valueOf(totalD - (advD + newAddD)));
                 this.jTextField135.setText("0");
-                
+
                 String notee = "Add more money to(Advanced Customer) ".concat(avd_id);
                 cashBalancing hhuu = new cashBalancing();
-                
+
                 hhuu.addDebitePayments(notee, newAddD, dane, tine, edit_advancedCust);
-                setCashBalance();  
+                setCashBalance();
             }
         }
     }//GEN-LAST:event_jButton126ActionPerformed
@@ -19793,14 +19505,12 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_search_bill_itm111ActionPerformed
 
     private void txt_search_bill_itm111KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_bill_itm111KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_search_bill_itm111.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_search_bill_itm111.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
@@ -19808,35 +19518,34 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton127ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton127ActionPerformed
         items_add_to_bill jjkkii = new items_add_to_bill();
-        searchItems pissa = new searchItems(); 
-        
+        searchItems pissa = new searchItems();
+
         String selectedSN = this.txt_search_bill_itm11.getText();
-        
+
         String status = jjkkii.getItemStatus(selectedSN);
-        
-        if(status.equals("no")){
-            JOptionPane.showMessageDialog(this, "This "+selectedSN+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (status.equals("no")) {
+            JOptionPane.showMessageDialog(this, "This " + selectedSN + " Item has already been added.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String SearchedItmName = pissa.getItemCodeBySubItemName(selectedSN);
-        
+
             String SearchedItmCode = pissa.getItemCodeBySubItemCode(selectedSN);
 
             String NextBillid = jjkkii.generateBill_id(this);
 
-            String SavedItemName = jjkkii.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+            String SavedItemName = jjkkii.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-            if(SearchedItmName.equals(SavedItemName)){
-                String BillItemID = jjkkii.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+            if (SearchedItmName.equals(SavedItemName)) {
+                String BillItemID = jjkkii.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                 String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, this);
 
-                if(bbbbbbbbb != null){
-                   try {
+                if (bbbbbbbbb != null) {
+                    try {
                         String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
                         PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, BillItemID);      
+                        pstl.setString(1, BillItemID);
                         pstl.executeUpdate();
 
                     } catch (SQLException ex) {
@@ -19852,19 +19561,19 @@ public class MainManue1 extends javax.swing.JFrame {
                         pstlu.setString(2, selectedSN);
                         pstlu.executeUpdate();
 
-                     } catch (SQLException ex) {
+                    } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                     }
+                    }
 
                     double rrrrrPrice = jjkkii.getRetailPrice(BillItemID);
-                    
+
                     double wwwwwPrice = jjkkii.getCostPrice(BillItemID);
-                    
+
                     int qqqqqty = jjkkii.getQTY(BillItemID);
-                    
-                    double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                    double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+
+                    double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                    double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                     try {
                         String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -19878,80 +19587,75 @@ public class MainManue1 extends javax.swing.JFrame {
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
+                    }
                 }
-
 
                 ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
                 this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
 
                 double calculatedValue = jjkkii.calculateTotal(NextBillid);
                 this.jTextField7.setText(String.valueOf(calculatedValue));
-                
+
                 this.txt_search_bill_itm11.setText("");
                 this.txt_search_bill_itm11.requestFocusInWindow();
-            }
-            else{
+            } else {
                 String rppp = this.txt_search_bill_itm211.getText();
-                if(rppp.equals("")){
-                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    String itmCode ="";
-                    String name="";
-                    String warranty="";
-                    String w_price="";
-                    String r_price=this.txt_search_bill_itm211.getText();
-                    String type="";
+                if (rppp.equals("")) {
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    String itmCode = "";
+                    String name = "";
+                    String warranty = "";
+                    String w_price = "";
+                    String r_price = this.txt_search_bill_itm211.getText();
+                    String type = "";
 
                     Date d = new Date();
                     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                    String date = sdf1.format(d); 
+                    String date = sdf1.format(d);
 
-                    int qty,free,dis;
-                    try{
+                    int qty, free, dis;
+                    try {
                         ResultSet rsg = jjkkii.getItemDetails(selectedSN);
-                        while(rsg.next()){
+                        while (rsg.next()) {
                             itmCode = rsg.getString("itm_code");
                             name = rsg.getString("itm_name");
-                            warranty = rsg.getString("warranty");   
+                            warranty = rsg.getString("warranty");
                             w_price = rsg.getString("w_price");
                             //r_price = rsg.getString("r_price");
-                            type = rsg.getString("type");              
+                            type = rsg.getString("type");
                         }
-                    qty = 1;
-                    free = 0;
-                    dis = 0;
-                    int wwarranty = Integer.parseInt(warranty);
-                    double ww_price = Double.parseDouble(w_price);
-                    double rr_price = Double.parseDouble(r_price);
-                    String cashBalID = "no";
-                    String billID = jjkkii.generateBill_id(this);
-                    double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                        qty = 1;
+                        free = 0;
+                        dis = 0;
+                        int wwarranty = Integer.parseInt(warranty);
+                        double ww_price = Double.parseDouble(w_price);
+                        double rr_price = Double.parseDouble(r_price);
+                        String cashBalID = "no";
+                        String billID = jjkkii.generateBill_id(this);
+                        double valu = calculateBillItemValue(qty, rr_price);
+                        double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                    String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, this);
+                        String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID, costValue, cashBalID, this);
 
-                    if(billItemCode != null){
-                        jjkkii.addBillSubItems(selectedSN, billItemCode, this);
-                        try {
-                            String queryyy = "update sub_items set inStock=? where sn = ?";
-                            PreparedStatement pstlu = conn.prepareStatement(queryyy);
+                        if (billItemCode != null) {
+                            jjkkii.addBillSubItems(selectedSN, billItemCode, this);
+                            try {
+                                String queryyy = "update sub_items set inStock=? where sn = ?";
+                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                            pstlu.setString(1, "no");
-                            pstlu.setString(2, selectedSN);
-                            pstlu.executeUpdate();
+                                pstlu.setString(1, "no");
+                                pstlu.setString(2, selectedSN);
+                                pstlu.executeUpdate();
 
-                         } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    }
-                    catch(Exception e){
+                            } catch (SQLException ex) {
+                                ex.printStackTrace();
+                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Date Base Error.!", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (Exception e) {
                         //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                     }
 
@@ -19964,9 +19668,9 @@ public class MainManue1 extends javax.swing.JFrame {
                     this.txt_search_bill_itm11.setText("");
                     this.txt_search_bill_itm11.requestFocusInWindow();
                 }
-  
+
             }
-            
+
         }
     }//GEN-LAST:event_jButton127ActionPerformed
 
@@ -19981,12 +19685,12 @@ public class MainManue1 extends javax.swing.JFrame {
     private void tbl_addBillItems1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_addBillItems1MousePressed
         storeItemData jukif = new storeItemData();
         int selectedRow177 = this.tbl_addBillItems1.getSelectedRow();
-        
+
         String itmCorde = this.tbl_addBillItems1.getModel().getValueAt(selectedRow177, 0).toString();
         String r_price = this.tbl_addBillItems1.getModel().getValueAt(selectedRow177, 4).toString();
-        
+
         ResultSet rs3333 = jukif.getSubItemData(itmCorde);
-        this.jTable3311.setModel(DbUtils.resultSetToTableModel(rs3333)); 
+        this.jTable3311.setModel(DbUtils.resultSetToTableModel(rs3333));
         this.txt_search_bill_itm211.setText(r_price);
     }//GEN-LAST:event_tbl_addBillItems1MousePressed
 
@@ -19997,62 +19701,61 @@ public class MainManue1 extends javax.swing.JFrame {
     private void jButton109ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton109ActionPerformed
         searchItems kio = new searchItems();
         items_add_to_bill jjkkii2 = new items_add_to_bill();
-        
+
         int selectedRow12 = this.tbl_addBillItems1.getSelectedRow();
-        
-        if(selectedRow12 == -1){
-            JOptionPane.showMessageDialog(this, "Select a Item to Add.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow12 == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Item to Add.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             //String SearchedItmName = kio.getItemCodeBySubItemName(selectedSN);
 
             String SearchedItmCode = this.tbl_addBillItems1.getModel().getValueAt(selectedRow12, 0).toString();
 
             String NextBillid = jjkkii2.generateBill_id(this);
 
-            String SavedItemName = jjkkii2.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+            String SavedItemName = jjkkii2.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-            if(SearchedItmCode.equals(SavedItemName)){
-                
-                String BillItemID = jjkkii2.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+            if (SearchedItmCode.equals(SavedItemName)) {
+
+                String BillItemID = jjkkii2.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                 //String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, itemsAdder);
-               int sqty = Integer.parseInt(this.txt_search_bill_itm111.getText());
-               try {
+                int sqty = Integer.parseInt(this.txt_search_bill_itm111.getText());
+                try {
                     String queryy = "update bill_items set qty=qty+? where bill_item_id = ?";
                     PreparedStatement pstl = conn.prepareStatement(queryy);
-                    
+
                     pstl.setInt(1, sqty);
-                    pstl.setString(2, BillItemID);      
+                    pstl.setString(2, BillItemID);
                     pstl.executeUpdate();
 
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-               
-               try {
+
+                try {
                     String query = "update items set qty = qty- ? where itm_code = ?";
                     PreparedStatement pst = conn.prepareStatement(query);
 
-                        pst.setInt(1, sqty);
-                        pst.setString(2, SearchedItmCode);
-                        pst.executeUpdate();
+                    pst.setInt(1, sqty);
+                    pst.setString(2, SearchedItmCode);
+                    pst.executeUpdate();
 
                     //JOptionPane.showMessageDialog(this, "Invoice Successfull","Movie Details", JOptionPane.INFORMATION_MESSAGE);
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
                 }
-               
+
                 double rrrrrPrice = jjkkii2.getRetailPrice(BillItemID);
 
                 double wwwwwPrice = jjkkii2.getCostPrice(BillItemID);
 
                 int qqqqqty = jjkkii2.getQTY(BillItemID);
 
-                double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+                double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                 try {
                     String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -20066,64 +19769,59 @@ public class MainManue1 extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                } 
-
-
+                }
 
                 ResultSet rs = jjkkii2.getAddedItemsBy_bill_ID(NextBillid);
                 this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
 
                 double calculatedValue = jjkkii2.calculateTotal(NextBillid);
                 this.jTextField7.setText(String.valueOf(calculatedValue));
-                
+
                 this.txt_search_bill_itm111.setText("");
                 //this.txt_search_bill_itm.requestFocusInWindow();
-            }
-            else{
+            } else {
                 String rppp = this.txt_search_bill_itm211.getText();
-                if(rppp.equals("")){
-                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    
+                if (rppp.equals("")) {
+                    JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+
                     String ittemmCoodde = this.tbl_addBillItems1.getModel().getValueAt(selectedRow12, 0).toString();
 
-                    String itmCode ="";
-                    String name="";
-                    String warranty="";
-                    String w_price="";
-                    String r_price=this.txt_search_bill_itm211.getText();
-                    String type="";
+                    String itmCode = "";
+                    String name = "";
+                    String warranty = "";
+                    String w_price = "";
+                    String r_price = this.txt_search_bill_itm211.getText();
+                    String type = "";
 
                     Date d = new Date();
                     SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                    String date = sdf1.format(d); 
+                    String date = sdf1.format(d);
 
-                    int qty,free,dis;
-                   try{
+                    int qty, free, dis;
+                    try {
                         ResultSet rsg = kio.getItemDetails(ittemmCoodde);
-                        while(rsg.next()){
+                        while (rsg.next()) {
                             itmCode = rsg.getString("itm_code");
                             name = rsg.getString("itm_name");
-                            warranty = rsg.getString("warranty");   
+                            warranty = rsg.getString("warranty");
                             w_price = rsg.getString("w_price");
                             //r_price = rsg.getString("r_price");
-                            type = rsg.getString("type");              
+                            type = rsg.getString("type");
                         }
-                    qty = Integer.parseInt(this.txt_search_bill_itm111.getText());
-                    free = 0;
-                    dis = 0;
-                    int wwarranty = Integer.parseInt(warranty);
-                    double ww_price = Double.parseDouble(w_price);
-                    double rr_price = Double.parseDouble(r_price);
-                    String cashBalID = "no";
-                    String billID = jjkkii2.generateBill_id(this);
-                    double valu = calculateBillItemValue(qty,rr_price);
-                    double costValue = calculateBillItemCostValue(qty,ww_price);
+                        qty = Integer.parseInt(this.txt_search_bill_itm111.getText());
+                        free = 0;
+                        dis = 0;
+                        int wwarranty = Integer.parseInt(warranty);
+                        double ww_price = Double.parseDouble(w_price);
+                        double rr_price = Double.parseDouble(r_price);
+                        String cashBalID = "no";
+                        String billID = jjkkii2.generateBill_id(this);
+                        double valu = calculateBillItemValue(qty, rr_price);
+                        double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                    String billItemCode = jjkkii2.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, this);
-                    }
-                    catch (SQLException exa) {
+                        String billItemCode = jjkkii2.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID, costValue, cashBalID, this);
+                    } catch (SQLException exa) {
                         exa.printStackTrace();
                         Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
                     }
@@ -20134,48 +19832,46 @@ public class MainManue1 extends javax.swing.JFrame {
                     double calculatedValue = jjkkii2.calculateTotal(NextBillid);
                     this.jTextField7.setText(String.valueOf(calculatedValue));
                 }
-                
+
             }
         }
     }//GEN-LAST:event_jButton109ActionPerformed
 
     private void jButton129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton129ActionPerformed
         items_add_to_bill jjkkii = new items_add_to_bill();
-        searchItems pissa = new searchItems(); 
-    
+        searchItems pissa = new searchItems();
+
         int selectedRow123789 = this.jTable3311.getSelectedRow();
-        
-        if(selectedRow123789 == -1){
-            JOptionPane.showMessageDialog(this, "Select a Serial to ADD.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow123789 == -1) {
+            JOptionPane.showMessageDialog(this, "Select a Serial to ADD.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String selectedSN = this.jTable3311.getModel().getValueAt(selectedRow123789, 1).toString();
             String status = jjkkii.getItemStatus(selectedSN);
-            
-            if(status.equals("no")){
-            JOptionPane.showMessageDialog(this, "This "+selectedSN+" Item has already been added.!","Database Error",JOptionPane.ERROR_MESSAGE);
-            }
-            else{
+
+            if (status.equals("no")) {
+                JOptionPane.showMessageDialog(this, "This " + selectedSN + " Item has already been added.!", "Database Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 String SearchedItmName = pissa.getItemCodeBySubItemName(selectedSN);
 
                 String SearchedItmCode = pissa.getItemCodeBySubItemCode(selectedSN);
 
                 String NextBillid = jjkkii.generateBill_id(this);
 
-                String SavedItemName = jjkkii.getItemNameFromBillItemTable(SearchedItmCode,NextBillid);
+                String SavedItemName = jjkkii.getItemNameFromBillItemTable(SearchedItmCode, NextBillid);
 
-                if(SearchedItmName.equals(SavedItemName)){
-                    String BillItemID = jjkkii.getBillItemIDFromBillItemTable(SearchedItmCode,NextBillid);
+                if (SearchedItmName.equals(SavedItemName)) {
+                    String BillItemID = jjkkii.getBillItemIDFromBillItemTable(SearchedItmCode, NextBillid);
 
                     String bbbbbbbbb = jjkkii.addBillSubItems(selectedSN, BillItemID, this);
 
-                    if(bbbbbbbbb != null){
-                       try {
-                        String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
-                        PreparedStatement pstl = conn.prepareStatement(queryy);
+                    if (bbbbbbbbb != null) {
+                        try {
+                            String queryy = "update bill_items set qty=qty+1 where bill_item_id = ?";
+                            PreparedStatement pstl = conn.prepareStatement(queryy);
 
-                        pstl.setString(1, BillItemID);      
-                        pstl.executeUpdate();
+                            pstl.setString(1, BillItemID);
+                            pstl.executeUpdate();
 
                         } catch (SQLException ex) {
                             ex.printStackTrace();
@@ -20190,10 +19886,10 @@ public class MainManue1 extends javax.swing.JFrame {
                             pstlu.setString(2, selectedSN);
                             pstlu.executeUpdate();
 
-                         } catch (SQLException ex) {
+                        } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                         }
+                        }
 
                         double rrrrrPrice = jjkkii.getRetailPrice(BillItemID);
                         System.out.println(rrrrrPrice);
@@ -20201,8 +19897,8 @@ public class MainManue1 extends javax.swing.JFrame {
                         System.out.println(wwwwwPrice);
                         int qqqqqty = jjkkii.getQTY(BillItemID);
                         System.out.println(qqqqqty);
-                        double NewValue = calculateBillItemValue(qqqqqty,rrrrrPrice);
-                        double NewCostValue = calculateBillItemCostValue(qqqqqty,wwwwwPrice);
+                        double NewValue = calculateBillItemValue(qqqqqty, rrrrrPrice);
+                        double NewCostValue = calculateBillItemCostValue(qqqqqty, wwwwwPrice);
 
                         try {
                             String queryy = "update bill_items set value=?, costValue=? where bill_item_id = ?";
@@ -20216,9 +19912,8 @@ public class MainManue1 extends javax.swing.JFrame {
                         } catch (SQLException ex) {
                             ex.printStackTrace();
                             Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                        } 
+                        }
                     }
-
 
                     ResultSet rs = jjkkii.getAddedItemsBy_bill_ID(NextBillid);
                     this.jTable3.setModel(DbUtils.resultSetToTableModel(rs));
@@ -20228,68 +19923,64 @@ public class MainManue1 extends javax.swing.JFrame {
 
                     this.txt_search_bill_itm11.setText("");
                     this.txt_search_bill_itm11.requestFocusInWindow();
-                }
-                else{
+                } else {
                     String rppp = this.txt_search_bill_itm211.getText();
-                    if(rppp.equals("")){
-                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!","Bill Error",JOptionPane.ERROR_MESSAGE);
-                    }
-                    else{
-                        String itmCode ="";
-                        String name="";
-                        String warranty="";
-                        String w_price="";
-                        String r_price=this.txt_search_bill_itm211.getText();
-                        String type="";
+                    if (rppp.equals("")) {
+                        JOptionPane.showMessageDialog(editEnvoice, "Price field is empty.!", "Bill Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        String itmCode = "";
+                        String name = "";
+                        String warranty = "";
+                        String w_price = "";
+                        String r_price = this.txt_search_bill_itm211.getText();
+                        String type = "";
 
                         Date d = new Date();
                         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
-                        String date = sdf1.format(d); 
+                        String date = sdf1.format(d);
 
-                        int qty,free,dis;
-                        try{
+                        int qty, free, dis;
+                        try {
                             ResultSet rsg = jjkkii.getItemDetails(selectedSN);
-                            while(rsg.next()){
+                            while (rsg.next()) {
                                 itmCode = rsg.getString("itm_code");
                                 name = rsg.getString("itm_name");
-                                warranty = rsg.getString("warranty");   
+                                warranty = rsg.getString("warranty");
                                 w_price = rsg.getString("w_price");
                                 //r_price = rsg.getString("r_price");
-                                type = rsg.getString("type");              
+                                type = rsg.getString("type");
                             }
-                        qty = 1;
-                        free = 0;
-                        dis = 0;
-                        int wwarranty = Integer.parseInt(warranty);
-                        double ww_price = Double.parseDouble(w_price);
-                        double rr_price = Double.parseDouble(r_price);
-                        String cashBalID = "no";
-                        String billID = jjkkii.generateBill_id(this);
-                        double valu = calculateBillItemValue(qty,rr_price);
-                        double costValue = calculateBillItemCostValue(qty,ww_price);   
+                            qty = 1;
+                            free = 0;
+                            dis = 0;
+                            int wwarranty = Integer.parseInt(warranty);
+                            double ww_price = Double.parseDouble(w_price);
+                            double rr_price = Double.parseDouble(r_price);
+                            String cashBalID = "no";
+                            String billID = jjkkii.generateBill_id(this);
+                            double valu = calculateBillItemValue(qty, rr_price);
+                            double costValue = calculateBillItemCostValue(qty, ww_price);
 
-                        String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID,costValue,cashBalID, this);
+                            String billItemCode = jjkkii.addItemsToBill(itmCode, name, wwarranty, qty, free, ww_price, dis, rr_price, date, valu, billID, costValue, cashBalID, this);
 
-                        if(billItemCode != null){
-                            jjkkii.addBillSubItems(selectedSN, billItemCode, this);
-                            try {
-                                String queryyy = "update sub_items set inStock=? where sn = ?";
-                                PreparedStatement pstlu = conn.prepareStatement(queryyy);
+                            if (billItemCode != null) {
+                                jjkkii.addBillSubItems(selectedSN, billItemCode, this);
+                                try {
+                                    String queryyy = "update sub_items set inStock=? where sn = ?";
+                                    PreparedStatement pstlu = conn.prepareStatement(queryyy);
 
-                                pstlu.setString(1, "no");
-                                pstlu.setString(2, selectedSN);
-                                pstlu.executeUpdate();
+                                    pstlu.setString(1, "no");
+                                    pstlu.setString(2, selectedSN);
+                                    pstlu.executeUpdate();
 
-                             } catch (SQLException ex) {
-                                ex.printStackTrace();
-                                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
-                             }
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(this, "Date Base Error.!","Error",JOptionPane.ERROR_MESSAGE);
-                        }
-                        }
-                        catch(Exception e){
+                                } catch (SQLException ex) {
+                                    ex.printStackTrace();
+                                    Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Date Base Error.!", "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        } catch (Exception e) {
                             //JOptionPane.showMessageDialog(this, "Cannot Save Movie Details!","Error",JOptionPane.ERROR_MESSAGE);
                         }
 
@@ -20313,15 +20004,15 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void txt_search_bill_itm11KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_bill_itm11KeyPressed
         storeItemData juki = new storeItemData();
-        if(evt.getKeyCode() == 10){
+        if (evt.getKeyCode() == 10) {
             txt_search_bill_itm11.requestFocus();
         }
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             searchItems st = new searchItems();
             ResultSet abb = st.searchByItemCode(this.txt_search_bill_itm11.getText().toString());
             this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(abb));
-            
-            if(abb!= null){
+
+            if (abb != null) {
                 String SearchedItmCode = st.getItemCodeBySubItemCode(this.txt_search_bill_itm11.getText().toString());
                 ResultSet rs333 = juki.getSubItemData(SearchedItmCode);
                 this.jTable3311.setModel(DbUtils.resultSetToTableModel(rs333));
@@ -20331,21 +20022,18 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         searchItems s = new searchItems();
-        
-        if(this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Item Name")){
+
+        if (this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Item Name")) {
             ResultSet a = s.searchByItemName(this.txt_search_bill_itm11.getText().toString());
             System.out.println(a);
             this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Serial Number")){
+        } else if (this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Serial Number")) {
             ResultSet ab = s.searchByItemCode(this.txt_search_bill_itm11.getText().toString());
             this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(ab));
-        }
-        else if(this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Item Code")){
+        } else if (this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Item Code")) {
             ResultSet a = s.searchByProductCode(this.txt_search_bill_itm11.getText().toString());
             this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(a));
-        }
-        else if(this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Category")){
+        } else if (this.com_box_bill_itm_searchTyp1.getSelectedItem().toString().equals("Category")) {
             ResultSet aj = s.searchByItemType(this.txt_search_bill_itm11.getText().toString());
             this.tbl_addBillItems1.setModel(DbUtils.resultSetToTableModel(aj));
         }
@@ -20356,14 +20044,12 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_search_bill_itm211ActionPerformed
 
     private void txt_search_bill_itm211KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_search_bill_itm211KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(txt_search_bill_itm211.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(txt_search_bill_itm211.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
@@ -20371,13 +20057,13 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jTable43MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable43MousePressed
         quotation klodffg = new quotation();
-        
+
         int selectedRow21wc = this.jTable43.getSelectedRow();
         String qID = this.jTable43.getModel().getValueAt(selectedRow21wc, 0).toString();
         String total, dis, desc, netA;
-        try{
+        try {
             ResultSet rsgg = klodffg.getAllQuotationsByAID(qID);
-            while(rsgg.next()){
+            while (rsgg.next()) {
                 total = rsgg.getString("totall");
                 dis = rsgg.getString("q_dis");
                 desc = rsgg.getString("q_discription");
@@ -20388,8 +20074,7 @@ public class MainManue1 extends javax.swing.JFrame {
                 this.jTextField154.setText(netA);
                 this.jTextArea19.setText(desc);
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jTable43MousePressed
@@ -20404,12 +20089,11 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton128ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton128ActionPerformed
         quotation klodq = new quotation();
-        
-        if(this.jComboBox14.getSelectedItem().toString().equals("Quotation Code")){
+
+        if (this.jComboBox14.getSelectedItem().toString().equals("Quotation Code")) {
             ResultSet ag = klodq.getQuotationBy_id(this.jTextField110.getText().toString());
             this.jTable43.setModel(DbUtils.resultSetToTableModel(ag));
-        }
-        else if(this.jComboBox14.getSelectedItem().toString().equals("Customer Name")){
+        } else if (this.jComboBox14.getSelectedItem().toString().equals("Customer Name")) {
             ResultSet agf = klodq.getQuotationBy_CustName(this.jTextField110.getText().toString());
             this.jTable43.setModel(DbUtils.resultSetToTableModel(agf));
         }
@@ -20421,28 +20105,27 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton130ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton130ActionPerformed
         int selectedRow21wfff = this.jTable43.getSelectedRow();
-        
-        if(selectedRow21wfff == -1){
-            JOptionPane.showMessageDialog(edit_advancedCust1, "Pleace Select a Quotation to Print.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow21wfff == -1) {
+            JOptionPane.showMessageDialog(edit_advancedCust1, "Pleace Select a Quotation to Print.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String qid = this.jTable43.getModel().getValueAt(selectedRow21wfff, 0).toString();
             HashMap aa = new HashMap();
             aa.put("invoNum", qid);
 
-            try { 
+            try {
                 InputStream file = getClass().getResourceAsStream("/classes/quotation.jrxml");
                 JasperDesign jdesign = JRXmlLoader.load(file);
 
                 JasperReport jreport = JasperCompileManager.compileReport(jdesign);
                 JasperPrint jprint = JasperFillManager.fillReport(jreport, aa, conn);
 
-                JasperViewer.viewReport(jprint, false); 
-                
+                JasperViewer.viewReport(jprint, false);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } 
+        }
     }//GEN-LAST:event_jButton130ActionPerformed
 
     private void jTextField152KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField152KeyTyped
@@ -20451,28 +20134,26 @@ public class MainManue1 extends javax.swing.JFrame {
 
     private void jButton131ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton131ActionPerformed
         quotation lllloo1 = new quotation();
-        
+
         int selectedRow111 = this.jTable43.getSelectedRow();
-        
-        if(selectedRow111 == -1){
-            JOptionPane.showMessageDialog(edit_advancedCust1, "Select a Quotation to Delete.!","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
+
+        if (selectedRow111 == -1) {
+            JOptionPane.showMessageDialog(edit_advancedCust1, "Select a Quotation to Delete.!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
             String qid = this.jTable43.getModel().getValueAt(selectedRow111, 0).toString();
-            
-            int userSelection = JOptionPane.showConfirmDialog(edit_advancedCust1,"Are you sure to delete this Quotation?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
-            if(userSelection == 0){
- 
+
+            int userSelection = JOptionPane.showConfirmDialog(edit_advancedCust1, "Are you sure to delete this Quotation?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (userSelection == 0) {
+
                 lllloo1.deleteAddedQuotationItems(qid);
                 boolean dd = lllloo1.deleteAdvancedCust(qid);
-                if(dd){
-                    JOptionPane.showMessageDialog(edit_advancedCust1, "Quotation Deleted Successfully","Advanced Details", JOptionPane.INFORMATION_MESSAGE);
-                    
+                if (dd) {
+                    JOptionPane.showMessageDialog(edit_advancedCust1, "Quotation Deleted Successfully", "Advanced Details", JOptionPane.INFORMATION_MESSAGE);
+
                     ResultSet agssd = lllloo1.getAllQuotations();
                     this.jTable43.setModel(DbUtils.resultSetToTableModel(agssd));
-                }
-                else{
-                    JOptionPane.showMessageDialog(edit_advancedCust1, "Database error.!","Error",JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(edit_advancedCust1, "Database error.!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
@@ -20502,48 +20183,46 @@ public class MainManue1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4MousePressed
 
     private void jTextField8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField8.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField8.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField8KeyTyped
 
     private void jTextField57KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField57KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField57.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField57.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField57KeyTyped
 
     private void jTextField68KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField68KeyTyped
-        if(Character.isLetter(evt.getKeyChar())){
+        if (Character.isLetter(evt.getKeyChar())) {
             evt.consume();
-        }
-        else{
-            try{
-                Double.parseDouble(jTextField68.getText()+evt.getKeyChar());
-            }
-            catch(NumberFormatException e){
+        } else {
+            try {
+                Double.parseDouble(jTextField68.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
                 evt.consume();
             }
         }
     }//GEN-LAST:event_jTextField68KeyTyped
-    
-    public void showPanels(){
+
+    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox17ActionPerformed
+
+    public void showPanels() {
         setColor(btn_search);
         resetColor(btn_add);
         resetColor(btn_billing);
@@ -20551,7 +20230,7 @@ public class MainManue1 extends javax.swing.JFrame {
         resetColor(btn_hr);
         resetColor(btn_hr4);
 //        resetColor(btn_billing1);
-        
+
         this.jPanel10.setVisible(true);
         this.jPanel13.setVisible(false);
         this.jPanel14.setVisible(false);
@@ -20559,7 +20238,7 @@ public class MainManue1 extends javax.swing.JFrame {
         this.jPanel16.setVisible(false);
         this.jPanel55.setVisible(false);
         this.jPanel56.setVisible(false);
-        
+
         this.pnl_searchItm.setVisible(true);
         this.pnl_addItms.setVisible(false);
         this.pnl_billing.setVisible(false);
@@ -20568,12 +20247,12 @@ public class MainManue1 extends javax.swing.JFrame {
         this.pnl_barcode.setVisible(false);
         this.pnl_quickBill.setVisible(false);
         this.pnl_settings.setVisible(false);
-        
+
         searchItems si = new searchItems();
         ResultSet rs = si.showItemDetails();
         this.tbl_items_search.setModel(DbUtils.resultSetToTableModel(rs));
     }
-    
+
 //    public void updateBill() throws ParseException{
 //        Date d = new Date();
 //        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
@@ -20624,18 +20303,18 @@ public class MainManue1 extends javax.swing.JFrame {
 //                Logger.getLogger(MainManue1.class.getName()).log(Level.SEVERE, null, exa);
 //        }
 //    }
-    
-    
-    void setColor(JPanel panel){
-        panel.setBackground(new Color(85,65,118));
+    void setColor(JPanel panel) {
+        panel.setBackground(new Color(85, 65, 118));
     }
-    void resetColor(JPanel panel){
-        panel.setBackground(new Color(64,43,100));
+
+    void resetColor(JPanel panel) {
+        panel.setBackground(new Color(64, 43, 100));
     }
+
     /**
      * @param args the command line arguments
      */
-public static void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -20834,6 +20513,7 @@ public static void main(String args[]) {
     javax.swing.JCheckBox jCheckBox14;
     javax.swing.JCheckBox jCheckBox15;
     javax.swing.JCheckBox jCheckBox16;
+    javax.swing.JCheckBox jCheckBox17;
     javax.swing.JCheckBox jCheckBox2;
     javax.swing.JComboBox<String> jComboBox1;
     javax.swing.JComboBox<String> jComboBox10;
@@ -21087,6 +20767,7 @@ public static void main(String args[]) {
     javax.swing.JLabel jLabel327;
     javax.swing.JLabel jLabel328;
     javax.swing.JLabel jLabel33;
+    javax.swing.JLabel jLabel34;
     javax.swing.JLabel jLabel35;
     javax.swing.JLabel jLabel37;
     javax.swing.JLabel jLabel4;
@@ -21515,53 +21196,51 @@ public static void main(String args[]) {
 
     private void setCashBalance() {
         cashBalancing crr = new cashBalancing();
-        
+
         Date d = new Date();
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         String da = sdf1.format(d);
-        
+
         double creditedAmt = crr.calculateCreditedMoney(da);
         double debitedAmt = crr.calculateDebitedMoney(da);
-        
+
         double dayllyBalance = (debitedAmt - creditedAmt);
-        
+
         this.jLabel196.setText(String.valueOf(dayllyBalance));
     }
-    
+
     private void setItemTypes() {
-        String sdds= "select * from item_typs";
+        String sdds = "select * from item_typs";
         com_box_searchTyp1.removeAllItems();
-        try{
+        try {
             Statement stmnt = conn.createStatement();
-            ResultSet rss = stmnt.executeQuery(sdds);      
-            while(rss.next()){
+            ResultSet rss = stmnt.executeQuery(sdds);
+            while (rss.next()) {
                 com_box_searchTyp1.addItem(rss.getString("type_name"));
             }
-            
-        }
-        catch(Exception ex){
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-        
+
     }
-    
+
     private void setItemTypesForEditItems() {
-        String sdds= "select * from item_typs";
+        String sdds = "select * from item_typs";
         com_box_searchTyp2.removeAllItems();
-        try{
+        try {
             Statement stmnt = conn.createStatement();
-            ResultSet rss = stmnt.executeQuery(sdds);      
-            while(rss.next()){
+            ResultSet rss = stmnt.executeQuery(sdds);
+            while (rss.next()) {
                 com_box_searchTyp2.addItem(rss.getString("type_name"));
             }
-            
-        }
-        catch(Exception ex){
+
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
-        
+
     }
-    
+
 //    private void setJobTypes() {
 //        String sddss= "select * from job_typs";
 //        jComboBox4.removeAllItems();
@@ -21578,20 +21257,17 @@ public static void main(String args[]) {
 //        }
 //        
 //    }
-    
-    public void UpdateBillPrices(){
-        items_add_to_bill iii122544 = new items_add_to_bill(); 
+    public void UpdateBillPrices() {
+        items_add_to_bill iii122544 = new items_add_to_bill();
         String ProccessingBillID = this.jLabel229.getText();
-        
+
         double tot = Double.parseDouble(this.jTextField115.getText());
         int disd = Integer.parseInt(this.jTextField117.getText());
         double netAmt = Double.parseDouble(this.jTextField118.getText());
         int itmCountd = jTable19.getRowCount();
         iii122544.updateBillWithPrices(tot, disd, netAmt, itmCountd, ProccessingBillID, editEnvoice);
     }
-    
-    
-    
+
 //    private void setJobTypes() {
 //        String sddss= "select * from job_typs";
 //        jComboBox4.removeAllItems();
@@ -21608,83 +21284,79 @@ public static void main(String args[]) {
 //        }
 //        
 //    }
-                    
-     public double calculateCreditAmtByCustomer(String custID){
+    public double calculateCreditAmtByCustomer(String custID) {
         double calCred = 0;
         String id = null;
         id = custID;
-        try{
+        try {
             Statement stmnt5 = conn.createStatement();
-            ResultSet rs = stmnt5.executeQuery("SELECT SUM(dueAmt) FROM creditedinvoices where cust_id='"+id+"'");
-            while(rs.next()){
+            ResultSet rs = stmnt5.executeQuery("SELECT SUM(dueAmt) FROM creditedinvoices where cust_id='" + id + "'");
+            while (rs.next()) {
                 calCred = rs.getDouble("SUM(dueAmt)");
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
         return calCred;
     }
-     
+
     private void setNewCreditValue(double creditSum, String custIDD) {
-        String sddssf= "update customers set credit_bal = ? where cust_id = ?";  
-        try{
-            PreparedStatement pstw = conn.prepareStatement(sddssf);  
-                pstw.setDouble(1, creditSum);
-                pstw.setString(2, custIDD);
-                pstw.executeUpdate();     
-        }
-        catch(Exception ex){
+        String sddssf = "update customers set credit_bal = ? where cust_id = ?";
+        try {
+            PreparedStatement pstw = conn.prepareStatement(sddssf);
+            pstw.setDouble(1, creditSum);
+            pstw.setString(2, custIDD);
+            pstw.executeUpdate();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }        
+        }
     }
-    
-    public String getCustIDFromCrediID(String cIID){
+
+    public String getCustIDFromCrediID(String cIID) {
         String calCred = "";
         String id = null;
         id = cIID;
-        try{
+        try {
             Statement stmnt5d = conn.createStatement();
-            ResultSet rsf = stmnt5d.executeQuery("SELECT cust_id FROM creditedinvoices where cdID='"+id+"'");
-            while(rsf.next()){
+            ResultSet rsf = stmnt5d.executeQuery("SELECT cust_id FROM creditedinvoices where cdID='" + id + "'");
+            while (rsf.next()) {
                 calCred = rsf.getString("cust_id");
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
         return calCred;
     }
-    
-    public void saveInvoiceDiscriptionForNewInvoices(String dis, String invoID){
+
+    public void saveInvoiceDiscriptionForNewInvoices(String dis, String invoID) {
         items_add_to_bill jjuu = new items_add_to_bill();
-        
+
         jjuu.addInvoiceDiscription(invoID, dis, "", "", this);
     }
-    
-    public void updateInvoiceDiscriptionForWarranty(String dis, String invoID){
+
+    public void updateInvoiceDiscriptionForWarranty(String dis, String invoID) {
         items_add_to_bill jjuutt = new items_add_to_bill();
-        
+
         jjuutt.updateInvoiceDiscriptionByWarrantyDiscription(invoID, dis);
     }
-    
-    public void updateInvoiceDiscriptionForReturn(String dis, String invoID){
+
+    public void updateInvoiceDiscriptionForReturn(String dis, String invoID) {
         items_add_to_bill jjuut = new items_add_to_bill();
-        
+
         jjuut.updateInvoiceDiscriptionByReturnDiscription(invoID, dis);
     }
-    
-    public String updateInvoiceDiscription(String billID){
-        items_add_to_bill ffgg = new items_add_to_bill(); 
-        
+
+    public String updateInvoiceDiscription(String billID) {
+        items_add_to_bill ffgg = new items_add_to_bill();
+
         String initialDis = ffgg.getInitialDis(billID);
         String warrantyDis = ffgg.getWarrantylDis(billID);
         String returnlDis = ffgg.getReturnlDis(billID);
-        
+
         String fullDis = initialDis.concat("\n").concat(warrantyDis).concat("\n").concat(returnlDis);
-        
+
         try {
             String queryyy = "update bill set bill_discrip=? where bill_id = ?";
             PreparedStatement pstlu = conn.prepareStatement(queryyy);
@@ -21692,136 +21364,127 @@ public static void main(String args[]) {
             pstlu.setString(1, fullDis);
             pstlu.setString(2, billID);
             pstlu.executeUpdate();
-            
+
             return "OK";
 
         } catch (SQLException ex) {
             ex.printStackTrace();
             return null;
         }
-        
+
     }
-    
-    
-    public String getBillItemSN(String billItemID){
-        
+
+    public String getBillItemSN(String billItemID) {
+
         String sb = "";
-        ArrayList<String> SNlist=new ArrayList<>();
+        ArrayList<String> SNlist = new ArrayList<>();
         String id = null;
         id = billItemID;
-        try{
+        try {
             Statement stmnt5d = conn.createStatement();
-            ResultSet rsfs = stmnt5d.executeQuery("SELECT snn FROM bill_sub_items where bill_item_id='"+id+"'");
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT snn FROM bill_sub_items where bill_item_id='" + id + "'");
             int j = 0;
-            while(rsfs.next()){
+            while (rsfs.next()) {
                 SNlist.add(rsfs.getString("snn"));
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(SNlist.size());
-        
-        for (String s : SNlist)
-        {
+
+        for (String s : SNlist) {
             sb += s + ", ";
         }
 
         return sb;
     }
-    
-    public String getReturnItemsGroupByName(String billItemID){
-        
+
+    public String getReturnItemsGroupByName(String billItemID) {
+
         String sb = "";
-        ArrayList<String> SNlist=new ArrayList<>();
+        ArrayList<String> SNlist = new ArrayList<>();
         String id = null;
         id = billItemID;
-        try{
+        try {
             Statement stmnt5d = conn.createStatement();
-            ResultSet rsfs = stmnt5d.executeQuery("SELECT itemName FROM returneditmlist WHERE bill_id = '"+id+"' GROUP BY itemName");
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT itemName FROM returneditmlist WHERE bill_id = '" + id + "' GROUP BY itemName");
 
-            while(rsfs.next()){
+            while (rsfs.next()) {
                 SNlist.add(rsfs.getString("itemName"));
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        for (String s : SNlist)
-        {
+
+        for (String s : SNlist) {
             sb += s + ", ";
         }
 
         return sb;
     }
-    
-    public String getAllWarrantyNotices(String billID){
-        
+
+    public String getAllWarrantyNotices(String billID) {
+
         String sb = "";
-        ArrayList<String> NoteList=new ArrayList<>();
+        ArrayList<String> NoteList = new ArrayList<>();
         String id = null;
         id = billID;
-        try{
+        try {
             Statement stmnt5d = conn.createStatement();
-            ResultSet rsfs = stmnt5d.executeQuery("SELECT notee FROM warranty where invoID='"+id+"'");
-            while(rsfs.next()){
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT notee FROM warranty where invoID='" + id + "'");
+            while (rsfs.next()) {
                 NoteList.add(rsfs.getString("notee"));
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(NoteList.size());
-        
-        for (String s : NoteList)
-        {
+
+        for (String s : NoteList) {
             sb += s + "\n";
         }
 
         return sb;
     }
-     
-    public String getAllReturnNotices(String billID){
-        
+
+    public String getAllReturnNotices(String billID) {
+
         String sb = "";
-        ArrayList<String> NoteList=new ArrayList<>();
+        ArrayList<String> NoteList = new ArrayList<>();
         String id = null;
         id = billID;
-        try{
+        try {
             Statement stmnt5d = conn.createStatement();
-            ResultSet rsfs = stmnt5d.executeQuery("SELECT notee FROM warranty where invoID='"+id+"'");
-            while(rsfs.next()){
+            ResultSet rsfs = stmnt5d.executeQuery("SELECT notee FROM warranty where invoID='" + id + "'");
+            while (rsfs.next()) {
                 NoteList.add(rsfs.getString("notee"));
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(NoteList.size());
-        
-        for (String s : NoteList)
-        {
+
+        for (String s : NoteList) {
             sb += s + "\n";
         }
 
         return sb;
     }
-    
-    public double calculateBillItemValue(int qttty, double r_pprice){
-        double Value= qttty * r_pprice;
-        
+
+    public double calculateBillItemValue(int qttty, double r_pprice) {
+        double Value = qttty * r_pprice;
+
         return Value;
     }
-    
-    public double calculateBillItemCostValue(int qttty, double w_pprice){
-        double CostValue= qttty * w_pprice;
-        
+
+    public double calculateBillItemCostValue(int qttty, double w_pprice) {
+        double CostValue = qttty * w_pprice;
+
         return CostValue;
     }
-    
-    private void tableColumnSettings(){
-        TableColumn col2 = jTable16.getColumnModel().getColumn(1);   
+
+    private void tableColumnSettings() {
+        TableColumn col2 = jTable16.getColumnModel().getColumn(1);
         col2.setPreferredWidth(300);
     }
 //    private void checkCustomerCrediteBal() {
@@ -21875,5 +21538,38 @@ public static void main(String args[]) {
 //            e.printStackTrace();
 //            return 0;
 //        } 
-//    }    
+//    } 
+
+    public String addBarcodeWhenAddingOrUpdateItems(int qty, String name, String r_p, String ItmCode) {
+        barcode bb = new barcode();
+        storeItemData ssdd = new storeItemData();
+        String btype = "MF";
+        String duplicate = "";
+        String rrrr = bb.addBundelBarcode(name, btype, qty, r_p, duplicate, this);
+
+        if (jCheckBox17.isSelected()) {
+            String snn = "";
+            for (int i = 0; i < qty; i++) {
+                snn = bb.addBarcodeItems2(name, this, btype, this, this, r_p, "pending");
+
+                duplicate = "yes";
+            }
+            bb.increaseNoOfBarcodeItmsByOne();
+            ssdd.addSubItems(snn, ItmCode, "dup", this);
+        } else {
+            for (int i = 0; i < qty; i++) {
+                String sn = bb.addBarcodeItems1(name, this, btype, this, this, r_p, "pending");
+                System.out.println(sn);
+                ssdd.addSubItems(sn, ItmCode, "yes", this);
+            }
+            duplicate = "no";
+        }
+
+        
+        if (rrrr != null) {
+            bb.addMainBarcode(this);
+        }
+
+        return rrrr;
+    }
 }

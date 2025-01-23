@@ -20,10 +20,10 @@ public class editItemData {
         conn = con.Connect();
     }
     
-    public void UpdateItemData(String name, int packSize, int qty, double w_price, double r_price, String date,String type, String itm_code, Component comp){
+    public void UpdateItemData(String name, int packSize, int qty, double w_price, double r_price, String date,String type, String itm_code, String bb_ib, Component comp){
         try{
            
-        String sql = "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=? where itm_code=?";
+        String sql = "update items set itm_name=?, warranty=?, qty=?, w_price=?, r_price=?, date=?, type=?, barcodeID=? where itm_code=?";
         PreparedStatement pst = conn.prepareStatement(sql);
          //System.out.println("aaaaaaaaaa");
             
@@ -34,7 +34,8 @@ public class editItemData {
             pst.setDouble(5, r_price);
             pst.setString(6, date);
             pst.setString(7, type);
-            pst.setString(8, itm_code);
+            pst.setString(8, bb_ib);
+            pst.setString(9, itm_code);
             
             pst.execute();
             //System.out.println("aaaaaaaaaa");
